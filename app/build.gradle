@@ -10,6 +10,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //集成腾讯Bugly开始
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi','armeabi-v7a', 'arm64-v8a'//,'x86', 'x86_64'
+        }
+        //集成腾讯Bugly结束
     }
     buildTypes {
         release {
@@ -26,4 +32,8 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
+    //集成腾讯Bugly开始
+    compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.1.5
+    compile 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
+    //集成腾讯Bugly结束
 }
