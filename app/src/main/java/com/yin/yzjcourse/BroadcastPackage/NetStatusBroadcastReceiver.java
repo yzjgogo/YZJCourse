@@ -1,4 +1,4 @@
-package com.yin.yzjcourse;
+package com.yin.yzjcourse.BroadcastPackage;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,6 +7,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.yin.yzjcourse.ForeService.RealForeService;
 
 /**
  * Created by hunter on 2015/10/9.

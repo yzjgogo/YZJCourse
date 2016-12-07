@@ -16,9 +16,9 @@
         tools:context="com.yin.yzjcourse.MainActivity">
 
         <Button
-            android:id="@+id/bt_fore_service"
+            android:id="@+id/bt_start_fore_service"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="前台服务" />
+            android:text="启动前台服务" />
     </LinearLayout>
 </ScrollView>

@@ -1,4 +1,4 @@
-package com.yin.yzjcourse;
+package com.yin.yzjcourse.ForeService;
 
 import android.app.Notification;
 import android.app.Service;

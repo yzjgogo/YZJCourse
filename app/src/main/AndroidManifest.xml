@@ -20,9 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="com.yin.yzjcourse.FakeForeService"/>
-        <service android:name="com.yin.yzjcourse.RealForeService"/>
-        <receiver android:name=".NetStatusBroadcastReceiver">
+        <activity android:name="com.yin.yzjcourse.ForeService.ForeServiceActivity"/>
+        <service android:name="com.yin.yzjcourse.ForeService.FakeForeService"/>
+        <service android:name="com.yin.yzjcourse.ForeService.RealForeService"/>
+        <receiver android:name=".BroadcastPackage.NetStatusBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>

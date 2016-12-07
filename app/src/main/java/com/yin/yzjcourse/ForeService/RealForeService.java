@@ -1,11 +1,10 @@
-package com.yin.yzjcourse;
+package com.yin.yzjcourse.ForeService;
 
 import android.app.Notification;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 /**
