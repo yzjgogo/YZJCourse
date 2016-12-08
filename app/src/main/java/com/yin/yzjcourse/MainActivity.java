@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.dev.think.mylibrary.Utils;
 import com.yin.yzjcourse.ForeService.FakeForeService;
 import com.yin.yzjcourse.ForeService.ForeServiceActivity;
 import com.yin.yzjcourse.ForeService.RealForeService;
