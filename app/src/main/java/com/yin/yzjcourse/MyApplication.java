@@ -7,6 +7,8 @@ import android.util.Log;
 import com.alibaba.sdk.android.push.CloudPushService;
 import com.alibaba.sdk.android.push.CommonCallback;
 import com.alibaba.sdk.android.push.noonesdk.PushServiceFactory;
+import com.alibaba.sdk.android.push.register.HuaWeiRegister;
+import com.alibaba.sdk.android.push.register.MiPushRegister;
 import com.tencent.bugly.crashreport.CrashReport;
 
 /**
@@ -43,5 +45,9 @@ public class MyApplication extends Application {
                 Log.e("yin", "init cloudchannel failed -- errorcode:" + errorCode + " -- errorMessage:" + errorMessage);
             }
         });
+        // 注册方法会自动判断是否支持小米系统推送，如不支持会跳过注册。
+        MiPushRegister.register(applicationContext, "小米AppID", "小米AppKey");
+// 注册方法会自动判断是否支持华为系统推送，如不支持会跳过注册。
+        HuaWeiRegister.register(applicationContext);
     }
 }

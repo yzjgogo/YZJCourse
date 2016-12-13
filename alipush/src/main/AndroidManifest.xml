@@ -1,5 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dev.think.mylibrary">
+    <!--小米通道相关权限 -->
+    <permission
+        android:name="com.mingyihome.tcmmgr.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signatureOrSystem"/>
+    <uses-permission android:name="com.mingyihome.tcmmgr.permission.MIPUSH_RECEIVE"/>
     <!--阿里移动推送相关权限-->
     <!--Android 6.0版本可去除，用于选举信息（通道复用）的同步-->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -87,6 +92,35 @@
             <!--</intent-filter>-->
         <!--</receiver>-->
         <!--aliPush-end-->
+        <!-- 小米通道官方配置 -->
+        <service android:name="com.xiaomi.mipush.sdk.PushMessageHandler" android:enabled="true" android:exported="true" />
+        <service android:enabled="true" android:name="com.xiaomi.mipush.sdk.MessageHandleService" />
+        <receiver android:name="com.alibaba.sdk.android.push.MiPushBroadcastReceiver" android:exported="true" >
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver" android:exported="true" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <!-- 华为通道官方配置 -->
+        <receiver android:name="com.alibaba.sdk.android.push.HuaWeiReceiver">
+            <intent-filter>
+                <action android:name="com.huawei.android.push.intent.REGISTRATION"/>
+                <action android:name="com.huawei.android.push.intent.RECEIVE"/>
+                <action android:name="com.huawei.intent.action.PUSH"/>
+                <action android:name="com.huawei.intent.action.PUSH_STATE"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -17,10 +17,26 @@ android {
         }
         //集成腾讯Bugly结束
     }
+
+    signingConfigs {
+        myConfigs {
+            storeFile file("yzjcourse.jks")
+            storePassword '189896love'
+            keyAlias '189896love'
+            keyPassword '189896love'
+        }
+    }
     buildTypes {
+        //Terminal打包命令：gradle build或gradlew build或gradle assembleRelease或gradlew assembleRelease
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.myConfigs
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.myConfigs
         }
     }
 }

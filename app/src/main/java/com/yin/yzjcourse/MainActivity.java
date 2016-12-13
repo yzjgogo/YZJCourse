@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bt_fore_service:
+                Integer i = null;
+                i.toString();
                 Intent intent = new Intent(this, ForeServiceActivity.class);
                 startActivity(intent);
                 break;

@@ -30,6 +30,11 @@
         </receiver>
         <!--aliPush-end-->
         <!--消息接收监听器-->
+
+
+        <activity
+            android:name=".aliPushPackage.XiaoMiActivity"
+            android:screenOrientation="portrait" />
         <receiver android:name="com.yin.yzjcourse.aliPushPackage.AliPushReceiver">
             <intent-filter>
                 <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED"/>
