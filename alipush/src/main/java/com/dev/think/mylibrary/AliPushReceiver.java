@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.aliPushPackage;
+package com.dev.think.mylibrary;
 
 import android.content.Context;
 import android.util.Log;
