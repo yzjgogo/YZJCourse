@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.bt_fore_service).setOnClickListener(this);
+        findViewById(R.id.bt_dialog_fragment).setOnClickListener(this);
     }
 
     @Override
@@ -25,6 +26,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i.toString();
                 Intent intent = new Intent(this, ForeServiceActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.bt_dialog_fragment:
+                CourseDialog dialog = CourseDialog.getInstance();
+                dialog.show(getSupportFragmentManager(), "CourseDialog");
                 break;
         }
     }

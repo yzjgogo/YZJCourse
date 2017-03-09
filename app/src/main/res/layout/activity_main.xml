@@ -20,5 +20,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="前台服务" />
+        <Button
+            android:id="@+id/bt_dialog_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DialogFragment" />
     </LinearLayout>
 </ScrollView>
