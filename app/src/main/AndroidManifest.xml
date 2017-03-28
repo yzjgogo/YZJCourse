@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.yin.yzjcourse.ForeService.ForeServiceActivity"/>
+        <activity android:name=".RxJava2.RxRelease2Activity"/>
         <service android:name="com.yin.yzjcourse.ForeService.FakeForeService"/>
         <service android:name="com.yin.yzjcourse.ForeService.RealForeService"/>
         <receiver android:name=".BroadcastPackage.NetStatusBroadcastReceiver">

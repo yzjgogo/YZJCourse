@@ -25,5 +25,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="DialogFragment" />
+        <Button
+            android:id="@+id/bt_rxjava"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RxJava 2.0" />
     </LinearLayout>
 </ScrollView>
