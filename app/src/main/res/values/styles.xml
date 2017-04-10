@@ -20,6 +20,12 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    <!--dialog填充整个屏幕-->
+    <style name="Dialog_FS">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/mystyle</item>
+    </style>
 
     <style name="mystyle" parent="android:Animation">
         <item name="@android:windowEnterAnimation">@anim/slide_from_bottom</item>

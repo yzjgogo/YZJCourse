@@ -1,54 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/bt_no_back_pressure"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="不支持压背：Observable/Observer" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/bt_back_pressure"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="支持压背：Flowable/Subscriber" />
+        <Button
+            android:id="@+id/bt_no_back_pressure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="不支持压背：Observable/Observer" />
 
-    <Button
-        android:id="@+id/bt_back_pressure_create"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="支持压背,创建：Flowable/Subscriber" />
+        <Button
+            android:id="@+id/bt_back_pressure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="支持压背：Flowable/Subscriber" />
 
-    <Button
-        android:id="@+id/bt_maybe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Maybe/MaybeObserver" />
+        <Button
+            android:id="@+id/bt_back_pressure_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="支持压背,创建：Flowable/Subscriber" />
 
-    <Button
-        android:id="@+id/bt_single"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Single/SingleObserver" />
+        <Button
+            android:id="@+id/bt_maybe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Maybe/MaybeObserver" />
 
-    <Button
-        android:id="@+id/bt_complete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Completable/CompletableObserver" />
+        <Button
+            android:id="@+id/bt_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Single/SingleObserver" />
 
-    <Button
-        android:id="@+id/bt_action0"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="action0-->action" />
+        <Button
+            android:id="@+id/bt_complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Completable/CompletableObserver" />
 
-    <Button
-        android:id="@+id/bt_action1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="action1-->Consumer" />
-</LinearLayout>
+        <Button
+            android:id="@+id/bt_action0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="action0-->action" />
+
+        <Button
+            android:id="@+id/bt_action1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="action1-->Consumer" />
+
+        <Button
+            android:id="@+id/bt_observable_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,map" />
+
+        <Button
+            android:id="@+id/bt_observable_defer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,defer" />
+
+        <Button
+            android:id="@+id/bt_observable_zip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,zip" />
+
+        <Button
+            android:id="@+id/bt_observable_disposable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,CompositeDisposable,subscribeWith,DisposableObserver,defer" />
+    </LinearLayout>
+</ScrollView>

@@ -31,6 +31,10 @@ public class CourseDialog extends DialogFragment {
          * 比如你希望dialog的左右侧和底部到达屏幕边界；
          */
 //        setStyle(DialogFragment.STYLE_NO_FRAME, R.style.shareDialogTheme);
+        /**
+         * 是dialog填充整个屏幕
+         */
+        setStyle(DialogFragment.STYLE_NO_FRAME, R.style.Dialog_FS);
     }
 
     @Nullable

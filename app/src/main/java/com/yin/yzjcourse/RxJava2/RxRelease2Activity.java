@@ -1,5 +1,6 @@
 package com.yin.yzjcourse.RxJava2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +8,15 @@ import android.util.Log;
 import android.view.View;
 
 import com.yin.yzjcourse.R;
+import com.yin.yzjcourse.bean.ApiUser;
+import com.yin.yzjcourse.bean.User;
+import com.yin.yzjcourse.utils.Utils;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
+
+import java.util.List;
+import java.util.concurrent.Callable;
 
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Completable;
@@ -26,6 +33,7 @@ import io.reactivex.MaybeOnSubscribe;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.Scheduler;
 import io.reactivex.Single;
@@ -35,7 +43,9 @@ import io.reactivex.SingleOnSubscribe;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
+import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 import io.reactivex.internal.schedulers.ComputationScheduler;
 import io.reactivex.schedulers.Schedulers;
 
@@ -57,6 +67,10 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
         findViewById(R.id.bt_complete).setOnClickListener(this);
         findViewById(R.id.bt_action0).setOnClickListener(this);
         findViewById(R.id.bt_action1).setOnClickListener(this);
+        findViewById(R.id.bt_observable_map).setOnClickListener(this);
+        findViewById(R.id.bt_observable_zip).setOnClickListener(this);
+        findViewById(R.id.bt_observable_defer).setOnClickListener(this);
+        findViewById(R.id.bt_observable_disposable).setOnClickListener(this);
     }
 
     @Override
@@ -85,6 +99,19 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.bt_action1:
                 testAction1();
+                break;
+            case R.id.bt_observable_map:
+                testObservableMap();
+                break;
+            case R.id.bt_observable_zip:
+                testObservableZip();
+                break;
+            case R.id.bt_observable_defer:
+                testObservableDefer();
+                break;
+            case R.id.bt_observable_disposable:
+                Intent intent = new Intent(this,DisposableExampleActivity.class);
+                startActivity(intent);
                 break;
         }
     }
@@ -385,5 +412,132 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
                 Log.e("yin","执行run");//e.onComplete();后执行
             }
         });
+    }
+
+    private void testObservableMap() {
+        Observable.create(new ObservableOnSubscribe<List<ApiUser>>() {
+            @Override
+            public void subscribe(ObservableEmitter<List<ApiUser>> e) throws Exception {
+                if (!e.isDisposed()) {
+                    e.onNext(Utils.getApiUserList());
+                    e.onComplete();
+                }
+            }
+        })
+           .subscribeOn(Schedulers.io())
+                // Be notified on the main thread
+                .observeOn(AndroidSchedulers.mainThread())
+                .map(new Function<List<ApiUser>, List<User>>() {//第一个参数类型，转化为第二个参数类型
+
+                    @Override
+                    public List<User> apply(List<ApiUser> apiUsers) throws Exception {
+                        return Utils.convertApiUserListToUserList(apiUsers);
+                    }
+                })
+                .subscribe(new Observer<List<User>>() {
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        Log.e("yin", " onSubscribe : " + d.isDisposed());
+                    }
+
+                    @Override
+                    public void onNext(List<User> userList) {
+                        Log.e("yin", " onNext : " + userList.toString());
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e("yin", " onError : " + e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Log.e("yin", " onComplete");
+                    }
+                });
+    }
+
+    /**
+     * 获取两个用户列表，一个列表喜欢板球，另一个喜欢足球，然后找到板球和足球都喜欢的用户列表
+     */
+    private void testObservableZip() {
+        Observable.zip(getCricketFansObservable(), getFootballFansObservable(),//这两个参数对应下面的后面两个参数
+                new BiFunction<List<User>, List<User>, List<User>>() {//后面两个参数压缩之后的值由第一个参数接收，具体的压缩逻辑在apply方法中自定义
+                    @Override
+                    public List<User> apply(List<User> cricketFans, List<User> footballFans) throws Exception {
+                        Log.e("yin","板球粉丝："+cricketFans.toString()+"\n足球粉丝："+footballFans.toString());
+                        return Utils.filterUserWhoLovesBoth(cricketFans, footballFans);
+                    }
+                })
+                // Run on a background thread
+                .subscribeOn(Schedulers.io())
+                // Be notified on the main thread
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(getObserver());
+    }
+
+    private Observable<List<User>> getCricketFansObservable() {
+        return Observable.create(new ObservableOnSubscribe<List<User>>() {
+            @Override
+            public void subscribe(ObservableEmitter<List<User>> e) throws Exception {
+                if (!e.isDisposed()) {
+                    e.onNext(Utils.getUserListWhoLovesCricket());
+                    e.onComplete();
+                }
+            }
+        });
+    }
+
+    private Observable<List<User>> getFootballFansObservable() {
+        return Observable.create(new ObservableOnSubscribe<List<User>>() {
+            @Override
+            public void subscribe(ObservableEmitter<List<User>> e) throws Exception {
+                if (!e.isDisposed()) {
+                    e.onNext(Utils.getUserListWhoLovesFootball());
+                    e.onComplete();
+                }
+            }
+        });
+    }
+
+    private Observer<List<User>> getObserver() {
+        return new Observer<List<User>>() {
+
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.e("yin", " onSubscribe : " + d.isDisposed());
+            }
+
+            @Override
+            public void onNext(List<User> userList) {
+                Log.e("yin", " onNext : " + userList.size());
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e("yin", " onError : " + e.getMessage());
+            }
+
+            @Override
+            public void onComplete() {
+                Log.e("yin", " onComplete");
+            }
+        };
+    }
+
+    /**
+     * defer：只有在被订阅后才会产生数据，才会调用call()方法？
+     */
+    private void testObservableDefer() {
+        final String str = "a";
+        Observable.defer(new Callable<ObservableSource<? extends String>>() {
+            @Override
+            public ObservableSource<? extends String> call() throws Exception {
+                return Observable.just(str);
+            }
+        });
+
+//        str = "b";
     }
 }
