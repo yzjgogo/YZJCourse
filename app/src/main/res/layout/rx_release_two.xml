@@ -12,72 +12,245 @@
             android:id="@+id/bt_no_back_pressure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="不支持压背：Observable/Observer" />
+            android:text="不支持压背：Observable/Observer"
+            android:textAllCaps="false"/>
 
         <Button
             android:id="@+id/bt_back_pressure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="支持压背：Flowable/Subscriber" />
+            android:text="支持压背：Flowable/Subscriber"
+            android:textAllCaps="false"/>
 
         <Button
             android:id="@+id/bt_back_pressure_create"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="支持压背,创建：Flowable/Subscriber" />
+            android:text="支持压背,创建：Flowable/Subscriber"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/bt_maybe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Maybe/MaybeObserver" />
+            android:text="Maybe/MaybeObserver"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/bt_single"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Single/SingleObserver" />
+            android:text="Single/SingleObserver"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/bt_complete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Completable/CompletableObserver" />
+            android:text="Completable/CompletableObserver"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/bt_action0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="action0-->action" />
+            android:text="action0-->action"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/bt_action1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="action1-->Consumer" />
+            android:text="action1-->Consumer"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/bt_observable_map"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Observable,map" />
+            android:text="Observable,map"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/bt_observable_defer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Observable,defer" />
+            android:text="Observable,defer"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/bt_observable_zip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Observable,zip" />
+            android:text="Observable,zip，BiFunction"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/bt_observable_disposable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Observable,CompositeDisposable,subscribeWith,DisposableObserver,defer" />
+            android:text="Observable,CompositeDisposable,subscribeWith,DisposableObserver,defer"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_observable_take"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,take"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_observable_timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,timer"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_observable_interval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,interval"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_flowable_reduce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flowable,reduce,BiFunction"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_flowable_reduce2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,reduce,BiFunction"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_observable_buffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,buffer"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_observable_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,filter,Predicate"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_observable_skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,skip"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_observable_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,scan,BiFunction"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_replay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="replay,PublishSubject,ConnectableObservable"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_concat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,concat,fromArray"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_merge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,merge"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_distinct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,distinct"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_last"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,last"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_replaysubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ReplaySubject"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_publishsubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PublishSubject"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_behaviorsubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BehaviorSubject"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_asyncsubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AsyncSubject"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_throttleFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,throttleFirst"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_throttleLast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,throttleLast"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_debounce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,debounce"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_window"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,window，consumer"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_delay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observable,delay"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
