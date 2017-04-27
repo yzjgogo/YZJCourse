@@ -102,6 +102,8 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
         findViewById(R.id.bt_debounce).setOnClickListener(this);
         findViewById(R.id.bt_window).setOnClickListener(this);
         findViewById(R.id.bt_delay).setOnClickListener(this);
+        findViewById(R.id.bt_take_while).setOnClickListener(this);
+        findViewById(R.id.bt_test_null).setOnClickListener(this);
     }
 
     @Override
@@ -213,6 +215,12 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.bt_delay:
                 testDelay();
+                break;
+            case R.id.bt_take_while:
+                testTakeWhile();
+                break;
+            case R.id.bt_test_null:
+                testNull();
                 break;
         }
     }
@@ -1582,5 +1590,68 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
                         Log.e("yin", "onComplete");
                     }
                 });
+    }
+
+    /**
+     * TakeWhile则是根据一个函数来判断是否发射数据，当函数返回值为true的时候正常发射数据；当函数返回false的时候丢弃所有后面的数据。
+     */
+    private void testTakeWhile() {
+        Observable.just(1,2,3,4,5,6,7)
+                .takeWhile(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer integer) throws Exception {
+                        return integer!=4;//1,2,3会被发射出去，从4开始(4==4),4,5,6,7都不会被发射出去
+                    }
+                }).subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.e("yin", "onSubscribe:" + d.isDisposed());
+            }
+
+            @Override
+            public void onNext(Integer value) {
+                Log.e("yin", "onNext:" + value);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e("yin", "onError:" + e.toString());
+            }
+
+            @Override
+            public void onComplete() {
+                Log.e("yin", "onComplete");
+            }
+        });
+    }
+    private void testNull(){
+        Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> e) throws Exception {
+                e.onNext("1");
+                e.onNext(null);
+                e.onComplete();
+            }
+        }).subscribe(new Observer<String>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.e("yin","执行onSubscribe:"+d.isDisposed());
+            }
+
+            @Override
+            public void onNext(String value) {
+                Log.e("yin","执行onNext:"+value);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e("yin","执行onError:"+e.toString());//空指针
+            }
+
+            @Override
+            public void onComplete() {
+                Log.e("yin","执行onComplete");
+            }
+        });
     }
 }
