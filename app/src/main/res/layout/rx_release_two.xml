@@ -266,5 +266,12 @@
             android:layout_height="wrap_content"
             android:text="2.x不接收null值"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_groupby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GroupBy"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

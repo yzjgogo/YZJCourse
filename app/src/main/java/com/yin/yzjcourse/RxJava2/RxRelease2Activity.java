@@ -51,6 +51,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 import io.reactivex.internal.schedulers.ComputationScheduler;
 import io.reactivex.observables.ConnectableObservable;
+import io.reactivex.observables.GroupedObservable;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.AsyncSubject;
 import io.reactivex.subjects.BehaviorSubject;
@@ -104,6 +105,7 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
         findViewById(R.id.bt_delay).setOnClickListener(this);
         findViewById(R.id.bt_take_while).setOnClickListener(this);
         findViewById(R.id.bt_test_null).setOnClickListener(this);
+        findViewById(R.id.bt_groupby).setOnClickListener(this);
     }
 
     @Override
@@ -221,6 +223,9 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.bt_test_null:
                 testNull();
+                break;
+            case R.id.bt_groupby:
+                testGroupBy();
                 break;
         }
     }
@@ -1653,5 +1658,35 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
                 Log.e("yin","执行onComplete");
             }
         });
+    }
+
+    private void testGroupBy() {
+        Observable.range(1,10)
+                .groupBy(new Function<Integer, String>() {
+                    @Override
+                    public String apply(Integer figure) throws Exception {
+                        return (figure%2 == 0)?"偶数组":"奇数组";
+                    }
+                })
+                .subscribe(new Consumer<GroupedObservable<String, Integer>>() {
+                    @Override
+                    public void accept(final GroupedObservable<String, Integer> stringIntegerGroupedObservable) throws Exception {
+                            if(stringIntegerGroupedObservable.getKey().equalsIgnoreCase("偶数组")){
+                                stringIntegerGroupedObservable.subscribe(new Consumer<Integer>() {
+                                    @Override
+                                    public void accept(Integer integer) throws Exception {
+                                        Log.e("yin","偶数："+stringIntegerGroupedObservable.getKey()+","+integer);
+                                    }
+                                });
+                            }else if(stringIntegerGroupedObservable.getKey().equalsIgnoreCase("奇数组")){
+                                stringIntegerGroupedObservable.subscribe(new Consumer<Integer>() {
+                                    @Override
+                                    public void accept(Integer integer) throws Exception {
+                                        Log.e("yin","奇数"+stringIntegerGroupedObservable.getKey()+","+integer);
+                                    }
+                                });
+                            }
+                    }
+                });
     }
 }
