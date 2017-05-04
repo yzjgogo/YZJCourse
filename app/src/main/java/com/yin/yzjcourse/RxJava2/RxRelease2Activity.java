@@ -106,6 +106,8 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
         findViewById(R.id.bt_take_while).setOnClickListener(this);
         findViewById(R.id.bt_test_null).setOnClickListener(this);
         findViewById(R.id.bt_groupby).setOnClickListener(this);
+        findViewById(R.id.bt_defaultifempty).setOnClickListener(this);
+        findViewById(R.id.bt_switchifempty).setOnClickListener(this);
     }
 
     @Override
@@ -226,6 +228,12 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.bt_groupby:
                 testGroupBy();
+                break;
+            case R.id.bt_defaultifempty:
+                testDefaultIfEmpty();
+                break;
+            case R.id.bt_switchifempty:
+                testSwitchIfEmpty();
                 break;
         }
     }
@@ -406,35 +414,40 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
         }).subscribe(new MaybeObserver<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-
+                Log.e("yin","第二Maybe的onSubscribe");
             }
 
             @Override
             public void onSuccess(Integer value) {
-
+                Log.e("yin","第二Maybe的onSuccess："+value);
             }
 
             @Override
             public void onError(Throwable e) {
-
+                Log.e("yin","第二Maybe的onError");
             }
 
             @Override
             public void onComplete() {
-
+                Log.e("yin","第二Maybe的onComplete");
             }
         });
     }
 
     /**
      * 它总是只发射一个值，或者一个错误通知，而不是发射一系列的值
+     *
      */
     private void testSingle() {
         Single.create(new SingleOnSubscribe<Integer>() {
             @Override
             public void subscribe(SingleEmitter<Integer> e) throws Exception {
+                //onSuccess和onError不能同时发送，即onError只有在无法执行onSuccess的时候才可以发送，
+                //即这里你要么只执行onSuccess(1),要么只执行onError(new Throwable("错误信息"));
+                //如果你先执行了onSuccess(1)再执行onError(new Throwable("错误信息"))则观察者无法通过onError接收错误信息而是后导致崩溃
                     e.onSuccess(1);
                 e.onSuccess(2);//无效
+//                e.onError(new Throwable("错误信息"));
             }
         }).subscribe(new SingleObserver<Integer>() {
             @Override
@@ -458,6 +471,14 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
      * 被观察者没有数据的发送，只是在处理完自己的逻辑后通知观察者已经处理完成
      */
     private void testComplete() {
+
+//        Observable.just(1).to(new Function<Observable<Integer>, String>() {
+//            @Override
+//            public String apply(Observable<Integer> integerObservable) throws Exception {
+//                return null;
+//            }
+//        })
+
         Completable.create(new CompletableOnSubscribe() {
             @Override
             public void subscribe(CompletableEmitter e) throws Exception {
@@ -1660,15 +1681,18 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
         });
     }
 
+    /**
+     * 根据你给定的规则对数据源分组
+     */
     private void testGroupBy() {
         Observable.range(1,10)
                 .groupBy(new Function<Integer, String>() {
                     @Override
                     public String apply(Integer figure) throws Exception {
-                        return (figure%2 == 0)?"偶数组":"奇数组";
+                        return (figure%2 == 0)?"偶数组":"奇数组";//分成奇数组合偶数组两组，apply的返回值就是组名，即key值
                     }
                 })
-                .subscribe(new Consumer<GroupedObservable<String, Integer>>() {
+                .subscribe(new Consumer<GroupedObservable<String, Integer>>() {//key-value,key是组名，value存放组的成员
                     @Override
                     public void accept(final GroupedObservable<String, Integer> stringIntegerGroupedObservable) throws Exception {
                             if(stringIntegerGroupedObservable.getKey().equalsIgnoreCase("偶数组")){
@@ -1686,6 +1710,52 @@ public class RxRelease2Activity extends AppCompatActivity implements View.OnClic
                                     }
                                 });
                             }
+                    }
+                });
+    }
+
+    /**
+     * 如果原始Observable正常终止后仍然没有发射任何数据，就发射一个默认值,内部调用的switchIfEmpty
+     */
+    private void testDefaultIfEmpty() {
+        Observable.just(1,2,3)
+                .filter(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer integer) throws Exception {
+//                        return integer>1;//观察者接收到2，3
+                        return integer>5;//观察者接收到4，因为设置了defaultIfEmpty(4);
+                    }
+                })
+                .defaultIfEmpty(4)
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        Log.e("yin","观察者接收："+integer);
+                    }
+                });
+    }
+
+    /**
+     * 如果原始Observable正常终止后仍然没有发射任何数据，就使用备用的Observable。
+     */
+    private void testSwitchIfEmpty() {
+        Observable.just(1,2,3)
+                .filter(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer integer) throws Exception {
+                        return integer>5;
+                    }
+                })
+                .switchIfEmpty(new Observable<Integer>() {
+                    @Override
+                    protected void subscribeActual(Observer<? super Integer> observer) {
+                        observer.onNext(4);
+                    }
+                })
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        Log.e("yin","switchIfEmpty:"+integer);
                     }
                 });
     }

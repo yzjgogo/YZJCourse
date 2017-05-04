@@ -273,5 +273,19 @@
             android:layout_height="wrap_content"
             android:text="GroupBy"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_defaultifempty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="defaultIfEmpty"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_switchifempty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SwitchIfEmpty"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
