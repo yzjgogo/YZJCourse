@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.yin.yzjcourse.DiyWidget.DiyViewActivity;
 import com.yin.yzjcourse.ForeService.ForeServiceActivity;
 import com.yin.yzjcourse.RxJava2.RxRelease2Activity;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bt_fore_service).setOnClickListener(this);
         findViewById(R.id.bt_dialog_fragment).setOnClickListener(this);
         findViewById(R.id.bt_rxjava).setOnClickListener(this);
+        findViewById(R.id.bt_diy_view).setOnClickListener(this);
     }
 
     @Override
@@ -36,6 +38,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_rxjava:
                 Intent intent1 = new Intent(this, RxRelease2Activity.class);
                 startActivity(intent1);
+                break;
+            case R.id.bt_diy_view:
+                Intent intent2 = new Intent(this, DiyViewActivity.class);
+                startActivity(intent2);
                 break;
         }
     }

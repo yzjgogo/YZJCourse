@@ -30,5 +30,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RxJava 2.0" />
+        <Button
+            android:id="@+id/bt_diy_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义控件" />
     </LinearLayout>
 </ScrollView>

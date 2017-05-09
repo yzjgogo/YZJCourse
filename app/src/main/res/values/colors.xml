@@ -3,4 +3,97 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!--导航栏上的标题颜色-->
+    <color name="textColorPrimary">#222222</color>
+    <color name="dialog_bg">#7F000000</color>
+    <!--Activity窗口的颜色-->
+    <color name="windowBackground">#EEEEEE</color>
+    <color name="textColor">#323232</color>
+    <color name="textColorSecondary">#676767</color>
+    <color name="textColorTertiary">#B3B3B3</color>
+    <color name="dividerColor">#e5e5e5</color>
+
+    <color name="themeColor">#15bb76</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="bg_page">#33cc66</color>
+    <color name="line_gray">#e5e5e5</color>
+    <color name="dark_gray">#333333</color>
+
+    <!-- circle process -->
+    <color name="unfinished_color">#E6E6E6</color>
+    <!-- 白色 -->
+    <color name="white">#FFFFFF</color>
+    <color name="ivory">#FFFFF0</color>
+
+    <color name="orange">#FFA500</color>
+
+    <color name="red">#FF0000</color>
+
+    <color name="gray">#AEAEAE</color>
+    <!-- 灰色 -->
+
+    <color name="grey">#808080</color>
+    <color name="black">#000000</color>
+    <!-- 黑色 -->
+
+    <color name="half_transparent_black">#7F000000</color>
+
+    <!-- 注册背景色 -->
+    <color name="register_bg">#E8E7E4</color>
+    <!-- 注册时分割线的颜色-->
+    <color name="register_line_bg">#e5e5e5</color>
+    <!-- 注册时获取验证码字体颜色 -->
+    <color name="register_get_code_text_color">#00C77B</color>
+    <!-- 主界面tabbar 未选中时字体颜色-->
+    <color name="main_tabbbar_font_color_normal">#AAAAAA</color>
+    <!-- 主界面tabbar 选中时字体颜色-->
+    <color name="main_tabbar_font_color_focus">#31C47D</color>
+    <!-- 处方反馈列表的背景色-->
+    <color name="feedback_list_bg">#e6e6e6</color>
+    <color name="feedback_detail_feedback_bg">#F0F1F2</color>
+    <!-- 处方反馈详情里面竖线的颜色-->
+    <color name="feedback_vertical_line_bg">#e5e5e5</color>
+    <!-- 病人管理消息界面的饼状图颜色-->
+    <color name="round_color">#FF804D</color>
+    <!--actionsheet的相关颜色 -->
+    <color name="alertdialog_line">#e5e5e5</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
+    <!-- 底部和顶部导航栏背景色-->
+    <color name="nav_bg">#27C684</color>
+    <color name="title_color">#222222</color>
+    <color name="normal_text_color">#666666</color>
+    <color name="hint_text_color">#999999</color>
+    <color name="strong_red_hint_text_color">#ef3f3d</color>
+    <color name="disable_text_color">#d7d7d7</color>
+    <color name="tabbar_bg">#fafafa</color>
+    <color name="bg">#f1f1f1</color>
+    <color name="nav_line_color">#e5e5e5</color>
+    <color name="tabbar_item_font_color_checked">#2EC47C</color>
+    <!-- 坐诊地址编辑时的背景颜色-->
+    <color name="diagnose_edit_bg">#EEEEEE</color>
+
+    <!-- 金额颜色-->
+    <color name="money_color">#FDC632</color>
+    <!-- 提现金额颜色-->
+    <color name="money_deposit_color">#F76D77</color>
+    <!-- 医案详情-->
+    <color name="delete_consilia">#F15F5B</color>
+
+    <color name="capital_other">#63DF61</color>
+    <color name="capital_prescription">#00CCEE</color>
+    <color name="capital_serve">#FFBD4C</color>
+    <color name="decocting_order_color">#FFF2CA27</color>
+    <color name="logo_color">#FEFEFE</color>
+    <color name="light_yellow">#F2E2AC</color>
+    <color name="electron_hint_color">#705D1C</color>
+    <color name="no_authenticate_text_color">#f77978</color>
+    <color name="faint_green">#f0fbf6</color>
+    <color name="inquiry_green">#2cc787</color>
+    <color name="edit_hint_text_color">#bbbbbb</color>
+    <color name="common_detail_button">#dfcf4b</color>
+    <color name="msg_read_bg">#f2c94e</color>
+    <!--订单详情颜色-->
+    <color name="detail_line_color">#53b078</color>
 </resources>
