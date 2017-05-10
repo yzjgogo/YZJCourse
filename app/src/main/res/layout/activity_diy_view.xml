@@ -25,5 +25,62 @@
             android:layout_width="300dp"
             android:layout_height="400dp"
             android:background="#dfcf4b" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/money_deposit_color" />
+
+        <com.yin.yzjcourse.DiyWidget.XfermodeNoticeView
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:background="#dfcf4b" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LayerView"
+            android:gravity="center_horizontal"
+            android:background="@color/money_deposit_color" />
+
+        <com.yin.yzjcourse.DiyWidget.LayerView
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:background="#dfcf4b" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="饼图：没有分类"
+            android:gravity="center_horizontal"
+            android:background="@color/money_deposit_color" />
+
+        <com.yin.yzjcourse.DiyWidget.PieGraph.PieGraph
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:background="#dfcf4b" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="饼图：只有一个分类"
+            android:gravity="center_horizontal"
+            android:background="@color/money_deposit_color" />
+
+        <com.yin.yzjcourse.DiyWidget.PieGraph.PieGraph
+            android:id="@+id/pie_one"
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:background="#dfcf4b" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="饼图：有过个分类"
+            android:gravity="center_horizontal"
+            android:background="@color/money_deposit_color" />
+
+        <com.yin.yzjcourse.DiyWidget.PieGraph.PieGraph
+            android:id="@+id/pie_more"
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:background="#dfcf4b" />
     </LinearLayout>
 </ScrollView>
