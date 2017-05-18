@@ -58,7 +58,7 @@ public class LayerView extends View {
 //        创建一个单独的图层，并放入Canvas图层栈
         int saveCount = canvas.saveLayer(0, 0, getWidth(), getHeight(), null,
                 Canvas.ALL_SAVE_FLAG);
-        Log.e("yin","saveCount:"+saveCount);//saveCount:1
+//        Log.e("yin","saveCount:"+saveCount);//saveCount:1
         float outSideRadius = getWidth()/3;//外圆半径
         float inSideRadius = getWidth()/4;//内圆半径
         float midX = getWidth()/2;
