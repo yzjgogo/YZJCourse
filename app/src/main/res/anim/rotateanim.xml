@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="-650"
+    android:pivotX="30%p"
+    android:pivotY="30%p"
+    android:duration="10000" >
+
+</rotate>
+<!--上面是从0度逆时针旋转650度的代码-->
+
+    <!--android:fromDegrees     开始旋转的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数-->
+    <!--android:toDegrees         结束时旋转到的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数-->
+    <!--android:pivotX               旋转起点X轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p，具体意义已在scale标签中讲述，这里就不再重讲-->
+    <!--android:pivotY               旋转起点Y轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p-->
+    <!--(pivotX,pivotY):决定了旋转的轴心的坐标-->
+    <!--从Animation类继承的属性仍然适用-->

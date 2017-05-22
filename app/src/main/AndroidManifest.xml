@@ -25,6 +25,7 @@
         <activity android:name=".RxJava2.DisposableExampleActivity"/>
         <activity android:name=".RxJava2.IntervalActivity"/>
         <activity android:name=".DiyWidget.DiyViewActivity"/>
+        <activity android:name=".DiyWidget.Animation.XmlAnimActivity"/>
         <service android:name="com.yin.yzjcourse.ForeService.FakeForeService"/>
         <service android:name="com.yin.yzjcourse.ForeService.RealForeService"/>
         <receiver android:name=".BroadcastPackage.NetStatusBroadcastReceiver">

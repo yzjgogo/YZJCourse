@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromAlpha="1.0"
+    android:toAlpha="0.1"
+    android:duration="3000">
+
+</alpha>
+    <!--android:fromAlpha   动画开始的透明度，从0.0 &#45;&#45;1.0 ，0.0表示全透明，1.0表示完全不透明-->
+    <!--android:toAlpha       动画结束时的透明度，也是从0.0 &#45;&#45;1.0 ，0.0表示全透明，1.0表示完全不透明-->
+    <!--从Animation类继承的属性同样适用于alpha-->

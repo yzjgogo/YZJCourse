@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_scale"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="scale" />
+
+        <Button
+            android:id="@+id/bt_alpha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="alpha" />
+
+        <Button
+            android:id="@+id/bt_rotate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="rotate" />
+
+        <Button
+            android:id="@+id/bt_trans"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="trans" />
+
+        <Button
+            android:id="@+id/bt_set"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="set" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_targent"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="30dp"
+        android:background="@color/orange" />
+</LinearLayout>

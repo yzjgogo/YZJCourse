@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXScale="0.0"
+    android:toXScale="1.4"
+    android:fromYScale="0.0"
+    android:toYScale="1.4"
+    android:pivotX="30%p"
+    android:pivotY="60%p"
+    android:duration="2000"
+    android:repeatCount="2"
+    android:repeatMode="reverse"/>
+<!--假设一个控件的width:100,height:200-->
+    <!--1：-->
+    <!--fromXScale:动画开始时的宽(X轴)相对自身原始宽(width)的缩放比例，是浮点数；1.0表示宽无变化,2.0表示宽增大2倍,0.3表示宽是原来的0.3倍,0.0表示从0开始。-->
+    <!--toXScale：动画结束时的宽(X轴)相对自身原始宽的缩放比例。-->
+    <!--fromYScale和toYScale同理；-->
+    <!--2：-->
+    <!--动画从某一个点开始，该点的坐标是(x,y);-->
+    <!--pivotX：动画开始时的点的X轴的坐标，其值可以是数值，百分数，百分数p(p必须是小写)三种样式，例如20,20%,20%,其中：-->
+        <!--数值(20)：表示动画开始时从当前view的左上角(原点)沿X轴加20px处开始；-->
+        <!--百分数(20%)：表示动画开始时从当前view的左上角(原点)沿X轴加该view原始宽width的20%处开始-->
+        <!--百分数(20%p)：表示动画开始时从当前view的左上角(原点)沿X轴加该view的父控件的宽的20%处开始-->
+    <!--pivotY同理；-->
+    <!--这样(pivotX,pivotY)就确定了动画开始的坐标点。-->
+    <!--3：-->
+    <!--duration：表示整个动画过程的持续时间。-->
+    <!--默认动画完成后view恢复到动画开始时的状态-->
+
+
+    <!--从Animation类继承的属性如下：-->
+    <!--android:fillAfter 如果设置为true，控件动画结束时，将保持动画最后时的状态,false则动画结束时回复到动画开始时的状态-->
+    <!--android:fillBefore       如果设置为true,控件动画结束时，还原到开始动画前的状态，但是我设置true或false都没有效果，留意一下-->
+    <!--android:fillEnabled    与android:fillBefore 效果相同，都是在动画结束时，将控件还原到初始化状态，但是我设置true或false都没有效果，留意一下-->
+    <!--android:repeatCount 重复次数，不包括第一次动画的次数，即如果你指定repeatCount为2，则动画执行3次，最后两次才是重复的次数-->
+    <!--android:repeatMode	重复类型，有reverse和restart两个值，reverse表示倒序回放（如果repeatCount是2，则第2次在第一次完成后倒回来，第3次再第2次完成后倒回去，共3次），restart表示重新放一遍，必须与repeatCount一起使用才能看到效果。-->
+    <!--android:interpolator  设定插值器，其实就是指定的动作效果，比如弹跳效果等，不在这小节中讲解，后面会单独列出一单讲解。-->

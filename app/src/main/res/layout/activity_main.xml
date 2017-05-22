@@ -35,5 +35,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="自定义控件" />
+        <Button
+            android:id="@+id/bt_xml_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="alpha、scale、translate、rotate、set" />
     </LinearLayout>
 </ScrollView>

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.yin.yzjcourse.DiyWidget.Animation.XmlAnimActivity;
 import com.yin.yzjcourse.DiyWidget.DiyViewActivity;
 import com.yin.yzjcourse.ForeService.ForeServiceActivity;
 import com.yin.yzjcourse.RxJava2.RxRelease2Activity;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bt_dialog_fragment).setOnClickListener(this);
         findViewById(R.id.bt_rxjava).setOnClickListener(this);
         findViewById(R.id.bt_diy_view).setOnClickListener(this);
+        findViewById(R.id.bt_xml_anim).setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +44,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_diy_view:
                 Intent intent2 = new Intent(this, DiyViewActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.bt_xml_anim:
+                Intent intent3 = new Intent(this, XmlAnimActivity.class);
+                startActivity(intent3);
                 break;
         }
     }
