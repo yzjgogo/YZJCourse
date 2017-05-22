@@ -5,10 +5,18 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.RotateAnimation;
+import android.view.animation.ScaleAnimation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 
 import com.yin.yzjcourse.R;
+import com.yin.yzjcourse.Utils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +41,8 @@ public class XmlAnimActivity extends AppCompatActivity {
     Button btSet;
     @BindView(R.id.bt_interpolator)
     Button btInterpolator;
+    @BindView(R.id.bt_code)
+    Button btCode;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,7 +51,7 @@ public class XmlAnimActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_alpha, R.id.bt_scale, R.id.bt_rotate, R.id.bt_trans, R.id.bt_set, R.id.bt_interpolator})
+    @OnClick({R.id.bt_alpha, R.id.bt_scale, R.id.bt_rotate, R.id.bt_trans, R.id.bt_set, R.id.bt_interpolator, R.id.bt_code})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_scale:
@@ -60,8 +70,107 @@ public class XmlAnimActivity extends AppCompatActivity {
                 viewTargent.startAnimation(AnimationUtils.loadAnimation(this, R.anim.setanim));//动画集合
                 break;
             case R.id.bt_interpolator:
-                startActivity(new Intent(this,FourAnimInterpolatorActivity.class));
+                startActivity(new Intent(this, FourAnimInterpolatorActivity.class));
+                break;
+            case R.id.bt_code:
+                Utils.showToast(this, "代码就在这个activity里看看就行了");
+                everyAnim();
                 break;
         }
+    }
+
+    private void everyAnim() {
+        /*
+        ScaleAnimation有下面几个构造函数：
+        ScaleAnimation(Context context, AttributeSet attrs)  从XML文件加载动画，基本用不到
+        ScaleAnimation(float fromX, float toX, float fromY, float toY)
+        ScaleAnimation(float fromX, float toX, float fromY, float toY, float pivotX, float pivotY)
+        ScaleAnimation(float fromX, float toX, float fromY, float toY, int pivotXType, float pivotXValue, int pivotYType, float pivotYValue)
+        在标签属性android:pivotX中有三种取值，数，百分数，百分数p；体现在构造函数中，就是最后一个构造函数
+        的pivotXType,它的取值有三个，Animation.ABSOLUTE、Animation.RELATIVE_TO_SELF和Animation.RELATIVE_TO_PARENT；
+
+        举例：
+        */
+        ScaleAnimation scaleAnim = new ScaleAnimation(0.0f, 1.4f, 0.0f, 1.4f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        scaleAnim.setDuration(700);
+
+        /*
+        同样alpha标签自有的属性有：
+        android:fromAlpha   动画开始的透明度，从0.0 --1.0 ，0.0表示全透明，1.0表示完全不透明
+        android:toAlpha       动画结束时的透明度，也是从0.0 --1.0 ，0.0表示全透明，1.0表示完全不透明
+        所对应的构造函数为：
+        AlphaAnimation(Context context, AttributeSet attrs)  同样，从本地XML加载动画，基本不用
+        AlphaAnimation(float fromAlpha, float toAlpha)
+        这里只剩最后一个构造函数，难度不大，下面举个例子说明下用法。
+        */
+        AlphaAnimation alphaAnim = new AlphaAnimation(1.0f, 0.1f);
+        alphaAnim.setDuration(3000);
+        alphaAnim.setFillBefore(true);
+        /*
+        Rotate标签所具有的XML属性有：
+
+android:fromDegrees     开始旋转的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数
+android:toDegrees         结束时旋转到的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数
+android:pivotX               缩放起点X轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p，具体意义已在scale标签中讲述，这里就不再重讲
+android:pivotY               缩放起点Y轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p
+对应的构造函数有：
+RotateAnimation(Context context, AttributeSet attrs)　　从本地XML文档加载动画，同样，基本不用
+RotateAnimation(float fromDegrees, float toDegrees)
+RotateAnimation(float fromDegrees, float toDegrees, float pivotX, float pivotY)
+RotateAnimation(float fromDegrees, float toDegrees, int pivotXType, float pivotXValue, int pivotYType, float pivotYValue)
+RotateAnimation跟ScaleAnimation差不多，关键问题同样是pivotXType和pivotYType的选择，同样有三个取值：Animation.ABSOLUTE、Animation.RELATIVE_TO_SELF和Animation.RELATIVE_TO_PARENT；
+         */
+        RotateAnimation rotateAnim = new RotateAnimation(0, -650, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotateAnim.setDuration(3000);
+        rotateAnim.setFillAfter(true);
+
+
+
+        /*
+        translate标签所具有的属性为：
+android:fromXDelta     起始点X轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p，具体意义已在scale标签中讲述，这里就不再重讲
+android:fromYDelta    起始点Y轴从标，可以是数值、百分数、百分数p 三种样式；
+android:toXDelta         结束点X轴坐标
+android:toYDelta        结束点Y轴坐标
+这些属性所对应的构造函数为：
+TranslateAnimation(Context context, AttributeSet attrs)  同样，基本不用
+TranslateAnimation(float fromXDelta, float toXDelta, float fromYDelta, float toYDelta)
+TranslateAnimation(int fromXType, float fromXValue, int toXType, float toXValue, int fromYType, float fromYValue, int toYType, float toYValue)
+由于fromXDelta、fromYDelta、toXDelta、toYDelta这三个属性都具有三种状态，所以在构造函数中，最理想的状态就是第三个构造函数
+，能够指定每个值的类型，第二个构造函数：TranslateAnimation (float fromXDelta, float toXDelta, float fromYDelta, float toYDelta)使用是绝对数值。
+只有最后一个构造函数可以指定百分数和相对父控件的百分数。
+         */
+        TranslateAnimation translateAnim = new TranslateAnimation(Animation.ABSOLUTE, 0, Animation.ABSOLUTE, -80,
+                Animation.ABSOLUTE, 0, Animation.ABSOLUTE, -80);
+        translateAnim.setDuration(2000);
+        translateAnim.setFillBefore(true);
+        /*
+        AnimationSet类对应set标签，定义动作类的集合
+它自己是没有XML属性的，所以我们直接说它的构造函数：
+AnimationSet(Context context, AttributeSet attrs)  同样，基本不用
+AnimationSet(boolean shareInterpolator)  shareInterpolator取值true或false，取true时，指在AnimationSet中定义一个插值器（interpolater），它下面的所有动画共同。如果设为false，则表示它下面的动画自己定义各自的插值器。
+增加动画的函数为：（更多函数，请参看SDK文档）
+
+public void addAnimation (Animation a)
+         */
+        alphaAnim = new AlphaAnimation(1.0f, 0.1f);
+        scaleAnim = new ScaleAnimation(0.0f, 1.4f, 0.0f, 1.4f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotateAnim = new RotateAnimation(0, 720, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+
+        AnimationSet setAnim = new AnimationSet(true);
+        setAnim.addAnimation(alphaAnim);
+        setAnim.addAnimation(scaleAnim);
+        setAnim.addAnimation(rotateAnim);
+
+        setAnim.setDuration(3000);
+        setAnim.setFillAfter(true);
+
+
+        /*
+        差之器
+         */
+        ScaleAnimation interpolateScaleAnim = new ScaleAnimation(0.0f, 1.4f, 0.0f, 1.4f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        interpolateScaleAnim.setInterpolator(new BounceInterpolator());
+        interpolateScaleAnim.setDuration(3000);
     }
 }

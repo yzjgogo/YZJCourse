@@ -49,6 +49,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Interpolator插值器"/>
+    <Button
+        android:id="@+id/bt_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="代码生成alpha、scale、translate、rotate、set及插值器动画"/>
 
     <View
         android:id="@+id/view_targent"

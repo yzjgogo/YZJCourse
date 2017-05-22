@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.InputStream;
 
@@ -32,5 +33,8 @@ public class Utils {
     }
     public static void log(String content){
         Log.e("yin",content);
+    }
+    public static void showToast(Context context,String content){
+        Toast.makeText(context,content,Toast.LENGTH_SHORT);
     }
 }
