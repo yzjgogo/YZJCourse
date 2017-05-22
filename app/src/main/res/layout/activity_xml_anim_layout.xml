@@ -44,6 +44,11 @@
             android:layout_weight="1"
             android:text="set" />
     </LinearLayout>
+    <Button
+        android:id="@+id/bt_interpolator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Interpolator插值器"/>
 
     <View
         android:id="@+id/view_targent"

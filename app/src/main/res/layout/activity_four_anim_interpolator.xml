@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yin.yzjcourse.DiyWidget.Animation.FourAnimInterpolatorActivity"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/bt_scale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="scale_interpolator"/>
+    <Button
+        android:id="@+id/bt_rotate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rotate_interpolator"/>
+    <Button
+        android:id="@+id/bt_alpha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="alpha_interpolator"/>
+    <Button
+        android:id="@+id/bt_trans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="trans_interpolator"/>
+</LinearLayout>

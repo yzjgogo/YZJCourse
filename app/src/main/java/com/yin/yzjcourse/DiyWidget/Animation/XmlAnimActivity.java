@@ -1,5 +1,6 @@
 package com.yin.yzjcourse.DiyWidget.Animation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,8 @@ public class XmlAnimActivity extends AppCompatActivity {
     View viewTargent;
     @BindView(R.id.bt_set)
     Button btSet;
+    @BindView(R.id.bt_interpolator)
+    Button btInterpolator;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class XmlAnimActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_alpha, R.id.bt_scale, R.id.bt_rotate, R.id.bt_trans, R.id.bt_set})
+    @OnClick({R.id.bt_alpha, R.id.bt_scale, R.id.bt_rotate, R.id.bt_trans, R.id.bt_set, R.id.bt_interpolator})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_scale:
@@ -55,6 +58,9 @@ public class XmlAnimActivity extends AppCompatActivity {
                 break;
             case R.id.bt_set:
                 viewTargent.startAnimation(AnimationUtils.loadAnimation(this, R.anim.setanim));//动画集合
+                break;
+            case R.id.bt_interpolator:
+                startActivity(new Intent(this,FourAnimInterpolatorActivity.class));
                 break;
         }
     }
