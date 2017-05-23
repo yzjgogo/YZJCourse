@@ -48,5 +48,13 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="属性动画(Property Animator):ValueAnimator和ObjectAnimation" />
+
+        <Button
+            android:id="@+id/bt_property_anim_interpolator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="属性动画(Property Animator)的Interpolator和Evaluator" />
+
     </LinearLayout>
 </ScrollView>
