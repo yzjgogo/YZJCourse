@@ -16,13 +16,13 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- 视图动画与属性动画的区别，参考图viewanim_propertyanim.png
- 对于视图动画，一个view在动画过程中和动画结束后(view停留在动画结束时的状态)，都没有改变该view的任何属性或任何值甚至view的位置大小等都没有改变，只是
- 这个view看起来和动画之前不一样了，以单击事件为例，即使动画使view看起来离开的原来的位置，但是其单击事件的响应区域仍然是view的原来的位置。
- 对于属性动画：Property Animator是通过改变控件内部的属性值来做动画的，以单击事件为例，属性动画view的响应区域随着view的位置变化而变化，即view通过动画编程什么样了
- view就真的变成什么样了。
- 一句话总结：视图动画没有改变view本身，你所看到的动画都是假象，是视觉效果
- 而属性动画改变了view的本身，你所看到的动画都是真实的，是view改变之后的样子
+ * 视图动画与属性动画的区别，参考图viewanim_propertyanim.png
+ * 对于视图动画，一个view在动画过程中和动画结束后(view停留在动画结束时的状态)，都没有改变该view的任何属性或任何值甚至view的位置大小等都没有改变，只是
+ * 这个view看起来和动画之前不一样了，以单击事件为例，即使动画使view看起来离开的原来的位置，但是其单击事件的响应区域仍然是view的原来的位置。
+ * 对于属性动画：Property Animator是通过改变控件内部的属性值来做动画的，以单击事件为例，属性动画view的响应区域随着view的位置变化而变化，即view通过动画编程什么样了
+ * view就真的变成什么样了。
+ * 一句话总结：视图动画没有改变view本身，你所看到的动画都是假象，是视觉效果
+ * 而属性动画改变了view的本身，你所看到的动画都是真实的，是view改变之后的样子
  */
 public class PropertyAnimActivity extends AppCompatActivity {
 
@@ -39,7 +39,7 @@ public class PropertyAnimActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_value_int, R.id.tv_target, R.id.bt_value_float,R.id.bt_int_cancel})
+    @OnClick({R.id.bt_value_int, R.id.tv_target, R.id.bt_value_float, R.id.bt_int_cancel})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_value_int:
@@ -62,10 +62,10 @@ public class PropertyAnimActivity extends AppCompatActivity {
 
 
 //                if(intAnimator!=null && intAnimator.isRunning()){
-                if(intAnimator!=null && intAnimator.isStarted()){
+                if (intAnimator != null && intAnimator.isStarted()) {
                     intAnimator.cancel();//在当前动画状态停止，而不是回到动画开始状态
 //                    intAnimator.isStarted()
-                }else {
+                } else {
                     intAnimator.start();//从头开始，而不是从停止的地方开始
                 }
 
@@ -80,49 +80,49 @@ public class PropertyAnimActivity extends AppCompatActivity {
     }
 
     /**
-     05-23 14:58:08.933 20156-20156/com.yin.yzjcourse E/yin: 0
-     05-23 14:58:08.939 20156-20156/com.yin.yzjcourse E/yin: 0
-     05-23 14:58:08.954 20156-20156/com.yin.yzjcourse E/yin: 0
-     05-23 14:58:08.971 20156-20156/com.yin.yzjcourse E/yin: 1
-     05-23 14:58:08.988 20156-20156/com.yin.yzjcourse E/yin: 2
-     05-23 14:58:09.005 20156-20156/com.yin.yzjcourse E/yin: 4
-     05-23 14:58:09.021 20156-20156/com.yin.yzjcourse E/yin: 6
-     .
-     .
-     .
-     .
-     05-23 14:58:09.640 20156-20156/com.yin.yzjcourse E/yin: 318
-     05-23 14:58:09.657 20156-20156/com.yin.yzjcourse E/yin: 326
-     05-23 14:58:09.673 20156-20156/com.yin.yzjcourse E/yin: 334
-     05-23 14:58:09.690 20156-20156/com.yin.yzjcourse E/yin: 342
-     05-23 14:58:09.707 20156-20156/com.yin.yzjcourse E/yin: 349
-     05-23 14:58:09.724 20156-20156/com.yin.yzjcourse E/yin: 356
-     05-23 14:58:09.741 20156-20156/com.yin.yzjcourse E/yin: 362
-     05-23 14:58:09.757 20156-20156/com.yin.yzjcourse E/yin: 368
-     05-23 14:58:09.774 20156-20156/com.yin.yzjcourse E/yin: 373
-     05-23 14:58:09.790 20156-20156/com.yin.yzjcourse E/yin: 378
-     05-23 14:58:09.807 20156-20156/com.yin.yzjcourse E/yin: 383
-     05-23 14:58:09.824 20156-20156/com.yin.yzjcourse E/yin: 387
-     05-23 14:58:09.840 20156-20156/com.yin.yzjcourse E/yin: 390
-     05-23 14:58:09.857 20156-20156/com.yin.yzjcourse E/yin: 393
-     05-23 14:58:09.874 20156-20156/com.yin.yzjcourse E/yin: 395
-     05-23 14:58:09.891 20156-20156/com.yin.yzjcourse E/yin: 397
-     05-23 14:58:09.907 20156-20156/com.yin.yzjcourse E/yin: 399
-     05-23 14:58:09.924 20156-20156/com.yin.yzjcourse E/yin: 399
-     05-23 14:58:09.941 20156-20156/com.yin.yzjcourse E/yin: 400
-
-     (0,400)的输出日志
-     动画时间短(setDuration)则0-400可能有部分数字没有执行
-     如果时间长，可能有部分数字执行多次
-
-     AnimatorListener监听log
-     05-23 15:33:14.673 13642-13642/com.yin.yzjcourse E/yin: start
-     05-23 15:33:20.701 13642-13642/com.yin.yzjcourse E/yin: repeat
-     05-23 15:33:26.699 13642-13642/com.yin.yzjcourse E/yin: repeat
-     05-23 15:33:32.697 13642-13642/com.yin.yzjcourse E/yin: repeat
-     05-23 15:33:38.695 13642-13642/com.yin.yzjcourse E/yin: repeat //如果不取消就一直repeat
-     05-23 15:33:41.121 13642-13642/com.yin.yzjcourse E/yin: cancel //点击取消按钮后
-     05-23 15:33:41.121 13642-13642/com.yin.yzjcourse E/yin: end
+     * 05-23 14:58:08.933 20156-20156/com.yin.yzjcourse E/yin: 0
+     * 05-23 14:58:08.939 20156-20156/com.yin.yzjcourse E/yin: 0
+     * 05-23 14:58:08.954 20156-20156/com.yin.yzjcourse E/yin: 0
+     * 05-23 14:58:08.971 20156-20156/com.yin.yzjcourse E/yin: 1
+     * 05-23 14:58:08.988 20156-20156/com.yin.yzjcourse E/yin: 2
+     * 05-23 14:58:09.005 20156-20156/com.yin.yzjcourse E/yin: 4
+     * 05-23 14:58:09.021 20156-20156/com.yin.yzjcourse E/yin: 6
+     * .
+     * .
+     * .
+     * .
+     * 05-23 14:58:09.640 20156-20156/com.yin.yzjcourse E/yin: 318
+     * 05-23 14:58:09.657 20156-20156/com.yin.yzjcourse E/yin: 326
+     * 05-23 14:58:09.673 20156-20156/com.yin.yzjcourse E/yin: 334
+     * 05-23 14:58:09.690 20156-20156/com.yin.yzjcourse E/yin: 342
+     * 05-23 14:58:09.707 20156-20156/com.yin.yzjcourse E/yin: 349
+     * 05-23 14:58:09.724 20156-20156/com.yin.yzjcourse E/yin: 356
+     * 05-23 14:58:09.741 20156-20156/com.yin.yzjcourse E/yin: 362
+     * 05-23 14:58:09.757 20156-20156/com.yin.yzjcourse E/yin: 368
+     * 05-23 14:58:09.774 20156-20156/com.yin.yzjcourse E/yin: 373
+     * 05-23 14:58:09.790 20156-20156/com.yin.yzjcourse E/yin: 378
+     * 05-23 14:58:09.807 20156-20156/com.yin.yzjcourse E/yin: 383
+     * 05-23 14:58:09.824 20156-20156/com.yin.yzjcourse E/yin: 387
+     * 05-23 14:58:09.840 20156-20156/com.yin.yzjcourse E/yin: 390
+     * 05-23 14:58:09.857 20156-20156/com.yin.yzjcourse E/yin: 393
+     * 05-23 14:58:09.874 20156-20156/com.yin.yzjcourse E/yin: 395
+     * 05-23 14:58:09.891 20156-20156/com.yin.yzjcourse E/yin: 397
+     * 05-23 14:58:09.907 20156-20156/com.yin.yzjcourse E/yin: 399
+     * 05-23 14:58:09.924 20156-20156/com.yin.yzjcourse E/yin: 399
+     * 05-23 14:58:09.941 20156-20156/com.yin.yzjcourse E/yin: 400
+     * <p>
+     * (0,400)的输出日志
+     * 动画时间短(setDuration)则0-400可能有部分数字没有执行
+     * 如果时间长，可能有部分数字执行多次
+     * <p>
+     * AnimatorListener监听log
+     * 05-23 15:33:14.673 13642-13642/com.yin.yzjcourse E/yin: start
+     * 05-23 15:33:20.701 13642-13642/com.yin.yzjcourse E/yin: repeat
+     * 05-23 15:33:26.699 13642-13642/com.yin.yzjcourse E/yin: repeat
+     * 05-23 15:33:32.697 13642-13642/com.yin.yzjcourse E/yin: repeat
+     * 05-23 15:33:38.695 13642-13642/com.yin.yzjcourse E/yin: repeat //如果不取消就一直repeat
+     * 05-23 15:33:41.121 13642-13642/com.yin.yzjcourse E/yin: cancel //点击取消按钮后
+     * 05-23 15:33:41.121 13642-13642/com.yin.yzjcourse E/yin: end
      */
     private ValueAnimator doIntAnimator() {
         ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 600);//可变参数
@@ -173,14 +173,14 @@ public class PropertyAnimActivity extends AppCompatActivity {
     }
 
     private void doFloatAnimator() {
-        ValueAnimator floatAnimator = ValueAnimator.ofFloat(0f,600f,100f,400f);//可变参数，参数越多可操控的动画就可以约复杂
+        ValueAnimator floatAnimator = ValueAnimator.ofFloat(0f, 600f, 100f, 400f);//可变参数，参数越多可操控的动画就可以约复杂
         floatAnimator.setDuration(5000);
         floatAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 Float curFloat = (Float) animation.getAnimatedValue();//返回Object类型
                 int curInt = curFloat.intValue();
-                tvTarget.layout(curInt,curInt,curInt+tvTarget.getWidth(),curInt+tvTarget.getHeight());
+                tvTarget.layout(curInt, curInt, curInt + tvTarget.getWidth(), curInt + tvTarget.getHeight());
             }
         });
         floatAnimator.start();
