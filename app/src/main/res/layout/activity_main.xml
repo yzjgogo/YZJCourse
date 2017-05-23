@@ -39,6 +39,14 @@
             android:id="@+id/bt_xml_anim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAllCaps="false"
             android:text="View Animation(视图动画):补间动画(Tween Animation)：alpha、scale、translate、rotate、set和逐帧动画(Frame Animation)" />
+
+        <Button
+            android:id="@+id/bt_property_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="属性动画(Property Animator):ValueAnimator和ObjectAnimation" />
     </LinearLayout>
 </ScrollView>

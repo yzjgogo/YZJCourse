@@ -39,7 +39,8 @@
         </receiver>
 
         <activity android:name=".DiyWidget.ViewAnimation.FourAnimInterpolatorActivity" />
-        <activity android:name=".DiyWidget.ViewAnimation.AnimInterpolatorActivity"></activity>
+        <activity android:name=".DiyWidget.ViewAnimation.AnimInterpolatorActivity" />
+        <activity android:name=".DiyWidget.PropertyAnimation.PropertyAnimActivity"></activity>
     </application>
 
 </manifest>
