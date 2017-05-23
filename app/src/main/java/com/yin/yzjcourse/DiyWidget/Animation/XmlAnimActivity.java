@@ -1,6 +1,8 @@
 package com.yin.yzjcourse.DiyWidget.Animation;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +16,7 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.Utils;
@@ -43,6 +46,16 @@ public class XmlAnimActivity extends AppCompatActivity {
     Button btInterpolator;
     @BindView(R.id.bt_code)
     Button btCode;
+    @BindView(R.id.bt_src_frame_anim)
+    Button btSrcFrameAnim;
+    @BindView(R.id.bt_bg_frame_anim)
+    Button btBgFrameAnim;
+    @BindView(R.id.bt_code_frame_anim)
+    Button btCodeFrameAnim;
+    @BindView(R.id.iv_src_frame_anim)
+    ImageView ivSrcFrameAnim;
+    @BindView(R.id.view_bg_frame_anim)
+    View viewBgFrameAnim;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -172,5 +185,55 @@ public void addAnimation (Animation a)
         ScaleAnimation interpolateScaleAnim = new ScaleAnimation(0.0f, 1.4f, 0.0f, 1.4f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         interpolateScaleAnim.setInterpolator(new BounceInterpolator());
         interpolateScaleAnim.setDuration(3000);
+    }
+
+    /**
+     * 逐帧动画（Frame-by-frame Animations）从字面上理解就是一帧挨着一帧的播放图片，就像放电影一样。
+     * 逐帧动画的动画资源放在res/drawable目录下
+     * 逐帧动画的效果要在onWindowFocusChanged之后才可能产生
+     * 逐帧动画只能实现比较小的动画效果，如果复杂而且帧数比较多的动画不太建议使用逐帧动画，一方面是因
+     * 为会造成OOM，另一方面会显得很卡
+     * @param view
+     */
+    @OnClick({R.id.bt_src_frame_anim, R.id.bt_bg_frame_anim, R.id.bt_code_frame_anim})
+    public void onClickFrame(View view) {
+        switch (view.getId()) {
+            case R.id.bt_src_frame_anim:
+                //逐帧动画可用于imageView的src
+                ivSrcFrameAnim.setImageResource(R.drawable.frame_anim_list);
+                AnimationDrawable animationDrawable = (AnimationDrawable) ivSrcFrameAnim.getDrawable();
+                if(animationDrawable.isRunning()){
+                    animationDrawable.stop();
+                }else {
+                    animationDrawable.start();
+                }
+                break;
+            case R.id.bt_bg_frame_anim:
+                //逐帧动画也可用于View的background
+                viewBgFrameAnim.setBackgroundResource(R.drawable.frame_anim_list);
+                AnimationDrawable animationDrawable1 = (AnimationDrawable) viewBgFrameAnim.getBackground();
+                if(animationDrawable1.isRunning()){
+                    animationDrawable1.stop();
+                }else {
+                    animationDrawable1.start();
+                }
+                break;
+            case R.id.bt_code_frame_anim:
+                codeShowFrameAnim();
+                break;
+        }
+    }
+
+    private void codeShowFrameAnim() {
+        AnimationDrawable anim = new AnimationDrawable();
+        for (int i = 1; i <= 6; i++) {
+            int id = getResources().getIdentifier("frame_anim_" + i, "mipmap", getPackageName());
+            Drawable drawable = getResources().getDrawable(id);
+            anim.addFrame(drawable, 200);
+        }
+        // false为循环播放，true为仅播放一次
+        anim.setOneShot(false);
+        ivSrcFrameAnim.setImageDrawable(anim);
+        anim.start();
     }
 }

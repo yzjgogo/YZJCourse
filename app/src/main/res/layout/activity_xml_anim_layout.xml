@@ -54,11 +54,52 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="代码生成alpha、scale、translate、rotate、set及插值器动画"/>
-
-    <View
-        android:id="@+id/view_targent"
-        android:layout_width="100dp"
-        android:layout_height="200dp"
-        android:layout_marginLeft="30dp"
-        android:background="@color/orange" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/bt_src_frame_anim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="逐帧动画src"/>
+    <Button
+        android:id="@+id/bt_bg_frame_anim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="逐帧动画bg"/>
+    <Button
+        android:id="@+id/bt_code_frame_anim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="代码逐帧动画"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:id="@+id/view_targent"
+            android:layout_width="100dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="30dp"
+            android:background="@color/orange" />
+        <ImageView
+            android:id="@+id/iv_src_frame_anim"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/frame_anim_list"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"/>
+        <View
+            android:id="@+id/view_bg_frame_anim"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/frame_anim_list"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
 </LinearLayout>
