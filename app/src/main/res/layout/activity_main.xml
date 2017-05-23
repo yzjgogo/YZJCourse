@@ -39,6 +39,6 @@
             android:id="@+id/bt_xml_anim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="alpha、scale、translate、rotate、set" />
+            android:text="View Animation(视图动画):补间动画(Tween Animation)：alpha、scale、translate、rotate、set和逐帧动画(Frame Animation)" />
     </LinearLayout>
 </ScrollView>

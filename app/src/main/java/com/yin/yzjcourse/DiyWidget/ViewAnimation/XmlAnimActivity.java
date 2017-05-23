@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.DiyWidget.Animation;
+package com.yin.yzjcourse.DiyWidget.ViewAnimation;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
@@ -193,6 +193,7 @@ public void addAnimation (Animation a)
      * 逐帧动画的效果要在onWindowFocusChanged之后才可能产生
      * 逐帧动画只能实现比较小的动画效果，如果复杂而且帧数比较多的动画不太建议使用逐帧动画，一方面是因
      * 为会造成OOM，另一方面会显得很卡
+     *
      * @param view
      */
     @OnClick({R.id.bt_src_frame_anim, R.id.bt_bg_frame_anim, R.id.bt_code_frame_anim})
@@ -202,9 +203,9 @@ public void addAnimation (Animation a)
                 //逐帧动画可用于imageView的src
                 ivSrcFrameAnim.setImageResource(R.drawable.frame_anim_list);
                 AnimationDrawable animationDrawable = (AnimationDrawable) ivSrcFrameAnim.getDrawable();
-                if(animationDrawable.isRunning()){
+                if (animationDrawable.isRunning()) {
                     animationDrawable.stop();
-                }else {
+                } else {
                     animationDrawable.start();
                 }
                 break;
@@ -212,9 +213,9 @@ public void addAnimation (Animation a)
                 //逐帧动画也可用于View的background
                 viewBgFrameAnim.setBackgroundResource(R.drawable.frame_anim_list);
                 AnimationDrawable animationDrawable1 = (AnimationDrawable) viewBgFrameAnim.getBackground();
-                if(animationDrawable1.isRunning()){
+                if (animationDrawable1.isRunning()) {
                     animationDrawable1.stop();
-                }else {
+                } else {
                     animationDrawable1.start();
                 }
                 break;

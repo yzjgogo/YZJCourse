@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.DiyWidget.Animation;
+package com.yin.yzjcourse.DiyWidget.ViewAnimation;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

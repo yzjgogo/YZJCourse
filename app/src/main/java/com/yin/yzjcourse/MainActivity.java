@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.yin.yzjcourse.DiyWidget.Animation.XmlAnimActivity;
+import com.yin.yzjcourse.DiyWidget.ViewAnimation.XmlAnimActivity;
 import com.yin.yzjcourse.DiyWidget.DiyViewActivity;
 import com.yin.yzjcourse.ForeService.ForeServiceActivity;
 import com.yin.yzjcourse.RxJava2.RxRelease2Activity;
