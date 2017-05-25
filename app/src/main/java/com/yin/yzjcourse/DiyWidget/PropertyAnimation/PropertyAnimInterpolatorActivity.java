@@ -131,6 +131,8 @@ public class PropertyAnimInterpolatorActivity extends AppCompatActivity {
         });
 //        animator.setInterpolator(new LinearInterpolator());
 //        animator.setEvaluator(new IntEvaluator());
+        //如果你用的ofInt则Evaluator的evaluate的返回值就是Integer,如果你用的是ofFloat则Evaluator的evaluate的返回值就是Float,即你传入的参数类型，决定了
+        //动画处理后返回的参数类型
         animator.setEvaluator(new MyIntEvaluator());
         animator.start();
     }

@@ -1,13 +1,16 @@
 package com.yin.yzjcourse.DiyWidget.PropertyAnimation;
 
 import android.animation.Animator;
+import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.yin.yzjcourse.DiyWidget.PropertyAnimation.View.PointView;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.Utils;
 
@@ -30,6 +33,8 @@ public class PropertyAnimActivity extends AppCompatActivity {
     Button btValueAnim;
     @BindView(R.id.tv_target)
     TextView tvTarget;
+    @BindView(R.id.pv)
+    PointView pv;
     private ValueAnimator intAnimator;
 
     @Override
@@ -39,7 +44,7 @@ public class PropertyAnimActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_value_int, R.id.tv_target, R.id.bt_value_float, R.id.bt_int_cancel})
+    @OnClick({R.id.bt_value_int, R.id.tv_target, R.id.bt_value_float, R.id.bt_int_cancel, R.id.bt_of_object, R.id.bt_of_object_hard})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_value_int:
@@ -72,6 +77,12 @@ public class PropertyAnimActivity extends AppCompatActivity {
                 break;
             case R.id.bt_value_float:
                 doFloatAnimator();
+                break;
+            case R.id.bt_of_object:
+                doObjectAnimator();
+                break;
+            case R.id.bt_of_object_hard:
+                doViewAnimator();
                 break;
             case R.id.tv_target:
                 Utils.showToast(this, "我被点击了");
@@ -184,5 +195,40 @@ public class PropertyAnimActivity extends AppCompatActivity {
             }
         });
         floatAnimator.start();
+    }
+
+    /**
+     * 如果你用的ofInt则Evaluator的evaluate的返回值就是Integer,如果你用的是ofFloat则Evaluator的evaluate的返回值就是Float,即你传入的参数类型，决定了
+     * 动画处理后返回的参数类型
+     * 因此当你用ofObject时，需要传入自定义的Evaluator，因为你传入的动画值参数类型时不固定的(Object)，如果你不传入一个自定义的Evaluator，则Evaluator无法
+     * 知道处理后返回什么样的数据类型
+     */
+    private void doObjectAnimator() {
+        ValueAnimator animator = ValueAnimator.ofObject(new CharEvaluator(), new Character('A'), new Character('Z'));
+        animator.setDuration(3000);
+        animator.setInterpolator(new AccelerateInterpolator());
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                //你在ofObject,ofInt,ofFloat方法传入的什么类型，则getAnimatedValue()就会返回什么类型
+                char curValue = (char) animation.getAnimatedValue();
+                tvTarget.setText(String.valueOf(curValue));
+            }
+        });
+        animator.start();
+    }
+
+    class CharEvaluator implements TypeEvaluator<Character> {
+
+        @Override
+        public Character evaluate(float fraction, Character startValue, Character endValue) {
+            int start = (int) startValue;
+            int end = (int) endValue;
+            return (char) (start + fraction * (end - start));
+        }
+    }
+
+    private void doViewAnimator() {
+        pv.doAnimator();
     }
 }
