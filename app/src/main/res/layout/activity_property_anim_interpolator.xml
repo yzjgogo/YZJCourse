@@ -29,6 +29,12 @@
     android:layout_height="wrap_content"
     android:text="自定义TypeEvaluator"
     android:textAllCaps="false"/>
+<Button
+    android:id="@+id/bt_argb_evaluator"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="ArgbEvalutor:颜色值过渡转换"
+    android:textAllCaps="false"/>
     <TextView
         android:id="@+id/tv_target"
         android:layout_width="wrap_content"

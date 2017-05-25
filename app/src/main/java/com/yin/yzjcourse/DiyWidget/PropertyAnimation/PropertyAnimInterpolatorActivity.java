@@ -1,5 +1,6 @@
 package com.yin.yzjcourse.DiyWidget.PropertyAnimation;
 
+import android.animation.ArgbEvaluator;
 import android.animation.TimeInterpolator;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
@@ -31,7 +32,7 @@ public class PropertyAnimInterpolatorActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_start_property_anim, R.id.tv_target, R.id.bt_custom_interpolator, R.id.bt_custom_evaluator})
+    @OnClick({R.id.bt_start_property_anim, R.id.tv_target, R.id.bt_custom_interpolator, R.id.bt_custom_evaluator,R.id.bt_argb_evaluator})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_start_property_anim:
@@ -41,6 +42,9 @@ public class PropertyAnimInterpolatorActivity extends AppCompatActivity {
                 break;
             case R.id.bt_custom_evaluator:
                 useEvaluator();
+                break;
+            case R.id.bt_argb_evaluator:
+                useArgbEvaluator();
                 break;
             case R.id.tv_target:
                 break;
@@ -154,5 +158,25 @@ public class PropertyAnimInterpolatorActivity extends AppCompatActivity {
             int start = startValue;
             return (int) (start + (endValue - startValue) * fraction);
         }
+    }
+
+    /**
+     * ArgbEvalutor是用来做颜色值过渡转换的
+     */
+    private void useArgbEvaluator() {
+        ValueAnimator animator = ValueAnimator.ofInt(0xffffff00, 0xff0000ff);
+        animator.setEvaluator(new ArgbEvaluator());
+//        animator.setInterpolator(new BounceInterpolator());
+        animator.setDuration(3000);
+
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int curValue = (int) animation.getAnimatedValue();
+                tvTarget.setBackgroundColor(curValue);
+
+            }
+        });
+        animator.start();
     }
 }
