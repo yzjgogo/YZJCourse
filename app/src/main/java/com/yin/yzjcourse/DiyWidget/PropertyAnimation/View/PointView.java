@@ -17,7 +17,7 @@ import com.yin.yzjcourse.DiyWidget.bean.Point;
  */
 
 public class PointView extends View {
-    private Point currentPoint;
+    private Point currentPoint = new Point(100);
 
     public PointView(Context context) {
         super(context);
@@ -37,6 +37,13 @@ public class PointView extends View {
             paint.setColor(Color.RED);
             canvas.drawCircle(300, 300, currentPoint.getRadius(), paint);
         }
+    }
+    public void setPointRadius(int radius){
+        currentPoint.setRadius(radius);
+        invalidate();
+    }
+    public int getPointRadius(){
+        return currentPoint.getRadius();
     }
 
     public void doAnimator() {

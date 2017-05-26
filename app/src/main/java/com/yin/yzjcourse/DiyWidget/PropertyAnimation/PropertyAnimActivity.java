@@ -1,12 +1,15 @@
 package com.yin.yzjcourse.DiyWidget.PropertyAnimation;
 
 import android.animation.Animator;
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
+import android.view.animation.BounceInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -26,6 +29,8 @@ import butterknife.OnClick;
  * view就真的变成什么样了。
  * 一句话总结：视图动画没有改变view本身，你所看到的动画都是假象，是视觉效果
  * 而属性动画改变了view的本身，你所看到的动画都是真实的，是view改变之后的样子
+ *
+ * 属性动画的整个路程参考：animator_process.png
  */
 public class PropertyAnimActivity extends AppCompatActivity {
 
@@ -230,5 +235,162 @@ public class PropertyAnimActivity extends AppCompatActivity {
 
     private void doViewAnimator() {
         pv.doAnimator();
+    }
+    /************************************************ObjectAnimator**********************************************/
+    /**
+     * ValueAnimator与ObjectAnimator的对比
+     *
+     * ObjectAnimator继承自ValueAnimator
+     *
+     * ValueAnimator只是单纯的用于计算动画的进度值，至于你取不取这个值，或者你取到这个值(通过监听)之后对哪一个控件做什么操作，ValueAnimator是不管的，完全在于程序员自己
+     * 而ObjectAnimator不需要设置监听，你在构建这个动画的同时就把要作用的控件传入进去，则ObjectAnimator计算完动画的进度值之后就直接作用于该控件、
+     *
+     * ObjectAnimator.ofFloat(Object target, String propertyName, float... values)中第一个参数是要作用的控件View，第二个参数来自于View的下面几个set方法名
+     * //1、透明度：alpha
+     public void setAlpha(float alpha)
+
+     //2、旋转度数：rotation、rotationX、rotationY
+     public void setRotation(float rotation)
+     public void setRotationX(float rotationX)
+     public void setRotationY(float rotationY)
+
+     //3、平移：translationX、translationY
+     public void setTranslationX(float translationX)
+     public void setTranslationY(float translationY)
+
+     //缩放：scaleX、scaleY
+     public void setScaleX(float scaleX)
+     public void setScaleY(float scaleY)
+
+     即：alpha、rotation、rotationX、rotationY、translationX、translationY  、scaleX、scaleY，首字母可以大小写均可，其它必须是原样
+     传入这些参数后，根据属性值拼装成对应的set函数的名字，比如这里的scaleY的拼装方法就是将属性的第一个字母强制大写后，
+     与set拼接，所以就是setScaleY。然后通过反射找到对应控件的setScaleY(float scaleY)函数，将当前数字值做为setScaleY(float scale)的参数将其传入。
+     *
+     * 参考：animator_process.png
+     */
+    @OnClick({R.id.bt_object_animator_alpha, R.id.bt_object_animator_rotation, R.id.bt_object_animator_rotation_x,
+            R.id.bt_object_animator_rotation_y, R.id.bt_object_animator_translationx, R.id.bt_object_animator_translationy,
+            R.id.bt_object_animator_scale_x, R.id.bt_object_animator_scale_y, R.id.bt_object_animator_custom,
+            R.id.bt_object_animator_get,R.id.bt_object_animator_bg})
+    public void onClickObjectAnimator(View view) {
+        switch (view.getId()) {
+            case R.id.bt_object_animator_alpha:
+                showObjectAnimAlpha();
+                break;
+            case R.id.bt_object_animator_rotation:
+                showObjectAnimRotation();
+                break;
+            case R.id.bt_object_animator_rotation_x:
+                showObjectAnimRotationX();
+                break;
+            case R.id.bt_object_animator_rotation_y:
+                showObjectAnimRotationY();
+                break;
+            case R.id.bt_object_animator_translationx:
+                showObjectAnimTranslationX();
+                break;
+            case R.id.bt_object_animator_translationy:
+                showObjectAnimTranslationY();
+                break;
+            case R.id.bt_object_animator_scale_x:
+                showObjectAnimScaleX();
+                break;
+            case R.id.bt_object_animator_scale_y:
+                showObjectAnimScaleY();
+                break;
+            case R.id.bt_object_animator_bg:
+                showObjectAnimBg();
+                break;
+            case R.id.bt_object_animator_custom:
+                showObjectAnimCustom();
+                break;
+            case R.id.bt_object_animator_get:
+                testObjectAnimSetGet();
+                break;
+        }
+    }
+
+    private void showObjectAnimAlpha() {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tvTarget,"alpha",1,0,1);//不透明到透明再到不透明
+        animator.setDuration(3000);
+//        animator.setInterpolator(new BounceInterpolator());
+        animator.start();
+
+    }
+
+    private void showObjectAnimRotation() {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tvTarget,"rotation",0,180,20);
+        animator.setDuration(3000);
+        animator.setInterpolator(new BounceInterpolator());
+        animator.start();
+    }
+
+    private void showObjectAnimRotationX() {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tvTarget,"rotationX",0,180,20);
+        animator.setDuration(3000);
+        animator.setInterpolator(new BounceInterpolator());
+        animator.start();
+    }
+
+    private void showObjectAnimRotationY() {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tvTarget,"rotationY",0,180,20);
+        animator.setDuration(3000);
+        animator.setInterpolator(new BounceInterpolator());
+        animator.start();
+    }
+
+    private void showObjectAnimTranslationX() {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tvTarget,"translationX",0,200,-200,0);
+        animator.setDuration(3000);
+        animator.setInterpolator(new BounceInterpolator());
+        animator.start();
+    }
+
+    private void showObjectAnimTranslationY() {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tvTarget,"translationY",0,200,-200,0);
+        animator.setDuration(3000);
+        animator.setInterpolator(new BounceInterpolator());
+        animator.start();
+    }
+
+    private void showObjectAnimScaleX() {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tvTarget,"ScaleX",0,3,1);
+        animator.setDuration(3000);
+        animator.setInterpolator(new BounceInterpolator());
+        animator.start();
+    }
+
+    private void showObjectAnimScaleY() {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tvTarget,"ScaleY",0,3,1);
+        animator.setDuration(3000);
+        animator.setInterpolator(new BounceInterpolator());
+        animator.start();
+    }
+
+    private void showObjectAnimBg() {ObjectAnimator animator = ObjectAnimator.ofInt(tvTarget, "BackgroundColor", 0xffff00ff, 0xffffff00, 0xffff00ff);
+        animator.setDuration(8000);
+        animator.setEvaluator(new ArgbEvaluator());
+        animator.start();
+    }
+
+    /**
+     * 自定义一个属性pointRadius，只需在pv中添加setPointRadius即可
+     */
+    private void showObjectAnimCustom() {
+        ObjectAnimator animator = ObjectAnimator.ofInt(pv,"pointRadius",0,300,100);
+        animator.setDuration(3000);
+        animator.start();
+    }
+
+    /**
+      目标view get方法的作用
+     1：当构造动画时的过度值只有一个时，即ofInt,ofFloat等的第三个参数只有一个值时
+        如果目标view没有第二个参数对应的get方法，则系统默认从默认值到指定值，这里是从0到300
+        如果有get方法，则会调用view的get方法获取动画的起始值即从get方法得到的值到300
+     */
+    private void testObjectAnimSetGet() {
+        ObjectAnimator animator = ObjectAnimator.ofInt(pv,"pointRadius",300);
+        animator.setDuration(3000);
+        animator.start();
     }
 }
