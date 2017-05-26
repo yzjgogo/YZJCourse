@@ -41,7 +41,8 @@
         <activity android:name=".DiyWidget.ViewAnimation.FourAnimInterpolatorActivity" />
         <activity android:name=".DiyWidget.ViewAnimation.AnimInterpolatorActivity" />
         <activity android:name=".DiyWidget.PropertyAnimation.PropertyAnimActivity" />
-        <activity android:name=".DiyWidget.PropertyAnimation.PropertyAnimInterpolatorActivity"></activity>
+        <activity android:name=".DiyWidget.PropertyAnimation.PropertyAnimInterpolatorActivity" />
+        <activity android:name=".DiyWidget.PropertyAnimation.PropertyValuesHolderActivity"></activity>
     </application>
 
 </manifest>
