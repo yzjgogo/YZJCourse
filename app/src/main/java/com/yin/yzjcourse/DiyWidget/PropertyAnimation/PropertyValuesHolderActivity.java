@@ -3,9 +3,11 @@ package com.yin.yzjcourse.DiyWidget.PropertyAnimation;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.TypeEvaluator;
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.yin.yzjcourse.DiyWidget.PropertyAnimation.View.MyTextView;
 import com.yin.yzjcourse.R;
@@ -26,7 +28,7 @@ public class PropertyValuesHolderActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_float_int, R.id.bt_object})
+    @OnClick({R.id.bt_float_int, R.id.bt_object, R.id.bt_valueanimator})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_float_int:
@@ -34,6 +36,9 @@ public class PropertyValuesHolderActivity extends AppCompatActivity {
                 break;
             case R.id.bt_object:
                 showObjectIntAnim();
+                break;
+            case R.id.bt_valueanimator:
+                showValueAnimatorHolder();
                 break;
         }
     }
@@ -65,6 +70,30 @@ public class PropertyValuesHolderActivity extends AppCompatActivity {
         ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(tvTarget, letterHolder, rotationHolder);
         animator.setDuration(2000);
         animator.start();
+
+    }
+
+    /**
+     * ValutAnimator的PropertyValuesHolder用法
+     */
+    private void showValueAnimatorHolder() {
+        PropertyValuesHolder myWidthHolder = PropertyValuesHolder.ofFloat("myWidth", 50, 200);
+        PropertyValuesHolder myHeightHolder  = PropertyValuesHolder.ofFloat("myHeight",  100, 500);
+        ValueAnimator ani = ValueAnimator
+                .ofPropertyValuesHolder(myWidthHolder, myHeightHolder)
+                .setDuration(400);
+        ani.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                float myWidth = (Float) valueAnimator.getAnimatedValue("myWidth");
+                float myHeight  = (Float) valueAnimator.getAnimatedValue("myHeight");
+                LinearLayout.LayoutParams p = (LinearLayout.LayoutParams) tvTarget.getLayoutParams();
+                p.width = (int) myWidth;
+                p.height = (int) myHeight;
+                tvTarget.setLayoutParams(p);
+            }
+        });
+        ani.start();
     }
 
     class LetterEvaluator implements TypeEvaluator<Character> {

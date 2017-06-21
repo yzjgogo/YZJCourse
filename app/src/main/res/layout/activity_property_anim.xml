@@ -58,10 +58,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:text="ValueAnimator主要包括ofInt(),ofFloat(),ofObject()方法，以及Interpolator和Evaluator。ValueAnimator只时用于计算动画的值，具体的动画效果要自己通过监听作用于控件"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="上面是ValueAnimator的内容，下面是ObjectAnimator的内容"
         android:textSize="10sp"
         android:gravity="center"
         android:background="@color/red"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:text="ObjectAnimator用于弥补ValueAnimator的不足：直接将动画作用于控件(通过控件的set方法实现动画)，"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

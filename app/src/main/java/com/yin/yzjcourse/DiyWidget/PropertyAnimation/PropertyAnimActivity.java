@@ -367,7 +367,8 @@ public class PropertyAnimActivity extends AppCompatActivity {
         animator.start();
     }
 
-    private void showObjectAnimBg() {ObjectAnimator animator = ObjectAnimator.ofInt(tvTarget, "BackgroundColor", 0xffff00ff, 0xffffff00, 0xffff00ff);
+    private void showObjectAnimBg() {
+        ObjectAnimator animator = ObjectAnimator.ofInt(tvTarget, "BackgroundColor", 0xffff00ff, 0xffffff00, 0xffff00ff);
         animator.setDuration(8000);
         animator.setEvaluator(new ArgbEvaluator());
         animator.start();

@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
-            android:text="ObjectAnimator_PropertyValuesHolder" />
+            android:text="ObjectAnimator和ValueAnimator的ofPropertyValuesHolder用法，本质上和ofInt,ofFloat,ofObject一样" />
 
     </LinearLayout>
 </ScrollView>

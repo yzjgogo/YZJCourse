@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.yin.yzjcourse.DiyWidget.PropertyAnimation.PropertyValuesHolderActivity">
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="ObjectAnimator的PropertyValuesHolder"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +30,31 @@
             android:layout_weight="1"
             android:text="ofObject"
             android:textAllCaps="false" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ValueAnimator的PropertyValuesHolder"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_valueanimator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PropertyValuesHolder"
+            android:textAllCaps="false" />
+
+        <!--<Button-->
+            <!--android:id="@+id/bt_object"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="ofObject"-->
+            <!--android:textAllCaps="false" />-->
     </LinearLayout>
 
     <com.yin.yzjcourse.DiyWidget.PropertyAnimation.View.MyTextView

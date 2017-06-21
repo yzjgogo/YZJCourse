@@ -1,11 +1,13 @@
 package com.yin.yzjcourse.DiyWidget.PropertyAnimation;
 
 import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
 import android.widget.Button;
@@ -32,7 +34,8 @@ public class PropertyAnimInterpolatorActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_start_property_anim, R.id.tv_target, R.id.bt_custom_interpolator, R.id.bt_custom_evaluator,R.id.bt_argb_evaluator})
+    @OnClick({R.id.bt_start_property_anim, R.id.tv_target, R.id.bt_custom_interpolator,
+            R.id.bt_custom_evaluator,R.id.bt_argb_evaluator,R.id.bt_interpolator_evaluator})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_start_property_anim:
@@ -45,6 +48,9 @@ public class PropertyAnimInterpolatorActivity extends AppCompatActivity {
                 break;
             case R.id.bt_argb_evaluator:
                 useArgbEvaluator();
+                break;
+            case R.id.bt_interpolator_evaluator:
+                testScope();
                 break;
             case R.id.tv_target:
                 break;
@@ -180,5 +186,40 @@ public class PropertyAnimInterpolatorActivity extends AppCompatActivity {
             }
         });
         animator.start();
+    }
+
+    private void testScope() {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tvTarget,"translationY",100,200);
+        animator.setInterpolator(new ScopeInterpolator());
+        animator.setEvaluator(new ScopeEvaluator());
+        animator.setDuration(3000);
+        animator.start();
+    }
+
+    /**
+     * 证明了getInterpolation的返回值可以大于1也可以小于0
+     * 参考：interpolator_method.png
+     */
+    class ScopeInterpolator implements TimeInterpolator{
+
+        @Override
+        public float getInterpolation(float input) {
+            return input-0.2f;
+        }
+    }
+
+    /**
+     * 证明了evaluate()的第一个参数就是TimeInterpolator的geInterpolation()方法的返回值（可小于0也可大于1）
+     * startValue和endValue就一直是你指定的值
+     * 参考：interpolator_method.png
+     */
+    class ScopeEvaluator implements TypeEvaluator<Float>{
+
+        @Override
+        public Float evaluate(float fraction, Float startValue, Float endValue) {
+            Log.e("yin","evaluate的参数："+fraction+","+startValue+","+endValue);
+            float start = startValue;
+            return start + (endValue - startValue) * fraction;
+        }
     }
 }

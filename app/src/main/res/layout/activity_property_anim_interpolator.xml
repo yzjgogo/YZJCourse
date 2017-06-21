@@ -35,6 +35,12 @@
     android:layout_height="wrap_content"
     android:text="ArgbEvalutor:颜色值过渡转换"
     android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/bt_interpolator_evaluator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试Interpolator的返回值的范围和Evaluator第一个参数的范围"
+        android:textAllCaps="false"/>
     <TextView
         android:id="@+id/tv_target"
         android:layout_width="wrap_content"
