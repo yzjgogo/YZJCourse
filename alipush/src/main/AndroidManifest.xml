@@ -2,7 +2,7 @@
     package="com.dev.think.mylibrary">
     <!--小米通道相关权限 -->
     <permission
-        android:name="com.mingyihome.tcmmgr.permission.MIPUSH_RECEIVE"
+        android:name="com.dev.think.mylibrary.permission.MIPUSH_RECEIVE"
         android:protectionLevel="signatureOrSystem"/>
     <uses-permission android:name="com.mingyihome.tcmmgr.permission.MIPUSH_RECEIVE"/>
     <!--阿里移动推送相关权限-->
