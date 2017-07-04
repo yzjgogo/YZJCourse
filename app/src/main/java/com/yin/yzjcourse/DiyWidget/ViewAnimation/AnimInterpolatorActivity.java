@@ -53,7 +53,7 @@ public class AnimInterpolatorActivity extends AppCompatActivity {
     Button btCycle;
     @BindView(R.id.bt_decelerate)
     Button btDecelerate;
-    @BindView(R.id.bt_linear)
+    @BindView(R.id.bt_listener)
     Button btLinear;
     @BindView(R.id.bt_overshoot)
     Button btOvershoot;
@@ -74,7 +74,7 @@ public class AnimInterpolatorActivity extends AppCompatActivity {
         Utils.log("当前类型："+currentAnimType);
     }
 
-    @OnClick({R.id.bt_acceleratedecelerate, R.id.bt_accelerate, R.id.bt_anticipate, R.id.bt_anticipateovershoot, R.id.bt_bounce, R.id.bt_cycle, R.id.bt_decelerate, R.id.bt_linear, R.id.bt_overshoot})
+    @OnClick({R.id.bt_acceleratedecelerate, R.id.bt_accelerate, R.id.bt_anticipate, R.id.bt_anticipateovershoot, R.id.bt_bounce, R.id.bt_cycle, R.id.bt_decelerate, R.id.bt_listener, R.id.bt_overshoot})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_acceleratedecelerate:
@@ -98,7 +98,7 @@ public class AnimInterpolatorActivity extends AppCompatActivity {
             case R.id.bt_decelerate:
                 btDecelerate();
                 break;
-            case R.id.bt_linear:
+            case R.id.bt_listener:
                 btLinear();
                 break;
             case R.id.bt_overshoot:

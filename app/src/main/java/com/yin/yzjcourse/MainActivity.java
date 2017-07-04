@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.yin.yzjcourse.DiyWidget.DiyViewActivity;
+import com.yin.yzjcourse.DiyWidget.DrawView.DrawViewActivity;
+import com.yin.yzjcourse.DiyWidget.PropertyAnimation.AnimatorSetActivity;
 import com.yin.yzjcourse.DiyWidget.PropertyAnimation.PropertyAnimActivity;
 import com.yin.yzjcourse.DiyWidget.PropertyAnimation.PropertyAnimInterpolatorActivity;
 import com.yin.yzjcourse.DiyWidget.PropertyAnimation.PropertyValuesHolderActivity;
@@ -45,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.bt_fore_service, R.id.bt_dialog_fragment, R.id.bt_rxjava,
-            R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim,R.id.bt_property_anim_interpolator,R.id.bt_object_anim_holder})
+            R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim,R.id.bt_property_anim_interpolator,R.id.bt_object_anim_holder
+    ,R.id.bt_anim_set,R.id.bt_anim_draw})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_fore_service:
@@ -78,6 +81,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.bt_object_anim_holder:
                 startActivity(new Intent(this, PropertyValuesHolderActivity.class));
+                break;
+            case R.id.bt_anim_set:
+                startActivity(new Intent(this, AnimatorSetActivity.class));
+                break;
+            case R.id.bt_anim_draw:
+                startActivity(new Intent(this, DrawViewActivity.class));
                 break;
         }
     }

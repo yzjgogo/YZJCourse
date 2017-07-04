@@ -74,10 +74,10 @@
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/bt_linear"
+            android:id="@+id/bt_listener"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Linear"
+            android:text="AnimatorSet-listener"
             android:textAllCaps="false"/>
 
         <Button
