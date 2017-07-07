@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.yin.yzjcourse.DiyWidget.DrawView.DrawViewActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="贝赛尔曲线"/>
-<com.yin.yzjcourse.DiyWidget.DrawView.YzjView
-    android:layout_width="200dp"
-    android:layout_height="200dp" />
-</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/tv_bse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击进入贝赛尔曲线" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Canvas_skew" />
+
+        <com.yin.yzjcourse.DiyWidget.DrawView.SkewView
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="在canvas上画文字，基线，drawText(String text,float x,float y,Paint paint)的参数含义，TextAlign" />
+
+        <com.yin.yzjcourse.DiyWidget.DrawView.DrawTextView
+            android:layout_width="400dp"
+            android:layout_height="400dp" />
+    </LinearLayout>
+</ScrollView>

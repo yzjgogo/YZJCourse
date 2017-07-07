@@ -44,7 +44,8 @@
         <activity android:name=".DiyWidget.PropertyAnimation.PropertyAnimInterpolatorActivity" />
         <activity android:name=".DiyWidget.PropertyAnimation.PropertyValuesHolderActivity" />
         <activity android:name=".DiyWidget.PropertyAnimation.AnimatorSetActivity" />
-        <activity android:name=".DiyWidget.DrawView.DrawViewActivity"></activity>
+        <activity android:name=".DiyWidget.DrawView.DrawViewActivity" />
+        <activity android:name=".DiyWidget.DrawView.BezierLineActivity"></activity>
     </application>
 
 </manifest>
