@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +15,8 @@
             android:layout_height="460dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:background="#dfcf4b" />
+            android:background="#dfcf4b"
+            tools:visibility="gone"/>
 
         <View
             android:layout_width="match_parent"
@@ -25,7 +27,8 @@
         <com.yin.yzjcourse.DiyWidget.XfermodeView
             android:layout_width="300dp"
             android:layout_height="400dp"
-            android:background="#dfcf4b" />
+            android:background="#dfcf4b"
+            tools:visibility="gone" />
 
         <View
             android:layout_width="match_parent"
@@ -36,7 +39,8 @@
         <com.yin.yzjcourse.DiyWidget.XfermodeNoticeView
             android:layout_width="300dp"
             android:layout_height="400dp"
-            android:background="#dfcf4b" />
+            android:background="#dfcf4b"
+            tools:visibility="gone"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,7 +51,8 @@
         <com.yin.yzjcourse.DiyWidget.LayerView
             android:layout_width="300dp"
             android:layout_height="400dp"
-            android:background="#dfcf4b" />
+            android:background="#dfcf4b"
+            tools:visibility="gone"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,7 +63,8 @@
         <com.yin.yzjcourse.DiyWidget.PieGraph.PieGraph
             android:layout_width="300dp"
             android:layout_height="400dp"
-            android:background="#dfcf4b" />
+            android:background="#dfcf4b"
+            tools:visibility="gone" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,7 +76,8 @@
             android:id="@+id/pie_one"
             android:layout_width="300dp"
             android:layout_height="400dp"
-            android:background="#dfcf4b" />
+            android:background="#dfcf4b"
+            tools:visibility="gone"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -82,7 +89,8 @@
             android:id="@+id/pie_more"
             android:layout_width="300dp"
             android:layout_height="400dp"
-            android:background="#dfcf4b" />
+            android:background="#dfcf4b"
+            tools:visibility="gone" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,7 +99,8 @@
             android:background="@color/money_deposit_color" />
         <com.yin.yzjcourse.DiyWidget.RotateView
             android:layout_width="400dp"
-            android:layout_height="600dp" />
+            android:layout_height="600dp"
+            tools:visibility="gone"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -104,6 +113,14 @@
             android:padding="10dp"
             custom:titleText1="3712"
             custom:titleTextColor1="#ff0000"
-            custom:titleTextSize1="40sp" />
+            custom:titleTextSize1="40sp"
+            tools:visibility="gone"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google的Xfermode合成图的误导"/>
+        <com.yin.yzjcourse.DiyWidget.XfermodeMisleadView
+            android:layout_width="400dp"
+            android:layout_height="400dp" />
     </LinearLayout>
 </ScrollView>

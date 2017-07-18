@@ -50,7 +50,7 @@ public class XfermodeView extends View {
 //        circlePaint.setARGB(255, 0, 0, 0);
         circlePaint.setColor(Color.BLUE);
         //对于同一个Canvas,PorterDuff.Mode用在上面图形的Paint上，用于与下面图形的交互,两个图形用一个Paint也是相同的道理
-        //各种mode参考R.drawable.porterduff_mode
+        //各种mode参考R.drawable.xfermode_proterduff_true.png
         circlePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.XOR));
 
 
