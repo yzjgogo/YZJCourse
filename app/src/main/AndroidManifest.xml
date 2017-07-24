@@ -47,7 +47,9 @@
         <activity android:name=".DiyWidget.DrawView.DrawViewActivity" />
         <activity android:name=".DiyWidget.DrawView.BezierLineActivity" />
         <activity android:name=".DiyWidget.XfermodeSrcOutEraserActivity" />
-        <activity android:name=".BuilderMode.BuilderModeActivity"></activity>
+        <activity android:name=".BuilderMode.BuilderModeActivity" />
+        <activity android:name=".DiyWidget.QQDelete.QQDeleteActivity" />
+        <activity android:name=".MathAbout.MathAboutActivity"></activity>
     </application>
 
 </manifest>
