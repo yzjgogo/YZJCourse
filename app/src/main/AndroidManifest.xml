@@ -46,7 +46,8 @@
         <activity android:name=".DiyWidget.PropertyAnimation.AnimatorSetActivity" />
         <activity android:name=".DiyWidget.DrawView.DrawViewActivity" />
         <activity android:name=".DiyWidget.DrawView.BezierLineActivity" />
-        <activity android:name=".DiyWidget.XfermodeSrcOutEraserActivity"></activity>
+        <activity android:name=".DiyWidget.XfermodeSrcOutEraserActivity" />
+        <activity android:name=".BuilderMode.BuilderModeActivity"></activity>
     </application>
 
 </manifest>

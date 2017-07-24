@@ -76,6 +76,12 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="画图" />
+        <Button
+            android:id="@+id/bt_builder_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Builder模式" />
 
     </LinearLayout>
 </ScrollView>

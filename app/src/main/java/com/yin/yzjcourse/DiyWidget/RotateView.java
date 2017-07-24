@@ -50,7 +50,8 @@ public class RotateView extends View {
         //进入translate,scale,rotate,skew,concat or clipRect等操作时调用
         canvas.save();
         //以(px/2,py/2)位中心将canvas旋转90度，Canvas的旋转可以理解为只是旋转了其坐标轴,同时出现一个“新的”canvas，
-        // 你在canvas原来的操作样式等保持不变
+        // 你在canvas原来的操作样式等保持不变,即你在调用translate,scale,rotate,skew,concat之前对canvas的操作样式，在调用
+        //这些方法之后，之前的样式保持不变，因为已经显示到屏幕上了，但是这些方法是不可逆的，要想恢复canvas原来的状态需要调用save,restore等方法
         canvas.rotate(90, px / 2, py / 2);//canvas.rotate(float degrees)方法默认沿着View的原点旋转;
         //旋转后的操作以旋转后的坐标系为准，因为x,y轴会旋转， 在旋转后的canvas上画箭头
         canvas.drawLine(px / 2, 0, 0, py / 2, line);
