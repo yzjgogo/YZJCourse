@@ -79,6 +79,8 @@ public class XfermodeSrcOutEraserView extends View {
             case MotionEvent.ACTION_UP:
                 break;
         }
+        //invadite()必须在主线程中调用，而postInvalidate()内部是由Handler的消息机制实现的，所以在任何线程都可以调用，
+        // 但实时性没有invadite()强。所以一般为了保险起见，一般是使用postInvalidate()来刷新界面。
         postInvalidate();
         return super.onTouchEvent(event);
     }

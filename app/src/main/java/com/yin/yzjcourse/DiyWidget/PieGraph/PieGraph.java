@@ -34,6 +34,8 @@ public class PieGraph extends View {
     }
 
     public void update() {
+        //invadite()必须在主线程中调用，而postInvalidate()内部是由Handler的消息机制实现的，所以在任何线程都可以调用，
+        // 但实时性没有invadite()强。所以一般为了保险起见，一般是使用postInvalidate()来刷新界面。
         postInvalidate();
     }
 
@@ -93,7 +95,8 @@ public class PieGraph extends View {
 
     public void addSlice(PieSlice slice) {
         this.slices.add(slice);
-        postInvalidate();//在工作线程中调用
-//        invalidate();在UI线程中调用，比如在修改某个view的显示时，调用invalidate()才能看到重新绘制的界面
+        //invadite()必须在主线程中调用，而postInvalidate()内部是由Handler的消息机制实现的，所以在任何线程都可以调用，
+        // 但实时性没有invadite()强。所以一般为了保险起见，一般是使用postInvalidate()来刷新界面。
+        postInvalidate();
     }
 }
