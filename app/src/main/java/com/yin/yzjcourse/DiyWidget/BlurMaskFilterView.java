@@ -20,6 +20,9 @@ import android.view.View;
 
  大家是否可以看出来发光效果与setShadowLayer所生成的阴影之间有什么联系？
  setShadowLayer所生成的阴影，其实就是将新建的阴影图形副本进行发光效果并且位移一定的距离而已。
+
+ 发光效果支持文字、图形和Bitmap图像，与setShadowLayer一样，发光效果也只会影响边缘部分图像，内部图像是不受影响的。
+ 发光效果是无法指定发光颜色的，采用边缘部分的颜色取样来进行模糊发光。所以边缘是什么颜色，发出的光也就是什么颜色的。
  */
 
 public class BlurMaskFilterView extends View {
