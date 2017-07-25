@@ -11,10 +11,10 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/bt_qq_delete"
+            android:id="@+id/bt_diy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="仿QQ红点拖拽删除"
+            android:text="各种自己写的控件"
             android:textAllCaps="false" />
 
         <com.yin.yzjcourse.DiyWidget.ArcColumnView

@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
 /**
  * Created by think on 2016/12/7.
  */
 
-public class ForeServiceActivity extends AppCompatActivity implements View.OnClickListener {
+public class ForeServiceActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

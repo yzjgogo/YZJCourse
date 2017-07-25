@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.BuilderMode.ClassicalBuilderMode.Cookies;
 import com.yin.yzjcourse.BuilderMode.ClassicalBuilderMode.Director;
 import com.yin.yzjcourse.BuilderMode.ClassicalBuilderMode.RoundCookiesBuilder;
@@ -17,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class BuilderModeActivity extends AppCompatActivity {
+public class BuilderModeActivity extends BaseActivity {
 
     @BindView(R.id.tv_test_result)
     TextView tvTestResult;

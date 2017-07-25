@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
 import java.util.concurrent.TimeUnit;
@@ -20,7 +21,7 @@ import io.reactivex.schedulers.Schedulers;
  * Created by think on 2017/4/11.
  */
 
-public class IntervalActivity extends AppCompatActivity implements View.OnClickListener{
+public class IntervalActivity extends BaseActivity implements View.OnClickListener{
 
     private final CompositeDisposable disposables = new CompositeDisposable();
     @Override

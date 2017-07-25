@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.Utils;
 
@@ -12,7 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class FourAnimInterpolatorActivity extends AppCompatActivity {
+public class FourAnimInterpolatorActivity extends BaseActivity {
 
     @BindView(R.id.bt_scale)
     Button btScale;

@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.DiyWidget.PieGraph.PieGraph;
 import com.yin.yzjcourse.DiyWidget.PieGraph.PieSlice;
 import com.yin.yzjcourse.DiyWidget.QQDelete.QQDeleteActivity;
@@ -19,7 +20,7 @@ import butterknife.OnClick;
  * Created by think on 2017/5/8.
  */
 
-public class DiyViewActivity extends AppCompatActivity {
+public class DiyViewActivity extends BaseActivity {
     private PieGraph pieOne;
     private PieGraph pieMore;
 
@@ -40,15 +41,15 @@ public class DiyViewActivity extends AppCompatActivity {
         pieMore.addSlice(new PieSlice(Color.RED, 6));
     }
 
-    @OnClick({R.id.bt_src_out_eraser,R.id.bt_qq_delete})
+    @OnClick({R.id.bt_src_out_eraser,R.id.bt_diy})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_src_out_eraser:
                 Intent intent = new Intent(this,XfermodeSrcOutEraserActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.bt_qq_delete:
-                Intent intent1 = new Intent(this,QQDeleteActivity.class);
+            case R.id.bt_diy:
+                Intent intent1 = new Intent(this,DiySimpleActivity.class);
                 startActivity(intent1);
                 break;
         }

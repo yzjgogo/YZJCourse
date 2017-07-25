@@ -13,6 +13,7 @@ import android.view.ViewAnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.LinearLayout;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.DiyWidget.PropertyAnimation.View.MyTextView;
 import com.yin.yzjcourse.R;
 
@@ -20,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class PropertyValuesHolderActivity extends AppCompatActivity {
+public class PropertyValuesHolderActivity extends BaseActivity {
 
     @BindView(R.id.tv_target)
     MyTextView tvTarget;

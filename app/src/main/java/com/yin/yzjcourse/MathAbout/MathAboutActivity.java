@@ -3,6 +3,7 @@ package com.yin.yzjcourse.MathAbout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.utils.DLog;
 
@@ -12,7 +13,7 @@ import com.yin.yzjcourse.utils.DLog;
  * 根据定义：圆的一周的弧度是2π*r/2 = 2π弧度 = 360度角，所以π弧度 = 180度角
  * 因此1弧度约为57.3°
  */
-public class MathAboutActivity extends AppCompatActivity {
+public class MathAboutActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

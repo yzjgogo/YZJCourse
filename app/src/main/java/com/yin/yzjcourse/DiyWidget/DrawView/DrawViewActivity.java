@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DrawViewActivity extends AppCompatActivity {
+public class DrawViewActivity extends BaseActivity {
 
     @BindView(R.id.tv_bse)
     Button tvBse;

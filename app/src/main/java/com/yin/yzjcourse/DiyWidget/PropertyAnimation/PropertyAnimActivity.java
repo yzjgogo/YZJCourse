@@ -13,6 +13,7 @@ import android.view.animation.BounceInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.DiyWidget.PropertyAnimation.View.PointView;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.Utils;
@@ -32,7 +33,7 @@ import butterknife.OnClick;
  *
  * 属性动画的整个路程参考：animator_process.png
  */
-public class PropertyAnimActivity extends AppCompatActivity {
+public class PropertyAnimActivity extends BaseActivity {
 
     @BindView(R.id.bt_value_int)
     Button btValueAnim;

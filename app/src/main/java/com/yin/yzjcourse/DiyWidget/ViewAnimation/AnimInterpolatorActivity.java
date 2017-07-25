@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.Utils;
 
@@ -37,7 +38,7 @@ import butterknife.OnClick;
         动画快结束时并没有停止，而是继续向超出动画正常结束时的状态继续前进，然后又回退到动画正常结束时的状态。
 
  */
-public class AnimInterpolatorActivity extends AppCompatActivity {
+public class AnimInterpolatorActivity extends BaseActivity {
 
     @BindView(R.id.bt_acceleratedecelerate)
     Button btAcceleratedecelerate;

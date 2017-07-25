@@ -18,6 +18,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.Utils;
 
@@ -29,7 +30,7 @@ import butterknife.OnClick;
  * Created by think on 2017/5/18.
  */
 
-public class XmlAnimActivity extends AppCompatActivity {
+public class XmlAnimActivity extends BaseActivity {
     @BindView(R.id.bt_alpha)
     Button btAlpha;
     @BindView(R.id.bt_scale)

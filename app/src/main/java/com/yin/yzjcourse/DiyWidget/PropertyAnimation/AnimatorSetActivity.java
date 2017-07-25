@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.utils.DLog;
 
@@ -19,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AnimatorSetActivity extends AppCompatActivity {
+public class AnimatorSetActivity extends BaseActivity {
 
     @BindView(R.id.bt_sequentially)
     Button btSequentially;

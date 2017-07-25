@@ -49,7 +49,9 @@
         <activity android:name=".DiyWidget.XfermodeSrcOutEraserActivity" />
         <activity android:name=".BuilderMode.BuilderModeActivity" />
         <activity android:name=".DiyWidget.QQDelete.QQDeleteActivity" />
-        <activity android:name=".MathAbout.MathAboutActivity"></activity>
+        <activity android:name=".MathAbout.MathAboutActivity" />
+        <activity android:name=".DiyWidget.DiySimpleActivity" />
+        <activity android:name=".DiyWidget.WeightSimpleActivity" />
     </application>
 
 </manifest>

@@ -13,6 +13,7 @@ import android.view.animation.BounceInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.Utils;
 
@@ -20,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class PropertyAnimInterpolatorActivity extends AppCompatActivity {
+public class PropertyAnimInterpolatorActivity extends BaseActivity {
 
     @BindView(R.id.bt_start_property_anim)
     Button btStartPropertyAnim;

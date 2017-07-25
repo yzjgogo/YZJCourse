@@ -8,6 +8,7 @@ import android.telecom.Call;
 import android.util.Log;
 import android.view.View;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.bean.ApiUser;
 import com.yin.yzjcourse.bean.User;
@@ -63,7 +64,7 @@ import io.reactivex.subjects.ReplaySubject;
  * Created by think on 2017/3/28.
  */
 
-public class RxRelease2Activity extends AppCompatActivity implements View.OnClickListener{
+public class RxRelease2Activity extends BaseActivity implements View.OnClickListener{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
