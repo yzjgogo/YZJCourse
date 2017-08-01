@@ -29,7 +29,7 @@ public class MyMarginLinLayout extends ViewGroup {
     }
 
     /**
-     LayoutParams存储了子View在加入ViewGroup中时的一些参数信息，在继承ViewGroup类时，一般也需要新建一个新的LayoutParams类，
+     LayoutParams存储了子View在加入ViewGroup中时的一些参数信息，是给子View用的，比如button.setLayoutParams,在继承ViewGroup类时，一般也需要新建一个新的LayoutParams类，
      就像SDK中我们熟悉的LinearLayout.LayoutParams，RelativeLayout.LayoutParams类等一样
      */
     public static class LayoutParams extends ViewGroup.MarginLayoutParams {
