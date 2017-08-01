@@ -21,5 +21,17 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="layer-list、selector、shape阴影效果"/>
+    <Button
+        android:id="@+id/bt_measure_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="自定义控件onMeasure，onLayout"/>
+    <Button
+        android:id="@+id/bt_measure_layout_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="自定义控件onMeasure，onLayout,margin"/>
 </LinearLayout>
 </ScrollView>

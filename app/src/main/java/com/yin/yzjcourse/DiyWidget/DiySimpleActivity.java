@@ -21,7 +21,7 @@ public class DiySimpleActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_qq_delete, R.id.bt_shade})
+    @OnClick({R.id.bt_qq_delete, R.id.bt_shade,R.id.bt_measure_layout,R.id.bt_measure_layout_margin})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_qq_delete:
@@ -29,6 +29,12 @@ public class DiySimpleActivity extends BaseActivity {
                 break;
             case R.id.bt_shade:
                 startActivity(new Intent(this, WeightSimpleActivity.class));
+                break;
+            case R.id.bt_measure_layout:
+                startActivity(new Intent(this, MyLinActivity.class));
+                break;
+            case R.id.bt_measure_layout_margin:
+                startActivity(new Intent(this, MyMarginLinActivity.class));
                 break;
         }
     }
