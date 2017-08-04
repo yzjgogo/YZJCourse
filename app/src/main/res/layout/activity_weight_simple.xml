@@ -43,7 +43,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/orange"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:visibility="gone">
 
             <TextView
                 android:layout_width="match_parent"
@@ -141,7 +142,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/nav_bg"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:visibility="gone">
 
             <TextView
                 android:layout_width="match_parent"
@@ -201,5 +203,24 @@
                 android:layout_height="wrap_content"
                 android:text="SetMaskFilter之BlurMaskFilter实现发光效果--结束" />
         </LinearLayout>
+        <!--android:elevation 设置该组件“浮”起来的高度，设置该属性可以让该组件呈现3D效果。值大的可能会遮挡住-->
+        <!--值小的，很好理解，显示生活中高的木板可能会挡住底的木板的视线，例如在FrameLayout中正常a在下，b在上，b遮挡住a；但是如果a的-->
+        <!--elevation值比b的大，则a就有可能遮挡住b；需要注意elevation是静态值,是View在Z轴上的初始值。-->
+        <!--android:translationZ是动态值，是Z上的偏移变化，用以在属性动画中动态改变Z值（使用View.setTranslationZ()），-->
+        <!--如果直接在布局文件中设置translationZ则效果和elevation一样-->
+        <!--这里之所以没有阴影效果是因为上面ScrollView设置了layerType="software"，去掉就可以了-->
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:padding="10dp"
+            android:layerType="none"
+            android:background="@drawable/bg_pre_protect_send"
+            android:text="android:elevation 设置该组件“浮”起来的高度，设置该属性可以让该组件呈现3D效果。值大的可能会遮挡住-->
+        值小的，很好理解，显示生活中高的木板可能会挡住底的木板的视线，例如在FrameLayout中正常a在下，b在上，b遮挡住a；但是如果a的
+        elevation值比b的大，则a就有可能遮挡住b；需要注意elevation是静态值,是View在Z轴上的初始值。
+        android:translationZ是动态值，是Z上的偏移变化，用以在属性动画中动态改变Z值（使用View.setTranslationZ()），
+        如果直接在布局文件中设置translationZ则效果和elevation一样。这里之所以没有阴影效果是因为上面ScrollView设置了layerType=software，去掉就可以了"
+            android:elevation="5dp"/>
     </LinearLayout>
 </ScrollView>

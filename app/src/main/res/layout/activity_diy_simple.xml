@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="layer-list、selector、shape阴影效果"/>
+        android:text="layer-list、selector、shape阴影效果，和elevation，translationZ"/>
     <Button
         android:id="@+id/bt_measure_layout"
         android:layout_width="match_parent"
