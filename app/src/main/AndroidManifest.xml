@@ -53,7 +53,10 @@
         <activity android:name=".DiyWidget.DiySimpleActivity" />
         <activity android:name=".DiyWidget.WeightSimpleActivity" />
         <activity android:name=".DiyWidget.MyLinActivity" />
-        <activity android:name=".DiyWidget.MyMarginLinActivity"></activity>
+        <activity android:name=".DiyWidget.MyMarginLinActivity" />
+        <activity android:name=".DataBindP.DataBindActivity" />
+        <activity android:name=".DataBindP.DataBindFragmentActivity" />
+        <activity android:name=".DataBindP.DataBindSimplesActivity"></activity>
     </application>
 
 </manifest>
