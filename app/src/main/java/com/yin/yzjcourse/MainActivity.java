@@ -19,6 +19,7 @@ import com.yin.yzjcourse.DiyWidget.PropertyAnimation.PropertyValuesHolderActivit
 import com.yin.yzjcourse.DiyWidget.ViewAnimation.XmlAnimActivity;
 import com.yin.yzjcourse.ForeService.ForeServiceActivity;
 import com.yin.yzjcourse.MathAbout.MathAboutActivity;
+import com.yin.yzjcourse.OfficialWeight.OfficialWeightActivity;
 import com.yin.yzjcourse.RxJava2.RxRelease2Activity;
 
 import butterknife.BindView;
@@ -52,7 +53,7 @@ public class MainActivity extends BaseActivity {
 
     @OnClick({R.id.bt_fore_service, R.id.bt_dialog_fragment, R.id.bt_rxjava,
             R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim,R.id.bt_property_anim_interpolator,R.id.bt_object_anim_holder
-    ,R.id.bt_anim_set,R.id.bt_anim_draw,R.id.bt_builder_mode,R.id.bt_math,R.id.bt_data_bind})
+    ,R.id.bt_anim_set,R.id.bt_anim_draw,R.id.bt_builder_mode,R.id.bt_math,R.id.bt_data_bind,R.id.bt_weight})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_fore_service:
@@ -101,35 +102,9 @@ public class MainActivity extends BaseActivity {
             case R.id.bt_data_bind:
                 startActivity(new Intent(this, DataBindSimplesActivity.class));
                 break;
-        }
-    }
-/*
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.bt_fore_service:
-                Integer i = null;
-                i.toString();
-                Intent intent = new Intent(this, ForeServiceActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.bt_dialog_fragment:
-                CourseDialog dialog = CourseDialog.getInstance();
-                dialog.show(getSupportFragmentManager(), "CourseDialog");
-                break;
-            case R.id.bt_rxjava:
-                Intent intent1 = new Intent(this, RxRelease2Activity.class);
-                startActivity(intent1);
-                break;
-            case R.id.bt_diy_view:
-                Intent intent2 = new Intent(this, DiyViewActivity.class);
-                startActivity(intent2);
-                break;
-            case R.id.bt_xml_anim:
-                Intent intent3 = new Intent(this, XmlAnimActivity.class);
-                startActivity(intent3);
+            case R.id.bt_weight:
+                startActivity(new Intent(this, OfficialWeightActivity.class));
                 break;
         }
     }
-    */
 }

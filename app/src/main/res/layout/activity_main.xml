@@ -94,6 +94,12 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="Data Binding数据绑定" />
+        <Button
+            android:id="@+id/bt_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="各种官方控件" />
 
     </LinearLayout>
 </ScrollView>

@@ -33,5 +33,11 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="自定义控件onMeasure，onLayout,margin"/>
+    <Button
+        android:id="@+id/bt_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="自定义可自动换换的FlowLayout"/>
 </LinearLayout>
 </ScrollView>

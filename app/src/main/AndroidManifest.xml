@@ -56,7 +56,10 @@
         <activity android:name=".DiyWidget.MyMarginLinActivity" />
         <activity android:name=".DataBindP.DataBindActivity" />
         <activity android:name=".DataBindP.DataBindFragmentActivity" />
-        <activity android:name=".DataBindP.DataBindSimplesActivity"></activity>
+        <activity android:name=".DataBindP.DataBindSimplesActivity" />
+        <activity android:name=".OfficialWeight.OfficialWeightActivity" />
+        <activity android:name=".OfficialWeight.AutoCompleteActivity" />
+        <activity android:name=".DiyWidget.FlowActivity"></activity>
     </application>
 
 </manifest>

@@ -89,7 +89,7 @@ public class FlowLayout extends ViewGroup {
                 //最后一行在这往后
                 lineWidth = childWidth;
                 lineHeight = childHeight;
-            }else {//没有换行时往后面摆，该行的搞去最高的控件
+            }else {//没有换行时往后面摆，该行的高取最高的控件
                 lineWidth += childWidth;
                 lineHeight = Math.max(lineHeight,childHeight);
             }
@@ -107,24 +107,33 @@ public class FlowLayout extends ViewGroup {
         int top = 0;
         int count = getChildCount();
         int lineHeight = 0;
-        int lineWidh = 0;
-        int height = 0;
-        int width = 0;
+        int lineWidth = 0;
         for(int i=0;i<count;i++){
             View child = getChildAt(i);
             MarginLayoutParams layoutParams = (MarginLayoutParams) child.getLayoutParams();
-            int childWidth = child.getMeasuredWidth();
-            int childHeight = child.getMeasuredHeight();
-            if((lineWidh+childWidth)>getMeasuredWidth()){
-//                left = 0;
-//                top +=
+            int childWidth = child.getMeasuredWidth()+layoutParams.leftMargin+layoutParams.rightMargin;
+            int childHeight = child.getMeasuredHeight()+layoutParams.topMargin+layoutParams.bottomMargin;
+            //下面的if else语句用于动态计算当期那child的left和top
+            if((lineWidth+childWidth)>getMeasuredWidth()){//换行
+                //换行后left置0，top增加
+                left = 0;
+                top += lineHeight;
+                //初始化新的一行的行宽和行高
+                lineWidth = childWidth;
+                lineHeight = childHeight;
             }else {
-                lineWidh += childWidth;
+                //主要用于上面判断是否换行
+                lineWidth += childWidth;
+                //主要用于计算top
                 lineHeight = Math.max(lineHeight,childHeight);
-                child.layout(left+layoutParams.leftMargin,top+layoutParams.topMargin,
-                        childWidth+left+layoutParams.leftMargin,childHeight+top+layoutParams.topMargin);
-                left +=(layoutParams.leftMargin+layoutParams.rightMargin+childWidth);
             }
+            int cl = left+layoutParams.leftMargin;
+            int ct = top+layoutParams.topMargin;
+            int cr = cl+child.getMeasuredWidth();
+            int cb = ct + child.getMeasuredHeight();
+            child.layout(cl,ct,cr,cb);
+            //同一行left累加
+            left += childWidth;
         }
     }
 }

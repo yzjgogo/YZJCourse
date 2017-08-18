@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yin.yzjcourse.OfficialWeight.AutoCompleteActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--默认下拉列表的宽度与输入框相同，你也可以通过dropDownWidth设置宽度-->
+        <!--completionHint显示的内容在下拉列表的底部，如果下拉列表需要滑动(条目多，需滑动)，则显示在键盘的顶部且不随提示列表的滑动而滑动，且是单行的。-->
+        <!--dropDownHorizontalOffset:设置下拉列表与输入框之间的水平偏移量，默认下载列表在输入框的正下部，负数表示左移，正数表示右移，但是不会超过屏幕。-->
+        <!--dropDownVerticalOffset:设置下拉列表与输入框之间的垂直偏移量，默认下载列表在输入框的正下部，负数表示上移，正数表示下移，但是不会超过屏幕。-->
+        <!--completionThreshold：表示至少输入几个字符才会提示，默认2个-->
+        <!--dropDownWidth:设置下拉列表的宽-->
+        <AutoCompleteTextView
+            android:id="@+id/tv_auto"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"
+            android:completionHint="completionHint的位置"
+            android:completionThreshold="2"
+            android:dropDownHorizontalOffset="0dp"
+            android:dropDownVerticalOffset="0dp"
+            android:dropDownWidth="200dp" />
+    </LinearLayout>
+</ScrollView>
