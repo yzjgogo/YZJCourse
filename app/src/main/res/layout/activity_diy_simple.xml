@@ -39,5 +39,17 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="自定义可自动换换的FlowLayout"/>
+    <Button
+        android:id="@+id/bt_shader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Paint的着色器Shader之BitmapShader"/>
+    <Button
+        android:id="@+id/bt_shader_telescope"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Paint的着色器Shader之BitmapShader实现望远镜效果"/>
 </LinearLayout>
 </ScrollView>

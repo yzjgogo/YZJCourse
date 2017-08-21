@@ -59,7 +59,9 @@
         <activity android:name=".DataBindP.DataBindSimplesActivity" />
         <activity android:name=".OfficialWeight.OfficialWeightActivity" />
         <activity android:name=".OfficialWeight.AutoCompleteActivity" />
-        <activity android:name=".DiyWidget.FlowActivity"></activity>
+        <activity android:name=".DiyWidget.FlowActivity" />
+        <activity android:name=".DiyWidget.PaintShaderActivity" />
+        <activity android:name=".DiyWidget.TelescopeShaderActivity"></activity>
     </application>
 
 </manifest>
