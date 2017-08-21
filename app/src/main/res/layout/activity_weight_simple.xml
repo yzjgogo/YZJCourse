@@ -222,5 +222,33 @@
         android:translationZ是动态值，是Z上的偏移变化，用以在属性动画中动态改变Z值（使用View.setTranslationZ()），
         如果直接在布局文件中设置translationZ则效果和elevation一样。这里之所以没有阴影效果是因为上面ScrollView设置了layerType=software，去掉就可以了"
             android:elevation="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义图片的阴影开始"
+                android:gravity="center_horizontal"
+                android:background="@color/msg_read_bg"/>
+            <com.yin.yzjcourse.DiyWidget.BitmapShadowView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:shadowDy="10"
+                app:shadowDx="10"
+                app:shadowColor="@color/actionsheet_blue"
+                app:shadowRadius="10.0"
+                app:src="@mipmap/blog12"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义图片的阴影结束"
+                android:gravity="center_horizontal"
+                android:background="@color/msg_read_bg"/>
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
