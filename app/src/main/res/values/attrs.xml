@@ -17,4 +17,13 @@
         <attr name="shadowColor" format="color"/>
         <attr name="shadowRadius" format="float"/>
     </declare-styleable>
+    <!--自定义各种样式的头像-->
+    <declare-styleable name="ShaderAvatarView">
+        <attr name="avatar" format="reference"/>
+        <attr name="shape" format="enum">
+            <enum name="circle" value="0"/>
+            <enum name="rectangle" value="1"/>
+        </attr>
+        <attr name="radius" format="float"/>
+    </declare-styleable>
 </resources>

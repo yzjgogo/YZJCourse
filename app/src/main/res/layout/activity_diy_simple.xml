@@ -51,5 +51,11 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="Paint的着色器Shader之BitmapShader实现望远镜效果"/>
+    <Button
+        android:id="@+id/bt_shader_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Paint的着色器Shader之实现任意形状的头像"/>
 </LinearLayout>
 </ScrollView>

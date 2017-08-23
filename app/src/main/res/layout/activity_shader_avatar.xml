@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.yin.yzjcourse.DiyWidget.ShaderAvatarActivity">
+
+    <com.yin.yzjcourse.DiyWidget.ShaderAvatarView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        app:avatar="@mipmap/dog_edge" />
+
+    <com.yin.yzjcourse.DiyWidget.ShaderAvatarView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="20dp"
+        app:shape="circle"
+        app:avatar="@mipmap/dog_edge" />
+
+    <com.yin.yzjcourse.DiyWidget.ShaderAvatarView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        app:radius="10"
+        app:shape="rectangle"
+        app:avatar="@mipmap/dog_edge" />
+</LinearLayout>

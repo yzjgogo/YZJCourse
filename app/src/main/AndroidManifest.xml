@@ -61,7 +61,8 @@
         <activity android:name=".OfficialWeight.AutoCompleteActivity" />
         <activity android:name=".DiyWidget.FlowActivity" />
         <activity android:name=".DiyWidget.PaintShaderActivity" />
-        <activity android:name=".DiyWidget.TelescopeShaderActivity"></activity>
+        <activity android:name=".DiyWidget.TelescopeShaderActivity" />
+        <activity android:name=".DiyWidget.ShaderAvatarActivity"></activity>
     </application>
 
 </manifest>
