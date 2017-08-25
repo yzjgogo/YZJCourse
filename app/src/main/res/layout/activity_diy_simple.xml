@@ -5,57 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.yin.yzjcourse.DiyWidget.DiySimpleActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <Button
-        android:id="@+id/bt_qq_delete"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="仿QQ拖拽删除效果"/>
-    <Button
-        android:id="@+id/bt_shade"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="layer-list、selector、shape阴影效果，画文字，画图形，画bitmap的阴影，textView及其派生类的阴影，发光效果，自定义图片阴影和elevation，translationZ"/>
-    <Button
-        android:id="@+id/bt_measure_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="自定义控件onMeasure，onLayout"/>
-    <Button
-        android:id="@+id/bt_measure_layout_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="自定义控件onMeasure，onLayout,margin"/>
-    <Button
-        android:id="@+id/bt_flow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="自定义可自动换换的FlowLayout"/>
-    <Button
-        android:id="@+id/bt_shader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Paint的着色器Shader之BitmapShader"/>
-    <Button
-        android:id="@+id/bt_shader_telescope"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Paint的着色器Shader之BitmapShader实现望远镜效果"/>
-    <Button
-        android:id="@+id/bt_shader_avatar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Paint的着色器Shader之实现任意形状的头像"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_qq_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="仿QQ拖拽删除效果"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_shade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="layer-list、selector、shape阴影效果，画文字，画图形，画bitmap的阴影，textView及其派生类的阴影，发光效果，自定义图片阴影和elevation，translationZ"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_measure_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义控件onMeasure，onLayout"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_measure_layout_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义控件onMeasure，onLayout,margin"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义可自动换换的FlowLayout"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_shader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paint的着色器Shader之BitmapShader"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_shader_telescope"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paint的着色器Shader之BitmapShader实现望远镜效果"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_shader_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paint的着色器Shader之实现任意形状的头像"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_shape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="shape标签的用法"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_level_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LevelListDrawable用法"
+            android:textAllCaps="false" />
+    </LinearLayout>
 </ScrollView>

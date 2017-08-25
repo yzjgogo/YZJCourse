@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--在没有匹配Level时显示的图片-->
+    <item android:drawable="@color/colorAccent"/>
+    <item
+        android:drawable="@color/orange"
+        android:maxLevel="20"
+        android:minLevel="10" />
+    <!-- 用TransitionDrawable来代替item标签里的drawable资源-->
+    <item
+        android:maxLevel="40"
+        android:minLevel="30" >
+        <transition >
+            <item android:drawable="@mipmap/first" />
+            <item android:drawable="@mipmap/second" />
+        </transition>
+    </item>
+    <item
+        android:drawable="@mipmap/third"
+        android:maxLevel="60"
+        android:minLevel="50" />
+    <item
+        android:drawable="@mipmap/fourth"
+        android:maxLevel="80"
+        android:minLevel="70" />
+    <item
+        android:drawable="@mipmap/fifth"
+        android:maxLevel="100"
+        android:minLevel="90" />
+</level-list>
