@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.yin.yzjcourse.R;
-import com.yin.yzjcourse.utils.DLog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,25 +29,17 @@ public class LevelListActivity extends AppCompatActivity {
         levelListDrawable = (LevelListDrawable) iv.getDrawable();
     }
 
+    /**
+     * 给定LevelListDrawable一个level值(setLevel),就会从<level-list>标签下匹配每一个<item>标签，
+     * 直到找到某一个item的minLevel<level<maxLevel，就去该item的drawable资源。如果没有匹配到则不显示drawable资源
+     */
     @OnClick(R.id.bt)
     public void onClick() {
         int currnetLevel = Integer.parseInt(etLevel.getText().toString().trim());
         levelListDrawable.setLevel(currnetLevel);
-        if (levelListDrawable.getCurrent() instanceof TransitionDrawable){
+        if (levelListDrawable.getCurrent() instanceof TransitionDrawable) {
             TransitionDrawable transitionDrawable = (TransitionDrawable) levelListDrawable.getCurrent();
             transitionDrawable.startTransition(3000);
         }
-
-//        int level = levelListDrawable.getLevel();
-//        DLog.eLog("当前level:"+level);
-//        if (level<1 || level>11){
-//            levelListDrawable.setLevel(2);
-//        } else{
-//            levelListDrawable.setLevel(level+2);
-//            if (levelListDrawable.getCurrent() instanceof TransitionDrawable){
-//                TransitionDrawable transitionDrawable = (TransitionDrawable) levelListDrawable.getCurrent();
-//                transitionDrawable.startTransition(3000);
-//            }
-//        }
     }
 }
