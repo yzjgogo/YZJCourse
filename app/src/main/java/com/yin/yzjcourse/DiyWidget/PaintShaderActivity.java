@@ -2,16 +2,16 @@ package com.yin.yzjcourse.DiyWidget;
 
 import android.graphics.Shader;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class PaintShaderActivity extends AppCompatActivity {
+public class PaintShaderActivity extends BaseActivity {
 
     @BindView(R.id.shader_view)
     ShaderView shaderView;

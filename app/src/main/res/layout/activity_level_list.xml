@@ -12,17 +12,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:minHeight="400dp"
-        android:minWidth="400dp"
-        android:maxHeight="400dp"
+        android:layout_margin="20dp"
         android:src="@drawable/level_list_drawable"
-        android:layout_margin="20dp"/>
-<EditText
-    android:id="@+id/et_level"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:singleLine="true"
-    android:inputType="number"/>
+        android:maxHeight="400dp"
+        android:minHeight="400dp"
+        android:minWidth="400dp" />
+
+    <EditText
+        android:id="@+id/et_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:singleLine="true" />
+
     <Button
         android:id="@+id/bt"
         android:layout_width="match_parent"

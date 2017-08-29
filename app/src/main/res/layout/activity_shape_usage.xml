@@ -22,7 +22,7 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/gradient_linear"
                 android:text="线性渐变：linear"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="100dp"
@@ -30,7 +30,7 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/gradient_radial"
                 android:text="辐射渐变：radial"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="100dp"
@@ -38,7 +38,19 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/gradient_sweep"
                 android:text="扫描渐变：sweep"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white" />
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/stroke_usage" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_ring"
+            android:text="画圆环的用法，因为你已经在shape中写死了，=圆环整个的宽高是140，所以这里你高度写为100，圆环会显示不全" />
     </LinearLayout>
 </ScrollView>

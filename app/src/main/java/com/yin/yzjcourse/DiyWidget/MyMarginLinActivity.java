@@ -1,11 +1,11 @@
 package com.yin.yzjcourse.DiyWidget;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
-public class MyMarginLinActivity extends AppCompatActivity {
+public class MyMarginLinActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

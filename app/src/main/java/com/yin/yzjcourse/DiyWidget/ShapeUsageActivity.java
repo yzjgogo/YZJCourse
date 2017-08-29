@@ -1,8 +1,8 @@
 package com.yin.yzjcourse.DiyWidget;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
 /**
@@ -15,9 +15,9 @@ import com.yin.yzjcourse.R;
  android:centerColor="color"  //渐变中间点的颜色，在开始与结束点之间
  android:endColor="color"    //渐变结束点的颜色
  android:gradientRadius="float"  //渐变的半径，只有当渐变类型为radial时才能使用,如果不使用则报错
- android:useLevel=["true" | "false"] />  //使用LevelListDrawable时就要设置为true。设为false时才有渐变效果
+ android:useLevel=["true" | "false"] />  //useLevel属性通常不使用。该属性用于指定是否将该shape当成一个LevelListDrawable来使用，默认值为false。
  */
-public class ShapeUsageActivity extends AppCompatActivity {
+public class ShapeUsageActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

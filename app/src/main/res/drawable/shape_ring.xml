@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="ring"
+    android:innerRadius="20dp"
+    android:thickness="50dp"
+    android:useLevel="false">
+    <solid android:color="@color/orange"/>
+    <!--必须useLevel为false才有效果-->
+    <!--只需要shape="ring",useLevel="false"两个属性就可以画一个默认的圆环-->
+    <!--android:innerRadiusRatio    浮点型，以环的宽度比率来表示内环的半径，-->
+    <!--例如，如果android:innerRadiusRatio，表示内环半径等于环的宽度除以5，这个值是可以被覆盖的，默认为9.-->
+    <!--android:thicknessRatio      浮点型，以环的宽度比率来表示环的厚度，例如，如果android:thicknessRatio="2"，-->
+    <!--那么环的厚度就等于环的宽度除以2。这个值是可以被android:thickness覆盖的，默认值是3.-->
+</shape>
