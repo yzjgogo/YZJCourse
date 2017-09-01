@@ -1,13 +1,11 @@
 package com.yin.yzjcourse.DataBindP;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
-import com.yin.yzjcourse.databinding.ActivityDataBindBinding;
 
-public class DataBindFragmentActivity extends AppCompatActivity {
+public class DataBindFragmentActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -20,5 +20,12 @@
     android:textAllCaps="false"
     android:text="fragment使用Data Binding"
     />
+<Button
+    android:id="@+id/bt_module_db"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAllCaps="false"
+    android:text="module中使用Data Binding"
+    />
 </LinearLayout>
 

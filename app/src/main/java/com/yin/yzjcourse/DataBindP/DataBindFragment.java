@@ -18,6 +18,7 @@ public class DataBindFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 //        View view = inflater.inflate(R.layout.fragment_data_bind, null);
+        //注意：在fragment中用FragmentDataBindBinding
         FragmentDataBindBinding binding = DataBindingUtil.inflate(inflater,R.layout.fragment_data_bind,container,false);
         User user = new User("第一", "第二");
         binding.setUser(user);

@@ -11,7 +11,8 @@ public class UserPri {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-    public String getFirstName() {
+    //也可以命名成getFirstName，即getFirstName()和firstName()都可以识别，识别的是方法名，不是return的值
+    public String firstName() {
         return this.firstName;
     }
     public String getLastName() {

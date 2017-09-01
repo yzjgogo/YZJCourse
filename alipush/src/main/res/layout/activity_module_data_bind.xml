@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-        <variable name="user" type="com.yin.yzjcourse.DataBindP.UserPri"/>
+        <variable name="dataUser" type="com.dev.think.mylibrary.DataUser"/>
     </data>
     <LinearLayout
         android:orientation="vertical"
@@ -10,9 +10,9 @@
         android:padding="20dp">
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{user.firstName}"/>
+            android:text="@{dataUser.firstName}"/>
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{user.lastName}"/>
+            android:text="@{dataUser.lastName}"/>
     </LinearLayout>
 </layout>
