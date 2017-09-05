@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yin.yzjcourse.MaterialDesign.BottomNavigationActivity">
+    <Button
+        android:id="@+id/bt_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通过java代码选中第二个item，最下面的那个"/>
+    <Button
+        android:id="@+id/bt_get_selection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取选中的item，没有api，自己遍历"
+        android:layout_below="@+id/bt_select"/>
+    <!--下面是默认的BottomNavigationView效果-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_three"
+        android:padding="10dp"
+        android:text="下面是默认的BottomNavigationView效果" />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_bottom_two"
+        android:layout_marginBottom="20dp"
+        app:menu="@menu/bottom_navigation_menu" />
+
+
+    <TextView
+        android:id="@+id/tv_bottom_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_two"
+        android:padding="10dp"
+        android:text="下面是使用style的BottomNavigationView效果" />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_two"
+        style="@style/BottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_bottom"
+        android:layout_marginBottom="20dp"
+        app:menu="@menu/bottom_navigation_menu" />
+
+
+    <TextView
+        android:id="@+id/tv_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom"
+        android:padding="10dp"
+        android:text="下面是使用各个属性的BottomNavigationView效果" />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        app:itemBackground="@drawable/bottom_bar_ripple2"
+        app:itemIconTint="@drawable/bottom_bar_item_selector"
+        app:itemTextColor="@drawable/bottom_bar_item_selector"
+        app:menu="@menu/bottom_navigation_menu" />
+</RelativeLayout>

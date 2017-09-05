@@ -56,6 +56,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile "com.android.support:appcompat-v7:${SUPPORT_APPCOMPAT_VERSION}"
+    compile "com.android.support:design:${SUPPORT_APPCOMPAT_VERSION}"
     //集成腾讯Bugly开始
     //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.1.5
     //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0

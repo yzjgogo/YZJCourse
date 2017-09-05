@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/recents"
+        android:title="第一"
+        android:icon="@mipmap/ic_discovery_gray"/>
+    <item
+        android:id="@+id/favorites"
+        android:title="第二"
+        android:icon="@mipmap/ic_library_gray"/>
+    <item
+        android:id="@+id/nearby"
+        android:title="第三"
+        android:icon="@mipmap/ic_news_gray"/>
+
+    <item
+        android:id="@+id/recents1"
+        android:title="第四"
+        android:icon="@mipmap/ic_discovery_gray"/>
+    <item
+        android:id="@+id/favorites1"
+        android:title="第五"
+        android:icon="@mipmap/ic_library_gray"/>
+</menu>
