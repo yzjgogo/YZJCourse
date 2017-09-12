@@ -34,16 +34,16 @@
         <!--completionThreshold：表示至少输入几个字符才会提示，默认2个-->
         <!--dropDownWidth:设置下拉列表的宽-->
         <!--<AutoCompleteTextView-->
-            <!--android:id="@+id/tv_auto"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="100dp"-->
-            <!--android:layout_marginTop="50dp"-->
-            <!--android:completionHint="completionHint的位置"-->
-            <!--android:completionThreshold="2"-->
-            <!--android:dropDownHorizontalOffset="0dp"-->
-            <!--android:dropDownVerticalOffset="0dp"-->
-            <!--android:dropDownWidth="200dp" />-->
+        <!--android:id="@+id/tv_auto"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="100dp"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:completionHint="completionHint的位置"-->
+        <!--android:completionThreshold="2"-->
+        <!--android:dropDownHorizontalOffset="0dp"-->
+        <!--android:dropDownVerticalOffset="0dp"-->
+        <!--android:dropDownWidth="200dp" />-->
         <AutoCompleteTextView
             android:id="@+id/tv_auto"
             android:layout_width="match_parent"

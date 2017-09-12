@@ -66,7 +66,8 @@
         <activity android:name=".DiyWidget.ShapeUsageActivity" />
         <activity android:name=".DiyWidget.LevelListActivity" />
         <activity android:name=".MaterialDesign.MaterialDesignActivity" />
-        <activity android:name=".MaterialDesign.BottomNavigationActivity"></activity>
+        <activity android:name=".MaterialDesign.BottomNavigationActivity" />
+        <activity android:name=".OfficialWeight.CustomAutoCompleteTextViewActivity"></activity>
     </application>
 
 </manifest>
