@@ -80,5 +80,12 @@
             android:layout_height="wrap_content"
             android:text="LevelListDrawable用法"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_photo_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="给图片添加标签"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

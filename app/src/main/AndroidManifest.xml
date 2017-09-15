@@ -68,6 +68,7 @@
         <activity android:name=".MaterialDesign.MaterialDesignActivity" />
         <activity android:name=".MaterialDesign.BottomNavigationActivity" />
         <activity android:name=".OfficialWeight.CustomAutoCompleteTextViewActivity"></activity>
+        <activity android:name=".PhotoTag.MainAct"></activity>
     </application>
 
 </manifest>
