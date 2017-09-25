@@ -69,14 +69,17 @@
         <activity android:name=".MaterialDesign.BottomNavigationActivity" />
         <activity android:name=".OfficialWeight.CustomAutoCompleteTextViewActivity" />
         <activity android:name=".PhotoTag.MainAct" />
-        <activity android:name="com.yin.yzjcourse.Coordinator.designDemo.CheeseActivity" />
-        <activity android:name="com.yin.yzjcourse.Coordinator.designDemo.CheeseDetailActivity" />
-        <activity android:name="com.yin.yzjcourse.Coordinator.designDemo.OtherActivity" />
+        <activity android:name=".Coordinator.designDemo.CheeseActivity" />
+        <activity android:name=".Coordinator.designDemo.CheeseDetailActivity" />
+        <activity android:name=".Coordinator.designDemo.OtherActivity" />
         <activity
             android:name=".Coordinator.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Coordinator.CoordinatorActivity"></activity>
+        <activity android:name=".Coordinator.CoordinatorActivity" />
+        <activity android:name=".Coordinator.AnchorActivity" />
+        <activity android:name=".Coordinator.FlexibleSpaceExampleActivity" />
+        <activity android:name=".Coordinator.MaterialUpConceptActivity"></activity>
     </application>
 
 </manifest>

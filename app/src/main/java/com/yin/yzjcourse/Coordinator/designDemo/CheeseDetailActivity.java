@@ -25,10 +25,11 @@ import android.view.Menu;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
 
-public class CheeseDetailActivity extends AppCompatActivity {
+public class CheeseDetailActivity extends BaseActivity {
 
     public static final String EXTRA_NAME = "cheese_name";
 

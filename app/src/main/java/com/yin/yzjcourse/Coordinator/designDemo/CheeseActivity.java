@@ -41,6 +41,7 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ import java.util.List;
 /**
  * TODO
  */
-public class CheeseActivity extends AppCompatActivity implements View.OnClickListener{
+public class CheeseActivity extends BaseActivity implements View.OnClickListener{
 
     private DrawerLayout mDrawerLayout;
 

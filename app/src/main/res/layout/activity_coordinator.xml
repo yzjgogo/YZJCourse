@@ -17,5 +17,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="指定控件在布局中的位置：layout_anchor，layout_anchorGravity"/>
+        android:text="CoordinatorLayout中指定控件在布局中的位置：layout_anchor，layout_anchorGravity"/>
+   <Button
+        android:id="@+id/bt_listener"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="监听AppBarLayout的滚动，动态调整某个控件,用到了ViewCompat"/>
+    <Button
+        android:id="@+id/bt_concept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="监听AppBarLayout的滚动，动态调整某个控件，较复杂的布局，包含ViewCompat，TabLayout，viewpager"/>
+
 </LinearLayout>

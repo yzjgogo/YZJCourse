@@ -20,13 +20,20 @@ public class CoordinatorActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_office_demo, R.id.bt_place})
+    @OnClick({R.id.bt_office_demo, R.id.bt_place,R.id.bt_listener,R.id.bt_concept})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_office_demo:
                 startActivity(new Intent(this, CheeseActivity.class));
                 break;
             case R.id.bt_place:
+                startActivity(new Intent(this, AnchorActivity.class));
+                break;
+            case R.id.bt_listener:
+                startActivity(new Intent(this, FlexibleSpaceExampleActivity.class));
+                break;
+            case R.id.bt_concept:
+                startActivity(new Intent(this, MaterialUpConceptActivity.class));
                 break;
         }
     }

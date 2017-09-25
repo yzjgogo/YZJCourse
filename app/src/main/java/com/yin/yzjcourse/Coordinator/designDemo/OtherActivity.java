@@ -11,12 +11,13 @@ import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
 import android.view.View;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
 /**
  * Created by think on 2016/6/20.
  */
-public class OtherActivity extends AppCompatActivity implements View.OnClickListener {
+public class OtherActivity extends BaseActivity implements View.OnClickListener {
     private TextInputLayout textInputLayout;
     private AppCompatButton button;
     private CoordinatorLayout coordinatorLayout;
