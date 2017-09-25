@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -31,6 +31,7 @@
         <item name="@android:windowEnterAnimation">@anim/slide_from_bottom</item>
         <item name="@android:windowExitAnimation">@anim/slide_out_bottom</item>
     </style>
+
     <style name="BottomNavigation">
         <!--整个控件的背景色，如果itemBackground没有设置正常状态下的背景色，则有效，否则无效，因为被覆盖了-->
         <item name="android:background">@color/colorPrimary</item>
@@ -42,5 +43,22 @@
         <item name="itemTextColor">@drawable/bottom_bar_item_selector</item>
         <item name="paddingStart">50dp</item>
         <item name="paddingEnd">50dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:orientation">vertical</item>
     </style>
 </resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yin.yzjcourse.Coordinator.CoordinatorActivity">
+    <Button
+        android:id="@+id/bt_office_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="DrawerLayout、NavigationView，CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout、TabLayout、FloatingActionButton官方demo"/>
+    <Button
+        android:id="@+id/bt_place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="指定控件在布局中的位置：layout_anchor，layout_anchorGravity"/>
+</LinearLayout>
