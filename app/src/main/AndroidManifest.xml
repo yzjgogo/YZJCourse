@@ -79,7 +79,8 @@
         <activity android:name=".Coordinator.CoordinatorActivity" />
         <activity android:name=".Coordinator.AnchorActivity" />
         <activity android:name=".Coordinator.FlexibleSpaceExampleActivity" />
-        <activity android:name=".Coordinator.MaterialUpConceptActivity"></activity>
+        <activity android:name=".Coordinator.MaterialUpConceptActivity" />
+        <activity android:name=".Coordinator.SwipeBehaviorExampleActivity"></activity>
     </application>
 
 </manifest>

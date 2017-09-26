@@ -20,7 +20,7 @@ public class CoordinatorActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_office_demo, R.id.bt_place,R.id.bt_listener,R.id.bt_concept})
+    @OnClick({R.id.bt_office_demo, R.id.bt_place,R.id.bt_listener,R.id.bt_concept,R.id.bt_swipe})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_office_demo:
@@ -34,6 +34,9 @@ public class CoordinatorActivity extends BaseActivity {
                 break;
             case R.id.bt_concept:
                 startActivity(new Intent(this, MaterialUpConceptActivity.class));
+                break;
+            case R.id.bt_swipe:
+                startActivity(new Intent(this, SwipeBehaviorExampleActivity.class));
                 break;
         }
     }

@@ -101,6 +101,8 @@
     <string name="example_subtitle">I\'m a cool subtitle, larger than the title</string>
     <string name="title_mup_name">Saúl Molinero</string>
 
+    <string name="swype.help">The \'Swipe to dismiss\' behavior allows you to easily add the \'Swipe to dismiss\' functionality in a View inside a CoordinatorLayout</string>
+
     <string name="subtitle_mup">Here I am with a subtitle</string>
     <string name="text_header">Text</string>
     <string name="lorem">

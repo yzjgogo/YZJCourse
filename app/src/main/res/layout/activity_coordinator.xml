@@ -30,5 +30,11 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="监听AppBarLayout的滚动，动态调整某个控件，较复杂的布局，包含ViewCompat，TabLayout，viewpager"/>
+<Button
+        android:id="@+id/bt_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="SwipeDismissBehavior的用法"/>
 
 </LinearLayout>
