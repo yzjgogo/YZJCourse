@@ -37,4 +37,11 @@
         android:textAllCaps="false"
         android:text="SwipeDismissBehavior的用法"/>
 
+    <Button
+        android:id="@+id/bt_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义Behavior以及view的偏移与坐标的关系，setTranslationY，getTranslationY"
+        android:textAllCaps="false" />
+
 </LinearLayout>

@@ -20,7 +20,7 @@ public class CoordinatorActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_office_demo, R.id.bt_place,R.id.bt_listener,R.id.bt_concept,R.id.bt_swipe})
+    @OnClick({R.id.bt_office_demo, R.id.bt_place,R.id.bt_listener,R.id.bt_concept,R.id.bt_swipe,R.id.bt_behavior})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_office_demo:
@@ -37,6 +37,9 @@ public class CoordinatorActivity extends BaseActivity {
                 break;
             case R.id.bt_swipe:
                 startActivity(new Intent(this, SwipeBehaviorExampleActivity.class));
+                break;
+            case R.id.bt_behavior:
+                startActivity(new Intent(this, CustomTextBehaviorActivity.class));
                 break;
         }
     }
