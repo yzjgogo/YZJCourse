@@ -51,9 +51,10 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                app:layout_collapseMode="pin"/>
+                app:layout_collapseMode="parallax"/>
             <!--这里只有Toolbar在折叠完成后会固定到顶部，下面的FloatingActionButton会动态消失显示，-->
             <!--换成其它布局文件则会随着折叠布局的高度逐渐变小至消失-->
+            <!--pin:折叠后固定到顶部，parallax随着滚动而滚动，不固定在顶部-->
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"

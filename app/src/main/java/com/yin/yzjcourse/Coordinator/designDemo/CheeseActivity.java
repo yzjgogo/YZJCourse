@@ -48,7 +48,78 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO
+ AppBarLayout中子控件的layout_scrollFlags：
+ SCROLL_FLAG_SCROLL：设置了该属性则该view会跟随滚动
+ Child1会跟着滚动，Child2到顶部固定
+ <CoordinatorLayout>
+ <AppBarLayout>
+ <Child1 app:layout_scrollFlags="scroll" />
+ <Child2 />
+ </AppBarLayout>
+ <ScrollableView />
+ </CoordinatorLayout>
+
+ Child1和Child2都不会跟着滚动，而是始终固定在顶部
+ <CoordinatorLayout>
+ <AppBarLayout>
+ <Child1/>
+ <Child2  app:layout_scrollFlags="scroll"  />
+ </AppBarLayout>
+ <ScrollableView />
+ </CoordinatorLayout>
+
+ Child1和Child2都会跟着滚动，不会固定在顶部
+ <CoordinatorLayout>
+ <AppBarLayout>
+ <Child1 app:layout_scrollFlags="scroll" />
+ <Child2  app:layout_scrollFlags="scroll" />
+ </AppBarLayout>
+ <ScrollableView />
+ </CoordinatorLayout>
+
+
+ SCROLL_FLAG_SNAP：根据滚动停止时的状态，如果这个view只有部分可见则这个view会立刻自动滚动到最近的边缘；
+ 即该view不会停留在中间状态，要不全部显示要么全部隐藏。
+
+ SCROLL_FLAG_ENTER_ALWAYS：无论当前在什么状态，滚动到了什么位置，只要手指向下滑都是先将该view拉出来(全部显示)，
+ 然后可滚动的veiw才可以向下滚动；只要手指向上滑都是先将该view推出去(全部隐藏)，然后可滚动的view才可以向上滚动
+
+ SCROLL_FLAG_ENTER_ALWAYS_COLLAPSED：enterAlways的附加值。要和enterAlways一起使用，
+ 这里涉及到Child View的高度和最小高度，向下滚动时，Child View先向下滚动最小高度值，
+ 然后Scrolling View开始滚动，到达边界时，Child View再向下滚动，直至显示完全。向上滚动没有这种效果只
+ 有enterAlways的效果。c参考file/enterAlwaysCollapsed.gif
+ <CoordinatorLayout>
+ <AppBarLayout>
+ <android.support.v7.widget.Toolbar
+ android:id="@+id/toolbar"
+ android:layout_width="match_parent"
+ android:minHeight="?attr/actionBarSize"
+ android:layout_height="150dp"
+ android:background="?attr/colorPrimary"
+ app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+ app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed" />
+ <Child2 />
+ </AppBarLayout>
+ <ScrollableView />
+ </CoordinatorLayout>
+
+ SCROLL_FLAG_EXIT_UNTIL_COLLAPSED：这里也涉及到最小高度。发生向上滚动事件时，Child View向上滚动退出直至
+ 最小高度，然后Scrolling View开始滚动。也就是，Child View不会完全退出屏幕。参考file/exitUntilCollapsed.gif
+ <CoordinatorLayout>
+ <AppBarLayout>
+ <android.support.v7.widget.Toolbar
+ android:id="@+id/toolbar"
+ android:layout_width="match_parent"
+ android:minHeight="?attr/actionBarSize"
+ android:layout_height="150dp"
+ android:background="?attr/colorPrimary"
+ app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+ app:layout_scrollFlags="scroll|exitUntilCollapsed" />
+ <Child2 />
+ </AppBarLayout>
+ <ScrollableView />
+ </CoordinatorLayout>
+
  */
 public class CheeseActivity extends BaseActivity implements View.OnClickListener{
 
