@@ -11,9 +11,9 @@ import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
 public class CustomTextBehaviorActivity extends BaseActivity {
-    private Button btGetTransY, btSetTransY, btGetTop, btGetY;
-    private TextView tvShowTransY, tvFab, tvShowTop,tvShowY;
-    private EditText etInputTransY;
+    private Button btGetTransY, btSetTransY, btGetTop, btGetY,btSetY,btSetTop;
+    private TextView tvShowTransY, tvFab, tvShowTop, tvShowY;
+    private EditText etInputTransY,etInputTop,etInputY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,10 @@ public class CustomTextBehaviorActivity extends BaseActivity {
         etInputTransY = (EditText) findViewById(R.id.et_input_trans_y);
         btGetY = (Button) findViewById(R.id.bt_get_y);
         tvShowY = (TextView) findViewById(R.id.tv_show_y);
+        btSetY = (Button) findViewById(R.id.bt_set_y);
+        btSetTop = (Button) findViewById(R.id.bt_set_top);
+        etInputY = (EditText) findViewById(R.id.et_input_y);
+        etInputTop = (EditText) findViewById(R.id.et_input_top);
         //设置垂直偏移：负数向上偏移，正数向下偏移
         btSetTransY.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,10 +58,24 @@ public class CustomTextBehaviorActivity extends BaseActivity {
             }
         });
         //getY() = getTop()+getTranslationY();getY()只是视觉上的位置，getTop()才是真正的相对父控件的位置
-        btGetY.setOnClickListener(new View.OnClickListener(){
+        btGetY.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvShowY.setText(tvFab.getY()+"");
+                tvShowY.setText(tvFab.getY() + "");
+            }
+        });
+        //setY()其实是偏移操作：setTranslationY(y - mTop)，比top值小说明是上移，比top值大说明是下移，偏移操作top始终不变
+        btSetY.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                tvFab.setY(Float.parseFloat(etInputY.getText().toString().trim()));
+            }
+        });
+        //貌似没啥意义，set后(view大小发生变化)再get会回去到你set的值(view复原)，要是再get一次又会获取到原来的top值
+        btSetTop.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                tvFab.setTop(Integer.parseInt(etInputTop.getText().toString().trim()));
             }
         });
         //通过setTranslationY等方法使view发生偏移则是真正的view的移动，无论怎么偏移都会相应单击事件
