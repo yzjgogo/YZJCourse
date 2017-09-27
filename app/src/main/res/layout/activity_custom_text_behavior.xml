@@ -13,28 +13,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/bt_get"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="获取top坐标"
-                android:textAllCaps="false"/>
-            <TextView
-                android:id="@+id/tv_show"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:textSize="14sp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
                 android:id="@+id/bt_get_y"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="获取垂直偏移"
+                android:text="获取y坐标"
                 android:textAllCaps="false"/>
             <TextView
                 android:id="@+id/tv_show_y"
@@ -49,13 +31,49 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/bt_set_y"
+                android:id="@+id/bt_get_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取top坐标"
+                android:textAllCaps="false"/>
+            <TextView
+                android:id="@+id/tv_show_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/bt_get_trans_y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取垂直偏移"
+                android:textAllCaps="false"/>
+            <TextView
+                android:id="@+id/tv_show_trans_y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/bt_set_trans_y"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="设置垂直偏移"
                 android:textAllCaps="false"/>
             <EditText
-                android:id="@+id/et_input_y"
+                android:id="@+id/et_input_trans_y"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
