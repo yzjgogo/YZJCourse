@@ -32,7 +32,7 @@ public class CourseDialog extends DialogFragment {
          */
 //        setStyle(DialogFragment.STYLE_NO_FRAME, R.style.shareDialogTheme);
         /**
-         * 是dialog填充整个屏幕
+         * 是dialog填充整个屏幕,进出动画
          */
         setStyle(DialogFragment.STYLE_NO_FRAME, R.style.Dialog_FS);
     }
