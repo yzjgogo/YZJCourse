@@ -46,14 +46,14 @@ public class CustomTextBehaviorActivity extends BaseActivity {
                 tvShowTransY.setText(tvFab.getTranslationY() + "");
             }
         });
-        //获取top坐标,getTop()的值始终是不变的，当没有发生偏移时getTop()=getY();
+        //获取top坐标,getTop()的值始终是不变的，当没有发生偏移时getTop()=getY();getY()只是视觉上的位置，getTop()才是真正的相对父控件的位置
         btGetTop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tvShowTop.setText(tvFab.getTop() + "");
             }
         });
-        //getY() = getTop()+getTranslationY();
+        //getY() = getTop()+getTranslationY();getY()只是视觉上的位置，getTop()才是真正的相对父控件的位置
         btGetY.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
