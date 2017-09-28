@@ -82,7 +82,6 @@
         <activity android:name=".Coordinator.MaterialUpConceptActivity" />
         <activity android:name=".Coordinator.SwipeBehaviorExampleActivity" />
         <activity android:name=".Coordinator.CustomTextBehaviorActivity" />
-        <activity android:name=".MaterialDesign.BottomSheetBaseActivity" />
         <activity android:name=".MaterialDesign.BottomSheetExampleActivity" />
         <activity android:name=".MaterialDesign.NestedScrollViewActivity" />
         <activity android:name=".MaterialDesign.RecyclerViewActivity" />
