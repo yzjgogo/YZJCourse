@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.yin.yzjcourse.BaseActivity;
-import com.yin.yzjcourse.DataBindP.DataBindSimplesActivity;
 import com.yin.yzjcourse.R;
 
 import butterknife.ButterKnife;
@@ -27,6 +26,7 @@ public class MaterialDesignActivity extends BaseActivity {
                 startActivity(new Intent(this, BottomNavigationActivity.class));
                 break;
             case R.id.bt_bottom_sheet:
+                startActivity(new Intent(this, BottomSheetExampleActivity.class));
                 break;
         }
     }
