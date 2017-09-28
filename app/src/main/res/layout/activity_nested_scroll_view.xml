@@ -15,7 +15,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="点击"/>
-
+<android.support.design.widget.FloatingActionButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/fab_margin"
+    android:src="@android:drawable/ic_dialog_email"
+    app:layout_anchor="@+id/bottom_sheet"
+    app:layout_anchorGravity="top|right"/>
 
     <!--behavior_hideable:默认为false无法隐藏整个BottomSheet，至少要显示默认的高或behavior_peekHeight指定的高；-->
                         <!--为true时可以隐藏整个BottomSheet-->

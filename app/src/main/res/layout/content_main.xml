@@ -33,9 +33,20 @@
         android:layout_height="50dp"/>
 
     <Button
-        android:id="@+id/bs_dialog"
-        android:text="bottom_sheet_dialog"
+        android:id="@+id/bt_bottom_dialog"
+        android:text="使用BottomSheetDialogFragment "
         android:layout_below="@+id/rv"
+        android:layout_marginTop="20dp"
+        android:background="#ff2020"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/bs_dialog"
+        android:text="使用BottomSheetDialog"
+        android:layout_below="@+id/bt_bottom_dialog"
         android:layout_marginTop="20dp"
         android:background="#ff2020"
         android:textColor="@android:color/white"

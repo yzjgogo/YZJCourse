@@ -31,6 +31,13 @@ public class BottomSheetExampleActivity extends BaseActivity {
             }
         });
 
+        findViewById(R.id.bt_bottom_dialog).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BottomSheetExampleActivity.this, SimpleBottomDialogActivity.class));
+            }
+        });
+
         findViewById(R.id.bs_dialog).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
