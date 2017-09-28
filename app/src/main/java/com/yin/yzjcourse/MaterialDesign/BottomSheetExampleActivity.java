@@ -45,12 +45,5 @@ public class BottomSheetExampleActivity extends BaseActivity {
             }
         });
 
-        findViewById(R.id.beautiful).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(BottomSheetExampleActivity.this, BeautifulBottomSheetActivity.class));
-            }
-        });
-
     }
 }

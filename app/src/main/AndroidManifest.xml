@@ -86,7 +86,6 @@
         <activity android:name=".MaterialDesign.NestedScrollViewActivity" />
         <activity android:name=".MaterialDesign.RecyclerViewActivity" />
         <activity android:name=".MaterialDesign.BottomSheetDialogActivity" />
-        <activity android:name=".MaterialDesign.BeautifulBottomSheetActivity" />
         <activity android:name=".MaterialDesign.SimpleBottomDialogActivity"></activity>
     </application>
 

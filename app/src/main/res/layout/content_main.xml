@@ -18,7 +18,8 @@
         android:background="#ff2020"
         android:textColor="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:textAllCaps="false"/>
 
 
 
@@ -30,7 +31,8 @@
         android:background="#ff2020"
         android:textColor="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/bt_bottom_dialog"
@@ -47,16 +49,7 @@
         android:id="@+id/bs_dialog"
         android:text="使用BottomSheetDialog"
         android:layout_below="@+id/bt_bottom_dialog"
-        android:layout_marginTop="20dp"
-        android:background="#ff2020"
-        android:textColor="@android:color/white"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
-
-    <Button
-        android:id="@+id/beautiful"
-        android:text="一个漂亮的demo"
-        android:layout_below="@+id/bs_dialog"
+        android:textAllCaps="false"
         android:layout_marginTop="20dp"
         android:background="#ff2020"
         android:textColor="@android:color/white"
