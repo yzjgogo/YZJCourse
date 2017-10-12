@@ -19,7 +19,7 @@ public class MaterialDesignActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_bottom_navigation, R.id.bt_bottom_sheet})
+    @OnClick({R.id.bt_bottom_navigation, R.id.bt_bottom_sheet,R.id.bt_expanded_notifications})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_bottom_navigation:
@@ -27,6 +27,9 @@ public class MaterialDesignActivity extends BaseActivity {
                 break;
             case R.id.bt_bottom_sheet:
                 startActivity(new Intent(this, BottomSheetExampleActivity.class));
+                break;
+            case R.id.bt_expanded_notifications:
+                startActivity(new Intent(this, NotificationsActivity.class));
                 break;
         }
     }

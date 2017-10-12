@@ -24,5 +24,12 @@
             android:layout_height="wrap_content"
             android:text="Bottom Sheets"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_expanded_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="扩展通知栏"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
