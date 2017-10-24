@@ -16,6 +16,36 @@ import butterknife.OnClick;
 /**
  * 只要通知栏列表有足够的控件，扩展的通知栏都会自动被显示，否则就会被压缩
  * 扩展的通知栏只在Jelly Bean 4.1以上可用，老版本只有普通的通知栏可以显示
+ * 可扩展的通知栏是要用两个手指收缩展开的
+ *
+ * 未讲到的内容：
+ 1：普通的通知栏各种方法
+
+ 2：通知栏上的操作事件
+  setContentIntent()：用户点击通知时触发
+ setFullScreenIntent()：//TODO 这个在通知显示的时候会被调用
+ setDeleteIntent()：用户清除通知时触发，可以是点击清除按钮，也可以是左右滑动删除(当然了，前提是高版本)
+ 2.3及以下是无法处理自定义布局中的操作事件的，这样我们就不要去考虑增加自定义按钮了。
+
+ 3：自定义布局
+ 使用NotificationCampat来做自定义布局我们可以这样做：
+ RemoteViews rvMain = new RemoteViews(context.getPackageName(), R.layout.notification_layout);
+ //TODO rvMain...
+ NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
+ .setContent(rvMain);
+ // TOOD ...
+
+
+ 在4.0以上，这样是没问题，但是在2.3的时候，你会发现这样根本无效，因此我们需要换一种方式：
+ RemoteViews rvMain = new RemoteViews(context.getPackageName(), R.layout.notification_layout);
+ //TODO rmMain...
+ NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
+ .setContent(rvMain);
+ // TOOD ...
+ Notification notification = builder.build();
+ if(Build.VERSION.SDK_INT <= 10){
+ notification.contentView = rvMain;
+ }
  */
 public class NotificationsActivity extends BaseActivity {
     private String bigText = "酸辣粉就两块时间发了控件时发送的经方考虑到收到了放假了快递商家收到的垃圾分类快递商家说得多了放假了的时间发" +
