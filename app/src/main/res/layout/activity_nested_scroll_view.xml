@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:behavior_hideable="true"
-        app:behavior_peekHeight="50dp"
+        app:behavior_peekHeight="100dp"
         android:orientation="vertical"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
@@ -63,6 +63,28 @@
                 android:layout_marginRight="10dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/a6"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/a6"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/a6"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="我在底部,可以把我去掉，我只是想看看底部可不可以放按钮"
+        android:layout_gravity="bottom"
+        android:background="@color/orange"/>
 </android.support.design.widget.CoordinatorLayout>

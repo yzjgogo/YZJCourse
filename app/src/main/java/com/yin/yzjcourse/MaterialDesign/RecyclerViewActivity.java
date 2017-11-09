@@ -173,7 +173,7 @@ public class RecyclerViewActivity extends BaseActivity {
 
         @Override
         public int getItemCount() {
-            return 3;
+            return 30;
         }
     }
 

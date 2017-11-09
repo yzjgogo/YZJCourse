@@ -1,24 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
-    android:background="@color/orange"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:text="我是标题"-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="20sp" />-->
+    <!--不要用ScrollView，如果用了，滑动上去后就滑不下来了-->
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/orange">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="2"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="3"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="4"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:lineSpacingMultiplier="2"-->
+            <!--android:text="5"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="40sp" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:lineSpacingMultiplier="2"-->
+            <!--android:text="6"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="40sp" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:lineSpacingMultiplier="2"-->
+            <!--android:text="7"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="40sp" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:lineSpacingMultiplier="2"-->
+            <!--android:text="8"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="40sp" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:lineSpacingMultiplier="2"-->
+            <!--android:text="9"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="40sp" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:lineSpacingMultiplier="2"-->
+            <!--android:text="10"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="40sp" />-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:lineSpacingMultiplier="2"-->
+            <!--android:text="11"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="40sp" />-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:lineSpacingMultiplier="2"-->
+            <!--android:text="12"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="40sp" />-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:lineSpacingMultiplier="2"-->
+            <!--android:text="13"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="40sp" />-->
+
+
+
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center_vertical"
-        android:text="我是标题"
+        android:text="我是底部"
+        android:layout_gravity="bottom"
         android:textColor="@color/black"
         android:textSize="20sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:lineSpacingMultiplier="2"
-        android:text="收费啊舒服舒服爽肤水所发生的是师傅的说法舒服舒服收费水电费水电费神鼎飞丹砂胜多负少少的地方胜多负少的地方少的地方随访师傅的说法是非得失冯绍峰收费水电费第三方"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
-</LinearLayout>
+</FrameLayout>
