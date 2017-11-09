@@ -3,8 +3,11 @@ package com.yin.yzjcourse;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import java.io.InputStream;
@@ -36,5 +39,17 @@ public class Utils {
     }
     public static void showToast(Context context,String content){
         Toast.makeText(context,content,Toast.LENGTH_SHORT).show();
+    }
+
+    public static int getScreenWidth(Context context) {
+        final Resources resources = context.getApplicationContext().getResources();
+        final DisplayMetrics dm = resources.getDisplayMetrics();
+        return dm.widthPixels;
+    }
+
+    public static int getScreenHeight(Context context) {
+        final Resources resources = context.getApplicationContext().getResources();
+        final DisplayMetrics dm = resources.getDisplayMetrics();
+        return dm.heightPixels;
     }
 }

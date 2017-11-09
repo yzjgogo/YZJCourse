@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_root"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--<TextView-->
         <!--android:layout_width="match_parent"-->
@@ -56,83 +58,83 @@
             android:textColor="@color/black"
             android:textSize="40sp" />
 
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:lineSpacingMultiplier="2"-->
-            <!--android:text="5"-->
-            <!--android:textColor="@color/black"-->
-            <!--android:textSize="40sp" />-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="5"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
 
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:lineSpacingMultiplier="2"-->
-            <!--android:text="6"-->
-            <!--android:textColor="@color/black"-->
-            <!--android:textSize="40sp" />-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="6"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
 
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:lineSpacingMultiplier="2"-->
-            <!--android:text="7"-->
-            <!--android:textColor="@color/black"-->
-            <!--android:textSize="40sp" />-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="7"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
 
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:lineSpacingMultiplier="2"-->
-            <!--android:text="8"-->
-            <!--android:textColor="@color/black"-->
-            <!--android:textSize="40sp" />-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="8"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
 
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:lineSpacingMultiplier="2"-->
-            <!--android:text="9"-->
-            <!--android:textColor="@color/black"-->
-            <!--android:textSize="40sp" />-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="9"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
 
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:lineSpacingMultiplier="2"-->
-            <!--android:text="10"-->
-            <!--android:textColor="@color/black"-->
-            <!--android:textSize="40sp" />-->
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:lineSpacingMultiplier="2"-->
-            <!--android:text="11"-->
-            <!--android:textColor="@color/black"-->
-            <!--android:textSize="40sp" />-->
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:lineSpacingMultiplier="2"-->
-            <!--android:text="12"-->
-            <!--android:textColor="@color/black"-->
-            <!--android:textSize="40sp" />-->
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:lineSpacingMultiplier="2"-->
-            <!--android:text="13"-->
-            <!--android:textColor="@color/black"-->
-            <!--android:textSize="40sp" />-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="10"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="11"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="12"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="2"
+            android:text="13"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
 
 
 
@@ -140,13 +142,29 @@
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
 
-
-    <TextView
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/fab"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_gravity="end|bottom"-->
+        <!--android:layout_margin="@dimen/fab_margin"-->
+        <!--android:src="@mipmap/ic_done"-->
+        <!--app:backgroundTint="#008000"-->
+        <!--app:rippleColor="#D2691E"-->
+        <!--app:elevation="5dp"-->
+        <!--app:pressedTranslationZ="10dp"/>-->
+    <RelativeLayout
+        android:id="@+id/rl_bottom_button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:gravity="center_vertical"
-        android:text="我是底部"
-        android:layout_gravity="bottom"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:layout_marginTop="140dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="我是底部"
+            android:background="@color/red"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </RelativeLayout>
 </FrameLayout>
