@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.Utils;
+import com.yin.yzjcourse.utils.DLog;
 
 /**
  * Created by think on 2017/9/28.
@@ -53,6 +54,7 @@ public class SimpleBottomDialog extends BottomSheetDialogFragment {
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
                 int pxOffet = (int) (unUseHeight * slideOffset);
+                DLog.eLog("顶部margin是多少："+marginLayoutParams.topMargin);
                 marginLayoutParams.topMargin = Utils.dip2px(getContext(), 140) + pxOffet;//这个140在布局中可以看到，是BottomSheet显示默认高时的topMargin
                 rlBottomButton.setLayoutParams(marginLayoutParams);
             }
