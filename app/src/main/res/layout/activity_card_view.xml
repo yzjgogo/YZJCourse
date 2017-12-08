@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<LinearLayout爷
+  android:clipChildren="false">
+    <LinearLayout父>
+        <View子(可超出父的范围) />
+    </LinearLayout>
+</LinearLayout>
+-->
+<!--clipChildren作用于爷ViewGroup，用于限制子View是否可以超出父ViewGroup的范围，默认为true即不可以-->
+<!--也可以在代码中设置：setClipChildren (boolean clipChildren)，也可以从代码中判断某个ViewGroup
+的clipChildren值：boolean getClipChildren()-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:orientation="vertical"
+    tools:context="com.yin.yzjcourse.MaterialDesign.ClipChildrenActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:background="#e57373" />
+
+    <LinearLayout
+        android:id="@+id/ll_test_original"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="#2196f3"
+        android:orientation="horizontal">
+        <!--view_clip的爷ViewGroup(ll_root)的clipChildren为false所以view_clip可以超出其父ViewGroup(ll_test_original)-->
+        <!--的范围，又因为在ViewGroup中默认的layout_gravity为top即上边缘与父控件的上边缘对齐，所以该view_clip下部分超出-->
+        <!--父VeiwGroup(ll_test_original)的范围,如果layout_gravity为bottom则view的底部与父view的底部对齐，则上部分会-->
+        <!--超出范围，看后面的ImageView-->
+        <TextView
+            android:id="@+id/view_clip"
+            android:layout_width="50dp"
+            android:layout_height="90dp"
+            android:background="@color/red" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="110dip"
+            android:layout_gravity="bottom"
+            android:background="@color/light_yellow"
+            android:src="@mipmap/ic_launcher" />
+    </LinearLayout>
+
+    <!--要想使用clipChildren属性，需要在爷View中设置android:clipChildren="false"，ll_test设置了clipChildren为false
+    所以view_test3可以超出其父view的范围。这里设置了一个layout_marginTop就是因为布局文件中的View有层级先后的关系如果没有设置
+    该layout_marginTop则view_clip的下班部分虽然超出了其父View的范围但是因为被挡住了，仍然看不到效果-->
+    <LinearLayout
+        android:id="@+id/ll_test"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="70dp"
+        android:background="@color/light_yellow"
+        android:clipChildren="false"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_test2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/actionsheet_blue"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/view_test3"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:background="@color/register_get_code_text_color"
+                android:text="该View(view_test3)可以超出其父View(ll_test2)的范围，又因为其爷View(ll_test)的父View(ll_root)也设置了android:clipChildren=false，所以该View(view_test3)也可以超出其爷View(ll_test)的范围" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="凸起按钮，用theme：colorControlHighlight和colorButtonNormal,有水波纹效果"
+        android:textColor="@color/white"
+        android:theme="@style/MyButton" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="凸起按钮，用selector，没有水波纹效果"
+        android:textColor="@color/title_color"
+        android:background="@drawable/button_selector"
+        android:enabled="true"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="平面按钮，类似于没有背景,用style设置了平面按钮，用theme设置了按压下去时的效果"
+        android:textColor="@color/title_color"
+        android:theme="@style/MyButton2"
+        style="@style/Widget.AppCompat.Button.Borderless"/>
+</LinearLayout>

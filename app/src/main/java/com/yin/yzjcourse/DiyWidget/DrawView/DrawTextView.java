@@ -57,7 +57,7 @@ public class DrawTextView extends View {
         //写文字
         paint.setColor(Color.GREEN);
         paint.setTextSize(120); //以px为单位
-        paint.setTextAlign(Paint.Align.LEFT);
+        paint.setTextAlign(Paint.Align.LEFT);//默认就是LEFT
         canvas.drawText("garvic\'s blog", baseLineX, baseLineY, paint);
         //drawText的第二三个参数(baseLineX,baseLineY)决定的text绘制的起点
         //drawText的第三个参数是基线所在的Y轴坐标

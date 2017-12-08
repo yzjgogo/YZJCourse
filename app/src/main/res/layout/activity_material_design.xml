@@ -31,5 +31,19 @@
             android:layout_height="wrap_content"
             android:text="扩展通知栏"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buttons"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_clip_children"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="android:clipChildren用法"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

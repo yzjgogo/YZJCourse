@@ -19,17 +19,28 @@ public class MaterialDesignActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_bottom_navigation, R.id.bt_bottom_sheet,R.id.bt_expanded_notifications})
+    @OnClick({R.id.bt_bottom_navigation, R.id.bt_bottom_sheet,
+            R.id.bt_expanded_notifications,R.id.bt_button_style,
+    R.id.bt_clip_children})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_bottom_navigation:
                 startActivity(new Intent(this, BottomNavigationActivity.class));
                 break;
             case R.id.bt_bottom_sheet:
+//                LinearLayout linearLayout = new LinearLayout(MaterialDesignActivity.this);
+//                linearLayout.setClipToPadding(false);
+//                linearLayout.setClipChildren(false);
                 startActivity(new Intent(this, BottomSheetExampleActivity.class));
                 break;
             case R.id.bt_expanded_notifications:
                 startActivity(new Intent(this, NotificationsActivity.class));
+                break;
+            case R.id.bt_button_style:
+                startActivity(new Intent(this, ButtonsActivity.class));
+                break;
+            case R.id.bt_clip_children:
+                startActivity(new Intent(this, ClipChildrenActivity.class));
                 break;
         }
     }

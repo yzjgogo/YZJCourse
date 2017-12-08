@@ -87,7 +87,9 @@
         <activity android:name=".MaterialDesign.RecyclerViewActivity" />
         <activity android:name=".MaterialDesign.BottomSheetDialogActivity" />
         <activity android:name=".MaterialDesign.SimpleBottomDialogActivity" />
-        <activity android:name=".MaterialDesign.NotificationsActivity"></activity>
+        <activity android:name=".MaterialDesign.NotificationsActivity" />
+        <activity android:name=".MaterialDesign.ButtonsActivity" />
+        <activity android:name=".MaterialDesign.ClipChildrenActivity"></activity>
     </application>
 
 </manifest>

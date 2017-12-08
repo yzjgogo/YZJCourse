@@ -35,17 +35,17 @@ public class DataBindSimplesActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_activity_db:
-                startActivity(new Intent(this, DataBindActivity.class));
+//                startActivity(new Intent(this, DataBindActivity.class));
                 break;
             case R.id.bt_fragment_db:
-                startActivity(new Intent(this, DataBindFragmentActivity.class));
+//                startActivity(new Intent(this, DataBindFragmentActivity.class));
                 break;
             case R.id.bt_module_db:
                 //在module中也要在gradle中配置
 //                dataBinding {
 //                enabled = true
 //            }
-                startActivity(new Intent(this, ModuleDataBindActivity.class));
+//                startActivity(new Intent(this, ModuleDataBindActivity.class));
                 break;
         }
     }

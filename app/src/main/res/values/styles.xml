@@ -79,4 +79,14 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:minHeight">48dp</item>
     </style>
+    <style name="MyButton" parent="Theme.AppCompat.Light">
+        <!--colorControlHighlight：指定按压下去时的颜色，且带有水波纹，但是只有Android5.0或更高版本有效-->
+        <item name="colorControlHighlight">@color/orange</item>
+        <!--colorButtonNormal：定义了button正常状态下的颜色-->
+        <item name="colorButtonNormal">@color/red</item>
+    </style>
+    <style name="MyButton2" parent="Theme.AppCompat.Light">
+        <!--colorControlHighlight：指定按压下去时的颜色，且带有水波纹，但是只有Android5.0或更高版本有效-->
+        <item name="colorControlHighlight">@color/orange</item>
+    </style>
 </resources>

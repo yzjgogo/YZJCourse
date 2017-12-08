@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--只能用android:drawable不能用android:color，为啥？-->
+    <!-- 不可用时 -->
+    <item android:drawable="@color/red" android:state_enabled="false" />
+    <!-- 按压时 -->
+    <item android:drawable="@color/orange" android:state_pressed="true" />
+    <!-- 默认时 -->
+    <item android:drawable="@color/colorAccent" />
+</selector>
