@@ -89,7 +89,8 @@
         <activity android:name=".MaterialDesign.SimpleBottomDialogActivity" />
         <activity android:name=".MaterialDesign.NotificationsActivity" />
         <activity android:name=".MaterialDesign.ButtonsActivity" />
-        <activity android:name=".MaterialDesign.ClipChildrenActivity"></activity>
+        <activity android:name=".MaterialDesign.ClipChildrenActivity" />
+        <activity android:name=".MaterialDesign.ClipToPaddingActivity"></activity>
     </application>
 
 </manifest>

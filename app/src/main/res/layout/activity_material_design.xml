@@ -45,5 +45,12 @@
             android:layout_height="wrap_content"
             android:text="android:clipChildren用法"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_clip_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="android:ClipToPadding用法(暂无)"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

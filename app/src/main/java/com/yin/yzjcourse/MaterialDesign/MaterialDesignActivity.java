@@ -21,7 +21,7 @@ public class MaterialDesignActivity extends BaseActivity {
 
     @OnClick({R.id.bt_bottom_navigation, R.id.bt_bottom_sheet,
             R.id.bt_expanded_notifications,R.id.bt_button_style,
-    R.id.bt_clip_children})
+    R.id.bt_clip_children,R.id.bt_clip_padding})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_bottom_navigation:
@@ -41,6 +41,9 @@ public class MaterialDesignActivity extends BaseActivity {
                 break;
             case R.id.bt_clip_children:
                 startActivity(new Intent(this, ClipChildrenActivity.class));
+                break;
+            case R.id.bt_clip_padding:
+                startActivity(new Intent(this, ClipToPaddingActivity.class));
                 break;
         }
     }
