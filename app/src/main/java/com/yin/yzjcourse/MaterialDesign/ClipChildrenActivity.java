@@ -1,19 +1,14 @@
 package com.yin.yzjcourse.MaterialDesign;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
-import com.yin.yzjcourse.utils.DLog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class ClipChildrenActivity extends BaseActivity {
 
@@ -34,7 +29,7 @@ public class ClipChildrenActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card_view);
+        setContentView(R.layout.activity_clip_child);
         ButterKnife.bind(this);
     }
 }
