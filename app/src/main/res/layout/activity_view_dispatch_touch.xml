@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yin.yzjcourse.DiyWidget.TouchLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mylayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.yin.yzjcourse.DiyWidget.ViewDispatchTouchActivity">
+    <com.yin.yzjcourse.DiyWidget.TouchButton
+        android:id="@+id/my_btn"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="click test" />
+</com.yin.yzjcourse.DiyWidget.TouchLinearLayout>

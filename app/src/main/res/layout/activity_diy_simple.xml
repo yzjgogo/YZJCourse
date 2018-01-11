@@ -87,5 +87,19 @@
             android:layout_height="wrap_content"
             android:text="给图片添加标签"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_touch_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android触摸事件--View"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_dispatch_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android触摸事件--View事件分发"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
