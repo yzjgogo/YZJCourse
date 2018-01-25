@@ -24,7 +24,20 @@ public class ViewDispatchTouchActivity extends BaseActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_view_dispatch_touch);
         ButterKnife.bind(this);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
     }
 }
