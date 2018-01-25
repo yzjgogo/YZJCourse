@@ -125,7 +125,6 @@ public class TouchButton extends Button implements View.OnTouchListener,View.OnC
             case MotionEvent.ACTION_DOWN:
                 break;
             case MotionEvent.ACTION_MOVE:
-                result = false;
                 break;
             case MotionEvent.ACTION_UP:
                 break;
@@ -135,7 +134,11 @@ public class TouchButton extends Button implements View.OnTouchListener,View.OnC
         DLog.eLog("TouchButton的onTouchEvent-- action="+event.getAction()+",result:");
         return result;
     }
-
+    /**
+     * onClicks是在ACTION_UP后执行，还有一条时从子View拦截过来的EVENT执行到ACTION_UP后不会执行onClick
+     * 必须是ACTION_DOWN时手指正好在该View或ViewGroup上时，ACTION_UP后才会执行OnClick
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         DLog.eLog("TouchButton的onClick--");
