@@ -48,6 +48,7 @@ public class TouchButton extends Button implements View.OnTouchListener,View.OnC
     }
 
     /**
+     测试子View的dispatchTouchEvent方法返回值的意义：
      第一步：当MotionEvent为ACTION_DOWN时dispatchTouchEvent直接返回true,ACTION_MOVE和ACTION_UP时return什么无所谓：
      TouchLinearLayout的dispatchTouchEvent-- action=0
      TouchLinearLayout的onInterceptTouchEvent-- action=0,result=false
@@ -82,24 +83,94 @@ public class TouchButton extends Button implements View.OnTouchListener,View.OnC
      的ACTION_MOVE和ACTION_UP也会由父ViewGroup来处理。
      注意，只有ACTION_DOWN时返回false才会将事件交还给父ViewGroup处理，ACTION_MOVE和ACTION_UP无论返回什么都无所谓，不会交还给父类处理，还是自己可以处理
      */
+    /**
+     * 测试子View的dispatchTouchEvent方法的返回值与父ViewGroup的返回值的关系：
+     第一步：返回false
+     TouchLinearLayout的dispatchTouchEvent-- action=0
+     TouchButton的dispatchTouchEvent-- action=0,result:false
+     TouchLinearLayout的dispatchTouchEvent-- action=0,result:true
+     rootView--true:0
+     TouchLinearLayout的dispatchTouchEvent-- action=2
+     TouchLinearLayout的dispatchTouchEvent-- action=2,result:true
+     rootView--true:2
+     TouchLinearLayout的dispatchTouchEvent-- action=1
+     TouchLinearLayout的dispatchTouchEvent-- action=1,result:true
+     rootView--true:1
+
+     第二步：返回true
+     TouchLinearLayout的dispatchTouchEvent-- action=0
+     TouchButton的dispatchTouchEvent-- action=0,result:true
+     TouchLinearLayout的dispatchTouchEvent-- action=0,result:true
+     rootView--true:0
+
+     TouchLinearLayout的dispatchTouchEvent-- action=2
+     TouchButton的dispatchTouchEvent-- action=2,result:true
+     TouchLinearLayout的dispatchTouchEvent-- action=2,result:true
+     rootView--true:2
+
+     TouchLinearLayout的dispatchTouchEvent-- action=1
+     TouchButton的dispatchTouchEvent-- action=1,result:true
+     TouchLinearLayout的dispatchTouchEvent-- action=1,result:true
+     rootView--true:1
+
+     第三步：DOWN返回false，MOVE、UP返回true效果和第一步一样，因为DOWN返回false，根本接收不到MOVE和UP
+
+     第四步：DOWN和UP返回true，MOVE返回false
+     TouchLinearLayout的dispatchTouchEvent-- action=0
+     TouchButton的dispatchTouchEvent-- action=0,result:true
+     TouchLinearLayout的dispatchTouchEvent-- action=0,result:true
+     rootView--true:0
+     TouchLinearLayout的dispatchTouchEvent-- action=2
+     TouchButton的dispatchTouchEvent-- action=2,result:false
+     TouchLinearLayout的dispatchTouchEvent-- action=2,result:false
+     rootView--false:2
+     TouchLinearLayout的dispatchTouchEvent-- action=1
+     TouchButton的dispatchTouchEvent-- action=1,result:true
+     TouchLinearLayout的dispatchTouchEvent-- action=1,result:true
+     rootView--true:1
+
+     第五步：DOWN返回true，MOVE、UP返回false
+     TouchLinearLayout的dispatchTouchEvent-- action=0
+     TouchButton的dispatchTouchEvent-- action=0,result:true
+     TouchLinearLayout的dispatchTouchEvent-- action=0,result:true
+     rootView--true:0
+     TouchLinearLayout的dispatchTouchEvent-- action=2
+     TouchButton的dispatchTouchEvent-- action=2,result:false
+     TouchLinearLayout的dispatchTouchEvent-- action=2,result:false
+     rootView--false:2
+     TouchLinearLayout的dispatchTouchEvent-- action=2
+     TouchButton的dispatchTouchEvent-- action=2,result:false
+     TouchLinearLayout的dispatchTouchEvent-- action=2,result:false
+     rootView--false:2
+     TouchLinearLayout的dispatchTouchEvent-- action=1
+     TouchButton的dispatchTouchEvent-- action=1,result:false
+     TouchLinearLayout的dispatchTouchEvent-- action=1,result:false
+     rootView--false:1
+
+     通过以上步骤得出结论：如果ACTION_DOWN时子View的dispatchTouchEvent返回false，则父ViewGroup返回true；且子View不会再处理MOVE和UP事件；且父ViewGroup
+     的MOVE和UP事件的dispatchTouchEvent方法也返回true；
+     其余情况子View的dispatchTouchEvent方法的返回值与父ViewGroup的返回值相同；
+     */
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        boolean result = true;
+        boolean result = false;
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-//                result = true;
+                result = true;
                 break;
             case MotionEvent.ACTION_MOVE:
+                result = false;
                 break;
             case MotionEvent.ACTION_UP:
+                result = false;
                 break;
             default:
                 break;
         }
-        DLog.eLog("TouchButton的dispatchTouchEvent-- action=" + event.getAction());
-//        return result;
-        return super.dispatchTouchEvent(event);
+        DLog.eLog("TouchButton的dispatchTouchEvent-- action=" + event.getAction()+",result:"+result);
+        return result;
+//        return super.dispatchTouchEvent(event);
 
     }
 
@@ -109,7 +180,7 @@ public class TouchButton extends Button implements View.OnTouchListener,View.OnC
      */
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        DLog.eLog("TouchButton的onTouch-- action="+event.getAction());
+//        DLog.eLog("TouchButton的onTouch-- action="+event.getAction());
         return false;
     }
 
@@ -131,7 +202,7 @@ public class TouchButton extends Button implements View.OnTouchListener,View.OnC
             default:
                 break;
         }
-        DLog.eLog("TouchButton的onTouchEvent-- action="+event.getAction()+",result:");
+//        DLog.eLog("TouchButton的onTouchEvent-- action="+event.getAction()+",result:");
         return result;
     }
     /**
@@ -141,6 +212,6 @@ public class TouchButton extends Button implements View.OnTouchListener,View.OnC
      */
     @Override
     public void onClick(View v) {
-        DLog.eLog("TouchButton的onClick--");
+//        DLog.eLog("TouchButton的onClick--");
     }
 }

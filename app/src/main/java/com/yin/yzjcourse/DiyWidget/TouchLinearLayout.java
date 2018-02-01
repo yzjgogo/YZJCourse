@@ -49,16 +49,72 @@ public class TouchLinearLayout extends LinearLayout implements View.OnTouchListe
 //        requestDisallowInterceptTouchEvent(false);
     }
 
+    /**
+     * 测试父ViewGroup的dispatchTouchEvent方法的返回值与爷ViewGroup的dispatchTouchEvent方法的返回值的关系：
+     * 其中rootView就是Activity的布局文件的根布局FrameLayout
+       第一步：返回false
+     TouchLinearLayout的dispatchTouchEvent-- action=0,result:false
+     rootView--false:0
+     rootView--false:2
+     rootView--false:2
+     rootView--false:1
 
+     第二步：返回true
+     TouchLinearLayout的dispatchTouchEvent-- action=0,result:true
+     rootView--true:0
+     TouchLinearLayout的dispatchTouchEvent-- action=2,result:true
+     rootView--true:2
+     TouchLinearLayout的dispatchTouchEvent-- action=2,result:true
+     rootView--true:2
+     TouchLinearLayout的dispatchTouchEvent-- action=1,result:true
+     rootView--true:1
+
+     第三步：DOWN返回false，MOVE、UP返回true效果和第一步一样，因为DOWN返回false，根本接收不到MOVE和UP
+
+     第四步：DOWN和UP返回true，MOVE返回false
+     TouchLinearLayout的dispatchTouchEvent-- action=0,result:true
+     rootView--true:0
+     TouchLinearLayout的dispatchTouchEvent-- action=2,result:false
+     rootView--false:2
+     TouchLinearLayout的dispatchTouchEvent-- action=2,result:false
+     rootView--false:2
+     TouchLinearLayout的dispatchTouchEvent-- action=1,result:true
+     rootView--true:1
+
+     通过以上方法得出结论：
+     如果ACTION_DOWN时父ViewGroup的dispatchTouchEvent方法返回false，则爷ViewGroup的dispatchTouchEvent方法也返回false，并且父ViewGroup不会再处理MOVE和UP
+     事件，且也ViewGroup的MOVE和UP事件的dispatchTouchEvent方法也会返回false；
+     其它情况父ViewGroup的dispatchTouchEvent方法与爷ViewGroup的dispatchTouchEvent方法返回值相同；
+
+     */
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         DLog.eLog("TouchLinearLayout的dispatchTouchEvent-- action=" + event.getAction());
-        return super.dispatchTouchEvent(event);
+//        boolean result = true;
+//        int action = event.getAction();
+//        switch (action) {
+//            case MotionEvent.ACTION_DOWN:
+//                result = true;
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                result = false;
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                result = false;
+//                break;
+//            default:
+//                break;
+//        }
+        boolean result = super.dispatchTouchEvent(event);
+        DLog.eLog("TouchLinearLayout的dispatchTouchEvent-- action=" + event.getAction()+",result:"+result);
+        return false;
+//        DLog.eLog("TouchLinearLayout的dispatchTouchEvent-- action=" + event.getAction());
+//        return super.dispatchTouchEvent(event);
     }
 
     @Override
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-        DLog.eLog("TouchLinearLayout的requestDisallowInterceptTouchEvent-- disallowIntercept=" + disallowIntercept);
+//        DLog.eLog("TouchLinearLayout的requestDisallowInterceptTouchEvent-- disallowIntercept=" + disallowIntercept);
         super.requestDisallowInterceptTouchEvent(disallowIntercept);
     }
 
@@ -152,19 +208,19 @@ public class TouchLinearLayout extends LinearLayout implements View.OnTouchListe
             default:
                 break;
         }
-        DLog.eLog("TouchLinearLayout的onInterceptTouchEvent-- action=" + ev.getAction()+",result="+result);
+//        DLog.eLog("TouchLinearLayout的onInterceptTouchEvent-- action=" + ev.getAction()+",result="+result);
         return result;
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        DLog.eLog("TouchLinearLayout的onTouch-- action="+event.getAction());
+//        DLog.eLog("TouchLinearLayout的onTouch-- action="+event.getAction());
         return false;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        DLog.eLog("TouchLinearLayout的onTouchEvent-- action="+event.getAction());
+//        DLog.eLog("TouchLinearLayout的onTouchEvent-- action="+event.getAction());
         return super.onTouchEvent(event);
     }
 
@@ -175,6 +231,6 @@ public class TouchLinearLayout extends LinearLayout implements View.OnTouchListe
      */
     @Override
     public void onClick(View v) {
-        DLog.eLog("TouchLinearLayout的onClick--");
+//        DLog.eLog("TouchLinearLayout的onClick--");
     }
 }
