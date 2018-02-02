@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yin.yzjcourse.Base.BaseKnowledgeActivity">
+
+    <TextView
+        android:id="@+id/tv_content1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/orange"/>
+
+    <TextView
+        android:id="@+id/tv_content2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/orange"/>
+
+    <TextView
+        android:id="@+id/tv_content3"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/orange"/>
+
+    <TextView
+        android:id="@+id/tv_content4"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/orange"/>
+
+    <TextView
+        android:id="@+id/tv_content5"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/orange"/>
+
+    <TextView
+        android:id="@+id/tv_content6"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/orange"/>
+
+    <Button
+        android:id="@+id/bt_message_handle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="发送并处理消息" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/bt_post_delay"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="postDelayed" />
+    <Button
+        android:id="@+id/bt_stop_delay"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="停止postDelayed" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_post"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="在主线程调用：handler的post(Runnable r)方法" />
+        <Button
+            android:id="@+id/bt_post_second"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="在子线程调用：handler的post(Runnable r)方法" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_run_ui"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="runOnUiThread方法" />
+        <Button
+            android:id="@+id/bt_view_post"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="view的post(Runnable r)方法" />
+    </LinearLayout>
+</LinearLayout>

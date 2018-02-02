@@ -92,7 +92,8 @@
         <activity android:name=".MaterialDesign.ClipChildrenActivity" />
         <activity android:name=".MaterialDesign.ClipToPaddingActivity" />
         <activity android:name=".DiyWidget.ViewTouchActivity" />
-        <activity android:name=".DiyWidget.ViewDispatchTouchActivity"></activity>
+        <activity android:name=".DiyWidget.ViewDispatchTouchActivity" />
+        <activity android:name=".Base.BaseKnowledgeActivity"></activity>
     </application>
 
 </manifest>
