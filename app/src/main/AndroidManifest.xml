@@ -93,7 +93,9 @@
         <activity android:name=".MaterialDesign.ClipToPaddingActivity" />
         <activity android:name=".DiyWidget.ViewTouchActivity" />
         <activity android:name=".DiyWidget.ViewDispatchTouchActivity" />
-        <activity android:name=".Base.AndroidMessageActivity"></activity>
+        <activity android:name=".Base.AndroidMessageActivity" />
+        <activity android:name=".Base.BaseContentActivity" />
+        <activity android:name=".Base.MessageSourceActivity"></activity>
     </application>
 
 </manifest>

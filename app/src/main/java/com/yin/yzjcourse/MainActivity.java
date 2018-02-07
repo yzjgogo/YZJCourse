@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.yin.yzjcourse.Base.AndroidMessageActivity;
+import com.yin.yzjcourse.Base.BaseContentActivity;
 import com.yin.yzjcourse.BuilderMode.BuilderModeActivity;
 import com.yin.yzjcourse.Coordinator.CoordinatorActivity;
 import com.yin.yzjcourse.DataBindP.DataBindSimplesActivity;
@@ -114,7 +115,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, CoordinatorActivity.class));
                 break;
             case R.id.bt_android_message:
-                startActivity(new Intent(this, AndroidMessageActivity.class));
+                startActivity(new Intent(this, BaseContentActivity.class));
                 break;
         }
     }

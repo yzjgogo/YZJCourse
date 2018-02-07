@@ -1,5 +1,6 @@
 package com.yin.yzjcourse.Base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -277,5 +278,6 @@ public class AndroidMessageActivity extends BaseActivity {
 
     @OnClick(R.id.bt_message_source)
     public void onClick() {
+        startActivity(new Intent(this, MessageSourceActivity.class));
     }
 }
