@@ -113,11 +113,11 @@
             android:textAllCaps="false"
             android:text="CoordinatorLayout" />
         <Button
-            android:id="@+id/bt_android_base"
+            android:id="@+id/bt_android_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
-            android:text="Android基础总结" />
+            android:text="Android消息总结" />
 
     </LinearLayout>
 </ScrollView>

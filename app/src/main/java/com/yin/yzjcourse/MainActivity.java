@@ -2,16 +2,13 @@ package com.yin.yzjcourse;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.yin.yzjcourse.Base.BaseKnowledgeActivity;
+import com.yin.yzjcourse.Base.AndroidMessageActivity;
 import com.yin.yzjcourse.BuilderMode.BuilderModeActivity;
 import com.yin.yzjcourse.Coordinator.CoordinatorActivity;
-import com.yin.yzjcourse.Coordinator.ScrollingActivity;
-import com.yin.yzjcourse.DataBindP.DataBindActivity;
 import com.yin.yzjcourse.DataBindP.DataBindSimplesActivity;
 import com.yin.yzjcourse.DiyWidget.DiyViewActivity;
 import com.yin.yzjcourse.DiyWidget.DrawView.DrawViewActivity;
@@ -58,7 +55,7 @@ public class MainActivity extends BaseActivity {
     @OnClick({R.id.bt_fore_service, R.id.bt_dialog_fragment, R.id.bt_rxjava,
             R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim,R.id.bt_property_anim_interpolator,R.id.bt_object_anim_holder
     ,R.id.bt_anim_set,R.id.bt_anim_draw,R.id.bt_builder_mode,R.id.bt_math,R.id.bt_data_bind,R.id.bt_weight,R.id.bt_material_design,
-    R.id.bt_coordinator,R.id.bt_android_base})
+    R.id.bt_coordinator,R.id.bt_android_message})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_fore_service:
@@ -116,8 +113,8 @@ public class MainActivity extends BaseActivity {
             case R.id.bt_coordinator:
                 startActivity(new Intent(this, CoordinatorActivity.class));
                 break;
-            case R.id.bt_android_base:
-                startActivity(new Intent(this, BaseKnowledgeActivity.class));
+            case R.id.bt_android_message:
+                startActivity(new Intent(this, AndroidMessageActivity.class));
                 break;
         }
     }

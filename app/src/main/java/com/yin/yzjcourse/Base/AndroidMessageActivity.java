@@ -22,7 +22,7 @@ import butterknife.OnClick;
  * 3: runOnUiThread(runnable),其实内部调用的还是handler.post(runnbale);
  * 4：view.post(runnable),其实内部调用的还是handler.post(runnbale);
  */
-public class BaseKnowledgeActivity extends BaseActivity {
+public class AndroidMessageActivity extends BaseActivity {
     @BindView(R.id.tv_content1)
     TextView tvContent1;
     @BindView(R.id.tv_content2)
@@ -194,7 +194,7 @@ public class BaseKnowledgeActivity extends BaseActivity {
         mHandler6.post(new Runnable() {
             @Override
             public void run() {
-                tvContent6.setText("直接调用handler.post(r):"+mainThread + "," + Thread.currentThread().getName());
+                tvContent6.setText("直接调用handler.post(r):" + mainThread + "," + Thread.currentThread().getName());
             }
         });
     }
@@ -204,7 +204,7 @@ public class BaseKnowledgeActivity extends BaseActivity {
      * 这里我们是在子线程调用的handler.post(r)方法，但是r仍然是在handler所在的mian线程执行
      * 所以当我们需要在子线程执行耗时操作时，操作完成后，我们也可以不通过message发送消息给handler
      * 执行，而是采用handler.post(r)方法同样可以做到在main更新UI
-     *
+     * <p>
      * 这种用法才是正常的用法
      */
     @OnClick(R.id.bt_post_second)
@@ -218,7 +218,7 @@ public class BaseKnowledgeActivity extends BaseActivity {
                     @Override
                     public void run() {
                         //看似是在子线程更新UI，其实是在handler所在的线程
-                        tvContent6.setText("子线程调用handler.post(r)更新UI："+mainThread + "," + secondThread + "," + Thread.currentThread().getName());
+                        tvContent6.setText("子线程调用handler.post(r)更新UI：" + mainThread + "," + secondThread + "," + Thread.currentThread().getName());
                     }
                 });
             }
@@ -242,7 +242,7 @@ public class BaseKnowledgeActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        tvContent6.setText("runOnUiThread:UI线程"+mainThread+",runOnUiThread执行时所在线程："+Thread.currentThread().getName());
+                        tvContent6.setText("runOnUiThread:UI线程" + mainThread + ",runOnUiThread执行时所在线程：" + Thread.currentThread().getName());
                     }
                 });
             }
@@ -256,7 +256,6 @@ public class BaseKnowledgeActivity extends BaseActivity {
      * 无论在哪个线程调用，view.post(Runnable action)都会在UI线程执行
      * 所以也适合在子线程执行耗时的操作后，调用view.post(Runnable action)直接在UI线程更新UI
      * 进view.post(Runnable action)内部看源码发现：view.post(Runnable action)其实最终还是调用的handler.post(runnable)方法
-     *
      */
     @OnClick(R.id.bt_view_post)
     public void onViewPost() {
@@ -267,10 +266,16 @@ public class BaseKnowledgeActivity extends BaseActivity {
                 tvContent6.post(new Runnable() {
                     @Override
                     public void run() {
-                        tvContent6.setText("view.post(runnable):UI线程"+mainThread+",view.post(runnable)执行时所在线程："+Thread.currentThread().getName());
+                        tvContent6.setText("view.post(runnable):UI线程" + mainThread + ",view.post(runnable)执行时所在线程：" + Thread.currentThread().getName());
                     }
                 });
             }
         }).start();
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @OnClick(R.id.bt_message_source)
+    public void onClick() {
     }
 }

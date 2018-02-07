@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.yin.yzjcourse.Base.BaseKnowledgeActivity">
+    tools:context="com.yin.yzjcourse.Base.AndroidMessageActivity">
 
     <TextView
         android:id="@+id/tv_content1"
@@ -108,4 +108,11 @@
             android:textAllCaps="false"
             android:text="view的post(Runnable r)方法" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_message_source"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Android消息处理机制" />
 </LinearLayout>
