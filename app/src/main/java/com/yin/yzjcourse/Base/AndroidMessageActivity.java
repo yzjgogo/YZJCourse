@@ -134,12 +134,15 @@ public class AndroidMessageActivity extends BaseActivity {
 //                mHandler2.sendEmptyMessageDelayed(9527, 2000);延迟两秒发送
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
                 Message msg3 = mHandler3.obtainMessage();
+//                Message msg3 = Message.obtain();也可以
                 msg3.what = 3;
                 msg3.obj = "msg3";
                 mHandler3.sendMessage(msg3);
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
                 //这里new Message()的不可以必须是obtainMessage()才能用sendToTarget()
                 Message msg4 = mHandler4.obtainMessage();//注意obtainMessage()有几个参数不一样的方法
+//                Message msg4 = Message.obtain();
+//                msg4.setTarget(mHandler4);这两行也可以
                 msg4.what = 4;
                 msg4.obj = "msg4";
                 msg4.sendToTarget();
