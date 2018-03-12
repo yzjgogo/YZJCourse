@@ -69,7 +69,7 @@ public class PropertyValuesHolderActivity extends BaseActivity {
      * ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(tvTarget,"rotation",-60f,60f);
      * ValueAnimator valueAnimator = ValueAnimator.ofInt(1,2,3);
      * 无论是ObjectAnimator还是ValueAnimator的ofInt,ofFloat,ofObject方法，构建出来的动画都只能真对控件的某一个属性做动画，即只能
-     * 实现控件的某一个维度的控件效果，如果想对一个控件组合使用多个控件怎么办呢，例如我想同时对控件执行旋转和变色动画，则PropertyValuesHolder
+     * 实现控件的某一个维度的控件效果，如果想对一个控件组合使用多个动画怎么办呢，例如我想同时对控件执行旋转和变色动画，则PropertyValuesHolder
      * 可以实现组合动画的效果。
      * 仔细观察属性动画的构造方法对比ObjectAnimator和ValueAnimator的ofInt,ofFloat,ofObject方法可发现规律：
      * 其实ofInt,ofFloat,ofObject内部也是把参数封装成PropertyValuesHolder后才执行动画
@@ -157,6 +157,9 @@ public class PropertyValuesHolderActivity extends BaseActivity {
         animator.start();
     }
 
+    /**
+     * Keyframe的ofObject方法没有传入TypeEvaluator的方法，所以需要通过PropertyValuesHolder设置一个TypeEvaluator
+     */
     private void showKeyframeOfObject() {
         Keyframe keyframe0 = Keyframe.ofObject(0f,new Character('A'));
         Keyframe keyframe1 = Keyframe.ofObject(0.1f,new Character('L'));

@@ -32,6 +32,12 @@ import butterknife.OnClick;
  * 而属性动画改变了view的本身，你所看到的动画都是真实的，是view改变之后的样子
  *
  * 属性动画的整个路程参考：animator_process.png
+ *
+ * ValueAnimator:只是针对值的计算，与控件无关。
+ * ObjectAnimator:直接作用于控件。将程序员从ValueAnimator中对值的监听解放出来，不用你监听了，我直接给你作用到控件就完事了。
+ *通过animator_process.png可以看出二者唯一的区别就是TypeEvaluator的evaluate计算出当前动画值之后ValueAnimator需要程序员自己用这个值做动画，ObjectAnimator则
+ * 直接将这个值作用到控件上。TypeEvaluator之前完全一样。
+ *
  */
 public class PropertyAnimActivity extends BaseActivity {
 

@@ -1,6 +1,7 @@
 package com.yin.yzjcourse.DiyWidget.PropertyAnimation;
 
 import android.animation.ArgbEvaluator;
+import android.animation.IntEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.animation.TypeEvaluator;
@@ -119,7 +120,7 @@ public class PropertyAnimInterpolatorActivity extends BaseActivity {
      * 插值器Interpolator用于确定某一时刻动画进度数值的百分比位置(getInterpolation返回值)
      * 拿到这个百分比位置后需要转化成确切的进度位置，这时候就需要用到Evaluator，Evaluator用于根据
      * 百分比位置、起点位置、终点位置计算出此时的确切位置。
-     * 对于ValueAnimator及时你没有setEvaluator，也会有一个默认的Evaluator，如果你用的是ofInt则这个默认的就是IntEvaluator
+     * 对于属性动画即使你没有setEvaluator，也会有一个默认的Evaluator，如果你用的是ofInt则这个默认的就是IntEvaluator
      * 如果你用的ofFloat则这个默认的就是FloatEvaluator
      * <p>
      * 每一种Evaluator都会实现TypeEvaluator接口并重写其public T evaluate(float fraction, T startValue, T endValue)方法

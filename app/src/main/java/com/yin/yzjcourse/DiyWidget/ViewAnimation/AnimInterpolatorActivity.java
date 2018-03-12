@@ -19,19 +19,19 @@ import butterknife.OnClick;
         整个动画过程先加速后减速，也就是说动画开始和结束的地方速度最小，中间速度最大
       2:accelerate_interpolator
         在整个动画开始结束的过程中，速度由慢到快，开始最慢结束时最快
-      3：decelerate_interpolator
-        在整个动画开始结束的过程中，速度由快到慢，开始时最快结束时最慢
-      4：anticipate_interpolator
-         在整个动画过程中，动画开始一小段时间后又回退（或前进）到动画的最开始，紧接着快速重新动画，直到动画结束时的画面
-         就像拉弹弓一样，蓄力前进那种感觉
-      5：anticipate_overshoot_interpolator
+      3：anticipate_interpolator
+        在整个动画过程中，动画开始一小段时间后又回退（或前进）到动画的最开始，紧接着快速重新动画，直到动画结束时的画面
+        就像拉弹弓一样，蓄力前进那种感觉
+      4：anticipate_overshoot_interpolator
         在整个动画过程中，动画开始一小段时间后又回退到动画的最开始，紧接着快速重新动画，甚至超出动画结束时的状态，
         然后又回退到动画结束时的状态。
-       与anticipate_interpolator类似，区别在于会超出动画正常结束时的状态然后向动画正常结束时的状态回退。
-      6：bounce_interpolator
+        与anticipate_interpolator类似，区别在于会超出动画正常结束时的状态然后向动画正常结束时的状态回退。
+      5：bounce_interpolator
         动画结束的时候会弹起，类似弹球落在地上多次弹起后逐渐静止。
-      7：cycle_interpolator
+      6：cycle_interpolator
         动画循环播放特定的次数，速率改变沿着正弦曲线。
+      7：decelerate_interpolator
+        在整个动画开始结束的过程中，速度由快到慢，开始时最快结束时最慢
       8：linear_interpolator
         整个动画过程速度不变，即匀速执行动画。
       9：overshoot_interpolator
