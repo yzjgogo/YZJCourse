@@ -60,14 +60,14 @@ public class PropertyAnimInterpolatorActivity extends BaseActivity {
     }
 
     /**
-     * 思考：监听器的onAnimationUpdate方法是如何得到当前的计算值的
-     * 在固定的时间区间内(setDuration决定)，怎么实现动画不同的运行效果或者运行轨迹
-     * <p>
-     * 对于属性动画ValueAnimator,即使你没有setInterpolator，也会有一个默认的插值器，插值器的作用是
-     * 在固定的时间区间内，决定了某一时刻ofInt或ofFloat指定区域内的值，参考图形：interpolator_method.png
-     * TimeInterpolator是每一个插值器的基类，其只有一个方法float getInterpolation(float input)，每一个插值器都重写了该
-     * 方法。这个方法返回值并不是当前的点的值，而是当前点的百分比的值，参考图形：interpolator_method.png
-     * 因此要想实现自定义插值器，只需要实现TimeInterpolator并重写其getInterpolation方法即可
+     思考：监听器的onAnimationUpdate方法是如何得到当前的计算值的
+     在固定的时间区间内(setDuration决定)，怎么实现动画不同的运行效果或者运行轨迹
+
+     对于属性动画,即使你没有setInterpolator，也会有一个默认的插值器，插值器的作用是
+     在固定的时间区间内，决定了某一时刻ofInt或ofFloat指定区域内的值，参考图形：interpolator_method.png
+     TimeInterpolator是每一个插值器的基类，其只有一个方法float getInterpolation(float input)，每一个插值器都重写了该
+     方法。这个方法返回值并不是当前的点的值，而是当前点的百分比的值，参考图形：interpolator_method.png
+     因此要想实现自定义插值器，只需要实现TimeInterpolator并重写其getInterpolation方法即可
      */
     private void startPropertyAnim() {
         ValueAnimator animator = ValueAnimator.ofInt(100, 700);
@@ -117,15 +117,15 @@ public class PropertyAnimInterpolatorActivity extends BaseActivity {
     }
 
     /**
-     * 插值器Interpolator用于确定某一时刻动画进度数值的百分比位置(getInterpolation返回值)
-     * 拿到这个百分比位置后需要转化成确切的进度位置，这时候就需要用到Evaluator，Evaluator用于根据
-     * 百分比位置、起点位置、终点位置计算出此时的确切位置。
-     * 对于属性动画即使你没有setEvaluator，也会有一个默认的Evaluator，如果你用的是ofInt则这个默认的就是IntEvaluator
-     * 如果你用的ofFloat则这个默认的就是FloatEvaluator
-     * <p>
-     * 每一种Evaluator都会实现TypeEvaluator接口并重写其public T evaluate(float fraction, T startValue, T endValue)方法
-     * 因此我们可以自定义Evaluator
-     * 参考图片interpolator_method.png
+     插值器Interpolator用于确定某一时刻动画进度数值的百分比位置(getInterpolation返回值)
+     拿到这个百分比位置后需要转化成确切的进度位置，这时候就需要用到Evaluator，Evaluator用于根据
+     百分比位置、起点位置、终点位置计算出此时的确切位置。
+     对于属性动画即使你没有setEvaluator，也会有一个默认的Evaluator，如果你用的是ofInt则这个默认的就是IntEvaluator
+     如果你用的ofFloat则这个默认的就是FloatEvaluator,如果你用了ofObject则要自定义Evaluator
+
+     每一种Evaluator都会实现TypeEvaluator接口并重写其public T evaluate(float fraction, T startValue, T endValue)方法
+     因此我们可以自定义Evaluator
+     参考图片interpolator_method.png
      */
     private void useEvaluator() {
         ValueAnimator animator = ValueAnimator.ofInt(100, 500);

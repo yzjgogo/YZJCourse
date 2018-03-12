@@ -23,21 +23,21 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * 视图动画与属性动画的区别，参考图viewanim_propertyanim.png
- * 对于视图动画，一个view在动画过程中和动画结束后(view停留在动画结束时的状态)，都没有改变该view的任何属性或任何值甚至view的位置大小等都没有改变，只是
- * 这个view看起来和动画之前不一样了，以单击事件为例，即使动画使view看起来离开的原来的位置，但是其单击事件的响应区域仍然是view的原来的位置。
- * 对于属性动画：Property Animator是通过改变控件内部的属性值来做动画的，以单击事件为例，属性动画view的响应区域随着view的位置变化而变化，即view通过动画编程什么样了
- * view就真的变成什么样了。
- * 一句话总结：视图动画没有改变view本身，你所看到的动画都是假象，是视觉效果
- * 而属性动画改变了view的本身，你所看到的动画都是真实的，是view改变之后的样子
- *
- * 属性动画的整个路程参考：animator_process.png
- *
- * ValueAnimator:只是针对值的计算，与控件无关。
- * ObjectAnimator:直接作用于控件。将程序员从ValueAnimator中对值的监听解放出来，不用你监听了，我直接给你作用到控件就完事了。
- *通过animator_process.png可以看出二者唯一的区别就是TypeEvaluator的evaluate计算出当前动画值之后ValueAnimator需要程序员自己用这个值做动画，ObjectAnimator则
- * 直接将这个值作用到控件上。TypeEvaluator之前完全一样。
- *
+ 视图动画与属性动画的区别，参考图viewanim_propertyanim.png
+ 对于视图动画，一个view在动画过程中和动画结束后(view停留在动画结束时的状态)，都没有改变该view的任何属性或任何值甚至view的位置大小等都没有改变，只是
+ 这个view看起来和动画之前不一样了，以单击事件为例，即使动画使view看起来离开的原来的位置，但是其单击事件的响应区域仍然是view的原来的位置。
+ 对于属性动画：Property Animator是通过改变控件内部的属性值来做动画的，以单击事件为例，属性动画view的响应区域随着view的位置变化而变化，即view通过动画编程什么样了
+ view就真的变成什么样了。
+ 一句话总结：视图动画没有改变view本身，你所看到的动画都是假象，是视觉效果
+ 而属性动画改变了view的本身，你所看到的动画都是真实的，是view改变之后的样子
+
+ 属性动画的整个路程参考：animator_process.png
+
+ ValueAnimator:只是针对值的计算，与控件无关。
+ ObjectAnimator:直接作用于控件。将程序员从ValueAnimator中对值的监听解放出来，不用你监听了，我直接给你作用到控件就完事了。
+ 通过animator_process.png可以看出二者唯一的区别就是TypeEvaluator的evaluate计算出当前动画值之后ValueAnimator需要程序员自己用这个值做动画，ObjectAnimator则
+ 直接将这个值作用到控件上。TypeEvaluator之前完全一样。
+
  */
 public class PropertyAnimActivity extends BaseActivity {
 
