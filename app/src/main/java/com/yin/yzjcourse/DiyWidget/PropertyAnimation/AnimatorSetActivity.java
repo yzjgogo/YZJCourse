@@ -74,10 +74,8 @@ public class AnimatorSetActivity extends BaseActivity {
     }
 
     /**
-     * playSequentially表示所有动画依次播放
-     * 激活一个动画之后，动画之后的操作就是动画自己来负责了，这个动画结束之后，再激活下一个动画。如果上一个动画没有结束，那下一个动画就永远也不会被激活
-     * 总之：playTogether和playSequentially只是负责指定什么时候开始动画，不干涉动画自己的运行过程。
-     * 换言之：playTogether和playSequentially只是赛马场上的每个赛道的门，门打开以后，赛道上的那匹马怎么跑跟它没什么关系。
+     playSequentially表示所有动画依次播放，一个动画完成才能开始下一个。类似赛马，1:00整1号马开门，1号马跑完后2号马的门才能开以此类推，
+     如果1号马一直跑不停了(无限循环)则2号马则会一直关在门后面。
      */
     private void doSequentiallyAnim() {
         ObjectAnimator tv1BgAnimator = ObjectAnimator.ofInt(tvTarget1, "BackgroundColor",  0xffff00ff, 0xffffff00, 0xffff00ff);
@@ -95,11 +93,8 @@ public class AnimatorSetActivity extends BaseActivity {
     }
 
     /**
-     * playTogether：同一时刻允许播放所有动画
-     * playTogether只是一个时间点上的一起开始，对于开始后，各个动画怎么操作就是他们自己的事了，至于各个动画结不结束也是他们自已的事了
-     * 类似于马场的赛马
-     * 总之：playTogether和playSequentially只是负责指定什么时候开始动画，不干涉动画自己的运行过程。
-     * 换言之：playTogether和playSequentially只是赛马场上的每个赛道的门，门打开以后，赛道上的那匹马怎么跑跟它没什么关系。
+     playTogether表示所有动画一起开始播放，注意只是在某一个时间点同时开始所有动画，至于开始之后各个动画怎么样AnimatorSet无权干涉，
+     由各个动画决定。类似赛马，1:00整准时开门，至于开门后各个马什么时候跑，跑不跑(延时)，跑多久，怎么跑都管不着。
      */
     private void doTogetherAnim() {
         ObjectAnimator tv1BgAnimator = ObjectAnimator.ofInt(tvTarget1, "BackgroundColor",  0xffff00ff, 0xffffff00, 0xffff00ff);
@@ -119,7 +114,9 @@ public class AnimatorSetActivity extends BaseActivity {
     }
 
     /**
-     * 播放tv1BgAnimator的同时，同时播放tv1TranslateY
+     播放tv1BgAnimator的同时，同时播放tv1TranslateY
+     play是生成Builder对象的唯一途径，所以要使用Builder你肯定会先调用play方法。
+     with:和前面动画一起执行：animatorSet.play(a1).with(a2);
      */
     private void doBuilderPlayWithAnim() {
         ObjectAnimator tv1BgAnimator = ObjectAnimator.ofInt(tvTarget1, "BackgroundColor",  0xffff00ff, 0xffffff00, 0xffff00ff);
@@ -132,7 +129,8 @@ public class AnimatorSetActivity extends BaseActivity {
     }
 
     /**
-     * 先执行foreAnim后执行latterAnim
+     先执行foreAnim后执行latterAnim
+     执行前面的动画后才执行该动画：animatorSet.play(a1).before(a2);
      */
     private void doBuilderBeforeAnim() {
         ObjectAnimator foreAnim = ObjectAnimator.ofInt(tvTarget1, "BackgroundColor",  0xffff00ff, 0xffffff00, 0xffff00ff);
@@ -145,7 +143,8 @@ public class AnimatorSetActivity extends BaseActivity {
     }
 
     /**
-     * 先执行foreAnim后执行latterAnim
+     先执行foreAnim后执行latterAnim
+     执行先执行这个动画再执行前面动画：animatorSet.play(a1).afte(a2);
      */
     private void doBuilderAfterAnim() {
         ObjectAnimator latterAnim = ObjectAnimator.ofInt(tvTarget1, "BackgroundColor",  0xffff00ff, 0xffffff00, 0xffff00ff);
@@ -158,7 +157,8 @@ public class AnimatorSetActivity extends BaseActivity {
     }
 
     /**
-     * after:一段时间后执行动画
+     延迟n毫秒之后执行动画
+     animatorSet.play(a1).after(1000);
      */
     private void doBuilderAfterTime() {
         ObjectAnimator latterAnim = ObjectAnimator.ofInt(tvTarget1, "BackgroundColor",  0xffff00ff, 0xffffff00, 0xffff00ff);
@@ -221,11 +221,24 @@ public class AnimatorSetActivity extends BaseActivity {
     }
 
     /**
-     * AnimatorSet的延时是仅针对性的延长AnimatorSet激活时间的，对单个动画的延时设置没有影响。
-     * - AnimatorSet真正激活延时 = AnimatorSet.startDelay+第一个动画.startDelay
-     - 在AnimatorSet激活之后，第一个动画绝对是会开始运行的，后面的动画则根据自己是否延时自行处理。
+     AnimatorSet的延时是仅针对性的延长AnimatorSet激活时间的，对单个动画的延时设置没有影响。就像延时打开赛马跑道的门，跟马跑的动画无关。
+
+     AnimatorSet真正激活延时 = AnimatorSet.startDelay+第一个动画.startDelay
+     这里的第一个动画可以是play(a1)里的动画也可以是playTogether(Animator... items)的第一个参数或
+     playTogether(Collection<Animator> items)items的第0个元素。
+
+     怎么理解：
+     animatorSet1.setStartDelay(1000)
+     a1.setStartDelay(2000)
+     animatorSet1.play(a1).with(a2);
+     则animatorSet1真正的延时=1000+2000
+     因此动画集合开始时间是这个真正的延时完成的时间，开始后第一个动画的延时则不再有而是直接执行其动画，
+     因为已经被animatorSet1用作自己的延时了，其它的动画则不受影响，动画开始后该怎么办还是怎么办。
+
+     例如加入a2也有延时2000,则animatorSet1的真正的延时结束后，a1直接作动画同时a2等待自己的延时完成后再动画。
+
      */
     private void doStartDelay() {
-
+//        void setStartDelay(long startDelay)
     }
 }
