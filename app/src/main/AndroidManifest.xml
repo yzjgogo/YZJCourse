@@ -95,7 +95,12 @@
         <activity android:name=".DiyWidget.ViewDispatchTouchActivity" />
         <activity android:name=".Base.AndroidMessageActivity" />
         <activity android:name=".Base.BaseContentActivity" />
-        <activity android:name=".Base.MessageSourceActivity"></activity>
+        <activity android:name=".Base.MessageSourceActivity" />
+        <activity android:name=".DiyWidget.ViewGroupAnimActivity" />
+        <activity android:name=".DiyWidget.LayoutAnimationXmlActivity" />
+        <activity android:name=".DiyWidget.LayoutAnimationCodeActivity" />
+        <activity android:name=".DiyWidget.GridLayoutAnimationXmlActivity" />
+        <activity android:name=".DiyWidget.GridLayoutAnimationCodeActivity"></activity>
     </application>
 
 </manifest>

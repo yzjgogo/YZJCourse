@@ -71,6 +71,12 @@
             android:textAllCaps="false"
             android:text="AnimatorSet:playSequentially()和playTogether()" />
         <Button
+            android:id="@+id/bt_anim_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="ViewGroup动画" />
+        <Button
             android:id="@+id/bt_anim_draw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
