@@ -19,8 +19,12 @@ public class ViewGroupAnimActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
+    /**
+     * 这部分是用xml补间动画实现viewGroup创建时的动画
+     * @param view
+     */
     @OnClick({R.id.bt_layout_xml, R.id.bt_layout_code, R.id.bt_grid_xml, R.id.bt_grid_code})
-    public void onClick(View view) {
+    public void onClickCreate(View view) {
         switch (view.getId()) {
             case R.id.bt_layout_xml:
                 startActivity(new Intent(this, LayoutAnimationXmlActivity.class));
@@ -33,6 +37,22 @@ public class ViewGroupAnimActivity extends BaseActivity {
                 break;
             case R.id.bt_grid_code:
                 startActivity(new Intent(this, GridLayoutAnimationCodeActivity.class));
+                break;
+        }
+    }
+
+    /**
+     * 这部分是用ObjectAnimator实现viewGroup创建后添加或删除元素的动画
+     * @param view
+     */
+    @OnClick({R.id.bt_change_anim, R.id.bt_transition})
+    public void onClickAddOrRemove(View view) {
+        switch (view.getId()) {
+            case R.id.bt_change_anim:
+                startActivity(new Intent(this, AnimateLayoutChangesActivity.class));
+                break;
+            case R.id.bt_transition:
+                startActivity(new Intent(this, LayoutTransitionActivity.class));
                 break;
         }
     }

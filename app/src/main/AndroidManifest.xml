@@ -100,7 +100,9 @@
         <activity android:name=".DiyWidget.LayoutAnimationXmlActivity" />
         <activity android:name=".DiyWidget.LayoutAnimationCodeActivity" />
         <activity android:name=".DiyWidget.GridLayoutAnimationXmlActivity" />
-        <activity android:name=".DiyWidget.GridLayoutAnimationCodeActivity"></activity>
+        <activity android:name=".DiyWidget.GridLayoutAnimationCodeActivity" />
+        <activity android:name=".DiyWidget.AnimateLayoutChangesActivity" />
+        <activity android:name=".DiyWidget.LayoutTransitionActivity"></activity>
     </application>
 
 </manifest>

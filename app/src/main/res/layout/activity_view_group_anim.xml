@@ -17,7 +17,7 @@
         <android.support.v7.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="这部分是只在viewGroup创建的时候，才会对其中的item添加动画。在创建成功以后，再向其中添加item将不会再有动画。 \n且这里只能用xml补间动画" />
+            android:text="橘色区域这部分是只在viewGroup创建的时候，才会对其中的item添加动画。在创建成功以后，再向其中添加item将不会再有动画。 \n且这里只能用xml补间动画" />
 
         <android.support.v7.widget.AppCompatTextView
             android:layout_width="match_parent"
@@ -74,4 +74,30 @@
         </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/themeColor"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="上面橘色部分讲的LayoutAnimation和GridLayoutAnimation都是智能在ViewGroup被创建时才能展示动画，创建后再添加或删除元素就没有动画，这部分就介绍了ViewGroup创建后实现添加或删除元素的动画：android:animateLayoutChanges和LayoutTransition" />
+
+        <Button
+            android:id="@+id/bt_change_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="animateLayoutChanges：用于viewGroup的布局中，且只需要设置为true就有默认动画，无其他任何操作，也不可以自定义动画"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_transition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LayoutTransition用法：只能使用ObjectAnimator动画"
+            android:textAllCaps="false" />
+    </LinearLayout>
 </LinearLayout>
