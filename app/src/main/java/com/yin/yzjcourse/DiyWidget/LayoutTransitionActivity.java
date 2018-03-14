@@ -54,17 +54,18 @@ public class LayoutTransitionActivity extends BaseActivity implements View.OnCli
         layoutTransitionGroup = (LinearLayout) findViewById(R.id.layoutTransitionGroup);
         findViewById(R.id.add_btn).setOnClickListener(this);
         findViewById(R.id.remove_btn).setOnClickListener(this);
-
+        //第1步：创建LayoutTransition对象
         mTransitioner = new LayoutTransition();
-        //1：新加入的那个元素的动画
+        //第2步：根据需要创建APPEARING、APPEARING、CHANGE_APPEARING、CHANGE_DISAPPEARING的一个或多个ObjectAnimator动画
+        //a：新加入的那个元素的动画
         ObjectAnimator animIn = ObjectAnimator.ofFloat(null, "rotationY", 0f, 360f, 0f);
         mTransitioner.setAnimator(LayoutTransition.APPEARING, animIn);
 
-        //2：消失的那个元素的动画
+        //b：消失的那个元素的动画
         ObjectAnimator animOut = ObjectAnimator.ofFloat(null, "rotation", 0f, 90f, 0f);
-        mTransitioner.setAnimator(LayoutTransition.DISAPPEARING, animOut);
+        mTransitioner.setAnimator(LayoutTransition.APPEARING, animOut);
 
-        //3：新加入一个元素，其它已存在的元素的动画
+        //c：新加入一个元素，其它已存在的元素的动画
         PropertyValuesHolder pvhLeft = PropertyValuesHolder.ofInt("left", 0, 100, 0);
         PropertyValuesHolder pvhTop = PropertyValuesHolder.ofInt("top", 1, 1);
         PropertyValuesHolder pvhScaleX = PropertyValuesHolder.ofFloat("ScaleX", 1f, 9f, 1f);
@@ -72,7 +73,7 @@ public class LayoutTransitionActivity extends BaseActivity implements View.OnCli
                 = ObjectAnimator.ofPropertyValuesHolder(layoutTransitionGroup, pvhLeft, pvhTop, pvhScaleX);//第一个参数也可以是this当前activity，为什么？
         mTransitioner.setAnimator(LayoutTransition.CHANGE_APPEARING, changeAppearAnimator);
 
-        //4：消失一个元素，其它剩余的元素的动画
+        //d：消失一个元素，其它剩余的元素的动画
         PropertyValuesHolder outLeft = PropertyValuesHolder.ofInt("left", 0, 0);
         PropertyValuesHolder outTop = PropertyValuesHolder.ofInt("top", 0, 0);
         Keyframe frame0 = Keyframe.ofFloat(0f, 0);
@@ -106,7 +107,7 @@ public class LayoutTransitionActivity extends BaseActivity implements View.OnCli
                 Log.d("qijian", "end:" + "transitionType:" + transitionType + "count:" + container.getChildCount() + "view:" + view.getClass().getName());
             }
         });
-
+        //第3步：给ViewGroup设置LayoutTransition
         layoutTransitionGroup.setLayoutTransition(mTransitioner);
     }
 
