@@ -16,6 +16,8 @@ import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
 /**
+  参考百度脑图
+
  APPEARING —— 元素在容器中出现时所定义的动画。
  DISAPPEARING —— 元素在容器中消失时所定义的动画。
  CHANGE_APPEARING —— 由于容器中要显现一个新的元素，其它需要变化的元素所应用的动画
@@ -63,7 +65,7 @@ public class LayoutTransitionActivity extends BaseActivity implements View.OnCli
 
         //b：消失的那个元素的动画
         ObjectAnimator animOut = ObjectAnimator.ofFloat(null, "rotation", 0f, 90f, 0f);
-        mTransitioner.setAnimator(LayoutTransition.APPEARING, animOut);
+        mTransitioner.setAnimator(LayoutTransition.DISAPPEARING, animOut);
 
         //c：新加入一个元素，其它已存在的元素的动画
         PropertyValuesHolder pvhLeft = PropertyValuesHolder.ofInt("left", 0, 100, 0);
