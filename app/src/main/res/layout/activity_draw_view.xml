@@ -24,6 +24,7 @@
             android:text="Canvas_skew" />
 
         <com.yin.yzjcourse.DiyWidget.DrawView.SkewView
+            android:id="@+id/sv_Skew"
             android:layout_width="200dp"
             android:layout_height="200dp" />
 
