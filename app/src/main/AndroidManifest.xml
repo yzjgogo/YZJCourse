@@ -108,7 +108,8 @@
         <activity android:name=".DiyWidget.CanvasRotateActivity" />
         <activity android:name=".DiyWidget.CanvasScaleActivity" />
         <activity android:name=".DiyWidget.CanvasSkewActivity" />
-        <activity android:name=".DiyWidget.CanvasClipActivity"></activity>
+        <activity android:name=".DiyWidget.CanvasClipActivity" />
+        <activity android:name=".DiyWidget.DrawTextActivity"></activity>
     </application>
 
 </manifest>

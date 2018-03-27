@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.yin.yzjcourse.BaseActivity;
+import com.yin.yzjcourse.DiyWidget.DrawView.BezierLineActivity;
 import com.yin.yzjcourse.DiyWidget.PieGraph.PieGraph;
 import com.yin.yzjcourse.DiyWidget.PieGraph.PieSlice;
 import com.yin.yzjcourse.DiyWidget.QQDelete.QQDeleteActivity;
@@ -42,7 +43,7 @@ public class DiyViewActivity extends BaseActivity {
         pieMore.addSlice(new PieSlice(Color.RED, 6));
     }
 
-    @OnClick({R.id.bt_src_out_eraser,R.id.bt_diy,R.id.bt_canvas_change})
+    @OnClick({R.id.bt_src_out_eraser,R.id.bt_diy,R.id.bt_canvas_change,R.id.bt_canvas_text,R.id.bt_canvas_beisaier})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_src_out_eraser:
@@ -56,6 +57,12 @@ public class DiyViewActivity extends BaseActivity {
             case R.id.bt_canvas_change:
                 Intent intent2 = new Intent(this,CanvasChangeActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.bt_canvas_text:
+                startActivity(new Intent(this,DrawTextActivity.class));
+                break;
+            case R.id.bt_canvas_beisaier:
+                startActivity(new Intent(this, BezierLineActivity.class));
                 break;
         }
     }

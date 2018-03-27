@@ -11,10 +11,24 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/bt_canvas_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="canvas画文字"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/bt_canvas_change"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="canvas变换与操作"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_canvas_beisaier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="贝塞尔曲线"
             android:textAllCaps="false" />
 
         <Button

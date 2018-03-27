@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
-            android:text="画图" />
+            android:text="画图(废弃，自定义控件里都有)" />
         <Button
             android:id="@+id/bt_builder_mode"
             android:layout_width="match_parent"
