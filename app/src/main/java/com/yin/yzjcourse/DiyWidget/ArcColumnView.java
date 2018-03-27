@@ -20,6 +20,7 @@ import android.view.View;
 public class ArcColumnView extends View {
 
     private Paint ringPaint;//在当前View画空心圆用的画笔
+    private Paint textPaint;
     public ArcColumnView(Context context) {
         super(context);
         initView();
@@ -49,11 +50,23 @@ public class ArcColumnView extends View {
 //        ringPaint.setARGB(255, 255 ,225, 255);
         ringPaint.setColor(Color.RED);
 //        ringPaint.setStrokeWidth(10);
+        initTextPaint();
+    }
+
+    /**
+     * 画文字用
+     */
+    private void initTextPaint() {
+        textPaint = new Paint();
+        textPaint.setColor(Color.RED);
+        textPaint.setTextSize(30);
+        textPaint.setTextAlign(Paint.Align.LEFT);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        drawThisText(canvas);
         float outSideRadius = getWidth()/3;//外圆半径
         float inSideRadius = getWidth()/4;//内圆半径
         //midX和midY是View的中心位置，这里用作俩圆的圆心(midX,midY)坐标
@@ -87,5 +100,13 @@ public class ArcColumnView extends View {
         canvas.drawPath(path,arcPaint);
         //一个画笔Paint画两个Path中间是不可以抬笔的，类似于汉字的连笔字
         //即一个path从起点画到终点后要直接连(这个连是有痕迹的，类似连笔字，也是paint画出的内容)到下一个path的起点
+    }
+
+    /**
+     * 参考：DrawTextView.java
+     * @param canvas
+     */
+    private void drawThisText(Canvas canvas) {
+        canvas.drawText("画矩形、圆、弧、弧形柱、Path用法",40,60,textPaint);
     }
 }

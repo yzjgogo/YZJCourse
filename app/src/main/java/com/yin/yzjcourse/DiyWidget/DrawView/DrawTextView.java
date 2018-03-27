@@ -44,9 +44,7 @@ public class DrawTextView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        DLog.eLog("开始画矩形1");
         super.onDraw(canvas);
-        DLog.eLog("开始画矩形2");
         int baseLineX = 40 ;
         int baseLineY = 200;
 
@@ -64,6 +62,8 @@ public class DrawTextView extends View {
         //当TextAlign为LEFT时,从点(baseLineX,baseLineY)开始向右侧画text，超出屏幕不显示；
         //当TextAlign为CENTER时,从点(baseLineX,baseLineY)开始向同时向左右两侧画text，超出屏幕不显示；
         //当TextAlign为RIGHT,从点(baseLineX,baseLineY)开始向左侧画text，超出屏幕不显示；
-
+//        StaticLayout实现drawtext换行
+        paint.setTextSize(30);
+        canvas.drawText("StaticLayout可以实现换行，自己研究",40,400,paint);
     }
 }
