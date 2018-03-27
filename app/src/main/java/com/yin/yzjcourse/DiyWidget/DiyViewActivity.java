@@ -1,6 +1,7 @@
 package com.yin.yzjcourse.DiyWidget;
 
 import android.content.Intent;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -41,7 +42,7 @@ public class DiyViewActivity extends BaseActivity {
         pieMore.addSlice(new PieSlice(Color.RED, 6));
     }
 
-    @OnClick({R.id.bt_src_out_eraser,R.id.bt_diy})
+    @OnClick({R.id.bt_src_out_eraser,R.id.bt_diy,R.id.bt_canvas_change})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_src_out_eraser:
@@ -51,6 +52,10 @@ public class DiyViewActivity extends BaseActivity {
             case R.id.bt_diy:
                 Intent intent1 = new Intent(this,DiySimpleActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.bt_canvas_change:
+                Intent intent2 = new Intent(this,CanvasChangeActivity.class);
+                startActivity(intent2);
                 break;
         }
     }

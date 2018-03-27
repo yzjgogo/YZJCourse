@@ -11,6 +11,13 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/bt_canvas_change"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="canvas变换与操作"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/bt_diy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,18 +122,6 @@
             android:layout_width="300dp"
             android:layout_height="400dp"
             android:background="#dfcf4b"
-            tools:visibility="gone" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/money_deposit_color"
-            android:gravity="center_horizontal"
-            android:text="RotateView:Canvas的save,restore,rotate的理解" />
-
-        <com.yin.yzjcourse.DiyWidget.RotateView
-            android:layout_width="400dp"
-            android:layout_height="600dp"
             tools:visibility="gone" />
 
         <TextView

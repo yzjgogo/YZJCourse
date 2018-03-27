@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yin.yzjcourse.DiyWidget.CanvasScaleActivity">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="scale(float sx, float sy):scale其实就是坐标系密度的控制，第一个参数是x轴的伸缩比例，
+    默认是1，小于1就变密，大于1就变疏，例如这里是0.5，则如果原来坐标系中0~1之间有1米宽，则现在设置
+    为0.5后，则0~1之间只有0.5米宽；但是0点仍然是0,1点仍然是1，。。。只是视觉上密度的稀疏"/>
+    <com.yin.yzjcourse.DiyWidget.ScaleView
+        android:layout_width="match_parent"
+        android:layout_height="800dp" />
+</LinearLayout>

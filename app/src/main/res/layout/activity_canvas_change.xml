@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yin.yzjcourse.DiyWidget.CanvasChangeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_translate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="平移"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_rotate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="旋转"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_scale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="缩放"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="平移"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="平移"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</ScrollView>
