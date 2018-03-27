@@ -15,33 +15,52 @@
             android:id="@+id/bt_translate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="平移"
+            android:text="平移translate"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/bt_rotate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="旋转"
+            android:text="旋转rotate"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/bt_scale"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="缩放"
+            android:text="缩放scale"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_skew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="扭曲skew"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_clip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="剪裁clip"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_restore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="save和restore：参考平移(TranslateView)和旋转(RotateView)"
             android:textAllCaps="false" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="平移"
-            android:textAllCaps="false" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="平移"
+            android:text="1：调用translate、rotate、scale、skew、clip之后不会改变原来canvas上已有的图形的状态，
+            只是说会影响调用后再画的图形的状态。
+            2：translate、rotate、scale、skew、clip都是不可逆的，一旦你调用了canvas就会永远是调用之后的状
+            态，除非你调用之前使用save()保存canvas的状态，调用之后再使用restore()恢复之前保存的状态，
+            这样就实现了可逆。"
             android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

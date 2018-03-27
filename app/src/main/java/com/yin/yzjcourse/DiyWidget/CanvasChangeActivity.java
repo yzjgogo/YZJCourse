@@ -19,7 +19,7 @@ public class CanvasChangeActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_translate, R.id.bt_rotate, R.id.bt_scale})
+    @OnClick({R.id.bt_translate, R.id.bt_rotate, R.id.bt_scale,R.id.bt_skew,R.id.bt_clip,R.id.bt_restore})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_translate:
@@ -30,6 +30,14 @@ public class CanvasChangeActivity extends BaseActivity {
                 break;
             case R.id.bt_scale:
                 startActivity(new Intent(this,CanvasScaleActivity.class));
+                break;
+            case R.id.bt_skew:
+                startActivity(new Intent(this,CanvasSkewActivity.class));
+                break;
+            case R.id.bt_clip:
+                startActivity(new Intent(this,CanvasClipActivity.class));
+                break;
+            case R.id.bt_restore:
                 break;
         }
     }
