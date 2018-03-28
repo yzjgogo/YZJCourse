@@ -56,11 +56,9 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1：调用translate、rotate、scale、skew、clip之后不会改变原来canvas上已有的图形的状态，
-            只是说会影响调用后再画的图形的状态。
-            2：translate、rotate、scale、skew、clip都是不可逆的，一旦你调用了canvas就会永远是调用之后的状
-            态，除非你调用之前使用save()保存canvas的状态，调用之后再使用restore()恢复之前保存的状态，
-            这样就实现了可逆。"
+            android:text="1：调用translate、rotate、scale、skew、clip之后不会改变原来canvas上已有的图形的状态，只是说会影响调用后再画的图形的状态。
+\n2：translate、rotate、scale、skew、clip都是不可逆的，一旦你调用了canvas就会永远是调用之后的状态，除非你调用之前使用save()保存canvas的状态，调用之后再使用restore()恢复之前保存的状态，这样就实现了可逆。
+\n3:对于translate、rotate、scale、skew这四个只是改变原canvas的坐标系，对于clip只是从元canvas中截取一部分canvas最为canvas的最新状态，且被截取的这部分会覆盖原来的内容"
             android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
