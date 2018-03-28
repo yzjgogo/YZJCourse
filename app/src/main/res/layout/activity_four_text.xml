@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yin.yzjcourse.DiyWidget.FourTextActivity">
+
+    <Button
+        android:id="@+id/bt_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Align.LEFT"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Align.CENTER"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Align.RIGHT"
+        android:textAllCaps="false" />
+
+    <com.yin.yzjcourse.DiyWidget.TextLineView
+        android:id="@+id/tv_view"
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        android:background="#B3B3B3"/>
+</LinearLayout>

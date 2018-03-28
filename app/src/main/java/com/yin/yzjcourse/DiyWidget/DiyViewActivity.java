@@ -59,7 +59,7 @@ public class DiyViewActivity extends BaseActivity {
                 startActivity(intent2);
                 break;
             case R.id.bt_canvas_text:
-                startActivity(new Intent(this,DrawTextActivity.class));
+                startActivity(new Intent(this,CanvasTextActivity.class));
                 break;
             case R.id.bt_canvas_beisaier:
                 startActivity(new Intent(this, BezierLineActivity.class));
