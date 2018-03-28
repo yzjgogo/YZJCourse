@@ -19,7 +19,7 @@ public class NetStatusBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Toast.makeText(context,"网络变化",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(context,"网络变化",Toast.LENGTH_SHORT).show();
         Log.e("yin", "NetStatusBroadcastReceiver onReceive");
         String action = intent.getAction();
         if (action.equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
