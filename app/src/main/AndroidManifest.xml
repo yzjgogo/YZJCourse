@@ -111,7 +111,9 @@
         <activity android:name=".DiyWidget.CanvasClipActivity" />
         <activity android:name=".DiyWidget.DrawTextActivity" />
         <activity android:name=".DiyWidget.CanvasTextActivity" />
-        <activity android:name=".DiyWidget.FourTextActivity"></activity>
+        <activity android:name=".DiyWidget.FourTextActivity" />
+        <activity android:name=".Optimize.OptimizeActivity" />
+        <activity android:name=".Optimize.OptimizeOneActivity"></activity>
     </application>
 
 </manifest>
