@@ -156,7 +156,6 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ModuleDataBindActivity"></activity>
     </application>
 
 </manifest>

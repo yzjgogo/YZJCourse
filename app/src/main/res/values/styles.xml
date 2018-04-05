@@ -28,8 +28,8 @@
     </style>
 
     <style name="mystyle" parent="android:Animation">
-        <item name="@android:windowEnterAnimation">@anim/slide_from_bottom</item>
-        <item name="@android:windowExitAnimation">@anim/slide_out_bottom</item>
+        <item name="android:windowEnterAnimation">@anim/slide_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
     </style>
 
     <style name="BottomNavigation">

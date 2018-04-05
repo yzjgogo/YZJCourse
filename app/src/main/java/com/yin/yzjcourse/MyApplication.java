@@ -1,14 +1,7 @@
 package com.yin.yzjcourse;
 
 import android.app.Application;
-import android.content.Context;
-import android.util.Log;
 
-import com.alibaba.sdk.android.push.CloudPushService;
-import com.alibaba.sdk.android.push.CommonCallback;
-import com.alibaba.sdk.android.push.noonesdk.PushServiceFactory;
-import com.alibaba.sdk.android.push.register.HuaWeiRegister;
-import com.alibaba.sdk.android.push.register.MiPushRegister;
 import com.dev.think.mylibrary.PushUtils;
 import com.tencent.bugly.crashreport.CrashReport;
 

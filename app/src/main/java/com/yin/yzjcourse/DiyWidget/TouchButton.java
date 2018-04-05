@@ -1,7 +1,6 @@
 package com.yin.yzjcourse.DiyWidget;
 
 import android.content.Context;
-import android.databinding.repacked.org.antlr.v4.codegen.model.ElementFrequenciesVisitor;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;

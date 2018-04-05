@@ -12,6 +12,6 @@ public class OptimizeOneActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_optimize_one);
 
-//        CommUtil commUtil = CommUtil.getInstance(this);
+        CommUtil commUtil = CommUtil.getInstance(this);
     }
 }
