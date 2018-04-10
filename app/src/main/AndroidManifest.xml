@@ -112,7 +112,8 @@
         <activity android:name=".DiyWidget.FourTextActivity" />
         <activity android:name=".Optimize.OptimizeActivity" />
         <activity android:name=".Optimize.OptimizeOneActivity" />
-        <activity android:name=".tools.ToolsActivity"></activity>
+        <activity android:name=".tools.ToolsActivity" />
+        <activity android:name=".Optimize.OptimizeTwoActivity"></activity>
     </application>
 
 </manifest>

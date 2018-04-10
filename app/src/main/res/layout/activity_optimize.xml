@@ -16,6 +16,6 @@
     android:id="@+id/bt_two"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="第二个内存泄露的例子"
+    android:text="第二个内存泄露的例子、WeakHashMap<K,V>"
     android:textAllCaps="false"/>
 </LinearLayout>

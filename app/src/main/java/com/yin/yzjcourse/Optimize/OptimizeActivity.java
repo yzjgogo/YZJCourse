@@ -11,7 +11,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class OptimizeActivity extends BaseActivity {
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +26,7 @@ public class OptimizeActivity extends BaseActivity {
                 startActivity(new Intent(this,OptimizeOneActivity.class));
                 break;
             case R.id.bt_two:
+                startActivity(new Intent(this,OptimizeTwoActivity.class));
                 break;
         }
     }
