@@ -130,6 +130,12 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="Android性能优化" />
+        <Button
+            android:id="@+id/bt_tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="工具" />
 
     </LinearLayout>
 </ScrollView>
