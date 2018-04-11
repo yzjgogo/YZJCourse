@@ -117,7 +117,8 @@
         <activity android:name=".Optimize.OptimizeInnerClassActivity" />
         <activity android:name=".Optimize.OptimizeInnerClassTwoActivity" />
         <activity android:name=".Optimize.OptimizeHandlerActivity" />
-        <activity android:name=".Optimize.OptimizeHandlerSolveActivity"></activity>
+        <activity android:name=".Optimize.OptimizeHandlerSolveActivity" />
+        <activity android:name=".Optimize.RemoveListenerActivity"></activity>
     </application>
 
 </manifest>

@@ -48,4 +48,24 @@
         android:layout_height="wrap_content"
         android:text="Handler造成的内存泄露解决办法，弱引用WeakReference的用法"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_listener"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="不再使用某些监听而未移除监听时导致内存泄露"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(无代码)资源未关闭引起的内存泄露情况:比如：BroadCastReceiver、Cursor、Bitmap、IO流、自定义属性attributeattr.recycle()回收。当不需要使用的时候，要记得及时释放资源。否则就会内存泄露"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="无限循环动画造成内存泄漏：没有在onDestroy中停止动画，否则Activity就会变成泄露对象。比如：轮播图效果。"
+        android:textAllCaps="false" />
 </LinearLayout>
