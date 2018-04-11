@@ -68,4 +68,11 @@
         android:layout_height="wrap_content"
         android:text="无限循环动画造成内存泄漏：没有在onDestroy中停止动画，否则Activity就会变成泄露对象。比如：轮播图效果。"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_allocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Allocation Tracking/Tracker"
+        android:textAllCaps="false" />
 </LinearLayout>
