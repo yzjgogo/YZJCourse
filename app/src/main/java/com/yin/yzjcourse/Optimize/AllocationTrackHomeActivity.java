@@ -17,6 +17,10 @@ public class AllocationTrackHomeActivity extends BaseActivity {
         createObject();
     }
 
+    /**
+        用于测试Android Device Monitor中Allocation Tracker的使用：用于分析一段时间中内存的去向，都分配给了谁，在哪分配的
+        参考图片：allocation_tracker_usage.png
+     */
     private void createObject() {
         mUserList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
