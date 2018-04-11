@@ -6,16 +6,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.yin.yzjcourse.Optimize.OptimizeActivity">
-<Button
-    android:id="@+id/bt_one"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="第一个内存泄露的例子"
-    android:textAllCaps="false"/>
-<Button
-    android:id="@+id/bt_two"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="第二个内存泄露的例子、WeakHashMap<K,V>"
-    android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/bt_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="静态变量引起的内存泄露_1"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="静态变量引起的内存泄露_2,WeakHashMap(K,V)"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_inner_class"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="非静态内部类引起内存泄露(包括匿名内部类):Thread"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_inner_class_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="非静态内部类引起内存泄露(包括匿名内部类):Timer"
+        android:textAllCaps="false" />
 </LinearLayout>

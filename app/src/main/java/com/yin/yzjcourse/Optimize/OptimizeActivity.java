@@ -19,7 +19,7 @@ public class OptimizeActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_one, R.id.bt_two})
+    @OnClick({R.id.bt_one, R.id.bt_two,R.id.bt_inner_class,R.id.bt_inner_class_two})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_one:
@@ -27,6 +27,12 @@ public class OptimizeActivity extends BaseActivity {
                 break;
             case R.id.bt_two:
                 startActivity(new Intent(this,OptimizeTwoActivity.class));
+                break;
+            case R.id.bt_inner_class:
+                startActivity(new Intent(this,OptimizeInnerClassActivity.class));
+                break;
+            case R.id.bt_inner_class_two:
+                startActivity(new Intent(this,OptimizeInnerClassTwoActivity.class));
                 break;
         }
     }
