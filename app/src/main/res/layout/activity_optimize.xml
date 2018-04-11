@@ -34,4 +34,18 @@
         android:layout_height="wrap_content"
         android:text="非静态内部类引起内存泄露(包括匿名内部类):Timer"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_handler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Handler造成的内存泄露"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_handler_solve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Handler造成的内存泄露解决办法，弱引用WeakReference的用法"
+        android:textAllCaps="false" />
 </LinearLayout>
