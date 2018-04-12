@@ -20,7 +20,7 @@ public class AllocationTrackHomeActivity extends BaseActivity {
     /**
         用于测试Android Device Monitor中Allocation Tracker的使用：用于分析一段时间中内存的去向，都分配给了谁，在哪分配的
         参考图片(DDMS的)：allocation_tracker_usage.png 新版Android Studio3.0已经废弃了Android Device Monitor，但是好像可以从sdk/tools/monitor.bat进入
-        参考图片(Profiler里的)：record_memory_allocations.png
+        参考图片(Profiler里的)：record_memory_allocations.png 这是studio3.0以上版本的图片，老版本的就就不看了
      */
     private void createObject() {
         mUserList = new ArrayList<>();
