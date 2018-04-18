@@ -47,6 +47,13 @@
             android:textAllCaps="false" />
 
         <Button
+            android:id="@+id/bt_clip_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/clip_usage"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/bt_restore"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
