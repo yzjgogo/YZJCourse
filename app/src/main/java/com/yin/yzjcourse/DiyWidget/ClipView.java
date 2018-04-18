@@ -11,6 +11,8 @@ import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.yin.yzjcourse.utils.DLog;
+
 public class ClipView extends View {
     private Paint paint1;
     private Paint paint2;
@@ -61,6 +63,10 @@ public class ClipView extends View {
         //跟translate,scale,rotate,skew一个道理，都是改变后不可逆，需要save()后restore()后恢复才可逆
         canvas.clipRect(new Rect(100, 100, 200, 200));
         canvas.drawColor(Color.GREEN);
-        canvas.drawRect(new Rect(130,130,190,190), paint2);
+        canvas.drawRect(new Rect(130,130,220,220), paint2);
+//        canvas.quickReject(50,50,100,100, Canvas.EdgeType.AA);
+        DLog.eLog("结果里面："+canvas.quickReject(130,130,180,180,Canvas.EdgeType.BW));//false
+        DLog.eLog("结果相交："+canvas.quickReject(130,130,220,220,Canvas.EdgeType.BW));//false
+        DLog.eLog("结果外面："+canvas.quickReject(230,230,330,330,Canvas.EdgeType.BW));//true
     }
 }

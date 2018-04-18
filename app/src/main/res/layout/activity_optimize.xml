@@ -1,78 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
     tools:context="com.yin.yzjcourse.Optimize.OptimizeActivity">
 
-    <Button
-        android:id="@+id/bt_one"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="静态变量引起的内存泄露_1"
-        android:textAllCaps="false" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/bt_two"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="静态变量引起的内存泄露_2,WeakHashMap(K,V)"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="静态变量引起的内存泄露_1"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_inner_class"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="非静态内部类引起内存泄露(包括匿名内部类):Thread"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="静态变量引起的内存泄露_2,WeakHashMap(K,V)"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_inner_class_two"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="非静态内部类引起内存泄露(包括匿名内部类):Timer"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_inner_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="非静态内部类引起内存泄露(包括匿名内部类):Thread"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_handler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Handler造成的内存泄露"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_inner_class_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="非静态内部类引起内存泄露(包括匿名内部类):Timer"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_handler_solve"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Handler造成的内存泄露解决办法，弱引用WeakReference的用法"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_handler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Handler造成的内存泄露"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_listener"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="不再使用某些监听而未移除监听时导致内存泄露"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_handler_solve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Handler造成的内存泄露解决办法，弱引用WeakReference的用法"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_recycle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="(无代码)资源未关闭引起的内存泄露情况:比如：BroadCastReceiver、Cursor、Bitmap、IO流、自定义属性attributeattr.recycle()回收。当不需要使用的时候，要记得及时释放资源。否则就会内存泄露"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_listener"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="不再使用某些监听而未移除监听时导致内存泄露"
+            android:textAllCaps="false" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="无限循环动画造成内存泄漏：没有在onDestroy中停止动画，否则Activity就会变成泄露对象。比如：轮播图效果。"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(无代码)资源未关闭引起的内存泄露情况:比如：BroadCastReceiver、Cursor、Bitmap、IO流、自定义属性attributeattr.recycle()回收。当不需要使用的时候，要记得及时释放资源。否则就会内存泄露"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_allocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Allocation Tracking/Tracker"
-        android:textAllCaps="false" />
-</LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="无限循环动画造成内存泄漏：没有在onDestroy中停止动画，否则Activity就会变成泄露对象。比如：轮播图效果。"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_allocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Allocation Tracking/Tracker"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_clip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="官方建议用canvas.clipRect()实现避免自定义控件的过度绘制：可以通过canvas.clipRect()来帮助系统识别那些可见的区域。这个方法可以指定一块矩形区域，只有在这个区域内才会被绘制，其他的区域会被忽视。这个API可以很好的帮助那些有多组重叠组件的自定义View来控制显示的区域。同时clipRect方法还可以帮助节约CPU与GPU资源，在clipRect区域之外的绘制指令都不会被执行，那些部分内容在矩形区域内的组件，仍然会得到绘制。"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</ScrollView>

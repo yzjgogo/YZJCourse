@@ -97,4 +97,8 @@
     <color name="msg_read_bg">#f2c94e</color>
     <!--订单详情颜色-->
     <color name="detail_line_color">#53b078</color>
+
+    <color name="joanna_color">#ff40aa52</color>
+    <color name="shailen_color">#ffaa713b</color>
+    <color name="chris_color">#ffaa3699</color>
 </resources>
