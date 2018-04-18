@@ -57,16 +57,26 @@ public class ClipView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        DLog.eLog("还没调用过clip系列函数，返回canvas的矩形边界："+canvas.getClipBounds().toShortString());
+
         canvas.drawColor(Color.RED);
         Rect rect = new Rect(140,140,240,240);
         canvas.drawRect(rect, paint1);
+
         //跟translate,scale,rotate,skew一个道理，都是改变后不可逆，需要save()后restore()后恢复才可逆
+        //如果剪裁了，则系统只渲染剪裁区域内的图形，区域外的系统不管
         canvas.clipRect(new Rect(100, 100, 200, 200));
+        DLog.eLog("调用了clip的函数："+canvas.getClipBounds().toShortString());
         canvas.drawColor(Color.GREEN);
         canvas.drawRect(new Rect(130,130,220,220), paint2);
 //        canvas.quickReject(50,50,100,100, Canvas.EdgeType.AA);
-        DLog.eLog("结果里面："+canvas.quickReject(130,130,180,180,Canvas.EdgeType.BW));//false
-        DLog.eLog("结果相交："+canvas.quickReject(130,130,220,220,Canvas.EdgeType.BW));//false
-        DLog.eLog("结果外面："+canvas.quickReject(230,230,330,330,Canvas.EdgeType.BW));//true
+        /**
+         判断给给定区域是否与之前剪裁出的区域相交，如果没调用过clip系列函数，则就是跟整个canvas判断，因此跟定会相交，因为肯定在整个canvas里。
+         如果相交或者剪裁的区域包含给定的区域则返回false，则说明还是有必要做该给定区域的计算
+         如果在剪裁的区域之外，即不想交则返回true，则说明没必要做该给定区域的计算了，做了也浪费CPU的计算性能，因为在剪裁区域之外系统肯定不会去渲染。
+         */
+        DLog.eLog("里面："+canvas.quickReject(130,130,180,180,Canvas.EdgeType.BW));//false
+        DLog.eLog("相交："+canvas.quickReject(130,130,220,220,Canvas.EdgeType.BW));//false
+        DLog.eLog("外面："+canvas.quickReject(230,230,330,330,Canvas.EdgeType.BW));//true
     }
 }

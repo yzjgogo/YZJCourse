@@ -43,7 +43,7 @@
             android:id="@+id/bt_clip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="剪裁clip"
+            android:text="剪裁clip：以及获取剪裁的矩形区域getClipBounds()"
             android:textAllCaps="false" />
 
         <Button

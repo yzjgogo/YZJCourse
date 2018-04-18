@@ -121,7 +121,8 @@
         <activity android:name=".Optimize.RemoveListenerActivity" />
         <activity android:name=".Optimize.AllocationTrackActivity" />
         <activity android:name=".Optimize.AllocationTrackHomeActivity" />
-        <activity android:name=".Optimize.ClipUsageActivity"></activity>
+        <activity android:name=".Optimize.ClipUsageActivity" />
+        <activity android:name=".Optimize.ObjectPoolActivity"></activity>
     </application>
 
 </manifest>
