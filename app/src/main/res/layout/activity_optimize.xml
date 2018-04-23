@@ -88,6 +88,13 @@
             android:textAllCaps="false" />
 
         <Button
+            android:id="@+id/bt_over_draw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GPU过度绘制案例"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/bt_object_pool"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

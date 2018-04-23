@@ -123,6 +123,7 @@
         <activity android:name=".Optimize.AllocationTrackHomeActivity" />
         <activity android:name=".Optimize.ClipUsageActivity" />
         <activity android:name=".Optimize.ObjectPoolActivity"></activity>
+        <activity android:name="com.yin.yzjcourse.Optimize.ChatumLatinumActivity"></activity>
     </application>
 
 </manifest>
