@@ -19,12 +19,13 @@ package com.yin.yzjcourse.Optimize;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
+import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
 /**
     目前代码是孤独绘制的情况，解决办法都在注释里，可以通过手机开发者模式的查看过度绘制做前后对比
  */
-public class ChatumLatinumActivity extends ActionBarActivity {
+public class ChatumLatinumActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
