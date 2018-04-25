@@ -2,6 +2,7 @@ package com.yin.yzjcourse;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Debug;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -59,7 +60,7 @@ public class MainActivity extends BaseActivity {
     @OnClick({R.id.bt_fore_service, R.id.bt_dialog_fragment, R.id.bt_rxjava,
             R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim,R.id.bt_property_anim_interpolator,R.id.bt_object_anim_holder
     ,R.id.bt_anim_set,R.id.bt_anim_draw,R.id.bt_builder_mode,R.id.bt_math,R.id.bt_data_bind,R.id.bt_weight,R.id.bt_material_design,
-    R.id.bt_coordinator,R.id.bt_android_message,R.id.bt_anim_group,R.id.bt_optimize,R.id.bt_tools})
+    R.id.bt_coordinator,R.id.bt_android_message,R.id.bt_anim_group,R.id.bt_optimize,R.id.bt_tools,R.id.bt_trace_view})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_fore_service:
@@ -129,6 +130,45 @@ public class MainActivity extends BaseActivity {
             case R.id.bt_tools:
                 startActivity(new Intent(this, ToolsActivity.class));
                 break;
+            case R.id.bt_trace_view:
+                startTrace();
+                break;
         }
+    }
+
+    private void startTrace() {
+        Debug.startMethodTracing("jie");
+        jie1();
+        jie2();
+        jie3();
+        jie5();
+        Debug.stopMethodTracing();
+    }
+
+    private void jie3() {
+        jie4();
+    }
+
+    private void jie4() {
+    }
+
+    private void jie5() {
+        jie6();
+    }
+
+    private void jie6() {
+        jie7();
+    }
+
+    private void jie7() {
+
+    }
+
+    private void jie2() {
+
+    }
+
+    private void jie1() {
+
     }
 }

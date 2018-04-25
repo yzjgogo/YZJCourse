@@ -136,6 +136,12 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="工具" />
+        <Button
+            android:id="@+id/bt_trace_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="TraceView的用法" />
 
     </LinearLayout>
 </ScrollView>
