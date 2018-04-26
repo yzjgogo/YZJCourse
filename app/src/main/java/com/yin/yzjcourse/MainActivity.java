@@ -137,35 +137,39 @@ public class MainActivity extends BaseActivity {
     }
 
     private void startTrace() {
-        Debug.startMethodTracing("jie");
+        Debug.startMethodTracing("yzj");
         jie1();
         jie2();
-        jie3();
-        jie5();
         Debug.stopMethodTracing();
-    }
-
-    private void jie3() {
-        jie4();
-    }
-
-    private void jie4() {
-    }
-
-    private void jie5() {
-        jie6();
-    }
-
-    private void jie6() {
-        jie7();
-    }
-
-    private void jie7() {
-
+        Utils.showToast(this,"成功");
     }
 
     private void jie2() {
+        jie3(0);
+        jie3(3);
+    }
 
+    /**
+     *
+     * @param count
+     */
+    private void jie3(int count) {
+        if (count == 3) {
+            jie4();
+        }
+        if (count == 0) {
+            return;
+        }else {
+            jie3(count-1);
+        }
+    }
+
+    private void jie4() {
+        for (int i=0;i<15;i++){
+            for (int j=0;j<15;j++){
+                int k = i+j;
+            }
+        }
     }
 
     private void jie1() {
