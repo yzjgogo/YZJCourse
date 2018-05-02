@@ -34,7 +34,7 @@ import butterknife.OnClick;
 
 //第一次从家里的电脑提交代码
 public class MainActivity extends BaseActivity {
-//试试我的台式机
+    //试试我的台式机
     @BindView(R.id.bt_fore_service)
     Button btForeService;
     @BindView(R.id.bt_dialog_fragment)
@@ -58,9 +58,9 @@ public class MainActivity extends BaseActivity {
     }
 
     @OnClick({R.id.bt_fore_service, R.id.bt_dialog_fragment, R.id.bt_rxjava,
-            R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim,R.id.bt_property_anim_interpolator,R.id.bt_object_anim_holder
-    ,R.id.bt_anim_set,R.id.bt_anim_draw,R.id.bt_builder_mode,R.id.bt_math,R.id.bt_data_bind,R.id.bt_weight,R.id.bt_material_design,
-    R.id.bt_coordinator,R.id.bt_android_message,R.id.bt_anim_group,R.id.bt_optimize,R.id.bt_tools,R.id.bt_trace_view})
+            R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim, R.id.bt_property_anim_interpolator, R.id.bt_object_anim_holder
+            , R.id.bt_anim_set, R.id.bt_anim_draw, R.id.bt_builder_mode, R.id.bt_math, R.id.bt_data_bind, R.id.bt_weight, R.id.bt_material_design,
+            R.id.bt_coordinator, R.id.bt_android_message, R.id.bt_anim_group, R.id.bt_optimize, R.id.bt_tools, R.id.bt_trace_view})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_fore_service:
@@ -131,43 +131,49 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, ToolsActivity.class));
                 break;
             case R.id.bt_trace_view:
+                Debug.startMethodTracing("custom");
                 startTrace();
+                Debug.stopMethodTracing();
+                Utils.showToast(this, "成功");
                 break;
         }
     }
 
+    /**
+     * jie1()和jie2()没有调用关系是兄弟关系
+     */
     private void startTrace() {
-        Debug.startMethodTracing("yzj");
         jie1();
         jie2();
-        Debug.stopMethodTracing();
-        Utils.showToast(this,"成功");
     }
 
+    /**
+     * jie2()中两次调用jie3()，其中jie3(0)直接return，不产生递归也不会调用jie4()
+     * jie3(3)会先调用一次jie4()再产生3次递归调用
+     */
     private void jie2() {
         jie3(0);
         jie3(3);
     }
 
-    /**
-     *
-     * @param count
-     */
     private void jie3(int count) {
         if (count == 3) {
             jie4();
         }
         if (count == 0) {
             return;
-        }else {
-            jie3(count-1);
+        } else {
+            jie3(count - 1);
         }
     }
 
+    /**
+     * 故意做比较耗时的操作：用于区分Excl和Incl的关系
+     */
     private void jie4() {
-        for (int i=0;i<15;i++){
-            for (int j=0;j<15;j++){
-                int k = i+j;
+        for (int i = 0; i < 15; i++) {
+            for (int j = 0; j < 15; j++) {
+                int k = i + j;
             }
         }
     }
