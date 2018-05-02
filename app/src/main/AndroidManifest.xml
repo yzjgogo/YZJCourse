@@ -122,8 +122,10 @@
         <activity android:name=".Optimize.AllocationTrackActivity" />
         <activity android:name=".Optimize.AllocationTrackHomeActivity" />
         <activity android:name=".Optimize.ClipUsageActivity" />
-        <activity android:name=".Optimize.ObjectPoolActivity"></activity>
-        <activity android:name="com.yin.yzjcourse.Optimize.ChatumLatinumActivity"></activity>
+        <activity android:name=".Optimize.ObjectPoolActivity" />
+        <activity android:name=".Optimize.ChatumLatinumActivity" />
+        <activity android:name=".Optimize.CachingActivity" />
+        <activity android:name=".Optimize.BusyUIThreadActivity"></activity>
     </application>
 
 </manifest>
