@@ -125,7 +125,8 @@
         <activity android:name=".Optimize.ObjectPoolActivity" />
         <activity android:name=".Optimize.ChatumLatinumActivity" />
         <activity android:name=".Optimize.CachingActivity" />
-        <activity android:name=".Optimize.BusyUIThreadActivity"></activity>
+        <activity android:name=".Optimize.BusyUIThreadActivity" />
+        <activity android:name=".Optimize.DataStructuresActivity"></activity>
     </application>
 
 </manifest>

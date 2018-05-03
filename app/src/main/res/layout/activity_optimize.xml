@@ -120,6 +120,13 @@
             android:layout_height="wrap_content"
             android:text="UI阻塞无响应"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_structure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="不恰当的选用数据结构，例如各种集合容器"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 </ScrollView>
