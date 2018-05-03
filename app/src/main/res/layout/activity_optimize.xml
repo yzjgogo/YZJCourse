@@ -100,6 +100,12 @@
             android:layout_height="wrap_content"
             android:text="对象池:如果确实需要频繁创建对象时使用"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_trace_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="TraceView的用法" />
 
         <Button
             android:id="@+id/bt_batch_cache"
