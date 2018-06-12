@@ -18,5 +18,19 @@
             android:text="获取不同手机分给每个堆大小（Heap Size）"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/bt_format_ms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="把毫秒数格式化成小时分钟，例如把3*60*60*1000+17*60*1000格式化成3小时17分"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_count_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android官方倒计时类：CountDownTimer"
+            android:textAllCaps="false" />
+
     </LinearLayout>
 </ScrollView>
