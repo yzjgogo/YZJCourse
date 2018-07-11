@@ -2,7 +2,7 @@ package com.yin.yzjcourse.Base;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
@@ -19,8 +19,20 @@ public class BaseContentActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.bt_android_message)
-    public void onClickMessage() {
-        startActivity(new Intent(this, AndroidMessageActivity.class));
+    @OnClick({R.id.bt_android_message, R.id.bt_title_menu})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.bt_android_message:
+                startActivity(new Intent(this, AndroidMessageActivity.class));
+                break;
+            case R.id.bt_title_menu:
+                startActivity(new Intent(this, TitleMenuActivity.class));
+                break;
+        }
     }
+
+//    @OnClick(R.id.bt_android_message,R.id.bt_)
+//    public void onClickMessage() {
+//        startActivity(new Intent(this, AndroidMessageActivity.class));
+//    }
 }

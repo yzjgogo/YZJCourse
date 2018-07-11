@@ -126,7 +126,9 @@
         <activity android:name=".Optimize.ChatumLatinumActivity" />
         <activity android:name=".Optimize.CachingActivity" />
         <activity android:name=".Optimize.BusyUIThreadActivity" />
-        <activity android:name=".Optimize.DataStructuresActivity"></activity>
+        <activity android:name=".Optimize.DataStructuresActivity" />
+        <activity android:name=".Base.TitleMenuActivity" />
+        <activity android:name=".Base.DiyMenuActivity"></activity>
     </application>
 
 </manifest>

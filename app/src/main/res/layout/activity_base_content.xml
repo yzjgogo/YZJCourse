@@ -12,4 +12,10 @@
     android:layout_height="wrap_content"
     android:textAllCaps="false"
     android:text="android消息"/>
+<Button
+    android:id="@+id/bt_title_menu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAllCaps="false"
+    android:text="标题和菜单"/>
 </LinearLayout>
