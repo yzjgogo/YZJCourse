@@ -18,4 +18,16 @@
     android:layout_height="wrap_content"
     android:textAllCaps="false"
     android:text="标题和菜单"/>
+<Button
+    android:id="@+id/bt_vp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAllCaps="false"
+    android:text="ViewPager用法"/>
+<Button
+    android:id="@+id/bt_span"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAllCaps="false"
+    android:text="CharSequence设置文本不同字体颜色，不同字体大小，添加图标"/>
 </LinearLayout>
