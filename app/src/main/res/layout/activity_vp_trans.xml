@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:clipChildren="false"
     tools:context="com.yin.yzjcourse.Base.TitleMenuActivity">
+    <!--注意，这里的LinearLayout和ViewPager都要设置clipChildren为false-->
     <android.support.v4.view.ViewPager
         android:id="@+id/vp"
         android:layout_width="280dp"
