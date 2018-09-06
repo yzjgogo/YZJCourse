@@ -3,15 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:clipChildren="false"
+    android:orientation="vertical"
     tools:context="com.yin.yzjcourse.Base.TitleMenuActivity">
-    <!--注意，这里的LinearLayout和ViewPager都要设置clipChildren为false-->
+    <!--
+            运行后的布局结构
+            <LinearLayout 爷>
+                <ViewPager 父>
+                    <多个page 子>
+                </ViewPager>
+            </LinearLayout>
+
+            因此要想实现左右露出的效果，首先ViewPager的宽不要匹配父元素，因为ViewPager一个界面只能显示一个page
+            这样左右预留出空间，供左右未显示的page漏出来一部分，这怎么才能露出来能，就需要这些page超出
+            ViewPager的范围，根据clipChildren的特点只需给爷LinearLayout设置clipChildren="false"
+
+            其实clipChildren="false"就相当于前端的overflow:hidden
+    -->
     <android.support.v4.view.ViewPager
         android:id="@+id/vp"
         android:layout_width="280dp"
         android:layout_height="200dp"
-        android:clipChildren="false"
         android:layout_gravity="center">
 
     </android.support.v4.view.ViewPager>

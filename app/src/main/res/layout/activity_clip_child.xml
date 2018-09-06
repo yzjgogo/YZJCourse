@@ -7,7 +7,10 @@
     </LinearLayout>
 </LinearLayout>
 -->
-<!--clipChildren作用于爷ViewGroup，用于限制子View是否可以超出父ViewGroup的范围，默认为true即不可以-->
+<!--clipChildren作用于爷ViewGroup，用于限制子View是否可以超出父ViewGroup的范围，默认为true即不可以
+如果不仅要超出父ViewGroup的范围还要超出爷ViewGroup的范围，则不仅要给爷ViewGroup设置clipChildren="false"
+还要给爷ViewGroup的父ViewGroup设置clipChildren="false"
+其实clipChildren="false"就相当于前端的overflow:hidden-->
 <!--也可以在代码中设置：setClipChildren (boolean clipChildren)，也可以从代码中判断某个ViewGroup
 的clipChildren值：boolean getClipChildren()-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

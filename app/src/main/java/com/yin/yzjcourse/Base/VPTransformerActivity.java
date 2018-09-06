@@ -8,6 +8,7 @@ import android.view.View;
 import com.yin.yzjcourse.Base.adapter.VPTransAdapter;
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
+import com.yin.yzjcourse.utils.DLog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +81,7 @@ public class VPTransformerActivity extends BaseActivity {
              */
             @Override
             public void transformPage(View page, float position) {
-//                DLog.eLog("此时的位置：" +page.getTag().toString()+"#"+ position);
+                DLog.eLog("此时的位置：" +page.getTag().toString()+"#"+ position);
                 if (position < -1 || position > 1) {
                     //不可见区域
                     page.setAlpha(MAX_ALPHA);
