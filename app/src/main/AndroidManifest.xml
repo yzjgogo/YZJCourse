@@ -135,9 +135,10 @@
         <activity android:name=".Base.VPTabStripActivity" />
         <activity android:name=".Base.SpanActivity" />
         <activity android:name=".Base.VPTabDiyActivity" />
-        <activity android:name=".Base.VPFragmentActivity"></activity>
-        <activity android:name=".Base.VPStateFragmentActivity"></activity>
-        <activity android:name=".Base.VPTransformerActivity"></activity>
+        <activity android:name=".Base.VPFragmentActivity" />
+        <activity android:name=".Base.VPStateFragmentActivity" />
+        <activity android:name=".Base.VPTransformerActivity" />
+        <activity android:name=".Base.VPTabLayoutActivity"></activity>
     </application>
 
 </manifest>

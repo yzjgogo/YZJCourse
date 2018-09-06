@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yin.yzjcourse.Base.VPTabLayoutActivity">
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--tab:tabBackground="tab的背景色"-->
+        <!--tab:tabIndicatorColor="下划线颜色"-->
+        <!--tab:tabMode="scrollable|fixed 是否可滚动"-->
+        <!--tab:tabSelectedTextColor="选中时的字体颜色"-->
+        <!--tab:tabTextAppearance="字体的大小"-->
+        <!--tab:tabTextColor="正常时的字体颜色"-->
+    </android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

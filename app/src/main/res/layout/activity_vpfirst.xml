@@ -41,6 +41,13 @@
         android:textAllCaps="false"
         android:text="阶梯2：PagerTabStrip-自定义tab的样式"/>
     <Button
+        android:id="@+id/bt_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAllCaps="false"
+        android:text="阶梯3：TabLayout配合ViewPager实现标题（推荐）"/>
+    <Button
         android:id="@+id/bt_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

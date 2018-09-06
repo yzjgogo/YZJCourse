@@ -21,7 +21,7 @@ public class VPFirstActivity extends BaseActivity {
 
     @OnClick({R.id.bt_vp_base, R.id.bt_title_strip,R.id.bt_tab_strip,
             R.id.bt_tab_diy,R.id.bt_fragment,R.id.bt_state_fragment,
-            R.id.bt_vp_trans})
+            R.id.bt_vp_trans,R.id.bt_tab_layout})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_vp_base:
@@ -44,6 +44,9 @@ public class VPFirstActivity extends BaseActivity {
                 break;
             case R.id.bt_vp_trans:
                 startActivity(new Intent(this, VPTransformerActivity.class));
+                break;
+            case R.id.bt_tab_layout:
+                startActivity(new Intent(this, VPTabLayoutActivity.class));
                 break;
         }
     }
