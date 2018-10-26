@@ -138,7 +138,8 @@
         <activity android:name=".Base.VPFragmentActivity" />
         <activity android:name=".Base.VPStateFragmentActivity" />
         <activity android:name=".Base.VPTransformerActivity" />
-        <activity android:name=".Base.VPTabLayoutActivity"></activity>
+        <activity android:name=".Base.VPTabLayoutActivity" />
+        <activity android:name=".Net.NetActivity"></activity>
     </application>
 
 </manifest>
