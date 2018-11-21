@@ -23,7 +23,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class NetActivity extends BaseActivity {
-    public static final String MAIN_URL = "http://c6acbe93.ngrok.io/";
+    public static final String MAIN_URL = "https://pzx.pagekite.me/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +58,10 @@ public class NetActivity extends BaseActivity {
                             "\nresponse.protocol():" + response.protocol() +
                             "\nresponse.code():" + response.code() +
                             "\nresponse.message():" + response.message() +
-                            "\nresponse.headers():\n" + response.headers().toString() +
+                            "\n响应头response.headers():\n" + response.headers().toString() +
                             "\nresponse.body():" + response.body().string() +
-                            "\nresponse.networkResponse().request().headers():\n" + response.networkResponse().request().headers().toString() +
-                            "\nresponse.request():" + response.request().toString());
+                            "\n请求头response.networkResponse().request().headers():\n" + response.networkResponse().request().headers().toString() +
+                            "\nresponse.request():" + response.request().toString());//Request{method=GET, url=https://pzx.pagekite.me/?type=type_get&id=id_get, tags={}}
                 } else {
                     DLog.eLog("get响应为空");
                 }
