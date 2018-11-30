@@ -4,8 +4,11 @@ import android.app.Notification;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
-import android.support.v7.app.NotificationCompat;
+//import android.support.v7.app.NotificationCompat;
+//support library 27以后v7包里不再有NotificationCompat，要用v4包里的
+//https://developer.android.com/topic/libraries/support-library/revisions
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;

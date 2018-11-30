@@ -17,7 +17,7 @@
 package com.yin.yzjcourse.Optimize;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+//import android.support.v7.app.ActionBarActivity;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;

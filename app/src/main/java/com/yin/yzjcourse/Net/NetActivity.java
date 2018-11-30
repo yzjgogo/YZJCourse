@@ -1,12 +1,14 @@
 package com.yin.yzjcourse.Net;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.utils.DLog;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,11 +18,15 @@ import butterknife.OnClick;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
+import okhttp3.Headers;
 import okhttp3.HttpUrl;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import okio.BufferedSink;
 
 public class NetActivity extends BaseActivity {
     public static final String MAIN_URL = "https://pzx.pagekite.me/";
@@ -141,11 +147,56 @@ public class NetActivity extends BaseActivity {
      * @param callback
      */
     public static void doPostObject(String url, Map<String, String> paras, Callback callback) {
-        //give 'post' request paras
+        //1:give 'post' request paras throw RequestBody directly
 //        RequestBody formBody = new FormBody.Builder()
 //                                .add("id","ids")
 //                                .add("type","types")
 //                                .build();
+
+        //2:throw MediaType create RequestBody
+//        MediaType mediaType = MediaType.parse("text/x-markdown; charset=utf-8");
+//        RequestBody requestBody = RequestBody.create(mediaType,"requestBody");
+
+        //3:post way to submit stream
+//        RequestBody streamBody = new RequestBody() {
+//            @Nullable
+//            @Override
+//            public MediaType contentType() {
+//                return MediaType.parse("text/x-markdown; charset=utf-8");
+//            }
+//
+//            @Override
+//            public void writeTo(BufferedSink sink) throws IOException {
+//                sink.writeUtf8("I am Jdqm.");
+//            }
+//        };
+
+        //4:post way to submit file.
+//        MediaType mediaType = MediaType.parse("text/x-markdown; charset=utf-8");
+//        File file = new File("test.md");
+//        RequestBody fileBody = RequestBody.create(mediaType, file);
+
+        //5：POST方式提交分块请求
+//        String IMGUR_CLIENT_ID = "...";
+//        MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
+//        MultipartBody body = new MultipartBody.Builder("AaB03x")
+//                .setType(MultipartBody.FORM)
+//                .addPart(
+//                        Headers.of("Content-Disposition", "form-data; name=\"title\""),
+//                        RequestBody.create(null, "Square Logo"))
+//                .addPart(
+//                        Headers.of("Content-Disposition", "form-data; name=\"image\""),
+//                        RequestBody.create(MEDIA_TYPE_PNG, new File("website/static/logo-square.png")))
+//                .build();
+//
+//        Request request = new Request.Builder()
+//                .header("Authorization", "Client-ID " + IMGUR_CLIENT_ID)
+//                .url("https://api.imgur.com/3/image")
+//                .post(body)
+//                .build();
+
+
+        //3:post way to submit form data.
         FormBody.Builder formBody = new FormBody.Builder();
         if (paras != null) {
             for (Map.Entry<String, String> entry : paras.entrySet()) {
