@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 //apply plugin: 'com.jakewharton.butterknife'
 //apply plugin: 'me.tatarka.retrolambda'
 
@@ -48,6 +50,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+//    testOptions{
+//        unitTests.returnDefaultValues = true
+//    }
 }
 
 dependencies {
@@ -83,4 +88,5 @@ dependencies {
     //okhttp依赖，会下载OkHttp和Okio两个库
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     testImplementation 'junit:junit:4.12'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

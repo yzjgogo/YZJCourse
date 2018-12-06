@@ -139,7 +139,8 @@
         <activity android:name=".Base.VPStateFragmentActivity" />
         <activity android:name=".Base.VPTransformerActivity" />
         <activity android:name=".Base.VPTabLayoutActivity" />
-        <activity android:name=".Net.NetActivity"></activity>
+        <activity android:name=".Net.NetActivity" />
+        <activity android:name=".mykt.FirActivity"></activity>
     </application>
 
 </manifest>

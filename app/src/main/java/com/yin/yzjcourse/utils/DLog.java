@@ -34,4 +34,19 @@ public class DLog {
             Log.e("yin",content);
         }
     }
+    public static void eTest(String content){
+
+        System.out.println(content);
+//        if(sDebug){
+//            Log.e("yin",content);
+//        }
+//
+//
+//
+//        public static int e(String tag, String msg) {
+//            System.out.println("ERROR: " + tag + ": " + msg);
+//            return 0;
+//        }
+
+    }
 }
