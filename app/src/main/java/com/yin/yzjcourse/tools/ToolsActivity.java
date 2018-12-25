@@ -46,7 +46,12 @@ public class ToolsActivity extends BaseActivity {
                     @Override
                     public void onTick(long millisUntilFinished) {//参数是剩余多少毫秒，CountDownTimer第一个参数的剩余
                         //每倒计时一次就调用一次，多用于更新UI
-                        DLog.eLog("当前："+millisUntilFinished/1000+"秒");
+                        long s = millisUntilFinished/1000;
+                        DLog.eLog("当前："+s+"秒");
+                        if (s == 50l){
+                            DLog.eLog("去取消");
+//                            cancel();
+                        }
                     }
 
                     @Override
@@ -55,7 +60,7 @@ public class ToolsActivity extends BaseActivity {
                         DLog.eLog("倒计时结束");
                     }
                 }.start();//调用start()才能开始倒计时
-//                timer.cancel();别忘了用完取消
+//                timer.cancel();别忘了用完取消,如果倒计时没完成久取消，不会调用onFinish
                 break;
         }
     }

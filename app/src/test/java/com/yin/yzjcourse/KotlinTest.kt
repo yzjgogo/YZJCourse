@@ -25,56 +25,20 @@ class KotlinTest {
         println(boxedA == anotherBoxedA) // true，值相等
     }
 
-    /**
-     * String
-     */
-    @Test
-    fun testString() {
-        //String pattern
-        //1:$varName 表示变量的值
-        var a = 1
-        val s1 = "a is $a"
-        println(s1)
-
-        //2:${varName.fun()} 表示变量的方法返回值:
-        val s2 = "${s1.replace("is", "was")}, and so on"
-        println(s2)
-
-
-        //multi line String
-        val text = """
-    多行字符串
-    多行字符串
-    """
-        println(text)   // 输出有一些前置空格
-
-        val text2 = """
-    |多行字符串
-    |菜鸟教程
-    |多行字符串
-    |Runoob
-    """.trimMargin()
-        println(text2)    // 前置空格删除了,默认 | 用作边界前缀，但你可以选择其他字符并作为参数传入，比如 trimMargin(">")。
-
-
-        //String can be for loop
-        var content = "hello"
-        for (c in content) {
-            println(c)
-        }
-        println(content[1])//we can visit String's element with '[index]'
-    }
-
 
     /**
      * null处理
      * kotlin will force you to handle nullable value.
+     * https://www.cnblogs.com/figozhg/p/6686798.html
+     *
+     * kotlin how to avoid NullPointerException?
+     * Kotlin let check NullPointerException when compile instead of runtime.
      */
     @Test
     fun testNull() {
-        //var x:Int? =10
-        var x: Int? = null//if you want give a variable 'null' value, you must use '?' decorate this variable.
 
+        //var x:Int? =10
+        var x: Int? = null//if you want give a variable 'null' value, you must use '?' decorate this variable.otherwise this variable cann't be null.
 //        var y  = x.toDouble()    if x is decorated with '?',you can't write like this,this will report  an error,so yous should judge is null;
 
         //if x can be null,you should handle null status.
@@ -282,4 +246,14 @@ class KotlinTest {
     fun testLabel() {
         //https://www.cnblogs.com/duduhuo/p/6908233.html
     }
+
+    /**
+     *
+     */
+//    @Test
+//    fun testClassCast(){
+//        var a = ""
+//        var str = a.toInt()
+//        println(str.)
+//    }
 }
