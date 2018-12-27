@@ -2,7 +2,7 @@ package com.yin.yzjcourse
 
 import org.junit.Test
 
-class k4字符串和字符串模板 {
+class k4字符串 {
 
 
     /**
@@ -46,5 +46,25 @@ class k4字符串和字符串模板 {
             println(c)
         }
         println(content[1])//we can visit String's element with '[index]'
+
+
+        /**
+        分割字符串
+        java的一个可恶的问题：Java中的Split方法不适用于一个点号。当代码写为12.345-6.A”.split（"·"）的时候，我们期
+        待的结果是得到一个[]12,345-6,A]数组。但是Java的split方法竟然返回一个空数组！这是因为它将一个正则表达式作为参
+        数，井根据表达式将字符串分割成多个字符串。这里点号（．）是表示任何字符的正则表达式。
+
+        kotlin就不存在这种问题
+        kotlin的split可以传入正则，也可以传入字符串；
+
+         */
+        //参数是正则
+        println("12.345-6.A".split("\\.|-".toRegex()))//[12, 345, 6, A]
+        //可以指定多个分隔符,可变长参数
+        println("12.345-6.A".split(".", "-"))//[12, 345, 6, A]
+        //截取
+        val mstr = "abc,def,gh,i,jklm"
+        println(mstr.substringBeforeLast(","))//最后换一个‘,’之前的子串
+        println(mstr.substringAfterLast(","))//最后一个','之后的子串
     }
 }

@@ -1,8 +1,8 @@
-package com.yin.yzjcourse
+package com.yin.yzjcourse.k5类
 
 import org.junit.Test
 
-class k6枚举类 {
+class k2枚举类 {
     /**
      * 没有定义属性的枚举类
      */

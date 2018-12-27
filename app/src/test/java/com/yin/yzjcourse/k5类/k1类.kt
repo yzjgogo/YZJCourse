@@ -1,10 +1,12 @@
-package com.yin.yzjcourse
+package com.yin.yzjcourse.k5类
 
 import org.junit.Test
 
-class k5类 {
+class k1类 {
     /**
      * 构造器的参数，同时也是类的属性，如果是var默认存在getter和setter，如果是val默认存在getter
+     *
+     * kotlin的声明默认都是public和final的，例如这里的Person类就是final的，默认不允许继承
      */
     class Person(val name: String, var age: Int, var isMarried: Boolean)
 
@@ -29,7 +31,7 @@ class k5类 {
     }
     @Test
     fun testVisit(){
-        var rect = Rectangle(40,20)
+        var rect = Rectangle(40, 20)
         println("是正方形吗：${rect.isSquare}")
     }
 }

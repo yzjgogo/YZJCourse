@@ -5,6 +5,10 @@ package com.yin.yzjcourse.k12顶层函数和顶层属性
  * 这个.kt文件类似java的XX.Utils类，常用于定义一些静态常量和静态方法。
  *
  * 如果包外文件要使用顶层函数或顶层属性，则需要import导入。
+ *
+ * java如何调用扩展函数：
+ * java中会把kotlin的扩展函数定义文件，例如Common.kt变异为Commonkt.java类
+ * 因此就像调用java的静态函数一样：Commonkt.joinToString()
  */
 
 

@@ -15,6 +15,8 @@ import java.util.*
  这对Java 开发者是一个好消息。你现在所掌握的所有Java 集合的知识在这里依然
  适用。
 
+ kotlin只是对这些java里的集合添加了大量的扩展函数，是操作集合更方便
+
  */
 class k11集合list_set_map {
     /**
@@ -45,6 +47,13 @@ class k11集合list_set_map {
 
         //创建一个list
         val list= arrayListOf(1,7,53)
+
+        //获取集合的最后一个元素
+        println("最后一个:${list.last()}")
+
+        //获取集合中的最大值，不仅适用于int集合，所有可比较的对象集合都可以
+        println("最大值:${list.max()}")
+
 
     }
 }
