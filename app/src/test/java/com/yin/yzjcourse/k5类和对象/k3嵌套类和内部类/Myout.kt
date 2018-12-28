@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.k5类.k3嵌套类和内部类
+package com.yin.yzjcourse.k5类和对象.k3嵌套类和内部类
 
 class Myout(val name:String) {
     /**

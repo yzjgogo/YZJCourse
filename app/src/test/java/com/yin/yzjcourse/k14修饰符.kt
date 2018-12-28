@@ -1,6 +1,6 @@
 package com.yin.yzjcourse
 
-import com.yin.yzjcourse.k13接口.ClickListener
+import com.yin.yzjcourse.k6接口.k1接口函数.ClickListener
 
 class k14修饰符 {
     /**

@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.k5类
+package com.yin.yzjcourse.k5类和对象
 
 import org.junit.Test
 

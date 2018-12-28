@@ -140,7 +140,9 @@
         <activity android:name=".Base.VPTransformerActivity" />
         <activity android:name=".Base.VPTabLayoutActivity" />
         <activity android:name=".Net.NetActivity" />
-        <activity android:name=".mykt.FirActivity"></activity>
+        <activity android:name=".mykt.FirActivity" />
+        <activity android:name=".DesignModel.DesignModelListActivity" />
+        <activity android:name=".DesignModel.Decorate.DecoratorPatternActivity"></activity>
     </application>
 
 </manifest>

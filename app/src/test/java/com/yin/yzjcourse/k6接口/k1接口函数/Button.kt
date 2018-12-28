@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.k13接口
+package com.yin.yzjcourse.k6接口.k1接口函数
 
 /**
  * 和java一样，kotlin可以继承一个类和实现多个接口

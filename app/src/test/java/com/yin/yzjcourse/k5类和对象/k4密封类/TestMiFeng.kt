@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.k5类.k4密封类
+package com.yin.yzjcourse.k5类和对象.k4密封类
 
 import org.junit.Test
 
