@@ -1,4 +1,4 @@
-package com.yin.yzjcourse
+package com.yin.yzjcourse.k9区间和数列和循环in用法
 
 import org.junit.Test
 

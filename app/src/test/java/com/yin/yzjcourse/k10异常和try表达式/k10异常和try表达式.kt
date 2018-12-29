@@ -1,4 +1,4 @@
-package com.yin.yzjcourse
+package com.yin.yzjcourse.k10异常和try表达式
 
 import org.junit.Test
 

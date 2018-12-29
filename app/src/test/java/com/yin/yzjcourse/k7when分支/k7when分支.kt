@@ -1,4 +1,4 @@
-package com.yin.yzjcourse
+package com.yin.yzjcourse.k7when分支
 
 import org.junit.Test
 

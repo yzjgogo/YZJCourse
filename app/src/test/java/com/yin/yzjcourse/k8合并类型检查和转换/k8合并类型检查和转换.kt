@@ -1,10 +1,10 @@
-package com.yin.yzjcourse
+package com.yin.yzjcourse.k8合并类型检查和转换
 
 import org.junit.Test
 
 class k8合并类型检查和转换 {
     interface Exter
-    class Num(val a:Int):Exter
+    class Num(val a:Int): Exter
     @Test
     fun testCast(){
         var n = Num(10)

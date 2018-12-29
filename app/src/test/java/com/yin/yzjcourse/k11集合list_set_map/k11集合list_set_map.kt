@@ -1,6 +1,5 @@
-package com.yin.yzjcourse
+package com.yin.yzjcourse.k11集合list_set_map
 
-import com.yin.yzjcourse.k12顶层函数和顶层属性.joinToString
 import org.junit.Test
 import java.util.*
 
