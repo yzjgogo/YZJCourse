@@ -65,5 +65,8 @@ class k9区间和数列和循环in用法 {
         mycount.forEach(fun(value: Int) {
             print(value)
         })
+
+        //forEach用Lambda
+        mycount.forEach { print(it) }
     }
 }

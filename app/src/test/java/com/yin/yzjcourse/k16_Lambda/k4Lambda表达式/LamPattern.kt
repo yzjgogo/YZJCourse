@@ -6,7 +6,7 @@ import org.junit.Test
 /**
  * Lambda表达式就是声明函数类型时，”=“右边的部分
  * {x:Int, y:Int -> x + y}
- * 模式是：{实参1，实参2... -> 函数体}
+ * 模式是：{实参1(:类型)，实参2(:类型)... -> 函数体}
  *
  * 注意点：
  * 要用{}包裹;
@@ -28,7 +28,7 @@ class LamPattern {
     @Test
     fun direct() {
         //但是这样做缺乏可读性，也没有意义
-        { println("哈哈") }()
+        { println("哈哈") }()//这个Lambda只有函数体
 
         //run可以执行一段代码块
         run { println("嘿嘿") }
@@ -37,5 +37,17 @@ class LamPattern {
             var a = 3 + 4
             println(a)
         }
+    }
+
+
+    //Lambda表达式的函数体并不一定是单行，可以更复杂
+    val lam = { x: Int, y: Int ->
+        val a = x + y + 2
+        println(a)
+    }
+
+    @Test
+    fun testl() {
+        lam(1, 2)
     }
 }

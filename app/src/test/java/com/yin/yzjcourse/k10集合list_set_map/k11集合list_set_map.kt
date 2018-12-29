@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.k11集合list_set_map
+package com.yin.yzjcourse.k10集合list_set_map
 
 import org.junit.Test
 import java.util.*
@@ -18,6 +18,7 @@ import java.util.*
 
  */
 class k11集合list_set_map {
+    class Person(val name:String,val age:Int)
     /**
      *
      */
@@ -52,6 +53,10 @@ class k11集合list_set_map {
 
         //获取集合中的最大值，不仅适用于int集合，所有可比较的对象集合都可以
         println("最大值:${list.max()}")
+
+        //根据条件获取最大的元素
+        val people = listOf(Person("jack",20),Person("fuck",30))
+        val maxAge = people.maxBy { it.age }
 
 
     }
