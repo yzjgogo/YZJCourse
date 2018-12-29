@@ -53,6 +53,8 @@ class k14修饰符 {
      * protected：子类中可见，注意和java的区别，java是保内可见，kotlin之内是子类可见
      * private：类或文件中可见
      *
+     * static:kotlin没有static关键字，参考伴生对象
+     *
      * kotlin禁止从public函数引用去引用低可见的类型，即public不可引用internal,protected,private
      * 类的扩展函数不能访问类的private和protected成员。
      */
