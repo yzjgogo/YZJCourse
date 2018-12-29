@@ -1,13 +1,21 @@
 package com.yin.yzjcourse.k16_Lambda.k7成员引用
 
 import org.junit.Test
-
+import com.yin.yzjcourse.k16_Lambda.k4Lambda表达式.LamPattern
 class MyMember {
 
     /**
-     *成员引用：
+     *成员引用(引用类的成员，类名::成员)：
      * 创建一个调用单个方法或者访问单个属性的函数值
      * 不仅可以引用属性，还可以引用函数，如果引用函数不能加()
+     *
+     * 成员引用本质上是一个Lambda，因为Person::age等价于{p:Person -> p.age}，
+     * Person::getMyAge等价于{p:Person -> p.getMyAge()}
+     * [LamPattern]
+     *
+     * kotlin 1.1之后还可以引用实例的成员,实例::成员
+     *
+     * 注意，如果理解不了成员引用，可以吧成员引用转换为Lambda就看懂了。
      */
     @Test
     fun test() {
@@ -53,6 +61,14 @@ class MyMember {
         val ieat = Person::eat
         val myp = Person("Dodo",90)
         ieat(myp)//记得传参因为Person::eat等价于{p:Person -> p.eat()},可见实参列表有参数p
+
+
+        //kotlin 1.1后，实例的成员引用
+        val now = Person("Now",45)
+        val ta = now::age
+        println(ta())//不需传参,因为引用的具体实例的成员
+        val tg = now::getMyAge
+        println(tg())//不需传参,因为引用的具体实例的成员
     }
     val action = {p:Person,m:String -> showit(p,m)}
 
