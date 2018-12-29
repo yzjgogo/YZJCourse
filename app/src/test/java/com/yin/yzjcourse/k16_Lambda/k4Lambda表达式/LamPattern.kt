@@ -33,7 +33,9 @@ class LamPattern {
         //run可以执行一段代码块
         run { println("嘿嘿") }
 
-        run{var a = 3+4
-        println(a)}
+        run {
+            var a = 3 + 4
+            println(a)
+        }
     }
 }

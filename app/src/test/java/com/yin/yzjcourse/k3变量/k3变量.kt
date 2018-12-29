@@ -1,4 +1,4 @@
-package com.yin.yzjcourse
+package com.yin.yzjcourse.k3变量
 
 /**
 val （来自value ） 一一不可变引用。使用val 声明的变量不能在初始化之

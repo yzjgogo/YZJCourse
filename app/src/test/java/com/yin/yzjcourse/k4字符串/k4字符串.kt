@@ -1,4 +1,4 @@
-package com.yin.yzjcourse
+package com.yin.yzjcourse.k4字符串
 
 import org.junit.Test
 
