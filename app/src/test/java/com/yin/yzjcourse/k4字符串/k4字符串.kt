@@ -66,5 +66,21 @@ class k4字符串 {
         val mstr = "abc,def,gh,i,jklm"
         println(mstr.substringBeforeLast(","))//最后换一个‘,’之前的子串
         println(mstr.substringAfterLast(","))//最后一个','之后的子串
+
+
+        /**
+         *  获取字符串的第一个字符和最后一个字符
+         */
+        val ym = "abcdefg"
+        val ymc = ym.first()
+        val yml = ym.last()
+        println("第一个:$ymc \n 最后一个：$yml")
+
+
+        /**
+         * 将字符串转换为字符集合
+         */
+        val strl = "hello"
+        println(strl.toList())
     }
 }

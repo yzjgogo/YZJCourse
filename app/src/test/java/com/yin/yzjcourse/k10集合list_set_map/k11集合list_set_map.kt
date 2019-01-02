@@ -60,4 +60,26 @@ class k11集合list_set_map {
 
 
     }
+
+
+    /**
+     * toSet
+     * 对list去重
+     */
+    @Test
+    fun listtomap(){
+        val list = listOf("a","b","a","a")
+        val set = list.toSet()
+        println(set)
+    }
+
+
+    /**
+     * 通过下标访问集合元素
+     */
+    @Test
+    fun testIndex() {
+        val list = listOf("a", "b", "c")
+        println(list[0])
+    }
 }
