@@ -19,7 +19,7 @@ kotlin只是对这些java里的集合添加了大量的扩展函数，是操作�
 更多内容参考：[com.yin.yzjcourse.k16_Lambda.k8集合库函数和序列.MyCollection]
 
  */
-class k11集合list_set_map {
+class k1集合list_set_map {
     class Person(val name: String, val age: Int)
 
     /**
