@@ -8,6 +8,8 @@ class MyReceive {
      * 这里的this就是sb对象
      *
      * 可以对一个对象进行扩展
+     *
+     * 返回该对象
      */
     @Test
     fun testwith() {
@@ -16,11 +18,13 @@ class MyReceive {
             append("hello")//可省略this
             this.toString()//也可以不省略
         }
+        println(result())
     }
 
     /**
      * apply是一个扩展函数
      * 里面的this指向引用apply函数的对象
+     * 返回该对象
      */
     @Test
     fun testApply() {
@@ -29,5 +33,6 @@ class MyReceive {
             append("myapply")
             this.toString()
         }
+        println(result())
     }
 }

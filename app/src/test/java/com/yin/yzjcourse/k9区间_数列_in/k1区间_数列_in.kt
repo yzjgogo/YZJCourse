@@ -8,6 +8,7 @@ class k1区间_数列_in {
     /**
      * 区间：range
      * reference [testForLoop] related.
+     * 参考:[com.yin.yzjcourse.k20运算符重载与约定.k8_1_rangTo约定]
      * @see testForLoop
      */
     @Test
