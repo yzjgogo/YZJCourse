@@ -43,6 +43,12 @@ fun <T> Collection<T>.joinToString(
 
 
 /**
+ * 可空类型的扩展函数[com.yin.yzjcourse.k18空处理.k3可空类型的扩展函数.MyExtraKt.isReallyNull]
+ */
+
+
+
+/**
  扩展属性
 
  val类型，要自定义getter访问器
