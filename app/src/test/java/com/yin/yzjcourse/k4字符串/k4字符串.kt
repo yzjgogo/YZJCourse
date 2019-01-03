@@ -89,16 +89,40 @@ class k4字符串 {
      * 字符串的null，"","   "判断
      */
     @Test
-    fun testisNull() {
-        var str1:String? = null
-        var str2:String? = ""
-        var str3:String? = "    "
-        var str4:String = ""
-        var str5:String = "   "
+    fun testEmptyCheck() {
+        var str1: String? = null
+        var str2: String? = ""
+        var str3: String? = "    "
+        var str4: String = ""
+        var str5: String = "   "
 
         println(str1.isNullOrEmpty())//对可空值判断是null或这""    可以用null值调用
         println(str3.isNullOrBlank())//对可空值判断是null或者"  "  可以用null值调用
         println(str4.isEmpty())//对非空值判断是不是""     不可以用null值调用
         println(str5.isBlank())//对非空值判断是不是"   "  不可以用null值调用
+    }
+
+
+    /**
+     * 用StringBuilder创建String的优雅方式：buildString{...}
+     */
+    @Test
+    fun testBuildString() {
+        fun getString() = buildString {
+            append("hello")
+            append(" the end")
+        }
+        println(getString())
+    }
+
+    /**
+     * 字符串转换数字时，如果可以转换就转换，如果不可以就返回null
+     */
+    @Test
+    fun testToIntOrNull(){
+        var str1:String = "123"
+        var str2:String = "123abc"
+        println(str1.toIntOrNull())
+        println(str2.toIntOrNull())
     }
 }

@@ -1,9 +1,8 @@
-package com.yin.yzjcourse.k9区间和数列和循环in用法
+package com.yin.yzjcourse.k9区间_数列_in
 
 import org.junit.Test
 
-class k9区间和数列和循环in用法 {
-
+class k1区间_数列_in {
 
 
     /**
@@ -24,7 +23,7 @@ class k9区间和数列和循环in用法 {
         }
 
         //in 也可以用与集合
-        println("判断某个元素在不在集合里：${"kotlin" in setOf("java","kotlin")}")
+        println("判断某个元素在不在集合里：${"kotlin" in setOf("java", "kotlin")}")
     }
 
     /**
@@ -42,31 +41,5 @@ class k9区间和数列和循环in用法 {
         for (i in 1 until 10) {   // i in [1, 10) not include 10.
             println(i)
         }
-
-        //through index loop array or list and so on.
-        var ints = arrayOf(11, 22, 33)
-        for (i in ints.indices) {
-            println(ints[i])
-        }
-
-        //loop index and element at the same time.
-        for ((index, value) in ints.withIndex()) {
-            println("the element at $index is $value")
-        }
-
-        //forEach loop
-        val mycount = intArrayOf(111, 222, 333, 0, 444, 555, 666)
-        mycount.forEach {
-            print(it)
-        }
-        println("分割")
-
-        //use anonymous fun.
-        mycount.forEach(fun(value: Int) {
-            print(value)
-        })
-
-        //forEach用Lambda
-        mycount.forEach { print(it) }
     }
 }

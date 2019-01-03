@@ -1,8 +1,9 @@
-package com.yin.yzjcourse
+package com.yin.yzjcourse.k19数据类型.k1基本类型
 
 import org.junit.Test
 
-class KotlinTest {
+class MyPackage {
+
     /**
      * == and ===
      * 装箱
@@ -24,39 +25,4 @@ class KotlinTest {
         //虽然经过了装箱，但是值是相等的，都是10000
         println(boxedA == anotherBoxedA) // true，值相等
     }
-
-
-    /**
-     * label:return ,break ,continue
-     * just like java's label.
-     */
-    @Test
-    fun testLabel() {
-        //https://www.cnblogs.com/duduhuo/p/6908233.html
-    }
-
-    /**
-     *
-     */
-//    @Test
-//    fun testClassCast(){
-//        var a = ""
-//        var str = a.toInt()
-//        println(str.)
-//    }
-
-
-/*
-    这个类的名称被称为接收者类型；用来调用这个扩展函数的那个对象，叫作接
-    收者对象
-
-
-    在这个扩展函数中，可以像其他成员函数一样用this 。而且也可以像普通的
-    成员函数一样，省略它。
-
-
-    和在
-    类内部定义的方法不同的是，扩展函数不能访问私有的或者是受保护的成员
-
-    */
 }
