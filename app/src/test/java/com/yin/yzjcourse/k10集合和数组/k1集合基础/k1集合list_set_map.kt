@@ -90,16 +90,6 @@ class k1集合list_set_map {
 
 
     /**
-     * 通过下标访问集合元素
-     */
-    @Test
-    fun testIndexVisit() {
-        val list = listOf("a", "b", "c")
-        println(list[0])
-    }
-
-
-    /**
      * 遍历集合
      * 集合遍历与数组遍历完全相同参考数组的遍历
      */
@@ -108,5 +98,70 @@ class k1集合list_set_map {
         /**
          * [com.yin.yzjcourse.k10集合和数组.k4数组.MyArray.testIterator]
          */
+    }
+
+
+    /**
+     * 通过下标访问集合元素
+     * 下标也可以访问map元素
+     *
+     * 也可以通过下标赋值
+     *
+     * 其实是下标运算符的重载，内部有用'operator'修饰的get和set函数
+     * 参考:[com.yin.yzjcourse.k20运算符重载与约定.k6下标运算符get_set约定]
+     */
+    @Test
+    fun testIndexVisit() {
+        val list = arrayListOf("a", "b", "c")
+        list[0] = "e"
+        println(list[0])
+
+        val map = hashMapOf(1 to "one", 2 to "two")
+        map[1] = "ooo"
+        println(map[1])
+        println(map[2])
+    }
+
+
+    /**
+     * 运算符重载的集合扩展函数
+     * 参考：[com.yin.yzjcourse.k20运算符重载与约定.k1重载二元算数运算符.testCollection]
+     * 和[com.yin.yzjcourse.k20运算符重载与约定.k2重载符合赋值运算符.testPlusAssign]
+     */
+    @Test
+    fun testAssign(){
+        val list1 = arrayListOf(11, 22, 33)
+        val list2 = arrayListOf(44)
+        val list3 = arrayListOf(11)
+        //plus函数
+        val list = list1 + list2//产生一个新的集合 返回
+        println(list)
+
+        //minus函数
+        val list4 = list1 - list3//产生一个新的集合返回
+        println(list4)
+
+        println("******************************************")
+
+        val mlist = arrayListOf("a", "b", "c")
+        mlist += "e"
+        println(mlist)
+
+        mlist -= "a"
+        println(mlist)
+    }
+
+
+    /**
+     * 集合用到了‘in’约定
+     * 判断某个对象是否属于集合元素
+     * 参考：[com.yin.yzjcourse.k20运算符重载与约定.k7_in的约定]
+     */
+    @Test
+    fun testIn(){
+        val list = listOf("a","b","c")
+        println("a" in list)//等价于list.contains("a")
+
+        println("z" in list)//list.contains("z")
     }
 }
