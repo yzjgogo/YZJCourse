@@ -93,6 +93,19 @@ class k1集合list_set_map {
 
 
     /**
+     * 集合的平均值
+     * 计算集合元素的平均值，返回double类型
+     */
+    @Test
+    fun testaverage(){
+        val list = listOf(100,200,300)
+        println(list.average())
+    }
+
+
+
+
+    /**
      * 遍历集合
      * 集合遍历与数组遍历完全相同参考数组的遍历
      */
