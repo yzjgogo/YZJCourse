@@ -97,12 +97,34 @@ class k1集合list_set_map {
      * 计算集合元素的平均值，返回double类型
      */
     @Test
-    fun testaverage(){
-        val list = listOf(100,200,300)
+    fun testaverage() {
+        val list = listOf(100, 200, 300)
         println(list.average())
     }
 
 
+    /**
+     * 获取指定索引区间的元素集合
+     */
+    @Test
+    fun getIndexRange() {
+        val list = listOf("a", "b", "c", "d", "e", "f", "g")
+        val mlist = list.slice(1..3)//获取索引1,2,3位置的元素组成新的集合返回
+        println(mlist)
+    }
+
+
+    /**
+     * 获取集合中指定类型的实例元素，组成新的集合返回
+     * filterIsInstance()用到了泛型中的实化类型参数，参考[com.yin.yzjcourse.k21泛型.k4泛型运行时擦除.K2实化类型参数]
+     */
+    @Test
+    fun filterIsInstance() {
+        val list = listOf("a", 1, 2.0, "b")
+        //获取list中字符串实例的元素
+        val result = list.filterIsInstance<String>()
+        println(result)
+    }
 
 
     /**
@@ -145,7 +167,7 @@ class k1集合list_set_map {
      * 和[com.yin.yzjcourse.k20运算符重载与约定.k2重载符合赋值运算符.testPlusAssign]
      */
     @Test
-    fun testAssign(){
+    fun testAssign() {
         val list1 = arrayListOf(11, 22, 33)
         val list2 = arrayListOf(44)
         val list3 = arrayListOf(11)
@@ -174,8 +196,8 @@ class k1集合list_set_map {
      * 参考：[com.yin.yzjcourse.k20运算符重载与约定.k7_in的约定]
      */
     @Test
-    fun testIn(){
-        val list = listOf("a","b","c")
+    fun testIn() {
+        val list = listOf("a", "b", "c")
         println("a" in list)//等价于list.contains("a")
 
         println("z" in list)//list.contains("z")
@@ -186,7 +208,7 @@ class k1集合list_set_map {
      * 集合的解构声明和组件函数
      */
     @Test
-    fun testcomponent(){
+    fun testcomponent() {
         /**
          * 参考:[com.yin.yzjcourse.k20运算符重载与约定.k9_1解构声明_声明多个变量.testCollectionAndArray]
          */
