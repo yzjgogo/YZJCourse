@@ -55,6 +55,9 @@ class k1集合list_set_map {
 
     /**
      * map的创建与修改
+     *
+     * map的遍历用到了解构声明(letter,binary),参考:[com.yin.yzjcourse.k20运算符重载与约定.k9_1解构声明_声明多个变量]
+     * 参考 kotlin in action page195
      */
     @Test
     fun testMap() {
@@ -163,5 +166,16 @@ class k1集合list_set_map {
         println("a" in list)//等价于list.contains("a")
 
         println("z" in list)//list.contains("z")
+    }
+
+
+    /**
+     * 集合的解构声明和组件函数
+     */
+    @Test
+    fun testcomponent(){
+        /**
+         * 参考:[com.yin.yzjcourse.k20运算符重载与约定.k9_1解构声明_声明多个变量.testCollectionAndArray]
+         */
     }
 }

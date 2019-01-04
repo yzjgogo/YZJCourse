@@ -127,6 +127,19 @@ class MyArray {
         for ((index, element) in arr.withIndex()) {
             println("with：arr[$index]=$element")
         }
+    }
 
+
+
+
+
+    /**
+     * 数组的解构声明和组件函数
+     */
+    @Test
+    fun testcomponent(){
+        /**
+         * 参考:[com.yin.yzjcourse.k20运算符重载与约定.k9_1解构声明_声明多个变量.testCollectionAndArray]
+         */
     }
 }

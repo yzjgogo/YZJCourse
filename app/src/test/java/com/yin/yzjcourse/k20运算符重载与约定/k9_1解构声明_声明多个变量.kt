@@ -8,7 +8,7 @@ import org.junit.Test
  */
 class k9_1解构声明_声明多个变量 {
     /**
-     * 对于数据类，编译器为每个在主构造方法中声明的属性都定义了componentN()函数，依次是component1,component2,...,注意是从1开始，不是从0开始
+     * 对于数据类，编译器为每个在主构造方法中声明的属性都定义了componentN()组件函数，依次是component1,component2,...,注意是从1开始，不是从0开始
      * 这些属性的类型可以不相同
      * 解构声明：val (a,b) = point
      * 等价于：val a = point.component1()
