@@ -27,6 +27,9 @@ import kotlinx.android.synthetic.main.activity_extension.*
  * 那么问题来了，如果我每次通过控件id访问控件，kotlin-android-extensions是不是都会重复调用依次findViewById()呢？
  * 当然不是，如果重复调用了，肯定会影响性能，kotlin-android-extensions内部采用了缓存策略，避免了findViewById()的重复调用。
  * 具体参考:[com.yin.yzjcourse.mykt.AndroidExtensions.E5MakeYourselfCache]
+ *
+ * 查看kotlin-android-extensions是如何调用findViewById()可通过如下方法查看，这也是查看kotlin代码的java版本的途径
+ * Android Studio -> Tools -> Kotlin -> Show Kotlin Bytecode -> Decompile
  */
 class ExtensionActivity : BaseActivity() {
 

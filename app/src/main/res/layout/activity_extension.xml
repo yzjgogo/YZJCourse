@@ -5,7 +5,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".mykt.AndroidExtensions.ExtensionActivity">
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="本Activity自己的内容，看注释，主要是对kotlin-android-extensions的整体总结"/>
     <Button
         android:id="@+id/btFind"
         android:layout_width="match_parent"
@@ -32,5 +35,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="轻松让一个类实现Parcelable"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btCache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更改kotlin-android-extensions的缓存方式"
         android:textAllCaps="false" />
 </LinearLayout>
