@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mykt.AndroidExtensions.ExtensionActivity">
+
+    <Button
+        android:id="@+id/btFind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="应用到Activity省略findViewById()"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btRecycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="用在ViewHolder省略findViewById()"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btDiy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="用在自定义控件省略findViewById()"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btParcel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="轻松让一个类实现Parcelable"
+        android:textAllCaps="false" />
+</LinearLayout>

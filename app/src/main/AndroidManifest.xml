@@ -140,9 +140,14 @@
         <activity android:name=".Base.VPTransformerActivity" />
         <activity android:name=".Base.VPTabLayoutActivity" />
         <activity android:name=".Net.NetActivity" />
-        <activity android:name=".mykt.FirActivity" />
+        <activity android:name=".mykt.AndroidExtensions.E1UseInActivity.WeightActivity" />
         <activity android:name=".DesignModel.DesignModelListActivity" />
-        <activity android:name=".DesignModel.Decorate.DecoratorPatternActivity"></activity>
+        <activity android:name=".DesignModel.Decorate.DecoratorPatternActivity" />
+        <activity android:name=".mykt.AndroidExtensions.E2UseInViewHolder.RecyActivity" />
+        <activity android:name=".mykt.MyKtActivity" />
+        <activity android:name=".mykt.AndroidExtensions.ExtensionActivity" />
+        <activity android:name=".mykt.AndroidExtensions.E3UseInDiyView.DiyActivity" />
+        <activity android:name=".mykt.AndroidExtensions.E5MakeYourselfCache.CacheActivity"></activity>
     </application>
 
 </manifest>

@@ -47,6 +47,11 @@ android {
     dataBinding {
         enabled = true
     }
+    androidExtensions {
+        //kotlin-android-extensions用于ViewHolder和实现Parcelable的功能处于实验阶段，需要加上这句话才能启动该功能
+        //参考:com.yin.yzjcourse.mykt.AndroidExtensions.Adapter.FruitAdapter.ViewHolder
+        experimental = true
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -91,4 +96,5 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     testImplementation 'junit:junit:4.12'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+//    implementation "org.jetbrains.anko:anko-common:$anko_version"
 }

@@ -27,7 +27,7 @@ import com.yin.yzjcourse.Net.NetActivity;
 import com.yin.yzjcourse.OfficialWeight.OfficialWeightActivity;
 import com.yin.yzjcourse.Optimize.OptimizeActivity;
 import com.yin.yzjcourse.RxJava2.RxRelease2Activity;
-import com.yin.yzjcourse.mykt.FirActivity;
+import com.yin.yzjcourse.mykt.MyKtActivity;
 import com.yin.yzjcourse.tools.ToolsActivity;
 
 import butterknife.BindView;
@@ -149,7 +149,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, NetActivity.class));
                 break;
             case R.id.bt_kotlin:
-                startActivity(new Intent(this, FirActivity.class));
+                startActivity(new Intent(this, MyKtActivity.class));
                 break;
             case R.id.bt_model:
                 startActivity(new Intent(this, DesignModelListActivity.class));
