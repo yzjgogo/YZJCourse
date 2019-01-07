@@ -5,6 +5,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".mykt.MyAnko.AlertAndProcess.AlertAndProcessActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="这个页面还有toast和snackbar的用法，看看就行了"/>
 
     <Button
         android:id="@+id/btDialog1"
