@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mykt.MyAnko.MyIntent.MyIntentActivity">
+<Button
+    android:id="@+id/btStart"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="启动activity,同时设置Flag"
+    android:textAllCaps="false"/>
+<Button
+    android:id="@+id/btStart2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="启动activity,不设置Flag"
+    android:textAllCaps="false"/>
+<Button
+    android:id="@+id/btStart3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="打电话，发短信，打开浏览器，分享，发邮件等，进来看一下就行了，没有单击事件"
+    android:textAllCaps="false"/>
+</LinearLayout>

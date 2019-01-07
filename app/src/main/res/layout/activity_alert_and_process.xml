@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mykt.MyAnko.AlertAndProcess.AlertAndProcessActivity">
+
+    <Button
+        android:id="@+id/btDialog1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自带固定按钮信息的dialog"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btDialog2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义按钮信息的dialog"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btDialog3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义布局的dialog"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btSelect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="可选择的dialog"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btProcess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="不确定进度对话框(转圈),(不全待补充)"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btProcess2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="有进度的进度对话框,(不全待补充)"
+        android:textAllCaps="false" />
+</LinearLayout>

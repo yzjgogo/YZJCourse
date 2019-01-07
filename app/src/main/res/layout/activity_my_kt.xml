@@ -13,8 +13,10 @@
         android:text="kotlin-android-extensions"
         android:textAllCaps="false"/>
     <Button
+        android:id="@+id/btAnko"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="anko的用法"
         android:textAllCaps="false"/>
 
 </LinearLayout>

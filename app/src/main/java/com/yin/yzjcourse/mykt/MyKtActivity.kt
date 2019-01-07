@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.yin.yzjcourse.BaseActivity
 import com.yin.yzjcourse.R
 import com.yin.yzjcourse.mykt.AndroidExtensions.ExtensionActivity
+import com.yin.yzjcourse.mykt.MyAnko.MyAnkoActivity
 import kotlinx.android.synthetic.main.activity_my_kt.*
 
 class MyKtActivity : BaseActivity() {
@@ -18,6 +19,9 @@ class MyKtActivity : BaseActivity() {
     private fun initView() {
         btExtension.setOnClickListener {
             startActivity(Intent(this, ExtensionActivity::class.java))
+        }
+        btAnko.setOnClickListener {
+            startActivity(Intent(this, MyAnkoActivity::class.java))
         }
     }
 }

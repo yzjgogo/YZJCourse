@@ -7,8 +7,8 @@ import com.yin.yzjcourse.R
 import com.yin.yzjcourse.mykt.AndroidExtensions.E3UseInDiyView.DiyActivity
 import com.yin.yzjcourse.mykt.AndroidExtensions.E1UseInActivity.WeightActivity
 import com.yin.yzjcourse.mykt.AndroidExtensions.E2UseInViewHolder.RecyActivity
-import com.yin.yzjcourse.mykt.startActivity
 import kotlinx.android.synthetic.main.activity_extension.*
+import org.jetbrains.anko.startActivity
 
 /**
  * kotlin-android-extensions的更详细用法，请参考：
