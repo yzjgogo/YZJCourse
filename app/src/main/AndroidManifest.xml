@@ -148,12 +148,19 @@
         <activity android:name=".mykt.AndroidExtensions.ExtensionActivity" />
         <activity android:name=".mykt.AndroidExtensions.E3UseInDiyView.DiyActivity" />
         <activity android:name=".mykt.AndroidExtensions.E5MakeYourselfCache.CacheActivity" />
-        <activity android:name=".mykt.MyAnko.Async.AsyncActivity" />
-        <activity android:name=".mykt.MyAnko.AlertAndProcess.AlertAndProcessActivity" />
+        <activity android:name=".mykt.MyAnko.A4Async.AsyncActivity" />
+        <activity android:name=".mykt.MyAnko.A2AlertAndProcess.AlertAndProcessActivity" />
         <activity android:name=".mykt.MyAnko.MyAnkoActivity" />
-        <activity android:name=".mykt.MyAnko.DB.MyDbActivity" />
-        <activity android:name=".mykt.MyAnko.MyIntent.MyIntentActivity" />
-        <activity android:name=".mykt.MyAnko.MyIntent.SecontIntentActivity"></activity>
+        <activity android:name=".mykt.MyAnko.A6DB.MyDbActivity" />
+        <activity android:name=".mykt.MyAnko.A1MyIntent.MyIntentActivity" />
+        <activity android:name=".mykt.MyAnko.A1MyIntent.SecontIntentActivity" />
+        <activity android:name=".mykt.MyAnko.A3Logging.MyLoggingActivity" />
+        <activity android:name="com.yin.yzjcourse.mykt.MyAnko.A5Layouts.L3ResourcesAndDimensions.ResDimeActivity" />
+        <activity android:name=".mykt.MyAnko.A5Layouts.L1Direcyly.MyLayoutDirectlyActivity" />
+        <activity android:name=".mykt.MyAnko.A5Layouts.LayoutActivity" />
+        <activity android:name=".mykt.MyAnko.A5Layouts.L2Separate.ComponentActivity" />
+        <activity android:name=".mykt.MyAnko.A5Layouts.L4LayoutParams.ParamsActivity" />
+        <activity android:name=".mykt.MyAnko.A5Layouts.L5IncludeXMLLayout.IncludeActivity"></activity>
     </application>
 
 </manifest>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".mykt.MyAnko.Async.AsyncActivity">
+    tools:context=".mykt.MyAnko.A4Async.AsyncActivity">
 <Button
     android:id="@+id/btDo"
     android:layout_width="match_parent"

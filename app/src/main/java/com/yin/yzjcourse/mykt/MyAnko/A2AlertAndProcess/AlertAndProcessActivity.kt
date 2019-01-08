@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.mykt.MyAnko.AlertAndProcess
+package com.yin.yzjcourse.mykt.MyAnko.A2AlertAndProcess
 
 import android.os.Bundle
 import com.yin.yzjcourse.BaseActivity
@@ -6,6 +6,10 @@ import com.yin.yzjcourse.R
 import kotlinx.android.synthetic.main.activity_alert_and_process.*
 import org.jetbrains.anko.*
 
+/**
+ * 官网介绍：
+ * https://github.com/Kotlin/anko/wiki/Anko-Commons-%E2%80%93-Dialogs
+ */
 class AlertAndProcessActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

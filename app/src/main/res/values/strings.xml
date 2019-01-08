@@ -126,6 +126,8 @@
 
 
     <string name="header_text">Chatum Latinum</string>
+    <string name="et_pwd">我是密码</string>
+    <string name="et_user">我是用户</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

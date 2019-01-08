@@ -89,4 +89,11 @@
         <!--colorControlHighlight：指定按压下去时的颜色，且带有水波纹，但是只有Android5.0或更高版本有效-->
         <item name="colorControlHighlight">@color/orange</item>
     </style>
+    <style name="AnkoButton">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:background">@color/alex_color</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
 </resources>

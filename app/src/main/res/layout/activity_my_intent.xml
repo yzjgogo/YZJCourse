@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".mykt.MyAnko.MyIntent.MyIntentActivity">
+    tools:context=".mykt.MyAnko.A1MyIntent.MyIntentActivity">
 <Button
     android:id="@+id/btStart"
     android:layout_width="match_parent"

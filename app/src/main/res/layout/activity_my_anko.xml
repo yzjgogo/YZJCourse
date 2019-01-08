@@ -7,10 +7,10 @@
     tools:context=".mykt.MyAnko.MyAnkoActivity">
 
     <Button
-        android:id="@+id/btAsync"
+        android:id="@+id/btIntent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="doAsync开启子线程与uiThread切换回子线程、toast"
+        android:text="Intent"
         android:textAllCaps="false" />
 
     <Button
@@ -21,10 +21,24 @@
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/btIntent"
+        android:id="@+id/btLogging"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Intent"
+        android:text="logging日志输出(待补充)"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btAsync"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="doAsync开启子线程与uiThread切换回子线程、toast"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="布局"
         android:textAllCaps="false" />
 
     <Button

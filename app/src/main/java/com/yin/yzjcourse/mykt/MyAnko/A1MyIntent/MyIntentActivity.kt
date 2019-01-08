@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.mykt.MyAnko.MyIntent
+package com.yin.yzjcourse.mykt.MyAnko.A1MyIntent
 
 import android.os.Bundle
 import com.yin.yzjcourse.BaseActivity
