@@ -155,12 +155,17 @@
         <activity android:name=".mykt.MyAnko.A1MyIntent.MyIntentActivity" />
         <activity android:name=".mykt.MyAnko.A1MyIntent.SecontIntentActivity" />
         <activity android:name=".mykt.MyAnko.A3Logging.MyLoggingActivity" />
-        <activity android:name="com.yin.yzjcourse.mykt.MyAnko.A5Layouts.L3ResourcesAndDimensions.ResDimeActivity" />
+        <activity android:name=".mykt.MyAnko.A5Layouts.L3ResourcesAndDimensions.ResDimeActivity" />
         <activity android:name=".mykt.MyAnko.A5Layouts.L1Direcyly.MyLayoutDirectlyActivity" />
         <activity android:name=".mykt.MyAnko.A5Layouts.LayoutActivity" />
         <activity android:name=".mykt.MyAnko.A5Layouts.L2Separate.ComponentActivity" />
         <activity android:name=".mykt.MyAnko.A5Layouts.L4LayoutParams.ParamsActivity" />
-        <activity android:name=".mykt.MyAnko.A5Layouts.L5IncludeXMLLayout.IncludeActivity"></activity>
+        <activity android:name=".mykt.MyAnko.A5Layouts.L5IncludeXMLLayout.IncludeActivity" />
+        <activity android:name=".MultiProcess.MultiMainActivity" />
+        <activity android:name=".MultiProcess.MultiSecondActivity"
+            android:process=":remote"/>
+        <activity android:name=".MultiProcess.MultiThirdActivity"
+            android:process="com.yin.yzjcourse.remote"></activity>
     </application>
 
 </manifest>

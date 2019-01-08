@@ -155,6 +155,12 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="设计模式" />
+        <Button
+            android:id="@+id/bt_multi_process"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="多进程IPC" />
 
     </LinearLayout>
 </ScrollView>
