@@ -11,11 +11,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textAllCaps="false"
-    android:text="Android多进程如何开启，以及怎么理解"/>
+    android:text="Android多进程如何开启，以及怎么理解,这也是为什么需要进程间通信的原因，也是Binder等存在的意义"/>
 <Button
     android:id="@+id/bt_xuliehua"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textAllCaps="false"
     android:text="Serializable和Parcelable"/>
+<Button
+    android:id="@+id/bt_aidl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAllCaps="false"
+    android:text="AIDL用法"/>
 </LinearLayout>

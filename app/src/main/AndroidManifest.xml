@@ -169,7 +169,20 @@
             android:name=".MultiProcess.AndroidMulti.MultiThirdActivity"
             android:process="com.yin.yzjcourse.remote" />
         <activity android:name=".MultiProcess.SerializableAndParcelable.UserActivity" />
-        <activity android:name=".MultiProcess.MultiActivity"></activity>
+        <activity android:name=".MultiProcess.MultiActivity" />
+
+        <service
+            android:name=".MultiProcess.MyAidl.MyService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":aidl"
+            >
+            <intent-filter>
+                <action android:name="com.yin.yzjcourse.remote_service"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".MultiProcess.MyAidl.ClientActivity"></activity>
     </application>
 
 </manifest>
