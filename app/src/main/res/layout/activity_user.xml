@@ -5,21 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MultiProcess.AndroidMulti.MultiMainActivity">
-<TextView
-    android:id="@+id/tv"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+    tools:context=".MultiProcess.SerializableAndParcelable.UserActivity">
     <Button
-        android:id="@+id/bt_second"
+        android:id="@+id/bt_ser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="启动Second"/>
+        android:text="序列化User"/>
     <Button
-        android:id="@+id/bt_third"
+        android:id="@+id/bt_ser_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="启动Third"/>
+        android:text="反序列化User"/>
+
 </LinearLayout>

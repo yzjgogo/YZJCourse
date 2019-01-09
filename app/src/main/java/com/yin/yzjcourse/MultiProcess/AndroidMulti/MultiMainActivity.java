@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.MultiProcess;
+package com.yin.yzjcourse.MultiProcess.AndroidMulti;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
-import com.yin.yzjcourse.utils.DLog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

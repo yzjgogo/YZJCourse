@@ -23,7 +23,8 @@ import com.yin.yzjcourse.DiyWidget.ViewGroupAnimActivity;
 import com.yin.yzjcourse.ForeService.ForeServiceActivity;
 import com.yin.yzjcourse.MaterialDesign.MaterialDesignActivity;
 import com.yin.yzjcourse.MathAbout.MathAboutActivity;
-import com.yin.yzjcourse.MultiProcess.MultiMainActivity;
+import com.yin.yzjcourse.MultiProcess.AndroidMulti.MultiMainActivity;
+import com.yin.yzjcourse.MultiProcess.MultiActivity;
 import com.yin.yzjcourse.Net.NetActivity;
 import com.yin.yzjcourse.OfficialWeight.OfficialWeightActivity;
 import com.yin.yzjcourse.Optimize.OptimizeActivity;
@@ -156,7 +157,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, DesignModelListActivity.class));
                 break;
             case R.id.bt_multi_process:
-                startActivity(new Intent(this, MultiMainActivity.class));
+                startActivity(new Intent(this, MultiActivity.class));
                 break;
         }
     }

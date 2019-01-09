@@ -161,11 +161,15 @@
         <activity android:name=".mykt.MyAnko.A5Layouts.L2Separate.ComponentActivity" />
         <activity android:name=".mykt.MyAnko.A5Layouts.L4LayoutParams.ParamsActivity" />
         <activity android:name=".mykt.MyAnko.A5Layouts.L5IncludeXMLLayout.IncludeActivity" />
-        <activity android:name=".MultiProcess.MultiMainActivity" />
-        <activity android:name=".MultiProcess.MultiSecondActivity"
-            android:process=":remote"/>
-        <activity android:name=".MultiProcess.MultiThirdActivity"
-            android:process="com.yin.yzjcourse.remote"></activity>
+        <activity android:name=".MultiProcess.AndroidMulti.MultiMainActivity" />
+        <activity
+            android:name=".MultiProcess.AndroidMulti.MultiSecondActivity"
+            android:process=":remote" />
+        <activity
+            android:name=".MultiProcess.AndroidMulti.MultiThirdActivity"
+            android:process="com.yin.yzjcourse.remote" />
+        <activity android:name=".MultiProcess.SerializableAndParcelable.UserActivity" />
+        <activity android:name=".MultiProcess.MultiActivity"></activity>
     </application>
 
 </manifest>

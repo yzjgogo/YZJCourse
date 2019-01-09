@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.MultiProcess;
+package com.yin.yzjcourse.MultiProcess.AndroidMulti;
 
 import android.app.ActivityManager;
 import android.content.Context;
