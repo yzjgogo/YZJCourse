@@ -28,9 +28,20 @@ public class ClientActivity extends BaseActivity {
      * 这是与服务链接的回调
      */
     private ServiceConnection mConnection = new ServiceConnection() {
+        /**
+         * 返回一个IMyAidl实例(从服务端拿到的)
+         * 这个返回的IMyAidl是一个Proxy代理，即服务端IMyAidl接口的代理，这个代理的构造参数是服务端的IBinder
+         *
+         * 注意：
+         * asInterface会做一个判断，如果你绑定服务的动作是在同一个线程(客户度和服务端位于同一个进程)，则不会返
+         * 回所谓服务端代理，而是直接返回服务端的Stub对象；
+         * 如果是跨进程调用，则才返回服务端IMyAidl接口的代理Stub.proxy。
+         *
+         * @param name
+         * @param service
+         */
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            //连接成功后可获取接口，这个接口是客户端和服务端都认可的，可通过该接口通信
             mAidl = IMyAidl.Stub.asInterface(service);
         }
 
@@ -71,6 +82,19 @@ public class ClientActivity extends BaseActivity {
     }
 
 
+    /**
+     * 前提客户端的IMyAidl虽然是在客户端本地，但是服务端IMyAidl的代理（Stub.proxy）
+     *
+     * 以getPersonList()为例：
+     * 客户端本地调用IMyAidl(Stub.proxy代理,在在客户端)的getPersonList()方法,该方法内部会调用mRemote.transact(Stub.TRANSACTION_getPersonList, _data, _reply, 0)
+     * 这个mRemote指向服务端的IBinder，第一个参数是客户端要顶用的服务端的方法的id，第二个参数是客户端要传递的参数(如果有，addPerson(person)就有)，
+     * 第三个参数是服务端执行完客户端要调用的服务端方法后，如果有返回值就将返回值写入这个reply。
+     * mRemote.transact(Stub.TRANSACTION_getPersonList, _data, _reply, 0)执行完后从_reply取出服务端的返回值，
+     * 由Stub.proxy的getPersonList()返回。
+     * 在mRemote.transact(Stub.TRANSACTION_getPersonList, _data, _reply, 0)才真正远程调用服务端的
+     * onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags)方法，这个方法运行在服务端的Binder线程池，
+     * 这个方法是真正调用服务端的getPersonList()的位置。
+     */
     private void call() {
         Random random = new Random();
         Person person = new Person("yzj" + random.nextInt(10));
