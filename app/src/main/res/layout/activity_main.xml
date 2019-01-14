@@ -161,6 +161,12 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="多进程IPC" />
+        <Button
+            android:id="@+id/bt_window"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Window" />
 
     </LinearLayout>
 </ScrollView>
