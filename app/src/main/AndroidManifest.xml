@@ -8,8 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
 
-
-    <!--<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />-->
+    <!-- <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> -->
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -183,7 +182,8 @@
         </service>
 
         <activity android:name=".MultiProcess.MyAidl.ClientActivity" />
-        <activity android:name=".Window.MyWindowActivity"></activity>
+        <activity android:name=".Window.MyWindowActivity" />
+        <activity android:name=".DesignModel.P1策略模式.StrategyActivity" />
     </application>
 
 </manifest>
