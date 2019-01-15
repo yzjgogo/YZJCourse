@@ -7,6 +7,20 @@
     tools:context=".DesignModel.DesignModelListActivity">
 
     <Button
+        android:id="@+id/bt_celuo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="策略模式"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_guanchazhe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="观察者模式"
+        android:textAllCaps="false" />
+
+    <Button
         android:id="@+id/bt_decorate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,9 +28,37 @@
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/bt_other"
+        android:id="@+id/bt_gongchang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="装饰器模式"
+        android:text="工厂模式"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_danli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="单例模式"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_mingling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="命令模式"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_shipeiqi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="适配器模式"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_waiguan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="外观模式"
         android:textAllCaps="false" />
 </LinearLayout>
