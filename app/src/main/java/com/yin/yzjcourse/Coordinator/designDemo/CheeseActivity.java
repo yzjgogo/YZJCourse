@@ -96,7 +96,7 @@ import java.util.List;
  android:minHeight="?attr/actionBarSize"
  android:layout_height="150dp"
  android:background="?attr/colorPrimary"
- app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+ app:popupTheme="@style/ThemeOverlay.AppCompat.LightReceiver"
  app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed" />
  <Child2 />
  </AppBarLayout>
@@ -113,7 +113,7 @@ import java.util.List;
  android:minHeight="?attr/actionBarSize"
  android:layout_height="150dp"
  android:background="?attr/colorPrimary"
- app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+ app:popupTheme="@style/ThemeOverlay.AppCompat.LightReceiver"
  app:layout_scrollFlags="scroll|exitUntilCollapsed" />
  <Child2 />
  </AppBarLayout>

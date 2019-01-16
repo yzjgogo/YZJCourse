@@ -40,7 +40,7 @@ public class OtherActivity extends BaseActivity implements View.OnClickListener 
              * 如果在setError之前设置ErrorEnabled为true则，默认在EditText下方预留出用于显示错误提示的控件；
              * 否则默认不预留，只有当显示错误提示时才会改变布局，显示错误提示
              * 要改变其颜色则用：
-             * <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+             * <style name="AppTheme" parent="Theme.AppCompat.LightReceiver.NoActionBar">
              <item name="colorAccent">#3498db</item>
              </style>
              */
