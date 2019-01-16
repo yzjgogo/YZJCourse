@@ -24,6 +24,8 @@ import com.yin.yzjcourse.DesignModel.P1策略模式.叫唤行为.叫唤基类.Qu
  * 			和QuackBehavior接收的，所以这些算法族之间可以互相替换。
  * 			Duck类(客户)只要求你具有‘飞行’和‘叫唤’的功能就行了，具体怎么飞怎么叫客户是不管的。
  * 			也就是说我只关心你是不是FlyBehavior和QuackBehavior，而不关心你是具体的哪个。
+ *
+ * 	参考:strategy_1.png
  */
 public abstract class Duck {
 	//与接口组合，拥有了接口的功能，也避免了继承。只关心抽象对象，不关系具体对象。可以在Duck的子类创建时赋值。

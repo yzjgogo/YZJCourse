@@ -19,6 +19,8 @@ import com.yin.yzjcourse.DesignModel.P2观察者模式.自定义观察者模式.
  * <p>
  * 观察者模式：
  * 定义了对象之间的一对多依赖，这样一来，当一个对象改变状态时，它的所有依赖者都会收到通知并自动更新。
+ *
+ * 参考：observer_1.png、observer_2.png
  */
 public class Test {
 
