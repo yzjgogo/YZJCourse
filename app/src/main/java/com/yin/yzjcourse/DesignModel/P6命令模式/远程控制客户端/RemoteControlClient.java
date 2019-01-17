@@ -20,6 +20,7 @@ import com.yin.yzjcourse.DesignModel.P6命令模式.命令的远程调用者.Rem
  *  类应该对扩展开放，对修改关闭：这里，你可以任意增减命令，而无需修改Commend接口。切可通过RemoteInvoker的
  *                              setCommand()方法随时更改RemoteInvoker的功能。
  *  依赖抽象，不要依赖具体类(依赖倒置)：RemoteInvoker依赖抽象的接口Commend。
+ *  别主动找我，我会叫你的(好莱坞原则)：命令接口的方法会主动调用命令的实际执行者的方法，这是单向调用的。
  *
  *
  *  命令模式：将请求(接收者)封装成命令对象，客户可通过命令对象松耦合执行请求。
