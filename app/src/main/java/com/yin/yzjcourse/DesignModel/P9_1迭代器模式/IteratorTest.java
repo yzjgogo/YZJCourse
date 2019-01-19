@@ -1,8 +1,8 @@
-package com.yin.yzjcourse.DesignModel.P9迭代器模式;
+package com.yin.yzjcourse.DesignModel.P9_1迭代器模式;
 
-import com.yin.yzjcourse.DesignModel.P9迭代器模式.聚合对象_内部维护对象集合的类_需暴露出遍历内部集合元素的迭代器.聚合类1_内部集合无自带迭代器需定义一个迭代器.DinerMenu;
-import com.yin.yzjcourse.DesignModel.P9迭代器模式.聚合对象_内部维护对象集合的类_需暴露出遍历内部集合元素的迭代器.聚合类2_内部集合有自带迭代器.PancakeHouseMenu;
-import com.yin.yzjcourse.DesignModel.P9迭代器模式.访问聚合对象的客户代码.Waitress;
+import com.yin.yzjcourse.DesignModel.P9_1迭代器模式.聚合对象_内部维护对象集合的类_需暴露出遍历内部集合元素的迭代器.聚合类1_内部集合无自带迭代器需定义一个迭代器.DinerMenu;
+import com.yin.yzjcourse.DesignModel.P9_1迭代器模式.聚合对象_内部维护对象集合的类_需暴露出遍历内部集合元素的迭代器.聚合类2_内部集合有自带迭代器.PancakeHouseMenu;
+import com.yin.yzjcourse.DesignModel.P9_1迭代器模式.访问聚合对象的客户代码.Waitress;
 
 /**
  *  迭代器模式：

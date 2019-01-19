@@ -1,4 +1,4 @@
-package com.yin.yzjcourse.DesignModel.P9迭代器模式.聚合对象内部集合存放的元素类;
+package com.yin.yzjcourse.DesignModel.P9_1迭代器模式.聚合对象内部集合存放的元素类;
 
 /**
  * 所有聚合类内部的对象集合存放的都是MenuItem类型的对象。

@@ -1,6 +1,6 @@
-package com.yin.yzjcourse.DesignModel.P9迭代器模式.聚合对象的公共接口_使所有聚合类属于同一类_使客户代码解耦;
+package com.yin.yzjcourse.DesignModel.P9_1迭代器模式.聚合对象的公共接口_使所有聚合类属于同一类_使客户代码解耦;
 
-import com.yin.yzjcourse.DesignModel.P9迭代器模式.聚合对象内部集合存放的元素类.MenuItem;
+import com.yin.yzjcourse.DesignModel.P9_1迭代器模式.聚合对象内部集合存放的元素类.MenuItem;
 
 import java.util.Iterator;
 

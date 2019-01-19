@@ -1,8 +1,7 @@
-package com.yin.yzjcourse.DesignModel.P9迭代器模式.聚合对象_内部维护对象集合的类_需暴露出遍历内部集合元素的迭代器.聚合类2_内部集合有自带迭代器;
+package com.yin.yzjcourse.DesignModel.P9_1迭代器模式.聚合对象_内部维护对象集合的类_需暴露出遍历内部集合元素的迭代器.聚合类2_内部集合有自带迭代器;
 
-import com.yin.yzjcourse.DesignModel.P9迭代器模式.聚合对象_内部维护对象集合的类_需暴露出遍历内部集合元素的迭代器.聚合类1_内部集合无自带迭代器需定义一个迭代器.迭代器.DinerMenuIterator;
-import com.yin.yzjcourse.DesignModel.P9迭代器模式.聚合对象内部集合存放的元素类.MenuItem;
-import com.yin.yzjcourse.DesignModel.P9迭代器模式.聚合对象的公共接口_使所有聚合类属于同一类_使客户代码解耦.Menu;
+import com.yin.yzjcourse.DesignModel.P9_1迭代器模式.聚合对象内部集合存放的元素类.MenuItem;
+import com.yin.yzjcourse.DesignModel.P9_1迭代器模式.聚合对象的公共接口_使所有聚合类属于同一类_使客户代码解耦.Menu;
 
 import java.util.ArrayList;
 import java.util.Iterator;
