@@ -1,5 +1,4 @@
-package com.yin.yzjcourse.DesignModel.P12原型模式.抽象的原型类;
-import java.lang.Cloneable;
+package com.yin.yzjcourse.DesignModel.P12_1原型模式.抽象的原型类;
 
 /**
  * 1：各个具体的原型类都需实现该接口；

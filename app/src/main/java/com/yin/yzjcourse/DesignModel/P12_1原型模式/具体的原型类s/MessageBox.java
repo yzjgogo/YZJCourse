@@ -1,7 +1,7 @@
-package com.yin.yzjcourse.DesignModel.P12原型模式.具体的原型类s;
+package com.yin.yzjcourse.DesignModel.P12_1原型模式.具体的原型类s;
 
 
-import com.yin.yzjcourse.DesignModel.P12原型模式.抽象的原型类.Product;
+import com.yin.yzjcourse.DesignModel.P12_1原型模式.抽象的原型类.Product;
 
 /**
  * 具体的原型类，实现Product接口。

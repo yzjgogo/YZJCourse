@@ -1,7 +1,8 @@
-package com.yin.yzjcourse.DesignModel.P12原型模式.业务使用者;
-import com.yin.yzjcourse.DesignModel.P12原型模式.抽象的原型类.Product;
+package com.yin.yzjcourse.DesignModel.P12_1原型模式.业务使用者;
 
-import java.util.*;
+import com.yin.yzjcourse.DesignModel.P12_1原型模式.抽象的原型类.Product;
+
+import java.util.HashMap;
 
 /**
  * 客户端代码，就是使用原型获取实例的使用者
