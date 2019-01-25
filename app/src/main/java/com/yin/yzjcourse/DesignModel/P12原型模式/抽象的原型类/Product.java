@@ -9,6 +9,8 @@ import java.lang.Cloneable;
  *  3：我们用Product对Cloneable又封装了一层，其实你也可以 选择不封装，Cloneable本身就是抽象原型，这里Product是
  *      抽象原型。
  *
+ *
+ *
  */
 public interface Product extends Cloneable {
     /**

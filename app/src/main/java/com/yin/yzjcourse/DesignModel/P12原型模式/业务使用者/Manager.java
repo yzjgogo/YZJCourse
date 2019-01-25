@@ -5,6 +5,8 @@ import java.util.*;
 
 /**
  * 客户端代码，就是使用原型获取实例的使用者
+ *
+ *
  */
 public class Manager {
     private HashMap showcase = new HashMap();

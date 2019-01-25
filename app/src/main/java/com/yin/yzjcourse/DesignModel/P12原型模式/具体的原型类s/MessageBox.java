@@ -5,6 +5,8 @@ import com.yin.yzjcourse.DesignModel.P12原型模式.抽象的原型类.Product;
 
 /**
  * 具体的原型类，实现Product接口。
+ *
+ *
  */
 public class MessageBox implements Product {
     private char decochar;

@@ -45,6 +45,9 @@ import com.yin.yzjcourse.DesignModel.P12原型模式.抽象的原型类.Product;
  *
  *  示例类图 ：proto_sample_1.png
  *  原型模式uml图：proto_sample_2.png
+ *
+ *
+ *
  */
 public class ProtoTypeTest {
     public static void main(String[] args) {
