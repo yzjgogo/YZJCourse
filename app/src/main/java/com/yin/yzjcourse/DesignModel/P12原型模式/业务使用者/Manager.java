@@ -1,6 +1,6 @@
-package com.yin.yzjcourse.DesignModel.P12_1原型模式.业务使用者;
+package com.yin.yzjcourse.DesignModel.P12原型模式.业务使用者;
 
-import com.yin.yzjcourse.DesignModel.P12_1原型模式.抽象的原型类.Product;
+import com.yin.yzjcourse.DesignModel.P12原型模式.抽象的原型类.Product;
 
 import java.util.HashMap;
 
