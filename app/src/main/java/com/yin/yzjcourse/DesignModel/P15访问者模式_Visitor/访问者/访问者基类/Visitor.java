@@ -15,6 +15,8 @@ import com.yin.yzjcourse.DesignModel.P15访问者模式_Visitor.被访问者.被
  * 由此可见，如果数据结构mStaffs中的元素类型经常增加，则会导致Visitor中定义的方法也会跟着增加，这样就应该考虑不适合用访问
  * 者模式。
  *
+ * 注意，之所以定义多个重载的visit(elementType)方法，是因为如果只定义一个visit(Staff)方法，则还需在该方法内判断是哪个元素类型，出现if-else语句。这样不好。
+ *
  * 每一个具体的访问者都可以访问到数据结构mStaffs中的所有的元素，因为mStaffs开始
  * 遍历时会接收一个访问者，然后让这个访问者作为accept(visitor)的参数传递给每一个元素，参考
  * BusinessReport.showReport(Visitor visitor)方法；
