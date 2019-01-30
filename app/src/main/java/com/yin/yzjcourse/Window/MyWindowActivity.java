@@ -12,6 +12,8 @@ import android.widget.Button;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
+import com.yin.yzjcourse.Utils;
+import com.yin.yzjcourse.utils.DLog;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -20,7 +22,7 @@ public class MyWindowActivity extends BaseActivity implements View.OnTouchListen
     private static final String TAG = "MainActivity";
 
     private Button mFloatingButton;
-    private WindowManager.LayoutParams mLayoutParams;
+    private LayoutParams mLayoutParams;
     private WindowManager mWindowManager;
 
     @Override
@@ -29,29 +31,40 @@ public class MyWindowActivity extends BaseActivity implements View.OnTouchListen
         setContentView(R.layout.activity_my_window);
         ButterKnife.bind(this);
         mWindowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+        WindowManager m1 = getWindowManager();
+        if (m1 == mWindowManager) {
+            DLog.eLog("是同一个");
+        } else {
+            DLog.eLog("不是同一个");
+        }
     }
 
     /**
      * 假想：一个Window就是整个屏幕的大小，分成两个部分：1:View所占的区域；2：View所占区域以外的区域(透明区域)。
-     *
+     * <p>
      * flags:
+     * <p>
+     * 首先，无论flag是什么类型，‘View所占的区域’这部分区域始终会响应输入事件和触摸事件的，例如，无论是什么类型的flags点击‘View所占的区域’
+     * 都会响应单击事件，但是‘透明区域’分如下情况。
+     * <p>
      * FLAG_NOT_FOCUSABLE:表示Window不需要获取焦点，也不需要接收各种输入事件，此标记会同时开启FLAG_NOT_TOUCH_MODAL,
-     *                      最终事件会直接传递给下层的具有焦点的Window(也就是说允许透明区域里的事件给下层的Window)。
-     *
-     *  FLAG_NOT_TOUCH_MODAL：如果没开启，则整个屏幕任何区域的事件都不向下层传递(也就是说不允许透明区域里的事件给下层的Window)
-     *
-     *  FLAG_SHOW_WHEN_LOCKED：锁屏的时候也允许显示该Window
-     *
-     *
-     *  type：指定Window的类型
-     *  应用Window：z-ordered范围1-99,只存活于某个Activity。
-     *  子Window：z-ordered范围1000-1999，不能单独存在，它需要附属在特定的父Window中，例如常见的Dialog就是一个子Window。
-     *  系统Window：z-ordered范围2000-2999，无论你的屏幕切换到哪个应用了，甚至是切换到桌面了，系统Window仍然在显示。例如，Toast和系统状态栏就是系统Window。
-     *
-     *  Window是分层的，每个Window都有对应的z-ordered。z-ordered值大的在上，小的在下，类似于HTML中的z-index概念。
-     *  z-ordered值就可以赋值给type,type在哪个范围就属于哪类Window，例如给type = 20001则type属于系统Window，但是最好
-     *  不要这样做，系统可能不允许你这样做，一般如果我们要指定某个Window是系统Window则只需让type = LayoutParams.TYPE_SYSTEM_ERROR即可。
-     *
+     * 最终事件会直接传递给下层的具有焦点的Window(也就是说允许透明区域里的事件给下层的Window)。
+     * <p>
+     * FLAG_NOT_TOUCH_MODAL：如果没开启，则整个屏幕任何区域的事件都不向下层传递(也就是说不允许透明区域里的事件给下层的Window)
+     * 例如，你单击‘透明区域’，响应的还是‘View所在区域’的单击事件，而不是你单击的具体区域的事件。
+     * <p>
+     * FLAG_SHOW_WHEN_LOCKED：锁屏的时候也允许显示该Window
+     * <p>
+     * <p>
+     * type：指定Window的类型
+     * 应用Window：z-ordered范围1-99,只存活于某个Activity。
+     * 子Window：z-ordered范围1000-1999，不能单独存在，它需要附属在特定的父Window中，例如常见的Dialog就是一个子Window。
+     * 系统Window：z-ordered范围2000-2999，无论你的屏幕切换到哪个应用了，甚至是切换到桌面了，系统Window仍然在显示。例如，Toast和系统状态栏就是系统Window。
+     * <p>
+     * Window是分层的，每个Window都有对应的z-ordered。z-ordered值大的在上，小的在下，类似于HTML中的z-index概念。
+     * z-ordered值就可以赋值给type,type在哪个范围就属于哪类Window，例如给type = 20001则type属于系统Window，但是最好
+     * 不要这样做，系统可能不允许你这样做，一般如果我们要指定某个Window是系统Window则只需让type = LayoutParams.TYPE_SYSTEM_ERROR即可。
+     * <p>
      * addView(view,params):创建一个Window并向其添加View；
      * updateViewLayout(view,params)：更新Window中的View；
      * removeView(view)：如果想删除Window只需删除里面的View即可。
@@ -61,7 +74,13 @@ public class MyWindowActivity extends BaseActivity implements View.OnTouchListen
     public void onViewClicked() {
         mFloatingButton = new Button(this);
         mFloatingButton.setText("click me");
-        mLayoutParams = new WindowManager.LayoutParams(
+        mFloatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utils.showToast(MyWindowActivity.this, "点击我了");
+            }
+        });
+        mLayoutParams = new LayoutParams(
                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0, 0,
                 PixelFormat.TRANSPARENT);
         mLayoutParams.flags = LayoutParams.FLAG_NOT_FOCUSABLE
@@ -110,5 +129,12 @@ public class MyWindowActivity extends BaseActivity implements View.OnTouchListen
             e.printStackTrace();
         }
         super.onDestroy();
+    }
+
+    @OnClick(R.id.bt_window2)
+    public void onViewClicked2() {
+        DLog.eLog("移除去");
+        mWindowManager.removeView(getWindow().getDecorView());
+        DLog.eLog("移除去2");
     }
 }
