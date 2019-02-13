@@ -39,6 +39,7 @@ public class PieGraph extends View {
         postInvalidate();
     }
 
+    @Override
     public void onDraw(Canvas canvas) {
         canvas.drawColor(Color.TRANSPARENT);
         paint.reset();

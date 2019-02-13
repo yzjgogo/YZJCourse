@@ -105,17 +105,19 @@ public class TextLineView extends View {
 
         //画包裹文本的最小矩形,比上面说的text所占区域小，四周都有缝隙
         paint.setColor(Color.parseColor("#7F15bb76"));//绿色
-        //这样获取到的最小矩形默认是以(0,0)绘制点，以x轴为基线的文本的矩形，
+        //这样获取到的最小矩形minRect默认是以(0,0)绘制点、以x轴为基线、Align.Left的文本的矩形，
         // 注意这里最小矩形的left并不是0，因为最小矩形比文本所占区域的矩形小，有点缝隙,这一点很重要
         Rect minRect = new Rect();
         paint.getTextBounds(content,0,content.length(),minRect);
         //将默认最小矩形，转化为实际最小矩形
-        int minLenght = minRect.right-minRect.left;
+        int minLenght = minRect.right-minRect.left;//最小矩形的宽度
         int defaultMinLeft = minRect.left;//注意这里最小矩形的left并不是0，因为最小矩形比文本所占区域的矩形小，有点缝隙,这一点很重要
         DLog.eLog("最小矩形的长1："+(minRect.right-minRect.left)+","+minRect.toShortString()+","+defaultMinLeft);
+        //默认最小矩形以x轴为基线，所以实际最小矩形的top和bottom需移动到baseLineY的位置
         minRect.top = minRect.top+baseLineY;
         minRect.bottom = minRect.bottom+baseLineY;
         if (align.equals(Paint.Align.LEFT)) {
+            //因为 默认最小矩形以(0,0)为绘制点，而实际最小矩形以(baseLineX,baseLineY)为绘制点，所以这样
             minRect.left = minRect.left+baseLineX;
             minRect.right = minRect.right+baseLineX;
             DLog.eLog("最小矩形的长2："+(minRect.right-minRect.left)+","+minRect.toShortString());

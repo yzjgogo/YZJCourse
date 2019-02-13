@@ -87,9 +87,9 @@ public class XfermodeView extends View {
         myCanvas = new Canvas(bitmap);//创建Canvas要指定一个Bitmap，也可用无参的构造器之后手动指定
         //在当前View的画布上画红色空心圆
         canvas.drawCircle(getWidth() / 2, getHeight() / 2, getWidth() / 3, ringPaint);
-        //下面的图形
+        //下面的图形,往Canvas上画图(调用drawXXX方法)实际就是画到Bitmap上。
         myCanvas.drawRect(new RectF(getWidth() / 2, getHeight() / 2, getWidth(), getHeight()), mFgroundPaint) ;//在自己的画布上画绿色矩形
-        //上面的图形
+        //上面的图形,往Canvas上画图(调用drawXXX方法)实际就是画到Bitmap上。
         myCanvas.drawCircle(getWidth() / 2, getHeight() / 2, mRadius, circlePaint);//在自己的画布上画蓝色实心圆
         //在你自己创建的画布myCanvas上画完图像后，要将myCanvas的bitmap画到当前View的canvas上才能显示出来
         canvas.drawBitmap(bitmap, null, mRect, null);//第三个参数是bitmap要画到的目标矩形

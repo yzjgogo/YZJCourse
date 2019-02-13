@@ -21,6 +21,7 @@ import android.view.WindowManager;
  * 原因是：在该例中你直接在当前View的Canvas上画图，无论你使用什么Mode，
  * 两个图的的相交部分总是黑色的，不知道是从哪里来的，要想实现Mode的正常效果，
  * 可以自己创建一个myCanvas,在该画布上画完图后再在当前View的画布上显示，如上一个例子：XfermodeView.java。
+ * 也可以使用图层,参考：LayerView.java
  */
 
 public class XfermodeNoticeView extends View {

@@ -1,6 +1,5 @@
 package com.yin.yzjcourse.DiyWidget.DrawView;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.yin.yzjcourse.BaseActivity;

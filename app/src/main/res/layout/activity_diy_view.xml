@@ -56,9 +56,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="#dfcf4b"
-            android:text="1：Xfermode最基本的用法：对于同一个Canvas,PorterDuff.Mode用在上面图形的Paint上，用于与下面图形的交互,两个图形用一个Paint也是相同的道理
-\n2：要使用Xfermode需要自己创建MyCanvas，再在MyCanvas上使用Xfermode，参考XfermodeNoticeView.java也就是下一个图形。
-\n3：创建Canvas要用到Bitmap，往Canvas上画图(调用drawXXX方法)实际就是画到Bitmap上。" />
+            android:text="Xfermode_1:\n不在View的canvas中使用Xfermode，而是在自己的MyCanvas中使用Xfermode" />
 
         <com.yin.yzjcourse.DiyWidget.XfermodeView
             android:layout_width="300dp"
@@ -76,7 +74,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="#dfcf4b"
-            android:text="证明了要使用Xfermode需要自己创建MyCanvas，再在MyCanvas上使用Xfermode，参考XfermodeNoticeView.java也就是下一个图形。" />
+            android:text="Xfermode_2:\n直接在View的canvas中使用Xfermode出现的问题" />
 
         <com.yin.yzjcourse.DiyWidget.XfermodeNoticeView
             android:layout_width="300dp"
@@ -84,12 +82,17 @@
             android:background="#dfcf4b"
             tools:visibility="gone" />
 
-        <TextView
+        <View
             android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/money_deposit_color" />
+
+        <TextView
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:background="@color/money_deposit_color"
-            android:gravity="center_horizontal"
-            android:text="LayerView" />
+            android:background="#dfcf4b"
+            android:text="Xfermode_3:\n如果想直接在View的canvas中使用Xfermode，则可以通过图层实现" />
 
         <com.yin.yzjcourse.DiyWidget.LayerView
             android:layout_width="300dp"
@@ -129,7 +132,7 @@
             android:layout_height="wrap_content"
             android:background="@color/money_deposit_color"
             android:gravity="center_horizontal"
-            android:text="饼图：有过个分类" />
+            android:text="饼图：有多个分类" />
 
         <com.yin.yzjcourse.DiyWidget.PieGraph.PieGraph
             android:id="@+id/pie_more"
