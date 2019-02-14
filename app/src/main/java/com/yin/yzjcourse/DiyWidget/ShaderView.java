@@ -53,6 +53,7 @@ public class ShaderView extends View {
 
     public void setTileMode(Shader.TileMode xTileMode, Shader.TileMode yTileMode) {
         paint.setShader(new BitmapShader(bitmap, xTileMode, yTileMode));
+//        paint.setColor(Color.BLUE);如果paint设置了shader则color无效
         postInvalidate();
     }
 
@@ -69,6 +70,7 @@ public class ShaderView extends View {
          * REPEAT:复制整个图片填充，多出的剪裁掉；
          * 着色器的填充方式：先填充Y轴，再填充X轴；例如REPEAT,则先Y轴REPEAT，Y轴填充满后再X轴REPEAT;CLAMP和MIRROR也是同样的道理。
          *
+         * 下面这个非常重要：着色器永远只从View的左上角开始画
          * 这里我们drawRect画的矩形是整个控件的大小(getWidth(),getHeight())，如果我们画一个只占控件一小部分的矩形，着色器会从哪里开始着色呢？
          * 答案是从控件的左上角开始着色，而不是从你所画的区域的左上角开始着色。只不过会在你所画的区域显示出着色后的内容，而区域之外不显示着色内容。
          * 根据这个原理可以实现望远镜效果。

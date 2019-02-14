@@ -5,8 +5,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.Shader;
 import android.os.Build;
 import android.support.annotation.Nullable;
@@ -16,7 +16,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.yin.yzjcourse.R;
-import com.yin.yzjcourse.utils.DLog;
 
 /**
  * Created by think on 2017/8/21.
@@ -24,7 +23,7 @@ import com.yin.yzjcourse.utils.DLog;
 
 public class TelescopeView extends View {
     private Paint paint;
-    private Bitmap bitmap, shaderBmp;
+    private Bitmap shaderBitmap;
     private float pointX = -1;
     private float pointY = -1;
 
@@ -51,23 +50,17 @@ public class TelescopeView extends View {
 
     private void initView() {
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.scenery);
+        shaderBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.scenery);
+//        paint.setColor(Color.BLUE);如果paint设置了shader则color无效
+        paint.setShader(new BitmapShader(shaderBitmap, Shader.TileMode.REPEAT, Shader.TileMode.REPEAT));
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (shaderBmp == null) {
-            //这段代码要在onDraw里执行，如果你在initView()中执行则getWidth和getHeight获取不到值
-            shaderBmp = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);//创建一个和控件大小一样的空shaderBmp
-            Canvas shaderCanvas = new Canvas(shaderBmp);
-            shaderCanvas.drawBitmap(bitmap, null, new Rect(0, 0, getWidth(), getHeight()), paint);//将图片bitmap拉伸后填充到shaderBmp中
-            //通过以上代码就实现了用于着色的图片与控件大小一样
-            paint.setShader(new BitmapShader(shaderBmp, Shader.TileMode.REPEAT, Shader.TileMode.REPEAT));
-        }
         if (pointX != -1 && pointY != -1) {
-            paint.setShader(new BitmapShader(shaderBmp, Shader.TileMode.REPEAT, Shader.TileMode.REPEAT));
-            canvas.drawCircle(pointX, pointY, 150, paint);
+            //手指触摸屏幕的时候才开始用canvas画图，所以，刚进入该页面是空白页面，因为还没画图呢
+            canvas.drawCircle(pointX, pointY, 150, paint);//画图的过程中，着色器从View的左上角开始着色，铺满view，但是drawCircle只画出了局部，也就实现了望远镜，参考ShaderView.java
         }
     }
 

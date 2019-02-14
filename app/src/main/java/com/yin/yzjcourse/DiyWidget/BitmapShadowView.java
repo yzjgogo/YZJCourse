@@ -19,7 +19,9 @@ import com.yin.yzjcourse.R;
 
 /**
  * Bitmap的Bitmap extractAlpha()方法：
+ * 生成只提取了原图的alpha通道的新图，也就是说新的bitmap只有alpha值，rgb值为0。这个函数的作用是获取原图的轮廓，然后可以填充rgb值。因此可以实现阴影，影子，光晕等效果。
  * 返回一个新的Bitmap，这个Bitmap与原来的Bitmap有相同的透明度。且通过canvas.drawBitmap()方法，可以使用Paint中的颜色填充该bitmap区域
+ *
  */
 
 public class BitmapShadowView extends View {

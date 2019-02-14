@@ -12,6 +12,8 @@ import android.util.TypedValue;
 import android.view.View;
 
 import com.yin.yzjcourse.R;
+import com.yin.yzjcourse.Utils;
+import com.yin.yzjcourse.utils.DLog;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -161,7 +163,8 @@ public class CustomTitleView extends View {
          */
         int widthSpecMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSpecSize = MeasureSpec.getSize(widthMeasureSpec);//单位是像素，不包括补距离padding
-        Log.e("yin","宽的："+widthSpecMode+","+MeasureSpec.EXACTLY+","+MeasureSpec.AT_MOST);
+        Log.e("yin","宽的："+widthSpecMode+","+MeasureSpec.EXACTLY+","+MeasureSpec.AT_MOST+","
+                + widthSpecSize+","+getPaddingLeft()+","+getPaddingRight()+","+Utils.dip2px(getContext(),100));
         switch (widthSpecMode)
         {
             case MeasureSpec.EXACTLY:// 明确指定了
@@ -209,5 +212,6 @@ public class CustomTitleView extends View {
         mPaint.setColor(mTitleTextColor);
         //在当前view中画出文本，drawText画文本的起点坐标是文本的左下角
         canvas.drawText(mTitleText, getWidth() / 2 - mBound.width() / 2, getHeight() / 2 + mBound.height() / 2, mPaint);
+        DLog.eLog("画："+getMeasuredWidth()+","+getWidth());
     }
 }

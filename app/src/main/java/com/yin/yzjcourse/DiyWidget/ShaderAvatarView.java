@@ -56,7 +56,7 @@ public class ShaderAvatarView extends View {
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ShaderAvatarView);
             int resId = typedArray.getResourceId(R.styleable.ShaderAvatarView_avatar, -1);
             if (resId == -1) {
-                throw new Exception("请执行一个图片");
+                throw new Exception("请指定一个图片");
             }
             bitmap = BitmapFactory.decodeResource(getResources(), resId);
             bitmapShader = new BitmapShader(bitmap, Shader.TileMode.REPEAT, Shader.TileMode.REPEAT);
