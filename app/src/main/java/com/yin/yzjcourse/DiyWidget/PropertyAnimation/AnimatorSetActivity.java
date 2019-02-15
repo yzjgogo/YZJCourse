@@ -144,7 +144,7 @@ public class AnimatorSetActivity extends BaseActivity {
 
     /**
      先执行foreAnim后执行latterAnim
-     执行先执行这个动画再执行前面动画：animatorSet.play(a1).afte(a2);
+     执行先执行这个动画再执行前面动画：animatorSet.play(a1).after(a2);
      */
     private void doBuilderAfterAnim() {
         ObjectAnimator latterAnim = ObjectAnimator.ofInt(tvTarget1, "BackgroundColor",  0xffff00ff, 0xffffff00, 0xffff00ff);

@@ -26,7 +26,7 @@ import butterknife.OnClick;
  视图动画与属性动画的区别，参考图viewanim_propertyanim.png
  对于视图动画，一个view在动画过程中和动画结束后(view停留在动画结束时的状态)，都没有改变该view的任何属性或任何值甚至view的位置大小等都没有改变，只是
  这个view看起来和动画之前不一样了，以单击事件为例，即使动画使view看起来离开的原来的位置，但是其单击事件的响应区域仍然是view的原来的位置。
- 对于属性动画：Property Animator是通过改变控件内部的属性值来做动画的，以单击事件为例，属性动画view的响应区域随着view的位置变化而变化，即view通过动画编程什么样了
+ 对于属性动画：Property Animator是通过改变控件内部的属性值来做动画的，以单击事件为例，属性动画view的响应区域随着view的位置变化而变化，即view通过动画变成什么样了
  view就真的变成什么样了。
  一句话总结：视图动画没有改变view本身，你所看到的动画都是假象，是视觉效果
  而属性动画改变了view的本身，你所看到的动画都是真实的，是view改变之后的样子
@@ -157,7 +157,7 @@ public class PropertyAnimActivity extends BaseActivity {
                 int curValue = (int) animation.getAnimatedValue();//获取ValueAnimator当前的计算点
                 //可看出，ValueAnimator没有跟任何控件相关联，ValueAnimator只是对值做动画运算，而由程序员自己根据其运算的值
                 //改变目标view，即ValueAnimator不操控控件，而是由程序员自己操控控件
-                //layout函数改变view的文字，是真的改变的view的原位置
+                //layout函数改变view的位置，是真的改变的view的原位置
                 tvTarget.layout(curValue, curValue, curValue + tvTarget.getWidth(), curValue + tvTarget.getHeight());
             }
         });
@@ -212,7 +212,7 @@ public class PropertyAnimActivity extends BaseActivity {
     /**
      * 如果你用的ofInt则Evaluator的evaluate的返回值就是Integer,如果你用的是ofFloat则Evaluator的evaluate的返回值就是Float,即你传入的参数类型，决定了
      * 动画处理后返回的参数类型
-     * 因此当你用ofObject时，需要传入自定义的Evaluator，因为你传入的动画值参数类型时不固定的(Object)，如果你不传入一个自定义的Evaluator，则Evaluator无法
+     * 因此当你用ofObject时，需要传入自定义的Evaluator，因为你传入的动画值参数类型是不固定的(Object)，如果你不传入一个自定义的Evaluator，则Evaluator无法
      * 知道处理后返回什么样的数据类型
      */
     private void doObjectAnimator() {

@@ -64,9 +64,9 @@ public class PropertyAnimInterpolatorActivity extends BaseActivity {
      在固定的时间区间内(setDuration决定)，怎么实现动画不同的运行效果或者运行轨迹
 
      对于属性动画,即使你没有setInterpolator，也会有一个默认的插值器，插值器的作用是
-     在固定的时间区间内，决定了某一时刻ofInt或ofFloat指定区域内的值，参考图形：interpolator_method.png
+     在固定的时间区间内，决定了某一时刻ofInt或ofFloat指定区域内的值的百分比，参考图形：interpolator_method.png
      TimeInterpolator是每一个插值器的基类，其只有一个方法float getInterpolation(float input)，每一个插值器都重写了该
-     方法。这个方法返回值并不是当前的点的值，而是当前点的百分比的值，参考图形：interpolator_method.png
+     方法。这个方法的参数是时间进度的百分比(根据duration),返回值并不是当前的点的值，而是当前点的百分比的值，参考图形：interpolator_method.png
      因此要想实现自定义插值器，只需要实现TimeInterpolator并重写其getInterpolation方法即可
      */
     private void startPropertyAnim() {
@@ -150,6 +150,11 @@ public class PropertyAnimInterpolatorActivity extends BaseActivity {
      */
     class SimpleInterpolator implements TimeInterpolator {
 
+        /**
+         *
+         * @param input 时间进度的百分比，时间总长是duration
+         * @return 数值的百分比，可大于1也可小于0，因为可超过ofInt(),ofFloat()等指定的数值范围。
+         */
         @Override
         public float getInterpolation(float input) {
             return 1 - input;//开始时动画在终点，结束时动画在起点

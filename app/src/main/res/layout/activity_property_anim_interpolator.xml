@@ -15,13 +15,15 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:text="ValueAnimator用插值器" />
+        android:text="ValueAnimator用插值器"
+        android:textAllCaps="false"/>
     <Button
         android:id="@+id/bt_custom_interpolator"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:text="ValueAnimator自定义插值器" />
+        android:text="ValueAnimator自定义插值器"
+        android:textAllCaps="false"/>
 </LinearLayout>
 <Button
     android:id="@+id/bt_custom_evaluator"
