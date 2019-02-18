@@ -141,11 +141,11 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
             case R.id.bt_observable_map:
                 testObservableMap();
                 break;
-            case R.id.bt_observable_zip:
-                testObservableZip();
-                break;
             case R.id.bt_observable_defer:
                 testObservableDefer();
+                break;
+            case R.id.bt_observable_zip:
+                testObservableZip();
                 break;
             case R.id.bt_observable_disposable:
                 Intent intent = new Intent(this,DisposableExampleActivity.class);
@@ -380,6 +380,13 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
         flowable.subscribe(subscriber);
     }
 
+    /**
+     * 能够发射0或者1个数据，要么成功，要么失败。
+     *
+     * Maybe没有数据发送的时候会执行MaybeObserver的onComplete()
+     * 如果有数据发送或者调用了onError,则不再调用MaybeObserver的onComplete()
+     * 没有onNext方法
+     */
     private void testMaybe() {
         Maybe.just(true)
                 .subscribeOn(Schedulers.newThread())
@@ -410,7 +417,7 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
             @Override
             public void subscribe(MaybeEmitter<Integer> e) throws Exception {
                 e.onSuccess(23);
-                e.onComplete();
+                e.onComplete();//无效，因为执行了onSuccess()
             }
         }).subscribe(new MaybeObserver<Integer>() {
             @Override
@@ -506,6 +513,9 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
 
     /**
      * Rxjava1.x的Action0在2.x中是Action
+     * 某些情况下它的run()可以代替onComplete()方法
+     *
+     * 总之可以代替无参的方法
      */
     private void testAction() {
         Completable.create(new CompletableOnSubscribe() {
@@ -523,6 +533,11 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
     }
     /**
      * Rxjava1.x的Action1在2.x中是Consumer
+     * 某些情况下它的accept(T)可以代替onNext(T)
+     * accept(Throwable)可以代替onError(Throwable)
+     * accept(? extend subscription)可以代替onSubscribe(Subscription)等等
+     *
+     * 总之可以代替一个参数的方法
      */
     private void testAction1() {
         Observable.create(new ObservableOnSubscribe<Integer>() {
@@ -550,6 +565,12 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
         });
     }
 
+    /**
+     * 对Observable发射的每一项数据应用一个函数，映射成另一项数据
+     * 这样observer接收的所有数据与Observable发送的所有数据一一映射。
+     *
+     * 这里是将List<ApiUser>中的每一项数据进行映射，映射成List<User>
+     */
     private void testObservableMap() {
         Observable.create(new ObservableOnSubscribe<List<ApiUser>>() {
             @Override
@@ -594,8 +615,34 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
                 });
     }
 
+
+    /**
+     * defer：只有在被订阅后才会产生数据，可以确保Observable发送的始终是最新的数据；
+     * 且每个订阅者订阅一次都会产生一个新的Observable，因此各个订阅者看起来是订阅了同一个Observable，其实不是。
+     */
+    private void testObservableDefer() {
+        final String str = "a";
+        //正常情况下创建Observable时就会立刻产生数据，例如Observable.just(str)等等。
+
+        //通过defer，可实现只有当有订阅者订阅时才产生数据。
+        Observable.defer(new Callable<ObservableSource<? extends String>>() {
+
+            //有订阅者订阅时会回调call()方法创建Observable
+            @Override
+            public ObservableSource<? extends String> call() throws Exception {
+                return Observable.just(str);//取最新的str，而不是最初的str
+            }
+        });
+
+//        str = "b";
+
+
+    }
+
     /**
      * 获取两个用户列表，一个列表喜欢板球，另一个喜欢足球，然后找到板球和足球都喜欢的用户列表
+     *
+     * 按照一定的逻辑组合两个数据源，将组合的结果作为最终的数据源发送出去
      */
     private void testObservableZip() {
         Observable.zip(getCricketFansObservable(), getFootballFansObservable(),//这两个参数对应下面的后面两个参数
@@ -663,20 +710,9 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
     }
 
     /**
-     * defer：只有在被订阅后才会产生数据，才会调用call()方法？
+     * take(n):只发送数据源的前n个数据；
+     * takeLast(n):只发送数据源的后n个数据；
      */
-    private void testObservableDefer() {
-        final String str = "a";
-        Observable.defer(new Callable<ObservableSource<? extends String>>() {
-            @Override
-            public ObservableSource<? extends String> call() throws Exception {
-                return Observable.just(str);
-            }
-        });
-
-//        str = "b";
-    }
-
     private void testTake() {
         Observable.just(1,2,3,4,5)
                 .subscribeOn(Schedulers.io())
@@ -707,7 +743,7 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
     }
 
     /**
-     * 5秒后发送事件
+     * 5秒后发送事件,发送一个简单数值0 (执行onNext())
      */
     private void testTimer() {
         Observable.timer(5, TimeUnit.SECONDS)
@@ -743,6 +779,9 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
      04-11 19:27:55.106 29456-29456/com.yin.yzjcourse E/yin: 53,3
      04-11 19:27:55.106 29456-29456/com.yin.yzjcourse E/yin: 56,4
      04-11 19:27:55.106 29456-29456/com.yin.yzjcourse E/yin: onSuccess60
+
+     Reduce操作符对原始Observable发射数据的第一项应用一个函数，然后再将这个函数的返回值作用到第二项数据得到新的返回值，再将这个新的返回值作用到第三项数据，
+     以此类推，持续这个过程直到原始Observable发射它的最后一项数据并终止，此时Reduce返回的Observable发射这个函数返回的最终值。
      */
     private void testReduce() {
         Flowable<Integer> observable = Flowable.just(1, 2, 3, 4);
