@@ -11,7 +11,7 @@ import android.widget.TextView;
 /**
   自定义Behavior并不复杂，但是要考虑到两个关键元素：child和dependency
   child就是这个自定义的Behavior的承受者，即这个Behavior作用到这个child上
- dependency就像一个扳机一样，来出发child的Behavior
+ dependency就像一个扳机一样，来触发child的Behavior
  这里的child就是这个TextView而dependency就是SnackbarLayout
 
  自定义Behavior要首先继承CoordinatorLayout.Behavior<V extends View>

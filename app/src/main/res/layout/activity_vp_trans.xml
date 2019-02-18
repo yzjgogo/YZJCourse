@@ -10,7 +10,7 @@
             运行后的布局结构
             <LinearLayout 爷>
                 <ViewPager 父>
-                    <多个page 子>
+                    <多个page组成一个整体 子>
                 </ViewPager>
             </LinearLayout>
 
