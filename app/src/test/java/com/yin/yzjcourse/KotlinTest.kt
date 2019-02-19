@@ -7,7 +7,7 @@ class KotlinTest {
      * == and ===
      * 装箱
      *
-     * java的Integer的换成机制：具体可参考http://javapapers.com/java/java-integer-cache/
+     * java的Integer的缓存机制：具体可参考http://javapapers.com/java/java-integer-cache/
     简单解释就是Java把-128到127的数都缓存了 引用这个范围内的数都会指向同一个对象，不在这个范围内的就会遵循装箱的规则了，不是同一个对象，所以你定义的 a 大于127就和官网的demo结果一样了，官网用的10000，明显知道这个“坑”
      */
     @Test

@@ -1,6 +1,6 @@
 package com.yin.yzjcourse;
 
-import com.yin.yzjcourse.mykt.MyTest;
+//import com.yin.yzjcourse.mykt.MyTest;
 import com.yin.yzjcourse.utils.DLog;
 
 import org.junit.Test;
