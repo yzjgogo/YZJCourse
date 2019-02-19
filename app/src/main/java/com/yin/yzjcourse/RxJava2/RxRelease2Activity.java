@@ -865,7 +865,9 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
      onNext[five]
      onComplete
 
-     buffer(int count, int skip)的第一个参数代表取事件的前count个组成list，第二个参数代表下次取时往前跳skip个index，直到只能取到一个元素的list为止
+     buffer(int count, int skip)的第一个参数代表取事件的前count个组成list发送一个onNext()，
+     第二个参数代表下次取时往前跳skip个index，再取count个组成list发送一个onNext(),如果剩余数据不足count则取实际个数，
+     直到只能取到一个元素的list为止；
      */
     private void testBuffer() {
         Observable<List<String>> observable = Observable.just("one","two","three","four","five").buffer(3,2);
@@ -898,12 +900,15 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
      onNext4
      onNext6
      onComplete
+
+     filter:过滤操作，对元数据中个各个元素指定一个函数，满足函数的就发送，不满足的就不发送。
      */
     private void testFilter() {
         Observable.just(1,2,3,4,5,6,7)
                 .filter(new Predicate<Integer>() {
                     @Override
                     public boolean test(Integer integer) throws Exception {
+                        //只发送偶数
                         return integer % 2 == 0;
                     }
                 })
@@ -937,6 +942,8 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
      yin: onNext5
      yin: onNext6
      yin: onComplete
+
+     skip(n):跳过前n个事件，从第n+1个事件开始发送
      */
     private void testSkip() {
         Observable.just(1,2,3,4,5,6)
@@ -1353,6 +1360,9 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
      yin: second_onNext:4
      yin: first_onComplete
      yin: second_onComplete
+
+     BehaviorSubject:被观察者的最新的订阅者不仅能接收到它订阅之后的数据，还能接收到它订阅之前的最新的那一条数据，再之前的数据就接收不到了。
+
      */
     private void testBehaviorSubject() {
 
@@ -1421,15 +1431,20 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
                 Thread.sleep(0);
                 emitter.onNext(1); //发送
                 emitter.onNext(2); // 睡
+
                 Thread.sleep(505);  //睡醒
                 emitter.onNext(3); // 发送
+
                 Thread.sleep(99);   //睡
                 emitter.onNext(4); // 睡
+
                 Thread.sleep(100); //睡
                 emitter.onNext(5); //睡
                 emitter.onNext(6); // 睡
+
                 Thread.sleep(305);//醒
                 emitter.onNext(7); //发送
+
                 Thread.sleep(510);
                 emitter.onComplete();
             }
@@ -1468,7 +1483,7 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
      yin: onNext:7
      yin: onComplete
 
-     throttleLast:接收指定时间区间内的第一个事件
+     throttleLast:接收指定时间区间内的最后一个事件
      */
     private void testThrottleLast() {
         Observable.create(new ObservableOnSubscribe<Integer>() {
@@ -1599,6 +1614,8 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
      yin: accept:11
 
      window操作符会在时间间隔内缓存结果，类似于buffer缓存一个list集合，区别在于window将这个结果集合封装成了observable
+
+     window操作符会在指定的时间间隔内缓存被观察者在此期间的事件，且将这些事件组装成别观察者对象事件发送出去，每隔一段事件就缓存依次发送依次。
      */
     private void testWindow() {
         Observable.interval(1, TimeUnit.SECONDS).take(12)
@@ -1660,6 +1677,8 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
 
     /**
      * TakeWhile则是根据一个函数来判断是否发射数据，当函数返回值为true的时候正常发射数据；当函数返回false的时候丢弃所有后面的数据。
+     *
+     * 类似filter
      */
     private void testTakeWhile() {
         Observable.just(1,2,3,4,5,6,7)
@@ -1695,7 +1714,7 @@ public class RxRelease2Activity extends BaseActivity implements View.OnClickList
             @Override
             public void subscribe(ObservableEmitter<String> e) throws Exception {
                 e.onNext("1");
-                e.onNext(null);
+                e.onNext(null);//会执行onError()
                 e.onComplete();
             }
         }).subscribe(new Observer<String>() {
