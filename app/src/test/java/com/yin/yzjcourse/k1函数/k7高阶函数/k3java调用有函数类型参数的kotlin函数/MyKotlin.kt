@@ -19,6 +19,6 @@ class MyKotlin {
     }
 
     fun kotfun4(str:String,operation: (Int,String) -> String) {
-        println("执行kotfun3:${operation(10,str)}")
+        println("执行kotfun4:${operation(10,str)}")
     }
 }

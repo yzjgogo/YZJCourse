@@ -15,7 +15,7 @@ class MyInline {
      * 函数中传递一道，又给其它函数或对象使用了，则就不会被内联，具体遇到了你会感觉到的
      */
 
-    //函数foo被声明成内联 的，函数类型参数b被声明成禁止内联。
+    //函数foo被声明成内联的，函数类型参数b被声明成禁止内联。
     inline fun foo(a: () -> Unit, noinline b: () -> Unit) {
         //...do something
     }
