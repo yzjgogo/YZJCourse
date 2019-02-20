@@ -2,7 +2,7 @@ package com.yin.yzjcourse.k6接口.k1接口函数
 
 interface ClickListener {
     /**
-     * kotlin的接口，可以有抽象方法、有具体实现的不同方法
+     * kotlin的接口，可以有抽象方法、有具体实现的普通方法
      * 非抽象的子类必须实现接口的抽象方法，可以选择是否实现接口的普通方法
      */
 

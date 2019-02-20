@@ -5,8 +5,8 @@ import org.junit.Test
 class MyField {
 
     /**
-     * 构造器的参数，同时也是类的属性，如果是var默认存在getter和setter，如果是val默认存在getter
-     *  只有主构造方法中定义的属性才允许用val。
+     * 主构造器的参数，同时也是类的属性，如果是var默认存在getter和setter，如果是val默认存在getter
+     * 只有主构造方法中定义的属性才允许用val。
      */
     class Person(val name: String, var age: Int, var isMarried: Boolean)
 

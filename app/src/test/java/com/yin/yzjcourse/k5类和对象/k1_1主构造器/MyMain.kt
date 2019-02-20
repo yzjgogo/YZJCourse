@@ -18,6 +18,8 @@ class MyMain {
         val name = _name
     }
 
+    class User9 constructor(val name: String) //也可以
+
     class User3 constructor(_name: String) {
         val name: String
 

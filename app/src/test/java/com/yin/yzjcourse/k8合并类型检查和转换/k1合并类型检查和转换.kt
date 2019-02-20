@@ -18,7 +18,7 @@ class k1合并类型检查和转换 {
 
     private fun testExter(n: Exter) {
         //类型转换
-        val num = n as Num
+        val num = n as Num//如果无法转换就报运行时错误
         println("类型转换：${num.a}")
 
         /**

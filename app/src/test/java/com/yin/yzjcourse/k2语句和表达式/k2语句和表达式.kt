@@ -19,7 +19,7 @@ class k2语句和表达式 {
         //way 1:
         var a = 1
         var b = 2
-        var max = if (a > b) a else b//just like java's x?:y
+        var max = if (a > b) a else b//just like java's x?y:z
         println("max is $max")
 
         //way 2:

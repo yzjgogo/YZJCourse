@@ -4,7 +4,7 @@ import kotlin.properties.Delegates
 import kotlin.reflect.KProperty
 
 /**
- * 使用了Delegates.observable()后，连委托的类都不用写了，Delegates.observable()内部实现了委托类，切同样有getValue()和setValue()
+ * 使用了Delegates.observable()后，连委托的类都不用写了，Delegates.observable()内部实现了委托类，且同样有getValue()和setValue()
  *
  * 因此我做一个总结：
  * 所谓属性代理，就是属性所在的类不直接维护属性，而是交给另一个类(kotlin系统有提供，可以不用自己定义)的实例来维护，
@@ -24,7 +24,7 @@ import kotlin.reflect.KProperty
  * 对KProperty<*>不懂不要紧，按套路来就行了。
  */
 class Person(val name: String, age: Int, salary: Int) : PropertyChangeAware() {
-    //observer是属性值变化后的会掉方法，方便你做变化后的逻辑处理
+    //observer是属性值变化后的回调方法，方便你做变化后的逻辑处理
     private val observer = { prop: KProperty<*>, oldValue: Int, newValue: Int ->
         changeSupport.firePropertyChange(prop.name, oldValue, newValue)
         println("哈哈哈")
