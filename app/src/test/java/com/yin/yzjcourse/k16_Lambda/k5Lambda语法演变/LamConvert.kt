@@ -18,10 +18,10 @@ class LamConvert {
         //演变3：如果Lambda表达式是调用函数的唯一一个参数，则可以省略()
         val max3 = people.maxBy { p: Person -> p.age }
 
-        //演变4：推导出Lambda表达式中实参的类型，省略类型声明
+        //演变4：推导出Lambda表达式中参数的类型，省略类型声明
         val max4 = people.maxBy { p -> p.age }
 
-        //演变5：如果Lambda表达式只有一个实参，并且可以推导出该参数类型，则系统会生成默认参数it，it代表某个Person实例，但是在嵌套Lambda表达式中应避免用it
+        //演变5：如果Lambda表达式只有一个参数，并且可以推导出该参数类型，则系统会生成默认参数it，it代表某个Person实例，但是在嵌套Lambda表达式中应避免用it
         val max5 = people.maxBy { it.age }
 
         //以上5种写法等价

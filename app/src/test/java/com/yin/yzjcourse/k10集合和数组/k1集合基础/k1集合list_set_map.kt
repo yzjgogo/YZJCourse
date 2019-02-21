@@ -164,7 +164,7 @@ class k1集合list_set_map {
     /**
      * 运算符重载的集合扩展函数
      * 参考：[com.yin.yzjcourse.k20运算符重载与约定.k1重载二元算数运算符.testCollection]
-     * 和[com.yin.yzjcourse.k20运算符重载与约定.k2重载符合赋值运算符.testPlusAssign]
+     * 和[com.yin.yzjcourse.k20运算符重载与约定.k2重载复合赋值运算符.testPlusAssign]
      */
     @Test
     fun testAssign() {

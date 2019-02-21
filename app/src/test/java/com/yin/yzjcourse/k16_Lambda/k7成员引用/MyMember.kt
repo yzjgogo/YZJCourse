@@ -40,21 +40,37 @@ class MyMember {
 
 
 
-
+        println("*************%%%%%%%%%%%%%%%%%%%%")
         //成员引用，可以还可以引用顶层函数此时::前不需要类名
-        fun salute() = println("salute")
-        run{::salute}
+        val mysalute = ::salute
+        mysalute()
+        val myadd = ::add
+        myadd(5)
+        println("*************%%%%%%%%%%%%%%%%%%%%")
 
 
-        //成员引用，引用多个参数的函数
-        val nextAction = ::showit
-        nextAction(Person("fuck",20),"hh")
+        //成员引用，引用多个参数的函数,nextAction1等价于nextAction2
+        val nextAction1 = MyMember::showit
+        val nextAction2 = {m1:MyMember,p:Person,m:String -> m1.showit(p,m)}
+        nextAction1(MyMember(),Person("fuck",20),"hh")
+        nextAction2(MyMember(),Person("fuck",20),"hh")
+
+        //又因为showit在MyMember内部 ，我们可以省略MyMember,nextAction3和nextAction4等价
+        val nextAction3 = ::showit
+        val nextAction4 = {p:Person,m:String -> showit(p,m)}
+        nextAction3(Person("duck",40),"hh")
+        nextAction4(Person("duck",40),"hh")
+        println("############################################")
 
 
-        //成员引用，引用构造方法
+        //成员引用，引用构造方法,createPerson和createPerson2等价
         val createPerson = ::Person
+        val createPerson2 = {name:String,age:Int -> Person(name,age)}
         val per = createPerson("Momo",40)
+        val per2 = createPerson2("Momo",40)
         println(per)
+        println(per2)
+        println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 
 
         //成员引用，引用扩展函数
@@ -63,14 +79,17 @@ class MyMember {
         ieat(myp)//记得传参因为Person::eat等价于{p:Person -> p.eat()},可见实参列表有参数p
 
 
-        //kotlin 1.1后，实例的成员引用
+        //kotlin 1.1后，实例的成员引用,从ta和ta2等价可看出，不需传参
         val now = Person("Now",45)
         val ta = now::age
+        val ta2 = {now.age}//可见不许传参
         println(ta())//不需传参,因为引用的具体实例的成员
+
+        //tg和tg2等价，可见也不需传参
         val tg = now::getMyAge
+        val tg2 = {now.getMyAge()}
         println(tg())//不需传参,因为引用的具体实例的成员
     }
-    val action = {p:Person,m:String -> showit(p,m)}
 
     private fun showit(p: Person, m: String) {
         println("$p,$m")
