@@ -5,7 +5,7 @@ class MyFan {
         //不用声明泛型类型形参，可以根据类型实参推导出String类型形参
         val list = listOf("A","B")
 
-//        val list1 = listOf() 报错，没有指定类型
+//        val list3 = listOf() //报错，没有指定类型
         val list1:List<String> = listOf()//可以
         val list2 = listOf<String>()//也可以
     }

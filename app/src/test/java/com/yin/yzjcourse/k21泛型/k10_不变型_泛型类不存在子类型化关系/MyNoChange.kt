@@ -6,6 +6,8 @@ package com.yin.yzjcourse.k21泛型.k10_不变型_泛型类不存在子类型化
  * 泛型类的类型不存在子类型化关系，也就是说泛型类型实参的子类型化，不影响泛型类的类型
  *
  * MutableList <Any>既不是MutableList<String>的子类型也不是它的超类型，虽然Any和String存在子类型化关系。
+ *
+ * 没有用out或in修饰的泛型类都是不变型的
  */
 class MyNoChange {
 }

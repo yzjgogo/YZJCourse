@@ -21,7 +21,7 @@ package com.yin.yzjcourse.k21泛型.k6类_类型_子类型
  *  协变的：
  *  如果A是B的子类型,那么List<A>就是List<B>的子类型。这样的类或者接口被称为协变的。
  *  逆变的：
- *  如果A是B的子类型,那么List<A>就是List<B>的超类型。这样的类或者接口被称为协变的。
+ *  如果A是B的子类型,那么List<A>就是List<B>的超类型。这样的类或者接口被称为逆变的。
  */
 class MyTyper {
 

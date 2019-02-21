@@ -29,10 +29,15 @@ class MyBian {
     fun testWrite() {
         val list = mutableListOf("aa", "bb")
 //        write(list)//编译错误，因为write的参数集合是可变的
+        writeStr(list)//相同的泛型类型可以传递
     }
 
     fun write(list: MutableList<Any>) {
         list.add(40)
+    }
+
+    fun writeStr(list: MutableList<String>) {
+        list.add("cc")
     }
 
 
