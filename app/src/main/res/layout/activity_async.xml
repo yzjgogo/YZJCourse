@@ -10,5 +10,6 @@
     android:id="@+id/btDo"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:textAllCaps="false"
     android:text="doAsync{}开启子线程，异步执行耗时操作"/>
 </LinearLayout>

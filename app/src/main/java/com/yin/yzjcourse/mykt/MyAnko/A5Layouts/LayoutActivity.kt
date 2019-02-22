@@ -9,6 +9,7 @@ import com.yin.yzjcourse.mykt.MyAnko.A5Layouts.L4LayoutParams.ParamsActivity
 import com.yin.yzjcourse.mykt.MyAnko.A5Layouts.L5IncludeXMLLayout.IncludeActivity
 import com.yin.yzjcourse.mykt.MyAnko.A5Layouts.L3ResourcesAndDimensions.ResDimeActivity
 import kotlinx.android.synthetic.main.activity_layoutctivity.*
+import org.jetbrains.anko.ctx
 import org.jetbrains.anko.startActivity
 
 

@@ -19,7 +19,7 @@ class AsyncActivity : BaseActivity() {
     /**
      * 这里涉及到Anko提供的三个方法。
      *
-     * doAsync:会开启一个新的县城这行耗时的操作；
+     * doAsync:会开启一个新的线程执行耗时的操作；
      *
      * uiThread:可以从子线程切换到UI线程，需要注意的是，Activity销毁后uiTread不会执行，所以不用在activity销毁时
      *          做特殊的处理，很方便。

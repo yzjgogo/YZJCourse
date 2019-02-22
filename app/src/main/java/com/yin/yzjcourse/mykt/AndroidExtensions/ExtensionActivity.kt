@@ -7,6 +7,7 @@ import com.yin.yzjcourse.R
 import com.yin.yzjcourse.mykt.AndroidExtensions.E3UseInDiyView.DiyActivity
 import com.yin.yzjcourse.mykt.AndroidExtensions.E1UseInActivity.WeightActivity
 import com.yin.yzjcourse.mykt.AndroidExtensions.E2UseInViewHolder.RecyActivity
+import com.yin.yzjcourse.mykt.AndroidExtensions.E5MakeYourselfCache.CacheActivity
 import kotlinx.android.synthetic.main.activity_extension.*
 import org.jetbrains.anko.startActivity
 
@@ -49,8 +50,11 @@ class ExtensionActivity : BaseActivity() {
         btDiy.setOnClickListener {
             startActivity<DiyActivity>()
         }
-        btDiy.setOnClickListener {
+        btParcel.setOnClickListener {
             Toast.makeText(this,"这个看一下ParcelBean类就可以了",Toast.LENGTH_SHORT).show()
+        }
+        btCache.setOnClickListener {
+            startActivity<CacheActivity>()
         }
     }
 }

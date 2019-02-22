@@ -5,6 +5,7 @@ import com.yin.yzjcourse.BaseActivity
 import com.yin.yzjcourse.R
 import kotlinx.android.synthetic.main.activity_my_intent.*
 import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.makeCall
 import org.jetbrains.anko.singleTop
 import org.jetbrains.anko.startActivity
 
