@@ -1,6 +1,7 @@
 package com.yin.yzjcourse;
 
 import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.dev.think.mylibrary.PushUtils;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -9,7 +10,7 @@ import com.tencent.bugly.crashreport.CrashReport;
  * Created by think on 2016/11/21.
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
