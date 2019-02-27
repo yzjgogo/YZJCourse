@@ -111,8 +111,11 @@ public interface StudyAidl extends android.os.IInterface {
             }
         }
 
+        /**
+         * 这是远程Binder的本地代理，方便本地访问远程的Binder
+         */
         private static class Proxy implements StudyAidl {
-            private android.os.IBinder mRemote;
+            private android.os.IBinder mRemote;//远程的Binder
 
             Proxy(android.os.IBinder remote) {
                 mRemote = remote;
