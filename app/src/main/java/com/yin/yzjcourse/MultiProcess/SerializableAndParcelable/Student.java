@@ -7,7 +7,7 @@ import android.os.Parcelable;
  * Parcelable：也是一种序列化的方式
  * <p>
  * 与Serializable与Parcelable的区别：
- * Serializable：是java的序列化方式，开销较大；
+ * Serializable：是java的序列化方式，开销较大，序列化和反序列化需要大量的I/O操作；
  * Parcelable：Android自己的序列化方式，效率很高，但是用起来较麻烦点，推荐使用Parcelable；
  * <p>
  * Parcelable内部真正实现序列化的是Parcel,Parcel用于序列化和反序列化，内部包装了可序列化的数据，可以
