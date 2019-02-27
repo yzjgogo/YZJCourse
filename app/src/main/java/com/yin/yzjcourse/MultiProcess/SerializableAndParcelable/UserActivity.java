@@ -19,6 +19,10 @@ import java.io.ObjectOutputStream;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * Serializable的用法参考:com.yin.yzjcourse.MultiProcess.SerializableAndParcelable.SerUser
+ * Student的用法参考：com.yin.yzjcourse.MultiProcess.SerializableAndParcelable.Student
+ */
 public class UserActivity extends BaseActivity {
 
     public static final String CHAPTER_2_PATH = Environment

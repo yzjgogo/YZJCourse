@@ -18,7 +18,7 @@ import java.io.Serializable;
  * 原来还存在的属性可以得以恢复，如果你把类名都改了，那肯定恢复不了了。
  *
  * 不参与序列化的东西：
- * 1：静态成员变量属于类不属于具体是对象，所以不会参与；
+ * 1：静态成员变量属于类不属于具体的对象，所以不会参与；
  * 2：用transient修饰的成员也不参与序列化 。
  */
 public class SerUser implements Serializable {

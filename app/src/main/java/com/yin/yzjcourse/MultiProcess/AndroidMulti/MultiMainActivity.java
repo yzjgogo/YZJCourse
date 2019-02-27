@@ -49,11 +49,12 @@ import butterknife.OnClick;
     4：Application会多次创建，其实不光Application会多次创建，你给应用开启多线程，其实就相当于开启了一个新的应用，这个
         新的应用和其它线程的应用拥有完全相同的代码，每个应用当然都有属于 自己的Application.
 
-    给一个应用开启多线程，可以这样理解：相当于多个不同的应用采用了SharedUID的模式。
+    给一个应用开启多线程，可以这样理解：相当于多个不同的应用采用了SharedUID的模式，这里
+    的MultiMainActivity、MultiSecondActivity和MultiThirdActivity所在进程的UID(Process.myUid)。
 
     一句话总结：应用的多进程就是产生多个应用(多套代码)分身，彼此完全无关。
 
-    因为多进程之前无法通过内存地址通信，所以Android提供了一些跨进程通信的方式。。。。下面一个个讲到。
+    因为多进程之间无法通过内存地址通信，所以Android提供了一些跨进程通信的方式。。。。下面一个个讲到。
  */
 public class MultiMainActivity extends BaseActivity {
 
@@ -65,7 +66,7 @@ public class MultiMainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multi_main);
         ButterKnife.bind(this);
-        //我在这里修改了mStatus的值,案例说mStatus已经变成了 101，但是你在MultiSecondActivity获取mStatus看看，它还是100
+        //我在这里修改了mStatus的值,按理说mStatus已经变成了 101，但是你在MultiSecondActivity获取mStatus看看，它还是100
         tv.setText(Process.myPid() + "\n" + ProcessUtils.getProcessName(this)+"\n"+Process.myUid()+"\n"+
                 (++ProcessUtils.mStatus));
     }
