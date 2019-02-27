@@ -20,7 +20,7 @@ public class MyService extends Service {
      * 包括包路径都要一样。这样客户端和服务端才能达成一致。
      *
      *
-     * 这个IMyAidl.java就是IMyAidl.aidl生成的,IMyAidl.Stub自动继承了Binder，Binder有实现了IBinder.
+     * 这个IMyAidl.java就是IMyAidl.aidl生成的,IMyAidl.Stub自动继承了Binder，Binder又实现了IBinder.
      *
      * 这里以匿名类的方式获取一个IBinder实例，也可以以内部类的方式。
      *
@@ -41,7 +41,8 @@ public class MyService extends Service {
     };
 
     /**
-     * 当有远程客户端绑定这个服务时，就把mIBinder返回给客户端，客户端可通过这个mIBinder调用服务端的方法，实现跨进程通信。
+     * 当有远程客户端绑定这个服务时，就把mIBinder返回给客户端，客户端可通过这个mIBinder调用服务端的方法，
+     * 实现跨进程通信。
      * @param intent
      * @return
      */
