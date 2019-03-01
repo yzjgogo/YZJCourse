@@ -31,6 +31,10 @@ public class OptimizeHandlerSolveActivity extends BaseActivity {
      * 引用，则activity准备销毁时，因为内部类强引用了该activity实例，如果内部类依然存活，会导致该activity无法被销毁导致内存泄露，
      * 因此用弱引用，这样在下次GC时，如果该activity关闭了则可直接回收该activity实例，而既然该activity实例销毁了，则该handler也
      * 没用工作了必要了。
+     *
+     * 总结：
+     * static为了不依附具体实例；
+     * 弱引用为了不持有具体类；
      */
     private static class MyHandler extends Handler {
         //        private MainActivity mainActivity;//直接强引用一个外部类的强引用，会内存泄露
