@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.yin.yzjcourse.Base.ThreadPool.TPActivity;
+import com.yin.yzjcourse.Base.mysurface.SurfaceActivity;
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 
@@ -20,7 +21,7 @@ public class BaseContentActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_android_message, R.id.bt_title_menu,R.id.bt_vp,R.id.bt_span,R.id.bt_ht,R.id.bt_is,R.id.bt_tp})
+    @OnClick({R.id.bt_android_message, R.id.bt_title_menu,R.id.bt_vp,R.id.bt_span,R.id.bt_ht,R.id.bt_is,R.id.bt_tp,R.id.bt_surface})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_android_message:
@@ -43,6 +44,9 @@ public class BaseContentActivity extends BaseActivity {
                 break;
             case R.id.bt_tp:
                 startActivity(new Intent(this, TPActivity.class));
+                break;
+            case R.id.bt_surface:
+                startActivity(new Intent(this, SurfaceActivity.class));
                 break;
         }
     }

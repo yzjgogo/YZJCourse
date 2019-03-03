@@ -48,4 +48,10 @@
     android:layout_height="wrap_content"
     android:textAllCaps="false"
     android:text="线程池"/>
+<Button
+    android:id="@+id/bt_surface"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAllCaps="false"
+    android:text="SurfaceView"/>
 </LinearLayout>
