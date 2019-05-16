@@ -3,9 +3,11 @@ package com.yin.yzjcourse.Net;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.Toast;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
+import com.yin.yzjcourse.tools.ToolsActivity;
 import com.yin.yzjcourse.utils.DLog;
 
 import java.io.File;
@@ -38,7 +40,7 @@ public class NetActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_ok, R.id.bt_temp})
+    @OnClick({R.id.bt_ok, R.id.bt_temp,R.id.bt_original_socket,R.id.bt_web_socket})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_ok:
@@ -47,6 +49,52 @@ public class NetActivity extends BaseActivity {
                 break;
             case R.id.bt_temp:
                 testPostObject();
+                break;
+            case R.id.bt_original_socket:
+                Toast.makeText(this,"没有跳转",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.bt_web_socket:
+                Toast.makeText(this,"看看这里的代码",Toast.LENGTH_SHORT).show();
+                /**
+                 * 重连websocket
+                 * 此方法在handler中调用，由于重新连接websocket的线程如果与原先连接websocket的线程相同，会报异常，
+                 * 所以切换到HandlerThread的线程中重连
+                 */
+    /*
+    private void reConnectWebSocket() {
+        if (null != client && !client.isOpen() && !isReConnecting) {
+            //LogUtils.showLog("socket onStartConnect");
+            client.reconnect();
+        }
+    }
+    */
+
+//    @Override
+//    public void onDestroy() {
+//        super.onDestroy();
+//
+//        try {
+//            LogUtils.showLog("socket service onDestroy()");
+//            client.close();
+//        } catch (Exception e) {
+//
+//        }
+//}
+
+
+    /*
+    1、重连机制需要自己来写：
+
+            （1）监听网络连接， 当从断开到连上就可以调用重连
+
+（2）在client回调的onError和onClose中调用重连
+
+2、心跳机制需要自己写
+
+    自己写一个循环的handler， 隔20秒就发送一个心跳：client.sendPing()， 这时候onWebsocketPong()会回调一次，这就是一次心跳
+
+3、后端传回来的消息在onMessage中返回来， 我们可以跟后台定格式，哪些业务需要处理什么格式的数据，然后根据type来分发给业务。
+*/
                 break;
         }
     }

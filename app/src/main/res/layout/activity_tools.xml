@@ -36,7 +36,16 @@
             android:id="@+id/bt_crash_catch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
             android:text="崩溃捕获并写入到文件\n用法：\n1：只涉及到两个类：AppCrashHandler和AppCrashLog\n2：在Application的onCreate()方法中调用AppCrashHandler.getInstance().init(getApplication());即可"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="二维码扫码工具：https://github.com/bingoogolapple/BGAQRCode-Android \n实战参考：趣教的ScanLoginResultActivity.java"
             android:textAllCaps="false" />
 
 

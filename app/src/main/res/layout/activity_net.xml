@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.yin.yzjcourse.Net.NetActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <Button
-        android:id="@+id/bt_ok"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="okhttp"/>
-    <Button
-        android:id="@+id/bt_temp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="temp"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/detail_line_color"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <Button
+                android:id="@+id/bt_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="okhttp-GET"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="okhttp-POST"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_original_socket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="socket\n框架叫：https://github.com/xuuhaoo/OkSocket 记得看github的wiki和中文文档 \n实战用法参考：趣教的RemoteControlActivity.java"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_web_socket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="websocket \n 框架叫：https://github.com/TooTallNate/Java-WebSocket 记得看github的wiki和百度搜索该框架的相关内容，能搜到有用的，例如关闭、重连、心跳、一些你没发现的毁掉方法等，看当前按钮单机事件处的代码，有提示"
+            android:textAllCaps="false" />
+    </LinearLayout>
 </ScrollView>
