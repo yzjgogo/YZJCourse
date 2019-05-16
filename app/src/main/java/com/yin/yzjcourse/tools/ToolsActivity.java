@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.utils.DLog;
+import com.yin.yzjcourse.utils.ScreenUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
@@ -26,7 +27,7 @@ public class ToolsActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_heap_size,R.id.bt_format_ms,R.id.bt_count_down,R.id.bt_crash_catch})
+    @OnClick({R.id.bt_heap_size,R.id.bt_format_ms,R.id.bt_count_down,R.id.bt_crash_catch,R.id.bt_screen})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_heap_size:
@@ -65,6 +66,10 @@ public class ToolsActivity extends BaseActivity {
                 break;
             case R.id.bt_crash_catch:
                 Toast.makeText(ToolsActivity.this,"只有两个类，看一下就行了",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.bt_screen:
+                //在Activity的onCreate()方法中调用下面一行即可
+//                ScreenUtils.setCustomDensity(this, getApplication());
                 break;
         }
     }
