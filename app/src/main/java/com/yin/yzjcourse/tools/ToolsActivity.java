@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Toast;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
@@ -25,7 +26,7 @@ public class ToolsActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_heap_size,R.id.bt_format_ms,R.id.bt_count_down})
+    @OnClick({R.id.bt_heap_size,R.id.bt_format_ms,R.id.bt_count_down,R.id.bt_crash_catch})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_heap_size:
@@ -61,6 +62,9 @@ public class ToolsActivity extends BaseActivity {
                     }
                 }.start();//调用start()才能开始倒计时
 //                timer.cancel();别忘了用完取消,如果倒计时没完成久取消，不会调用onFinish
+                break;
+            case R.id.bt_crash_catch:
+                Toast.makeText(ToolsActivity.this,"只有两个类，看一下就行了",Toast.LENGTH_SHORT).show();
                 break;
         }
     }

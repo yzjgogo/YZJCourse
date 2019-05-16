@@ -17,7 +17,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textAllCaps="false"
-    android:text="标题和菜单"/>
+    android:text="标题、菜单、状态栏"/>
 <Button
     android:id="@+id/bt_vp"
     android:layout_width="match_parent"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_yellow"
     tools:context="com.yin.yzjcourse.Base.TitleMenuActivity">
 
     <LinearLayout
@@ -16,6 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="自定义右上角菜单布局"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_status_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5.0以上系统修改状态栏的颜色，或改为透明色，但是状态栏的内容还在,例如事件，图标，通知等,但是activity也占用状态栏的区域"
             android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
