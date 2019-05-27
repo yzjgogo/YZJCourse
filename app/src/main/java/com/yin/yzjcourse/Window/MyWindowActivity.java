@@ -3,6 +3,8 @@ package com.yin.yzjcourse.Window;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -24,6 +26,13 @@ public class MyWindowActivity extends BaseActivity implements View.OnTouchListen
     private Button mFloatingButton;
     private LayoutParams mLayoutParams;
     private WindowManager mWindowManager;
+    boolean isClick = true;//没有用系统的onClickListener,在ACTION_UP自己模拟处理onClick()，用于将单击和拖拽时间区分，根据时间差区分
+    long startTime = 0;
+
+    //xm和ym用于弥补，滑动时刚开始滑动，window就瞬移了一段距离，其实就是单击的坐标和window左上角的坐标的差值
+    int xm = 0;
+    int ym = 0;
+//    private boolean isMove = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,19 +83,12 @@ public class MyWindowActivity extends BaseActivity implements View.OnTouchListen
     public void onViewClicked() {
         mFloatingButton = new Button(this);
         mFloatingButton.setText("click me");
-        mFloatingButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Utils.showToast(MyWindowActivity.this, "点击我了");
-            }
-        });
         mLayoutParams = new LayoutParams(
                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0, 0,
                 PixelFormat.TRANSPARENT);
-        mLayoutParams.flags = LayoutParams.FLAG_NOT_FOCUSABLE
-                | LayoutParams.FLAG_NOT_TOUCH_MODAL
-                | LayoutParams.FLAG_SHOW_WHEN_LOCKED;
-        mLayoutParams.type = LayoutParams.TYPE_SYSTEM_ERROR;
+        mLayoutParams.flags = LayoutParams.FLAG_NOT_FOCUSABLE;
+//        mLayoutParams.type = LayoutParams.TYPE_SYSTEM_ERROR;
+        mLayoutParams.type = 2;
         mLayoutParams.gravity = Gravity.LEFT | Gravity.TOP;
         mLayoutParams.x = 100;
         mLayoutParams.y = 300;
@@ -97,21 +99,35 @@ public class MyWindowActivity extends BaseActivity implements View.OnTouchListen
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        int rawX = (int) event.getRawX();
-        int rawY = (int) event.getRawY();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN: {
+                Log.e("yin","按下");
+                xm = (int) (event.getRawX()-mLayoutParams.x);
+                ym = (int) (event.getRawY()-mLayoutParams.y);
+                startTime = System.currentTimeMillis();
                 break;
             }
             case MotionEvent.ACTION_MOVE: {
-                int x = (int) event.getX();
-                int y = (int) event.getY();
-                mLayoutParams.x = rawX;
-                mLayoutParams.y = rawY;
-                mWindowManager.updateViewLayout(mFloatingButton, mLayoutParams);
+                Log.e("yin","移动");
+                long currentTime = System.currentTimeMillis();
+                long midtime = currentTime-startTime;
+                //midtime用于区分是拖拽还是单击
+                if (midtime > 100) {//走拖拽
+                    isClick = false;
+                    mLayoutParams.x = (int) event.getRawX()-xm;
+                    mLayoutParams.y = (int) event.getRawY()-ym;
+                    mWindowManager.updateViewLayout(mFloatingButton, mLayoutParams);//更新window的位置
+                }else {//走单击，具体在ACTION_UP执行单击
+                    isClick = true;
+                }
                 break;
             }
             case MotionEvent.ACTION_UP: {
+                Log.e("yin","抬起");
+                if (isClick) {
+                    Log.e("yin","单击");
+                    Utils.showToast(MyWindowActivity.this, "点击我了");
+                }
                 break;
             }
             default:
