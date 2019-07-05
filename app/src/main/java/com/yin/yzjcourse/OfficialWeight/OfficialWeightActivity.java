@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.yin.yzjcourse.BaseActivity;
+import com.yin.yzjcourse.OfficialWeight.RCV.RecyclerHomeActivity;
 import com.yin.yzjcourse.R;
 
 import butterknife.ButterKnife;
@@ -20,7 +21,7 @@ public class OfficialWeightActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_auto_complete, R.id.ll_root,R.id.bt_custom_auto_complete})
+    @OnClick({R.id.bt_auto_complete, R.id.ll_root,R.id.bt_custom_auto_complete,R.id.bt_recycler})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_root:
@@ -30,6 +31,9 @@ public class OfficialWeightActivity extends BaseActivity {
                 break;
             case R.id.bt_custom_auto_complete:
                 startActivity(new Intent(this, CustomAutoCompleteTextViewActivity.class));
+                break;
+            case R.id.bt_recycler:
+                startActivity(new Intent(this, RecyclerHomeActivity.class));
                 break;
         }
     }

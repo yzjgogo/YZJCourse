@@ -25,5 +25,12 @@
             android:layout_height="wrap_content"
             android:text="AutoCompleteTextView：自定义Filter"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RecyclerView总结"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
