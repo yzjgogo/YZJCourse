@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 
 /**
  * Created by think on 2016/4/14.
+ * 当要显示不同的item时，注意泛型是RecyclerView.ViewHolder而不是你自定义的ViewHolder因为你多个自定义的ViewHolder都继承自RecyclerView.ViewHolder
  */
 public class RcvDiffItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static final int TYPE_HEAD = 1;
