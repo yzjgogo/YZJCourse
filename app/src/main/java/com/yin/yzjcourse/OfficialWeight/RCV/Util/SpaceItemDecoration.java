@@ -25,6 +25,7 @@ public class SpaceItemDecoration extends RecyclerView.ItemDecoration {
         outRect.top = space;//当前item的顶部空白空间
         outRect.right = space;//当前item的右侧空白空间
         outRect.bottom = space;//当前item的底部空白空间
+//        outRect.set(space,space,space,space);一次性设置上下左右四个空白空间
         parent.getChildLayoutPosition(view);//获取当前item所在的position
     }
 }
