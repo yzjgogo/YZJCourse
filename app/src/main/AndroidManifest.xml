@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".OfficialWeight.RCV.RecyclerBaseUseActivity"></activity>
+        <activity android:name=".OfficialWeight.RCV.RecyclerDiffItemActivity"></activity>
         <activity android:name=".OfficialWeight.RCV.RecyclerHomeActivity" />
         <activity android:name=".Base.mysurface.SurfaceActivity" />
         <activity android:name=".Base.ThreadPool.TPActivity" />

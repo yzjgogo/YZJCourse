@@ -16,10 +16,10 @@
         android:textAllCaps="false"
         android:text="最基本的用法"/>
     <Button
-        android:id="@+id/bt_base_use1"
+        android:id="@+id/bt_diff_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="最基本的用法"/>
+        android:text="不同的item的用法，包括添加头部"/>
 </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
