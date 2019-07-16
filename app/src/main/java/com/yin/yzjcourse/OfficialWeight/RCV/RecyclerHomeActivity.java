@@ -19,7 +19,7 @@ public class RecyclerHomeActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_base_use, R.id.bt_diff_item})
+    @OnClick({R.id.bt_base_use, R.id.bt_diff_item,R.id.bt_grid})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_base_use:
@@ -27,6 +27,9 @@ public class RecyclerHomeActivity extends BaseActivity {
                 break;
             case R.id.bt_diff_item:
                 startActivity(new Intent(this, RecyclerDiffItemActivity.class));
+                break;
+            case R.id.bt_grid:
+                startActivity(new Intent(this, RecyclerGridActivity.class));
                 break;
         }
     }

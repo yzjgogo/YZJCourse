@@ -21,5 +21,11 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="不同的item的用法，包括添加头部"/>
+    <Button
+        android:id="@+id/bt_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Grid布局"/>
 </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
