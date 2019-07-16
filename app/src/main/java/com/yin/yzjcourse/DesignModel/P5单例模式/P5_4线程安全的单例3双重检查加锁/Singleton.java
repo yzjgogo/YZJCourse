@@ -8,7 +8,9 @@ package com.yin.yzjcourse.DesignModel.P5单例模式.P5_4线程安全的单例3�
 public class Singleton {
     //volatile表示某个线程对uniqueInstance赋值后，另一个线程可以立即访问到该值。
 	private volatile static Singleton uniqueInstance;
- 
+ 	public String name;
+ 	public int age;
+ 	public String address;
 	private Singleton() {}
 
     /**
@@ -28,5 +30,11 @@ public class Singleton {
 			}
 		}
 		return uniqueInstance;
+	}
+	//需要释放的时候销毁掉
+	public static void destroySingleton() {
+		if (uniqueInstance != null) {
+			uniqueInstance = null;
+		}
 	}
 }
