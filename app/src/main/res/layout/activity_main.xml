@@ -167,6 +167,12 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="Window" />
+        <Button
+            android:id="@+id/bt_jetpack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Jetpack" />
 
     </LinearLayout>
 </ScrollView>

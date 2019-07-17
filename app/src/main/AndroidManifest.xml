@@ -15,9 +15,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OfficialWeight.RCV.RecyclerBaseUseActivity"></activity>
-        <activity android:name=".OfficialWeight.RCV.RecyclerDiffItemActivity"></activity>
-        <activity android:name=".OfficialWeight.RCV.RecyclerGridActivity"></activity>
+        <activity android:name=".Jetpack.MyLCActivity"></activity>
+        <activity android:name=".Jetpack.JetpackHomeActivity" />
+        <activity android:name=".OfficialWeight.RCV.RecyclerBaseUseActivity" />
+        <activity android:name=".OfficialWeight.RCV.RecyclerDiffItemActivity" />
+        <activity android:name=".OfficialWeight.RCV.RecyclerGridActivity" />
         <activity android:name=".OfficialWeight.RCV.RecyclerHomeActivity" />
         <activity android:name=".Base.mysurface.SurfaceActivity" />
         <activity android:name=".Base.ThreadPool.TPActivity" />

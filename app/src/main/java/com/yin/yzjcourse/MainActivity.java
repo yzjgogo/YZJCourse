@@ -21,6 +21,7 @@ import com.yin.yzjcourse.DiyWidget.PropertyAnimation.PropertyValuesHolderActivit
 import com.yin.yzjcourse.DiyWidget.ViewAnimation.XmlAnimActivity;
 import com.yin.yzjcourse.DiyWidget.ViewGroupAnimActivity;
 import com.yin.yzjcourse.ForeService.ForeServiceActivity;
+import com.yin.yzjcourse.Jetpack.JetpackHomeActivity;
 import com.yin.yzjcourse.MaterialDesign.MaterialDesignActivity;
 import com.yin.yzjcourse.MathAbout.MathAboutActivity;
 import com.yin.yzjcourse.MultiProcess.AndroidMulti.MultiMainActivity;
@@ -78,7 +79,7 @@ public class MainActivity extends BaseActivity {
             R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim, R.id.bt_property_anim_interpolator, R.id.bt_object_anim_holder
             , R.id.bt_anim_set, R.id.bt_anim_draw, R.id.bt_builder_mode, R.id.bt_math, R.id.bt_data_bind, R.id.bt_weight, R.id.bt_material_design,
             R.id.bt_coordinator, R.id.bt_android_message, R.id.bt_anim_group, R.id.bt_optimize, R.id.bt_tools, R.id.bt_net,R.id.bt_kotlin,
-    R.id.bt_model,R.id.bt_multi_process,R.id.bt_window})
+    R.id.bt_model,R.id.bt_multi_process,R.id.bt_window,R.id.bt_jetpack})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_fore_service:
@@ -162,6 +163,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.bt_window:
                 startActivity(new Intent(this, MyWindowActivity.class));
+                break;
+            case R.id.bt_jetpack:
+                startActivity(new Intent(this, JetpackHomeActivity.class));
                 break;
         }
     }
