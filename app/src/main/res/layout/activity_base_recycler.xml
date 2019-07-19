@@ -26,6 +26,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="Grid布局"/>
+        android:text="GridLayoutManager,ItemDecoration"/>
 </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
