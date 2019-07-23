@@ -33,6 +33,31 @@
             android:textAllCaps="false" />
 
         <Button
+            android:id="@+id/bt_timing_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Timer.schedule()--执行的任务的时间小于周期间隔时"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_timing_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Timer.scheduleAtFixedRate()--执行的任务的时间小于周期间隔时"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_time_calculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="System.currentTimeMillis()， SystemClock.uptimeMillis，SystemClock.elapsedRealtime的区别：\n\n
+System.currentTimeMillis()系统时间，也就是日期时间，可以被系统设置修改，然后值就会发生跳变；\n\n
+SystemClock.uptimeMillis 自开机后，经过的时间，不包括深度睡眠的时间；\n\n
+SystemClock.elapsedRealtime自开机后，经过的时间，包括深度睡眠的时间。"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/bt_crash_catch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

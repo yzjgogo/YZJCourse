@@ -21,12 +21,12 @@ public class PushUtils {
         pushService.register(applicationContext, new CommonCallback() {
             @Override
             public void onSuccess(String response) {
-                Log.e("yin", "init cloudchannel success:" + pushService.getDeviceId());
+//                Log.e("yin", "init cloudchannel success:" + pushService.getDeviceId());
             }
 
             @Override
             public void onFailed(String errorCode, String errorMessage) {
-                Log.e("yin", "init cloudchannel failed -- errorcode:" + errorCode + " -- errorMessage:" + errorMessage);
+//                Log.e("yin", "init cloudchannel failed -- errorcode:" + errorCode + " -- errorMessage:" + errorMessage);
             }
         });
         // 注册方法会自动判断是否支持小米系统推送，如不支持会跳过注册。
