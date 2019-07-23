@@ -71,6 +71,7 @@ public class ToolsActivity extends BaseActivity {
                 break;
             case R.id.bt_timing_schedule:
 /*
+1秒后，每隔1秒执行一次
                 mInitialTime = SystemClock.elapsedRealtime();
                 Timer myTimer = new Timer();
                 // Update the elapsed time every second.

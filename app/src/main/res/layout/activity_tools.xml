@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -32,19 +31,48 @@
             android:text="Android官方倒计时类：CountDownTimer"
             android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/bt_timing_schedule"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Timer.schedule()--执行的任务的时间小于周期间隔时"
-            android:textAllCaps="false" />
+            android:background="@color/light_yellow"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="周期性执行任务"
+                android:textSize="30sp"
+                android:textColor="@color/red"
+                android:padding="20dp"
+                android:layout_gravity="center_horizontal"/>
 
-        <Button
-            android:id="@+id/bt_timing_rate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Timer.scheduleAtFixedRate()--执行的任务的时间小于周期间隔时"
-            android:textAllCaps="false" />
+            <Button
+                android:id="@+id/bt_timing_schedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Timer.schedule()--执行的任务的时间小于周期间隔时"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_timing_schedule_big"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Timer.schedule()--执行的任务的时间大于周期间隔时，没写"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_timing_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Timer.scheduleAtFixedRate()--执行的任务的时间小于周期间隔时"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_timing_rate_big"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Timer.scheduleAtFixedRate()--执行的任务的时间大于周期间隔时，没写"
+                android:textAllCaps="false" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/bt_time_calculate"
