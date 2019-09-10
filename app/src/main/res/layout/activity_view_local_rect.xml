@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/bt_get"
+        android:layout_width="wrap_content"
+        android:layout_height="300px"
+        android:text="获取矩形"
+        android:textAllCaps="false"/>
+
+    <LinearLayout
+        android:id="@+id/innerL"
+        android:layout_below="@+id/bt_get"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="200px">
+
+        <View
+            android:id="@+id/test_view"
+            android:layout_width="200px"
+            android:layout_height="400px"
+            android:layout_marginLeft="-100px"
+            android:background="@color/inquiry_green"/>
+        <View
+            android:layout_width="300px"
+            android:layout_height="300px"
+            android:layout_marginTop="-100px"
+            android:background="@color/red"/>
+    </LinearLayout>
+<!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@color/red"/>-->
+</RelativeLayout>
