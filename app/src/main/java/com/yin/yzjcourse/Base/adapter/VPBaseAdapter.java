@@ -4,6 +4,8 @@ import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.yin.yzjcourse.utils.DLog;
+
 import java.util.List;
 
 /**
@@ -25,6 +27,7 @@ public class VPBaseAdapter extends PagerAdapter {
      */
     @Override
     public boolean isViewFromObject(View view, Object object) {
+        DLog.eLog("执行isViewFromObject");
         return view == object;//instantiateItem直接返回实例化出来的view作为key的处理方法
 //        return view == views.get((int)Integer.parseInt(object.toString()));
         //instantiateItem返回实例化出来的view的位置作为key的处理方法
@@ -32,6 +35,7 @@ public class VPBaseAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
+        DLog.eLog("执行getCount");
         return views.size();
     }
 
@@ -43,6 +47,7 @@ public class VPBaseAdapter extends PagerAdapter {
      */
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
+        DLog.eLog("执行destroyItem");
         container.removeView(views.get(position));
     }
 
@@ -57,6 +62,7 @@ public class VPBaseAdapter extends PagerAdapter {
      */
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+        DLog.eLog("执行instantiateItem");
         container.addView(views.get(position));
         return views.get(position);//直接返回当前实例化出来的view作为key
 //        return position;返回当前实例化出来的view的位置作为key

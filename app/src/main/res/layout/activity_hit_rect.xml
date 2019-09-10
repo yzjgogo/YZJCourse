@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DiyWidget.ViewHitRectActivity">
+    <LinearLayout
+        android:layout_marginTop="500px"
+        android:layout_width="450px"
+        android:layout_height="450px"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/holo_red_light"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/testView"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100px"
+            android:background="@android:color/holo_blue_bright"
+            android:gravity="center"
+            android:text="测试区域"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

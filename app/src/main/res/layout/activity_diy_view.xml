@@ -38,6 +38,13 @@
             android:text="各种自己写的控件"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/bt_hit_rect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View的getHitRect()方法"
+            android:textAllCaps="false" />
+
         <com.yin.yzjcourse.DiyWidget.ArcColumnView
             android:layout_width="360dp"
             android:layout_height="460dp"
