@@ -17,6 +17,12 @@ public class ViewDrawingRectActivity extends BaseActivity {
     @BindView(R.id.test_view)
     TextView testView;
 
+    /**
+     *  getDrawingRect(rect)
+     *  1：以View自身作为坐标系，view的左上角为坐标系的(0,0),rect即为[0,0,width,height],其中(width,height)即为该view的有下角；
+     *  2：如果view自身发生了滚动，那么rect存储了view滚动后到原始的坐标系的位置，进去看一下源码就知道了；
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
