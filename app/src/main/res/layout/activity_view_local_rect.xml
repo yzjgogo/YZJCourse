@@ -2,34 +2,44 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/red">
     <Button
         android:id="@+id/bt_get"
         android:layout_width="wrap_content"
         android:layout_height="300px"
         android:text="获取矩形"
         android:textAllCaps="false"/>
-
+<ScrollView
+    android:layout_below="@+id/bt_get"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="100px"
+    android:background="@color/blue">
     <LinearLayout
         android:id="@+id/innerL"
-        android:layout_below="@+id/bt_get"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:layout_marginLeft="200px">
+        android:layout_margin="200px"
+        android:background="@color/orange"
+        android:gravity="center_horizontal">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2000px"/>
 
         <View
             android:id="@+id/test_view"
             android:layout_width="200px"
             android:layout_height="400px"
-            android:layout_marginLeft="-100px"
             android:background="@color/inquiry_green"/>
+
         <View
-            android:layout_width="300px"
-            android:layout_height="300px"
-            android:layout_marginTop="-100px"
-            android:background="@color/red"/>
+            android:layout_width="match_parent"
+            android:layout_height="2000px"/>
     </LinearLayout>
+</ScrollView>
+
 <!--<View-->
     <!--android:layout_width="match_parent"-->
     <!--android:layout_height="match_parent"-->
