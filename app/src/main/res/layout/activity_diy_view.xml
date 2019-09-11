@@ -38,26 +38,34 @@
             android:text="各种自己写的控件"
             android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/bt_hit_rect"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="View的getHitRect()方法"
-            android:textAllCaps="false" />
+            android:background="@color/orange"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/bt_draw_rect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View的getDrawingRect()方法"
-            android:textAllCaps="false" />
+            <Button
+                android:id="@+id/bt_hit_rect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View的getHitRect()方法"
+                android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/bt_local_rect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View的getLocalVisibleRect()方法"
-            android:textAllCaps="false" />
+            <Button
+                android:id="@+id/bt_draw_rect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View的getDrawingRect()方法"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_local_rect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View的getLocalVisibleRect()和getGlobalVisibleRect()方法"
+                android:textAllCaps="false" />
+        </LinearLayout>
 
         <com.yin.yzjcourse.DiyWidget.ArcColumnView
             android:layout_width="360dp"
