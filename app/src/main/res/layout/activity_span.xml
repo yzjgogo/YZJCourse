@@ -9,6 +9,5 @@
 <TextView
     android:id="@+id/tv"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/orange"/>
+    android:layout_height="wrap_content"/>
 </LinearLayout>

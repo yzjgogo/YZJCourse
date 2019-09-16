@@ -29,7 +29,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textAllCaps="false"
-    android:text="CharSequence设置文本不同字体颜色，不同字体大小，添加图标"/>
+    android:text="CharSequence设置文本不同字体颜色，不同字体大小，添加图标，局部可点击，添加下划线等"/>
 <Button
     android:id="@+id/bt_ht"
     android:layout_width="match_parent"
