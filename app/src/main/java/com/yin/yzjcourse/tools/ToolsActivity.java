@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
+import com.yin.yzjcourse.Utils;
 import com.yin.yzjcourse.utils.DLog;
 import com.yin.yzjcourse.utils.ScreenUtils;
 
@@ -32,9 +33,14 @@ public class ToolsActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_heap_size,R.id.bt_format_ms,R.id.bt_count_down,R.id.bt_timing_schedule,R.id.bt_timing_rate,R.id.bt_time_calculate,R.id.bt_crash_catch,R.id.bt_screen})
+    @OnClick({R.id.bt_heap_size,R.id.bt_format_ms,R.id.bt_count_down,R.id.bt_timing_schedule,
+            R.id.bt_timing_rate,R.id.bt_time_calculate,R.id.bt_crash_catch,R.id.bt_screen
+            ,R.id.bt_utils,R.id.bt_gener_id})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.bt_utils:
+                Utils.showToast(this,"看看这个类就行了");
+                break;
             case R.id.bt_heap_size:
                 ActivityManager manager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
                 int heapSize = manager.getMemoryClass();//单位是Mb
@@ -187,6 +193,10 @@ public class ToolsActivity extends BaseActivity {
             case R.id.bt_screen:
                 //在Activity的onCreate()方法中调用下面一行即可
 //                ScreenUtils.setCustomDensity(this, getApplication());
+                break;
+            case R.id.bt_gener_id:
+                View myView = new View(this);
+                myView.setId(IdiUtils.generateViewId());
                 break;
         }
     }

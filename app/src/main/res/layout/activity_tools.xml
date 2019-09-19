@@ -11,6 +11,13 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/bt_utils"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="工具类:com.yin.yzjcourse.Utils"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/bt_heap_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -107,6 +114,18 @@ SystemClock.elapsedRealtime自开机后，经过的时间，包括深度睡眠�
             android:layout_height="wrap_content"
             android:text="今日头条屏幕适配方案"
             android:textAllCaps="false" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/chris_color"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/bt_gener_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自动生成View的id"
+                android:textAllCaps="false" />
+        </LinearLayout>
 
 
     </LinearLayout>
