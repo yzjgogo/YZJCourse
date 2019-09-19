@@ -20,7 +20,7 @@ public class OfficialWeightActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_auto_complete, R.id.ll_root,R.id.bt_custom_auto_complete,R.id.bt_recycler})
+    @OnClick({R.id.bt_auto_complete, R.id.ll_root,R.id.bt_custom_auto_complete,R.id.bt_recycler,R.id.bt_et_filter})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_root:
@@ -33,6 +33,9 @@ public class OfficialWeightActivity extends BaseActivity {
                 break;
             case R.id.bt_recycler:
                 startActivity(new Intent(this, RecyclerHomeActivity.class));
+                break;
+            case R.id.bt_et_filter:
+                startActivity(new Intent(this, EtFilterActivity.class));
                 break;
         }
     }

@@ -41,15 +41,43 @@ public class Utils {
         Toast.makeText(context,content,Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 获取屏幕的宽
+     * @param context
+     * @return
+     */
     public static int getScreenWidth(Context context) {
         final Resources resources = context.getApplicationContext().getResources();
         final DisplayMetrics dm = resources.getDisplayMetrics();
         return dm.widthPixels;
     }
 
+    /**
+     * 获取屏幕的高
+     * @param context
+     * @return
+     */
     public static int getScreenHeight(Context context) {
         final Resources resources = context.getApplicationContext().getResources();
         final DisplayMetrics dm = resources.getDisplayMetrics();
         return dm.heightPixels;
+    }
+
+    /**
+     * 给定一个字符判断是不是中文字符
+     * @param c 任意字符
+     * @return 如果任意字符c是中文字符则返回true，否则返回false
+     */
+    public static boolean isChinese(char c) {
+        Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
+        if (ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS
+                || ub == Character.UnicodeBlock.CJK_COMPATIBILITY_IDEOGRAPHS
+                || ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A
+                || ub == Character.UnicodeBlock.GENERAL_PUNCTUATION
+                || ub == Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION
+                || ub == Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS) {
+            return true;
+        }
+        return false;
     }
 }

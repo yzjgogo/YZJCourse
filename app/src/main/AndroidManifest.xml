@@ -15,7 +15,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Base.IteratorActivity"></activity>
+        <activity android:name=".OfficialWeight.EtFilterActivity"></activity>
+        <activity android:name=".Base.IteratorActivity" />
         <activity android:name=".DiyWidget.ViewLocalRectActivity" />
         <activity android:name=".DiyWidget.ViewDrawingRectActivity" />
         <activity android:name=".DiyWidget.ViewHitRectActivity" />
