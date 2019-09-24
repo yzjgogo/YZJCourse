@@ -87,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:background="@color/msg_read_bg"
                 android:orientation="vertical">
                 <Button
                     android:id="@+id/bt_view_animate_1"
