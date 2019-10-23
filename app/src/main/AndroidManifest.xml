@@ -15,7 +15,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Base.GetIdActivity"></activity>
+        <activity android:name=".Base.SvScrollActivity"></activity>
+        <activity android:name=".Base.GetIdActivity" />
         <activity android:name=".DiyWidget.ViewCompatAnimateActivity" />
         <activity android:name=".DiyWidget.ViewAnimateActivity" />
         <activity android:name=".OfficialWeight.EtFilterActivity" />

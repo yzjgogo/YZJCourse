@@ -79,6 +79,13 @@
             android:layout_height="wrap_content"
             android:text="根据资源名称获取资源的id"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_sc_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ScrollView的滚动相关内容"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 </ScrollView>

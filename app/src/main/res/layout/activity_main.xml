@@ -15,6 +15,40 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.yin.yzjcourse.MainActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_yellow"
+            android:clipChildren="false"
+            android:orientation="vertical">
+            <View
+                android:layout_width="200dp"
+                android:layout_height="2dp"
+                android:background="@color/blue"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/orange"/>
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-20dp"
+                    android:background="@color/black"/>
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="-3dp"
+                    android:background="@color/orange"/>
+            </LinearLayout>
+        </LinearLayout>
 
         <Button
             android:id="@+id/bt_fore_service"
