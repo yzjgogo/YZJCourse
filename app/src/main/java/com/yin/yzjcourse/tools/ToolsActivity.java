@@ -2,6 +2,7 @@ package com.yin.yzjcourse.tools;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
@@ -35,7 +36,7 @@ public class ToolsActivity extends BaseActivity {
 
     @OnClick({R.id.bt_heap_size,R.id.bt_format_ms,R.id.bt_count_down,R.id.bt_timing_schedule,
             R.id.bt_timing_rate,R.id.bt_time_calculate,R.id.bt_crash_catch,R.id.bt_screen
-            ,R.id.bt_utils,R.id.bt_gener_id})
+            ,R.id.bt_utils,R.id.bt_gener_id,R.id.bt_str})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_utils:
@@ -197,6 +198,9 @@ public class ToolsActivity extends BaseActivity {
             case R.id.bt_gener_id:
                 View myView = new View(this);
                 myView.setId(IdiUtils.generateViewId());
+                break;
+            case R.id.bt_str:
+                startActivity(new Intent(this, StrAboutActivity.class));
                 break;
         }
     }
