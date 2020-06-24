@@ -41,6 +41,7 @@ public class StrAboutActivity extends BaseActivity {
      */
     private void splitStr() {
         String sentence = "What does she want to do when she's older? ";
+        //将字符串sentence按照空格分割
         StringTokenizer st = new StringTokenizer(sentence, " ");
 //        while (st.hasMoreTokens()){
         while (st.hasMoreElements()){
