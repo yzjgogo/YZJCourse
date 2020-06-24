@@ -15,6 +15,7 @@ import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
+import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.TextView;
@@ -41,6 +42,8 @@ public class SpanActivity extends BaseActivity {
 
     private SpannableStringBuilder handleStyle(Context context, String prescriptionName, String totalMedicines) {
         SpannableStringBuilder style = new SpannableStringBuilder(prescriptionName + totalMedicines);
+
+//        style.setSpan(new TypefaceSpan());
 
         //设置不同的字体颜色，可调用多次
         style.setSpan(new ForegroundColorSpan(ContextCompat.getColor(context,R.color.title_color)),

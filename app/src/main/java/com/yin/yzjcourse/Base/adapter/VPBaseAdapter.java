@@ -1,5 +1,6 @@
 package com.yin.yzjcourse.Base.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,22 @@ public class VPBaseAdapter extends PagerAdapter {
 
     public VPBaseAdapter(List<View> views) {
         this.views = views;
+    }
+
+//    @Override
+//    public void setPrimaryItem(@NonNull View container, int position, @NonNull Object object) {
+//        super.setPrimaryItem(container, position, object);
+//    }
+
+    /**
+     * 切换页面时，position就是当前页的位置
+     * @param container
+     * @param position
+     * @param object
+     */
+    @Override
+    public void setPrimaryItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+        super.setPrimaryItem(container, position, object);
     }
 
     /**
