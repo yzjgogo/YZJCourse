@@ -96,4 +96,15 @@
         <item name="android:textSize">40sp</item>
     </style>
 
+    <style name="ProgressBar_Max" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">45dip</item>
+        <item name="android:minHeight">4dip</item>
+<!--        是否开启模糊模式：如果进度是未知的，无法具体的知道具体进度是百分之多少时，可设置为true，此时就用到了indeterminateDrawable指定的样式，progressDrawable指定的样式就没用了-->
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal
+        </item>
+<!--        indeterminateOnly为false时就使用progressDrawable指定的样式-->
+        <item name="android:progressDrawable">@drawable/progressbar_max</item>
+    </style>
 </resources>

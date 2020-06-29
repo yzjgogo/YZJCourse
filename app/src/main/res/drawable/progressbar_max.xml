@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    参考图片：progress_demo.jpg-->
+<!--    进度条还没进到的位置的颜色，其实就是进度条的背景色-->
+    <item android:id="@android:id/background">
+        <shape>
+            <corners android:radius="30dip" />
+            <solid android:color="#15bb76"/>
+        </shape>
+    </item>
+
+<!--    类似于播放器的缓冲进度，因此一般比播放进度快一点，如果慢，就相当于播放卡住了-->
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape>
+                <corners android:radius="30dip" />
+                <solid android:color="#FF0000"/>
+            </shape>
+        </clip>
+    </item>
+
+<!--    类似于播放器的播放进度-->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <corners android:radius="30dip" />
+<!--                支持渐变色-->
+                <gradient
+                    android:angle="180"
+                    android:centerY="0.75"
+                    android:endColor="#FFEF22"
+                    android:startColor="#FFD200" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>
