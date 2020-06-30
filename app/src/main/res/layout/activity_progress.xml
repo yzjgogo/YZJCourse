@@ -41,7 +41,7 @@
 <!--    splitTrack="false"：即使滑块四周是透明的，如果不设置为false,则这个透明部分仍然是不透明的效果，会遮挡底下的进度条
         参考图片：splitTrack.jpg-->
     <SeekBar
-        android:id="@+id/seekBar_chinese_learn_audio"
+        android:id="@+id/seekBar"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
