@@ -14,6 +14,8 @@
     </item>
 <!--    走过的进度的样式-->
     <item android:id="@android:id/progress">
+        <!--        clip用法参考：clip_img.xml和DrawableActivity,这里clipOrientation取默认值horizontal，gravity取默认值left
+                    clip是实现进度条效果的关键-->
         <clip>
             <shape android:shape="rectangle">
                 <corners android:radius="2dp" />

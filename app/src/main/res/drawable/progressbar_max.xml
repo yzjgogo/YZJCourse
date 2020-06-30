@@ -11,6 +11,8 @@
 
 <!--    类似于播放器的缓冲进度，因此一般比播放进度快一点，如果慢，就相当于播放卡住了-->
     <item android:id="@android:id/secondaryProgress">
+<!--        clip用法参考：clip_img.xml和DrawableActivity,这里clipOrientation取默认值horizontal，gravity取默认值left
+            clip是实现进度条效果的关键-->
         <clip>
             <shape>
                 <corners android:radius="30dip" />

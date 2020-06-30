@@ -35,6 +35,7 @@ public class DrawableActivity extends BaseActivity {
                 ImageView ivClip = (ImageView) findViewById(R.id.iv_clip);
                 ClipDrawable clipDrawable = (ClipDrawable) ivClip.getDrawable();
                 //level的值的范围是[0,10000],表示被剪裁出来的部分(保留的可见的部分)占万分之几，0代表完全剪裁完全不可见，10000代表不剪裁完全可见；
+                //因此通过动态改变level的值，可以实现进度条效果
                 clipDrawable.setLevel(4000);
                 break;
         }
