@@ -141,6 +141,13 @@ SystemClock.elapsedRealtime自开机后，经过的时间，包括深度睡眠�
             android:text="进度相关"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/bt_drawable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="各种drawable:ClipDrawable、ScaleDrawable、。。。"
+            android:textAllCaps="false" />
+
 
     </LinearLayout>
 </ScrollView>

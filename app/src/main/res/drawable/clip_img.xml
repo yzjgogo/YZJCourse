@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clip xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clipOrientation="horizontal"
+    android:gravity="left"
+    android:drawable="@drawable/icon_science_bg">
+<!--    clipOrientation的默认值是horizontal
+        gravity的默认值是left：将内部的drawable(这里是icon_science_bg)放在容器的“左边”，不改变它的大小。如果为水平剪裁(horizontal),那么从右边开始剪裁。
+        参考图片：clip_drawable.jpg
+        更多clipOrientation和gravity的取值，及其关系参考：<<Android开发艺术探索>>6.2.9章节-->
+</clip>

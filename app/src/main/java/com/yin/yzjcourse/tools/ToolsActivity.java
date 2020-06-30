@@ -36,7 +36,7 @@ public class ToolsActivity extends BaseActivity {
 
     @OnClick({R.id.bt_heap_size,R.id.bt_format_ms,R.id.bt_count_down,R.id.bt_timing_schedule,
             R.id.bt_timing_rate,R.id.bt_time_calculate,R.id.bt_crash_catch,R.id.bt_screen
-            ,R.id.bt_utils,R.id.bt_gener_id,R.id.bt_str,R.id.bt_progress})
+            ,R.id.bt_utils,R.id.bt_gener_id,R.id.bt_str,R.id.bt_progress,R.id.bt_drawable})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_utils:
@@ -204,6 +204,9 @@ public class ToolsActivity extends BaseActivity {
                 break;
             case R.id.bt_progress:
                 startActivity(new Intent(this, ProgressActivity.class));
+                break;
+            case R.id.bt_drawable:
+                startActivity(new Intent(this, DrawableActivity.class));
                 break;
         }
     }
