@@ -101,5 +101,12 @@
             android:layout_height="wrap_content"
             android:text="Android触摸事件--View事件分发"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_cache_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View-Cache-Bitmap"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

@@ -25,7 +25,7 @@ public class DiySimpleActivity extends BaseActivity {
     @OnClick({R.id.bt_qq_delete, R.id.bt_shade,R.id.bt_measure_layout,
             R.id.bt_measure_layout_margin,R.id.bt_flow,R.id.bt_shader,R.id.bt_shader_telescope,
     R.id.bt_shader_avatar,R.id.bt_shape,R.id.bt_level_list,R.id.bt_photo_tag,R.id.bt_touch_view,
-    R.id.bt_dispatch_view})
+    R.id.bt_dispatch_view,R.id.bt_cache_view})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_qq_delete:
@@ -66,6 +66,9 @@ public class DiySimpleActivity extends BaseActivity {
                 break;
             case R.id.bt_dispatch_view:
                 startActivity(new Intent(this, ViewDispatchTouchActivity.class));
+                break;
+            case R.id.bt_cache_view:
+                startActivity(new Intent(this, ViewCacheActivity.class));
                 break;
         }
     }
