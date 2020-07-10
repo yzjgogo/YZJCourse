@@ -36,6 +36,6 @@ dependencies {
     api files('libs/huawei-xiaomi-push-support-2.3.0.jar')
 //    api 'com.android.support:appcompat-v7:25.3.1'
     api "com.android.support:appcompat-v7:${SUPPORT_APPCOMPAT_VERSION}"
-    api 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
+    api 'com.android.support.constraint:constraint-layout:2.0.0-beta7'
     testImplementation 'junit:junit:4.12'
 }
