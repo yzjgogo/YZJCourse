@@ -12,7 +12,8 @@
 还要给爷ViewGroup的父ViewGroup设置clipChildren="false"
 其实clipChildren="false"就相当于前端的overflow:hidden-->
 <!--也可以在代码中设置：setClipChildren (boolean clipChildren)，也可以从代码中判断某个ViewGroup
-的clipChildren值：boolean getClipChildren()-->
+的clipChildren值：boolean getClipChildren()
+注意：如果关闭了硬件加速，则无效果；例如：setLayerType(View.LAYER_TYPE_SOFTWARE, null)-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ll_root"
