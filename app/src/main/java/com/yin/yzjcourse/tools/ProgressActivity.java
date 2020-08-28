@@ -1,6 +1,11 @@
 package com.yin.yzjcourse.tools;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.ClipDrawable;
+import android.graphics.drawable.LayerDrawable;
+import android.os.Build;
 import android.os.CountDownTimer;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -61,10 +66,24 @@ public class ProgressActivity extends BaseActivity {
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @OnClick({R.id.bt_start,R.id.bt_start_seek})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_start:
+
+                //开启帧动画
+                LayerDrawable layerDrawable = (LayerDrawable) progress_loading.getProgressDrawable();
+                ClipDrawable clipDrawable = (ClipDrawable) layerDrawable.getDrawable(2);
+                //有版本限制的
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                    AnimationDrawable animationDrawable = (AnimationDrawable) clipDrawable.getDrawable();
+                    if (animationDrawable!=null) {
+                        animationDrawable.start();
+                    }
+                }
+
+
                 countDownTimer = new CountDownTimer(100 * 1000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {

@@ -4,7 +4,7 @@
 <!--    进度条还没进到的位置的颜色，其实就是进度条的背景色-->
     <item android:id="@android:id/background">
         <shape>
-            <corners android:radius="30dip" />
+            <corners android:radius="5dp" />
             <solid android:color="#15bb76"/>
         </shape>
     </item>
@@ -15,8 +15,8 @@
             clip是实现进度条效果的关键-->
         <clip>
             <shape>
-                <corners android:radius="30dip" />
-                <solid android:color="#FF0000"/>
+                <corners android:radius="5dp" />
+                <solid android:color="#15bb76"/>
             </shape>
         </clip>
     </item>
@@ -24,15 +24,30 @@
 <!--    类似于播放器的播放进度-->
     <item android:id="@android:id/progress">
         <clip>
-            <shape>
-                <corners android:radius="30dip" />
-<!--                支持渐变色-->
-                <gradient
-                    android:angle="180"
-                    android:centerY="0.75"
-                    android:endColor="#FFEF22"
-                    android:startColor="#FFD200" />
-            </shape>
+<!--            1：使用图片作为进度条-->
+<!--            <bitmap android:src="@drawable/ppt_video_progress">-->
+
+<!--            </bitmap>-->
+
+<!--            2：使用帧动画(彩色灯柱效果)作为进度条-->
+            <animation-list
+                android:oneshot="false">
+                <item android:drawable="@drawable/ppt_progress_1" android:duration="200" />
+                <item android:drawable="@drawable/ppt_progress_2" android:duration="200" />
+                <item android:drawable="@drawable/ppt_progress_3" android:duration="200" />
+            </animation-list>
+
+
+<!--            3：使用颜色作为进度条-->
+<!--            <shape>-->
+<!--                <corners android:radius="10dip" />-->
+<!--&lt;!&ndash;                支持渐变色&ndash;&gt;-->
+<!--                <gradient-->
+<!--                    android:angle="180"-->
+<!--                    android:centerY="0.75"-->
+<!--                    android:endColor="#FFEF22"-->
+<!--                    android:startColor="#FFD200" />-->
+<!--            </shape>-->
         </clip>
     </item>
 </layer-list>
