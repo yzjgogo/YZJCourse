@@ -32,6 +32,8 @@ public class CourseDialog extends DialogFragment {
             dialog.setContentView(R.layout.dialog_ppt_feedback_layout);
             Window dialogWindow = dialog.getWindow();
             if (dialogWindow != null) {
+                //如果不加这一行，则dialog较高时，例如横屏时，虽然状态栏看不见是透明的，但是dialog顶部与状态栏重叠的区域会被截断，可通过FLAG_FULLSCREEN解决
+                dialogWindow.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
                 dialogWindow.setGravity(Gravity.CENTER);
                 dialogWindow.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             }
