@@ -124,4 +124,30 @@
         <!-- 背景透明 -->
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+
+
+
+
+
+
+    <style name="DialogWebActivityTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+<!--        android:windowNoTitle 并没有去掉activity的标题-->
+        <item name="android:windowNoTitle">true</item>
+<!--        windowNoTitle：这个才真正去掉activity的标题-->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+
+
+    <style name="DialogBaseTheme" parent="AppTheme">
+<!--        "android:windowIsTranslucent"  间接解决代码中setTheme()方法windowIsTranslucent不生效，dialog四周黑色不透明的问题-->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

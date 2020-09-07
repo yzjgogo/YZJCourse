@@ -86,6 +86,26 @@
             android:layout_height="wrap_content"
             android:text="ScrollView的滚动相关内容"
             android:textAllCaps="false" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/orange">
+
+            <Button
+                android:id="@+id/bt_act_dialog_xml"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="通过在manifest中给Activity设置Dialog样式的theme实现弹窗效果"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_act_dialog_dynamic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="通过用java代码动态设置，让Activity成为Dialog,这种方式需要注意怎么让dialog的遮罩成为半透明的"
+                android:textAllCaps="false" />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

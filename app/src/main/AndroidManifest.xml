@@ -206,6 +206,10 @@
         <activity android:name=".MultiProcess.MyAidl.ClientActivity" />
         <activity android:name=".Window.MyWindowActivity" />
         <activity android:name=".DesignModel.P1策略模式.StrategyActivity" />
+        <activity android:name=".Base.XMLDialogActivity"
+            android:theme="@style/DialogWebActivityTheme"/>
+        <activity android:name=".Base.DynamicDialogActivity"
+            android:theme="@style/DialogBaseTheme"/>
     </application>
 
 </manifest>
