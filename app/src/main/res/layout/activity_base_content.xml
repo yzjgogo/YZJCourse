@@ -105,6 +105,10 @@
                 android:layout_height="wrap_content"
                 android:text="通过用java代码动态设置，让Activity成为Dialog,这种方式需要注意怎么让dialog的遮罩成为半透明的"
                 android:textAllCaps="false" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="既然把Activity设置成了Dialog,那么如果弹出这个Activity(Dialog)的Activity是横屏的那么这个Activity(Dialog)也是横屏的，竖屏也一样"/>
         </LinearLayout>
     </LinearLayout>
 
