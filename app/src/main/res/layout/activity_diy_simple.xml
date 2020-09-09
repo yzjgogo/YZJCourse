@@ -45,27 +45,47 @@
             android:layout_height="wrap_content"
             android:text="自定义可自动换换的FlowLayout"
             android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/bt_shader"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Paint的着色器Shader之BitmapShader"
-            android:textAllCaps="false" />
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@color/orange">
 
-        <Button
-            android:id="@+id/bt_shader_telescope"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Paint的着色器Shader之BitmapShader实现望远镜效果"
-            android:textAllCaps="false" />
+            <Button
+                android:id="@+id/bt_shader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Paint的着色器Shader之BitmapShader"
+                android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/bt_shader_avatar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Paint的着色器Shader之实现任意形状的头像"
-            android:textAllCaps="false" />
+            <Button
+                android:id="@+id/bt_shader_telescope"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Paint的着色器Shader之BitmapShader实现望远镜效果"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_shader_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Paint的着色器Shader之实现任意形状的头像"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_shader_sweep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Paint的着色器Shader之SweepGradient、LinearGradient、RadialGradient"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Paint的着色器Shader之ComposeShader，没有demo，可以组合任意两个Shader混合使用，ComposeShader(shaderA, shaderB, Xfermode)"
+                android:textAllCaps="false" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/bt_shape"
