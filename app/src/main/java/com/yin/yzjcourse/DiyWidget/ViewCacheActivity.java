@@ -46,6 +46,10 @@ public class ViewCacheActivity extends BaseActivity {
                 ll_content.setDrawingCacheEnabled(true);
                 //调用getDrawingCache方法就可以获得view的cache图片了
                 Bitmap bitmap = ll_content.getDrawingCache();
+                //根据场景可选操作：因为getDrawingCache()获取的Bitmap，在调用destroyDrawingCache()或setDrawingCacheEnabled(false)后就被回收了
+                //所以如果有需要，可以获取持久化的bitmap,当然如果不需要持久性的，只需要即时性的，无需此操作
+                bitmap = Bitmap.createBitmap(bitmap);
+
                 if (bitmap != null) {
                     cacheView.setCacheBitmap(bitmap, 50, 50);
                     //因为cacheView并没有设置layoutParams，所以是match_parent,但是视觉上真正有效的区域是bitmap的区域，其他区域完全透明，因此这个bitmap的置位很重要，可看成视觉上的cacheView的大小
