@@ -24,7 +24,7 @@ public class BaseContentActivity extends BaseActivity {
     }
 
     @OnClick({R.id.bt_android_message, R.id.bt_title_menu,R.id.bt_vp,R.id.bt_span,R.id.bt_ht,R.id.bt_is,R.id.bt_tp,
-            R.id.bt_surface,R.id.bt_iterator,R.id.bt_get_id,R.id.bt_sc_scroll,R.id.bt_act_dialog_xml,R.id.bt_act_dialog_dynamic})
+            R.id.bt_surface,R.id.bt_iterator,R.id.bt_get_id,R.id.bt_sc_scroll,R.id.bt_act_dialog_xml,R.id.bt_act_dialog_dynamic,R.id.bt_phone_listen})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_android_message:
@@ -65,6 +65,9 @@ public class BaseContentActivity extends BaseActivity {
                 break;
             case R.id.bt_act_dialog_dynamic:
                 startActivity(new Intent(this, DynamicDialogActivity.class));
+                break;
+            case R.id.bt_phone_listen:
+                startActivity(new Intent(this, PhoneListenActivity.class));
                 break;
         }
     }

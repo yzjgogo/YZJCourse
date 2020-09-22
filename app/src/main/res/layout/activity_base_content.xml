@@ -110,6 +110,13 @@
                 android:layout_height="wrap_content"
                 android:text="既然把Activity设置成了Dialog,那么如果弹出这个Activity(Dialog)的Activity是横屏的那么这个Activity(Dialog)也是横屏的，竖屏也一样"/>
         </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_phone_listen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="来电监听"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 </ScrollView>
