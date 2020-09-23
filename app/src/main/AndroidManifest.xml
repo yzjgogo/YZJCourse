@@ -22,6 +22,7 @@
         <activity android:name=".Base.SvScrollActivity" />
         <activity android:name=".Base.PhoneListenActivity" />
         <activity android:name=".Base.GetIdActivity" />
+        <activity android:name=".Base.GetSizeActivity" />
         <activity android:name=".DiyWidget.ViewCompatAnimateActivity" />
         <activity android:name=".DiyWidget.ViewAnimateActivity" />
         <activity android:name=".OfficialWeight.EtFilterActivity" />
