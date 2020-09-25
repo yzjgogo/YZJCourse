@@ -148,6 +148,13 @@ SystemClock.elapsedRealtime自开机后，经过的时间，包括深度睡眠�
             android:text="各种drawable:ClipDrawable、ScaleDrawable、。。。"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/bt_status_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取状态栏高，是否有虚拟导航栏，虚拟导航栏的高"
+            android:textAllCaps="false" />
+
 
     </LinearLayout>
 </ScrollView>

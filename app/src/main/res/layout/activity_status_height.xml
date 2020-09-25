@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".tools.DrawableActivity">
+    <Button
+        android:id="@+id/bt_status_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="状态栏的高"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/bt_nav_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="是否有虚拟导航栏，如果有虚拟导航栏的高是多少"
+        android:textAllCaps="false"/>
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:background="@color/light_yellow"
+        android:text="onWindowFocusChanged后显示状态栏的高，虚拟导航栏的高"/>
+</LinearLayout>
