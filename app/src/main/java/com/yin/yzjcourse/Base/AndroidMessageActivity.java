@@ -3,6 +3,7 @@ package com.yin.yzjcourse.Base;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
@@ -11,6 +12,8 @@ import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.Utils;
 import com.yin.yzjcourse.utils.DLog;
+
+import java.util.concurrent.ThreadPoolExecutor;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -282,5 +285,25 @@ public class AndroidMessageActivity extends BaseActivity {
     @OnClick(R.id.bt_message_source)
     public void onClick() {
         startActivity(new Intent(this, MessageSourceActivity.class));
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @OnClick(R.id.bt_handle_thread)
+    public void onHandleThread() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                DLog.eLog("handle所在的线程是_1："+Thread.currentThread().getName());//子线程
+                Handler mHandler = new Handler(Looper.getMainLooper());//注意用的是MainLooper
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //主线程
+                        DLog.eLog("handle所在的线程是："+Thread.currentThread().getName());
+                    }
+                });
+            }
+        }).start();
     }
 }

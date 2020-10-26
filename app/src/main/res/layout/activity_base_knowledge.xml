@@ -115,4 +115,11 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="Android消息处理机制" />
+
+    <Button
+        android:id="@+id/bt_handle_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="指定handler所在的线程" />
 </LinearLayout>
