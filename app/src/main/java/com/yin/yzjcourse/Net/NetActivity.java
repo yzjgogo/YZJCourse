@@ -1,11 +1,13 @@
 package com.yin.yzjcourse.Net;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Toast;
 
 import com.yin.yzjcourse.BaseActivity;
+import com.yin.yzjcourse.DiyWidget.ViewGroupAnimActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.tools.ToolsActivity;
 import com.yin.yzjcourse.utils.DLog;
@@ -40,7 +42,7 @@ public class NetActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_ok, R.id.bt_temp,R.id.bt_original_socket,R.id.bt_web_socket})
+    @OnClick({R.id.bt_ok, R.id.bt_temp,R.id.bt_original_socket,R.id.bt_web_socket,R.id.bt_url_connection})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_ok:
@@ -95,6 +97,9 @@ public class NetActivity extends BaseActivity {
 
 3、后端传回来的消息在onMessage中返回来， 我们可以跟后台定格式，哪些业务需要处理什么格式的数据，然后根据type来分发给业务。
 */
+                break;
+            case R.id.bt_url_connection:
+                startActivity(new Intent(this, UrlConnectionActivity.class));
                 break;
         }
     }

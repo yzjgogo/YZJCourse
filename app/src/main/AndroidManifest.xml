@@ -167,6 +167,7 @@
         <activity android:name=".Base.VPTransformerActivity" />
         <activity android:name=".Base.VPTabLayoutActivity" />
         <activity android:name=".Net.NetActivity" />
+        <activity android:name=".Net.UrlConnectionActivity" />
         <activity android:name=".mykt.AndroidExtensions.E1UseInActivity.WeightActivity" />
         <activity android:name=".DesignModel.DesignModelListActivity" />
         <activity android:name=".mykt.AndroidExtensions.E2UseInViewHolder.RecyActivity" />

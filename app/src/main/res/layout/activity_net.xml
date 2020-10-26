@@ -45,5 +45,12 @@
             android:layout_height="wrap_content"
             android:text="websocket \n 框架叫：https://github.com/TooTallNate/Java-WebSocket 记得看github的wiki和百度搜索该框架的相关内容，能搜到有用的，例如关闭、重连、心跳、一些你没发现的毁掉方法等，看当前按钮单机事件处的代码，有提示"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_url_connection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HttpURLConnection"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
