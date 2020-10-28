@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 连线题 target的位置 的tag id -->
+    <item name="target_link_point" type="id"/>
+
+</resources>
