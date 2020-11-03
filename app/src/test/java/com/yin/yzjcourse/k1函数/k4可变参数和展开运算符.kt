@@ -17,6 +17,10 @@ class k4可变参数和展开运算符 {
         for (i in v) {
             println(i)
         }
+//        for ((index,element) in v.withIndex()) {
+//            println(element)
+//        }
+        println("---------------------")
     }
 
     @Test
