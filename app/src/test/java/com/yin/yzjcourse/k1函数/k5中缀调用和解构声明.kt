@@ -24,9 +24,10 @@ class k5中缀调用和解构声明 {
     val map = mapOf(1 to "one", 2 to "two", 3 to "three")
     //val map1 = mapOf(1.to("one"),2.to("two"),3.to("three"))
 
-    //自定义中缀调用函数
-    infix fun String.myto(p: Int) {
+    //自定义中缀调用函数,可以有返回值，也可以没有
+    infix fun String.myto(p: Int):String {
         println("参数：$p，$this")
+        return "$p,$this"
     }
 
     //自定义一个泛型的中缀函数，并且给了一个返回值，这个返回值用了Pair类，代表一对元素
@@ -36,7 +37,9 @@ class k5中缀调用和解构声明 {
 
     @Test
     fun testTo() {
-        "a" myto 200
+        val mResult = "a" myto 200
+        println("$mResult")
+        println("B" myto 300)
         //通过Pair实现解构声明，同时声明多个变量，只能是局部变量(方法内的变量)
         val (a1, b1) = 10086 youto 10010//返回一个Pair
         val (a2, b2) = Pair(1, 2)
