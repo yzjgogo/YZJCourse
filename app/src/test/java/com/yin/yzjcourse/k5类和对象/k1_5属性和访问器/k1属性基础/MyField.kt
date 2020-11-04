@@ -98,6 +98,11 @@ class MyField {
         fun addWord(word: String) {
             totalLength += word.length//内部可调用私有的setter
         }
+        var mTest :(Int,Int) -> String = {x,y -> "$x,$y,$totalLength"}
+        var mSec = {x:Int,y:Int ->
+            println("方法mSec")
+            x+y+totalLength
+        }
     }
 
     @Test
@@ -106,5 +111,8 @@ class MyField {
 //        wl.totalLength = 10 //报错，因为你已经将setter设置为私有的了
         wl.addWord("fuck")
         println(wl.totalLength)//getter不变，扔可外部访问
+        println(wl.mTest(5,6))
+        println(wl.mTest.invoke(7,8))
+        println(wl.mSec(1,2))
     }
 }
