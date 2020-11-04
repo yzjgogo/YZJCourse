@@ -10,6 +10,12 @@ class TestUsage {
         p.addPropertyChangeListener(PropertyChangeListener { event ->
             println("属性${event.propertyName}从${event.oldValue}变到${event.newValue}")
         })
+
+        //这里的it就是propertyChange(PropertyChangeEvent evt)里的evt对象
+//        p.addPropertyChangeListener(PropertyChangeListener {
+//            println("属性${it.propertyName}从${it.oldValue}变到${it.newValue}")
+//        })
+
         p.age = 35
         p.salary = 4000
     }
