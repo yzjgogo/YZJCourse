@@ -17,6 +17,7 @@ class MyField {
         println("年龄${per.age}")//默认调用getter
         per.isMarried = false//默认调用setter
         println("是否结婚了：${per.isMarried}")//默认调用getter
+        println("姓名是：${per.name}")//默认调用getter，无setter,因为是val修饰的
     }
 
 
@@ -30,6 +31,9 @@ class MyField {
      * 自定义 getter访问器
      */
     class Rectangle(val height: Int, val width: Int) {
+        val isBig:Boolean = true;
+
+        //定义的是isSquare的getter，与isBig无关，看位置即可
         val isSquare: Boolean
             get() {
                 return height == width
@@ -63,7 +67,7 @@ class MyField {
             }
             get() {
                 println("重写了getter:$field")
-                return field//必须返回field不可以返回address
+                return field//必须返回field不可以返回address,如果返回address就是无限死循环调用getter
             }
     }
 
@@ -99,7 +103,7 @@ class MyField {
     @Test
     fun testLen() {
         val wl = WordLength()
-//        wl.totalLength = 10 报错，因为你已经将setter设置为私有的了
+//        wl.totalLength = 10 //报错，因为你已经将setter设置为私有的了
         wl.addWord("fuck")
         println(wl.totalLength)//getter不变，扔可外部访问
     }
