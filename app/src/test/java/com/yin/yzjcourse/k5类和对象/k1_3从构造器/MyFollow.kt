@@ -22,7 +22,7 @@ class MyFollow {
     //设置了从构造方法就不能有主构造方法，即使是空的主构造方法也没有，即无法通过val user7 = User7()创建对象
     open class User7 {
         init {
-//            println("User7 init${this.isAdult}") 虽然init会执行，但init内部引用不到从构造器的参数
+//            println("User7 init${this.isAdult}") 虽然init会执行，但init内部引用不到从构造器的参数,因为是先执行init再执行从构造器
             println("User7 init")
         }
 
@@ -37,12 +37,12 @@ class MyFollow {
             println("Student2 init")
         }
 
-        //可以像java一样用this调用自己的另一个构造器
+        //可以像java一样用this调用自己的另一个构造器,执行顺序：this(_add, isAdult, 0) --> 自己
         constructor(_add: String, isAdult: Boolean) : this(_add, isAdult, 0) {
             add = _add
         }
 
-        //可以通过super调用父构造器
+        //可以通过super调用父构造器，执行顺序super(isAdult, age) --> 自己
         constructor(_add: String, isAdult: Boolean, age: Int) : super(isAdult, age) {
             add = _add
         }
