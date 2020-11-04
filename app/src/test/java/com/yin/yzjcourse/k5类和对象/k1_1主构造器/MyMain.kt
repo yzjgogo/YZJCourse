@@ -8,7 +8,7 @@ class MyMain {
      *  主构造方法的实现原理：
      *  Uesr1,User2,User3的定义都是等价的；
      *  都有一个主构造器，都有init语句块，都有属性name
-     *  构造方法的参数同时也是类的属性
+     *  构造方法的参数如果用val修饰则同时也是类的属性，否则需手动设置才能成为类的属性
      *  参考[testCon]
      */
     class User1(val name: String)
