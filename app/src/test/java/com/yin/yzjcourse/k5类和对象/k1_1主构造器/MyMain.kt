@@ -8,7 +8,7 @@ class MyMain {
      *  主构造方法的实现原理：
      *  Uesr1,User2,User3的定义都是等价的；
      *  都有一个主构造器，都有init语句块，都有属性name
-     *  构造方法的参数如果用val修饰则同时也是类的属性，否则需手动设置才能成为类的属性
+     *  构造方法的参数如果用val或var修饰则同时也是类的属性；否则不是类的属性，但可以赋值给某个属性,参考类[Monkey]，address不是属性，但是add是属性
      *  参考[testCon]
      */
     class User1(val name: String)
@@ -35,6 +35,12 @@ class MyMain {
         val user2 = User2("user2")
         val user3 = User3("user3")
         println("${user1.name},${user2.name},${user3.name}")
+        val monkey = Monkey("孙悟空",88,"森林")
+
+        println("${monkey.name},${monkey.age},${monkey.add}")
+    }
+    class Monkey(val name:String,var age:Int,address:String){
+        var add:String = address;
     }
 
 
