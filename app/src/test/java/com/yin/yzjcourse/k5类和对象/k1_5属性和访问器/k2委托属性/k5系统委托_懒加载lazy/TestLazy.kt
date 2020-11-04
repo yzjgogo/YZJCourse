@@ -14,8 +14,8 @@ class TestLazy {
     @Test
     fun testl() {
         val person = Person("Fuck")
-        person.emails//这次会加载属性值调用lazy()，因为属性还没值
+        println(person.emails)//这次会加载属性值调用lazy()，因为属性还没值
         println("*****再一次访问emails******")
-        person.emails//已经加载过了 ，不在加载，不在调用lazy()
+        println(person.emails)//已经加载过了 ，不在加载，不在调用lazy(),而是emails直接就有值了
     }
 }
