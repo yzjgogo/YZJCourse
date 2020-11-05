@@ -11,12 +11,14 @@ class TestUsage {
         p.addPropertyChangeListener(PropertyChangeListener { event ->
             println("属性${event.propertyName}从${event.oldValue}变到${event.newValue}")
         })
+
+
         //匿名内部类的方式
-        p.addPropertyChangeListener(object :PropertyChangeListener{
-            override fun propertyChange( event: PropertyChangeEvent){
-                println("属性${event.propertyName}从${event.oldValue}变到${event.newValue}")
-            }
-        })
+//        p.addPropertyChangeListener(object :PropertyChangeListener{
+//            override fun propertyChange( event: PropertyChangeEvent){
+//                println("属性${event.propertyName}从${event.oldValue}变到${event.newValue}")
+//            }
+//        })
 
         //这里的it就是propertyChange(PropertyChangeEvent evt)里的evt对象
 //        p.addPropertyChangeListener(PropertyChangeListener {
