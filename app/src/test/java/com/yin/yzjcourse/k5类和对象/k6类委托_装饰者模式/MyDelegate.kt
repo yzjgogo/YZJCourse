@@ -9,7 +9,7 @@ package com.yin.yzjcourse.k5类和对象.k6类委托_装饰者模式
  * 关键点：MyDelegate和MyListenerImpl都有共同的基类；
  *
  * 结果好处：
- * 不用改变MyListener和MyListenerImpl的结构，就实现了impl新功能的扩展，比继承优雅多了，因为经常改类解构会导致系统不稳定。
+ * 不用改变MyListener和MyListenerImpl的结构，就实现了impl新功能的扩展，比继承(MyObj就是通过继承扩展的)优雅多了，因为经常改类解构会导致系统不稳定。
  */
 class MyDelegate(val impl: MyListenerImpl = MyListenerImpl()) : MyListener by impl {
     //可以根据需要重写某个函数,扩展impl的功能
