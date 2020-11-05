@@ -17,6 +17,8 @@ class TestA {
 
         //调用伴生对象的扩展函数
         A.expfun()
+
+        println(A.desc)
     }
 
     fun testListener(listener:AListener){
