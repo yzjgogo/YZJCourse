@@ -31,12 +31,13 @@ class Test {
     /**
      * 可以用变量接收一个对象
      */
+    @Test
     fun test1(){
         var myobj = object :ClickListener{
             override fun onClick() {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                println("被点击了")
             }
-
         }
+        myobj.onClick()
     }
 }
