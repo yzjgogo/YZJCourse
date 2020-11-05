@@ -24,7 +24,7 @@ class MyLate {
     fun testLate() {
         val p = Person()
         //延迟初始化的属性，如果在被初始化前就访问，则会报错
-        println("加载前:${p.name}")//lateinit property name has not been initialized
+//        println("加载前:${p.name}")//lateinit property name has not been initialized
         p.setNewName("jack")
         println("加载后:${p.name}")
     }
