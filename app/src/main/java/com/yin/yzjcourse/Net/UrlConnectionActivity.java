@@ -50,7 +50,8 @@ public class UrlConnectionActivity extends BaseActivity {
             @Override
             public void run() {
                 try {
-                    String strUrl = "http://www.baidu.com";
+//                    String strUrl = "http://www.baidu.com";
+                    String strUrl = "https://www.cnblogs.com/zhuziyu/p/9167115.html";
                     URL url = new URL(strUrl);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setConnectTimeout(5000);
@@ -63,6 +64,7 @@ public class UrlConnectionActivity extends BaseActivity {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
+                    DLog.eLog("报错："+e.getMessage());
                 }
             }
         }).start();

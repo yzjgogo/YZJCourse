@@ -10,5 +10,15 @@ class TestInstance {
         MyInstance.onSuccess()
         MyInstance.age = 10086
         println(MyInstance.age)
+
+        println("-------------------------------")
+
+        val obj = MyInstance
+        obj.inFun()
+        obj.onGet()
+        obj.onSuccess()
+        obj.age = 10086
+        println(obj.age)
+
     }
 }

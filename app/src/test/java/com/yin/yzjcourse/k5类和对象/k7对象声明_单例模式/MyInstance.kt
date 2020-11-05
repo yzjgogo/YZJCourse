@@ -13,7 +13,7 @@ import com.yin.yzjcourse.k5类和对象.k6类委托_装饰者模式.MyListener
  */
 object MyInstance : MyListener {
     var age:Int = 100
-    //初始化语句块可以有
+    //初始化语句块可以有，会在第一次访问该单例对象时调用
     init {
         println("init")
     }
