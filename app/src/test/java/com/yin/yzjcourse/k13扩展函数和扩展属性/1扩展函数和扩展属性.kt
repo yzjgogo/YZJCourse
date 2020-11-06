@@ -3,7 +3,7 @@ package com.yin.yzjcourse.k13扩展函数和扩展属性
 /**
  * 有点类似顶层函数和顶层属性，区别是扩展函数和扩展属性要绑定到现有的某个类上
  *
- * 给已存在的类添加新的属性和方法，这些新增的方法不能方位原来类的私有或者是受保护的成员
+ * 给已存在的类添加新的属性和方法，这些新增的方法不能访问原来类的私有或者是受保护的成员
  *
  * 包外的文件如果想使用该扩展 ，则需要import导入，导入时也可以修改方法名，避免出现重复的方法名：
  * import strings.lastChar as last
@@ -19,11 +19,13 @@ package com.yin.yzjcourse.k13扩展函数和扩展属性
 //java如果调用kotlin的扩展函数：Commonkt.lastChar("kotlin")，接收者对象将会作为函数的第一个参数传入，注意是第一个参数
 //例如：String.lastChar(a)则java中调用为，Commonkt.lastChar("kotlin",a),多了一个参数接收者对象
 fun String.lastChar():Char = this.get(this.length-1)
+fun String.lastButOne():Char = this[this.length-2]
 
 fun String.firstChar():Char = get(0) //也可以省略接受者对象
 
 fun String.secondChar():Char{
         return this.get(1)
+//        return this[1] 这样也可以
 }
 
 
