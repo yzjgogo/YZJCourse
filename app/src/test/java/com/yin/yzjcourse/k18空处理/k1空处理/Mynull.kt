@@ -40,7 +40,8 @@ class Mynull {
             val y1 = x.toDouble()//except null status.
         }
         //handle way 2:
-        val y2 = x?.toDouble()//if x not  null then execute x.toDouble();if x is null then y2 will be null too,and y2's type will be Double?.
+        val y2 = x?.toDouble()//if x not  null then execute x.toDouble();if x is null then y2 will be null too,and y2's type will be 'Double?'.
+        val y22 = y2.toString()//因为y2的类型是'Double?'，所以不会报错
 
         //if you don't want return a null value,you can use ':' define a default value;
         val y3 = x?.toDouble() ?: 0.0//if x is null will return 0.0
