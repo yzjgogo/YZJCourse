@@ -12,6 +12,7 @@ class MyCollection {
     @Test
     fun testCollectionNull() {
         testNull(null)
+        println("-------------------------------------")
         val list = listOf<Int?>(1, null, 3)
         testNull(list)
     }
