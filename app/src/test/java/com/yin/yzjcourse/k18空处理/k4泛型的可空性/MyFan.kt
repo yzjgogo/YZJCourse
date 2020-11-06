@@ -4,8 +4,8 @@ import org.junit.Test
 
 class MyFan {
     /**
-     * 泛型参数默认是可空的，等价于Any?
-     * 这里的T等价于Any?
+     * 泛型参数默认是可空的，等价于'Any?'
+     * 这里的T等价于'Any?'
      */
     fun <T> show(t: T) {
         println(t?.hashCode())//因为t可空，所以必须使用安全调用
