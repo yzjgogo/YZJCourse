@@ -106,6 +106,11 @@ class k4字符串 {
     /**
      * 用StringBuilder创建String的优雅方式：buildString{...}
      * buildString的参数是StringBuilder的扩展函数类型
+     *
+     * Ctrl+鼠标左键进入：
+     * 1：buildString是一个顶层函数；
+     * 2：buildString的参数是函数类型，且这个函数是StringBuilder的扩展函数，因此这个函数里的this就是StringBuilder的示例(接受者对象)
+     * 3：最终函数会执行StringBuilder().apply(builderAction).toString()得到字符串
      */
     @Test
     fun testBuildString() {
@@ -113,6 +118,12 @@ class k4字符串 {
             this.append("hello")//this就是当前StringBuilder的实例
             append(" the end")
         }
+
+//fun getString() = buildString({
+//    this.append("hello")//this就是当前StringBuilder的实例
+//    append(" the end")
+//})
+
         println(getString())
     }
 
