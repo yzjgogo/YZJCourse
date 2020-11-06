@@ -22,10 +22,16 @@ class MyArray {
             println("nullArr[$i]=${nullArr[i]}")
         }
 
+        println("----------------------")
+
 
         //构造方法接收一个数组的大小，和lambda表达式，lambda表达式用于计算每一个数组元素
         //其中i或这it就是索引
         val letterArr = Array<Int>(3) { i -> i + 10 }//val letterArr = Array<Int>(3){it+10}
+        //集合也可以通过构造方法实现
+//        val mList = List<String>(3){"${it}--"}
+//        println(mList)
+
         for (i in letterArr.indices) {
             println("letterArr[$i]=${letterArr[i]}")
         }
