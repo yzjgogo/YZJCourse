@@ -19,5 +19,6 @@ class MyExtra {
         var str: String? = ""
         //虽然str可空，但无需对其进行安全调用，因为isReallyNull内部做了判断
         println(str.isReallyNull())
+//        println(str?.isReallyNull()) 永远没必要这样,isReallyNull()的方法体无论是什么样都没必要这样
     }
 }
