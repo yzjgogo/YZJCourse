@@ -74,7 +74,7 @@ class MyMember {
 
 
         //成员引用，引用扩展函数
-        val ieat = Person::eat
+        val ieat = Person::eat//{p:Person -> p.eat()}
         val myp = Person("Dodo",90)
         ieat(myp)//记得传参因为Person::eat等价于{p:Person -> p.eat()},可见实参列表有参数p
 
