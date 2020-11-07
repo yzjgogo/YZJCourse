@@ -22,5 +22,10 @@ class MyNothing {
     fun tno(): Nothing {
         println("返回nothing")
         throw IllegalAccessException("我是异常")//注释这一行就会报错，因为声明了Nothing
+
+        //死循环也可以
+//        while (true){
+//
+//        }
     }
 }
