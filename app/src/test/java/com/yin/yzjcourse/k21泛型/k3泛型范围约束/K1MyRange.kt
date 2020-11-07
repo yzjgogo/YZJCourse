@@ -1,5 +1,7 @@
 package com.yin.yzjcourse.k21泛型.k3泛型范围约束
 
+import org.junit.Test
+
 class K1MyRange {
     /**
      * 指定类型实参必须是Number的子类
@@ -17,9 +19,30 @@ class K1MyRange {
     }
 
     /**
-     * 约束了类型实参必须即是CharSequence的子类也是Appendable的子类
+     * 约束了类型实参必须即是MyFaceOne的子类也是MyFaceTwo的子类
      */
-    fun <T> get(seq: T) where T : CharSequence, T : Appendable {
+    fun <T> get(seq: T) where T : MyFaceOne, T : MyFaceTwo {
+        println("执行了get")
+    }
+    //有返回值的
+    fun <T> catch(seq: T):String where T : MyFaceOne, T : MyFaceTwo {
+        println("执行了get")
+        return "catch了"
+    }
+    class Face(val name:String,val age:Int):MyFaceOne,MyFaceTwo {
+        override fun face1() {
+            println("执行face_1")
+        }
 
+        override fun face2() {
+            println("执行face_2")
+        }
+    }
+
+    @Test
+    fun doTest(){
+        val face = Face("beauty",20)
+        val c = catch(face)
+        println("--------$c---------")
     }
 }
