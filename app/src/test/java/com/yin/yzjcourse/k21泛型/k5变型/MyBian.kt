@@ -17,6 +17,9 @@ class MyBian {
         onlyRead(list)
     }
 
+    /**
+     * List是不可变的(只读的)
+     */
     fun onlyRead(list: List<Any>) {
         println(list.joinToString())
     }
