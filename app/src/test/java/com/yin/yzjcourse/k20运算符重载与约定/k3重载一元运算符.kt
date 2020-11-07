@@ -47,7 +47,7 @@ class k3重载一元运算符 {
         var bd = BigDecimal.ZERO
         println(bd++)//0 等价于bd.inc()
         println(++bd)//2
-        println(--bd)//0
+        println(--bd)//1
     }
 
 }
