@@ -110,15 +110,6 @@ class MyXie {
 //        }
 //    }
 
-    /**
-     * 案例2_1：私有函数参数中的T处于out位置
-     */
-    class Dog6_1<out T:Animal>{
-      private fun test(t:T){
-
-        }
-    }
-
 
     /**
      * 案例3：函数返回值的T处于out位置
