@@ -105,10 +105,19 @@ class MyXie {
      * 案例2：函数参数中的T处于in位置
      */
 //    class Dog6<out T:Animal>{
-//        fun test(t:T){
+//       fun test(t:T){
 //
 //        }
 //    }
+
+    /**
+     * 案例2_1：私有函数参数中的T处于out位置
+     */
+    class Dog6_1<out T:Animal>{
+      private fun test(t:T){
+
+        }
+    }
 
 
     /**
