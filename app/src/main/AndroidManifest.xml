@@ -32,6 +32,7 @@
         <activity android:name=".DiyWidget.ViewHitRectActivity" />
         <activity android:name=".Jetpack.MyLCActivity" />
         <activity android:name=".Jetpack.JetpackHomeActivity" />
+        <activity android:name=".structure.DataStructureActivity" />
         <activity android:name=".OfficialWeight.RCV.RecyclerBaseUseActivity" />
         <activity android:name=".OfficialWeight.RCV.RecyclerDiffItemActivity" />
         <activity android:name=".OfficialWeight.RCV.RecyclerGridActivity" />
