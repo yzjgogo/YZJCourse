@@ -1,1 +1,2 @@
+include ':learn'
 include ':app', ':alipush'

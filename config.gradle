@@ -1,0 +1,25 @@
+ext {
+    android = [
+            minSdkVersion    : 15,
+            targetSdkVersion : 28,
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            versionCode      : 1,
+            versionName      : "1.0",
+            isApplication    : false
+    ]
+
+    dependencies = [
+            publicImplementation      : [
+                    'de.hdodenhof:circleimageview:1.3.0',
+                    'com.squareup.picasso:picasso:2.2.0',
+                    'com.alibaba:arouter-api:1.5.1'
+            ],
+            arouterAnnotationProcessor: 'com.alibaba:arouter-compiler:1.5.1',
+            testImplementation        : 'junit:junit:4.12',
+            androidTestImplementation : [
+                    'androidx.test.ext:junit:1.1.2',
+                    'androidx.test.espresso:espresso-core:3.3.0'
+            ]
+    ]
+}

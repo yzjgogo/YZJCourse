@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.DiyWidget.ViewGroupAnimActivity;
 import com.yin.yzjcourse.R;
@@ -31,7 +32,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import okio.BufferedSink;
-
+@Route(path = "/test/net")
 public class NetActivity extends BaseActivity {
     public static final String MAIN_URL = "https://pzx.pagekite.me/";
 

@@ -3,6 +3,7 @@ package com.yin.yzjcourse;
 import android.app.Application;
 import android.support.multidex.MultiDexApplication;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.dev.think.mylibrary.PushUtils;
 import com.tencent.bugly.crashreport.CrashReport;
 
@@ -14,6 +15,11 @@ public class MyApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        ARouter.openLog();
+        ARouter.openDebug();
+        ARouter.init(this);
+
         initBugly();
         PushUtils.register(this);
     }

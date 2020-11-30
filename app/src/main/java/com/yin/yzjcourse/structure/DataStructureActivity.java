@@ -8,6 +8,8 @@ import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.Jetpack.MyLCActivity;
 import com.yin.yzjcourse.R;
 
+import java.util.ArrayList;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 

@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.yin.yzjcourse.Base.BaseContentActivity;
 import com.yin.yzjcourse.BuilderMode.BuilderModeActivity;
 import com.yin.yzjcourse.Coordinator.CoordinatorActivity;
@@ -158,13 +159,16 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, ToolsActivity.class));
                 break;
             case R.id.bt_net:
-                startActivity(new Intent(this, NetActivity.class));
+//                startActivity(new Intent(this, NetActivity.class));
+                ARouter.getInstance().build("/test/net").navigation();
                 break;
             case R.id.bt_kotlin:
-                startActivity(new Intent(this, MyKtActivity.class));
+                ARouter.getInstance().build("/test/push").navigation();
+//                startActivity(new Intent(this, MyKtActivity.class));
                 break;
             case R.id.bt_model:
-                startActivity(new Intent(this, DesignModelListActivity.class));
+                ARouter.getInstance().build("/test/learn").navigation();
+//                startActivity(new Intent(this, DesignModelListActivity.class));
                 break;
             case R.id.bt_multi_process:
                 startActivity(new Intent(this, MultiActivity.class));
