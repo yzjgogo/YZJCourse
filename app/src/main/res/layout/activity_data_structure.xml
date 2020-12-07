@@ -11,17 +11,17 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/bt_lifecycle"
+            android:id="@+id/bt_array_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="顺序存储结构的线性表-ArrayList"
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/bt_lifecycle2"
+            android:id="@+id/bt_linked_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="  "
+            android:text="链式存储结构的线性表-LinkedList"
             android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

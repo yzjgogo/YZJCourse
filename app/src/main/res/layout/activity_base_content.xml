@@ -12,6 +12,13 @@
         android:paddingBottom="50dp">
 
         <Button
+            android:id="@+id/bt_java"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="java相关"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/bt_android_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

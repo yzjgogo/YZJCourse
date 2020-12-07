@@ -35,6 +35,7 @@ import com.yin.yzjcourse.Optimize.OptimizeActivity;
 import com.yin.yzjcourse.RxJava2.RxRelease2Activity;
 import com.yin.yzjcourse.Window.MyWindowActivity;
 import com.yin.yzjcourse.mykt.MyKtActivity;
+import com.yin.yzjcourse.structure.DataStructureActivity;
 import com.yin.yzjcourse.tools.ToolsActivity;
 
 import butterknife.BindView;
@@ -159,16 +160,16 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, ToolsActivity.class));
                 break;
             case R.id.bt_net:
-//                startActivity(new Intent(this, NetActivity.class));
-                ARouter.getInstance().build("/test/net").navigation();
+                startActivity(new Intent(this, NetActivity.class));
+//                ARouter.getInstance().build("/test/net").navigation();
                 break;
             case R.id.bt_kotlin:
-                ARouter.getInstance().build("/test/push").navigation();
-//                startActivity(new Intent(this, MyKtActivity.class));
+//                ARouter.getInstance().build("/test/push").navigation();
+                startActivity(new Intent(this, MyKtActivity.class));
                 break;
             case R.id.bt_model:
-                ARouter.getInstance().build("/test/learn").navigation();
-//                startActivity(new Intent(this, DesignModelListActivity.class));
+//                ARouter.getInstance().build("/test/learn").navigation();
+                startActivity(new Intent(this, DesignModelListActivity.class));
                 break;
             case R.id.bt_multi_process:
                 startActivity(new Intent(this, MultiActivity.class));
@@ -180,7 +181,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, JetpackHomeActivity.class));
                 break;
             case R.id.bt_data_structure:
-                startActivity(new Intent(this, JetpackHomeActivity.class));
+                startActivity(new Intent(this, DataStructureActivity.class));
                 break;
         }
     }
