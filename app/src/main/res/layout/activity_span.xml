@@ -6,8 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.yin.yzjcourse.Base.SpanActivity">
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 <TextView
-    android:id="@+id/tv"
+    android:id="@+id/tv_suojin"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+    android:layout_height="wrap_content"
+    android:background="#F15F5B"
+    android:textSize="26sp"
+    android:text="亲情是树，每个人都是它的一条根，让它吸收营养永葆青春;亲情是河，每个人都是它的一条支流，让它永不干涸澎湃向前;亲情是火，每个人都是它的一根木柴，让它永不熄灭温暖四方。"/>
 </LinearLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -15,6 +16,7 @@ import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
+import android.text.style.LeadingMarginSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
 import android.view.View;
@@ -32,12 +34,16 @@ public class SpanActivity extends BaseActivity {
     @BindView(R.id.tv)
     TextView tv;
 
+    @BindView(R.id.tv_suojin)
+    TextView tv_suojin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_span);
         ButterKnife.bind(this);
         tv.setText(handleStyle(this,"012345","6789请点击这里试试，再进入里面看看"));
+        suojin();
     }
 
     private SpannableStringBuilder handleStyle(Context context, String prescriptionName, String totalMedicines) {
@@ -111,5 +117,22 @@ public class SpanActivity extends BaseActivity {
 //        tv.setHighlightColor(Color.parseColor("#0000ff"));我们可以随意设置一个颜色，验证一下点击后背景色是不是这个颜色
 
         return style;
+    }
+
+    /**
+     * 首行缩进span
+     */
+    public void suojin(){
+        String content = tv_suojin.getText().toString().trim();
+        SpannableString spannableString = new SpannableString(content);
+        //26是tv_suojin的sp字体大小，第一个参数是第一行的缩进，第二个参数是非第一行之外所有行的缩进，这里是首行缩进两个字符
+        LeadingMarginSpan.Standard what = new LeadingMarginSpan.Standard(spTopx(this,26*2),0);
+        spannableString.setSpan(what, 10, 10, SpannableString.SPAN_INCLUSIVE_INCLUSIVE);
+        tv_suojin.setText(spannableString);
+    }
+
+    public int spTopx(Context context, float spValue) {
+        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (spValue * fontScale + 0.5f);
     }
 }
