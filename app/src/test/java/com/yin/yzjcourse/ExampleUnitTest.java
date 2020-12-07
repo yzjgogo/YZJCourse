@@ -65,9 +65,9 @@ public class ExampleUnitTest {
         arrayListY.add("b");
         arrayListY.add("c");
         arrayListY.add("d");
-        DLog.eLog("输出："+arrayListY.size()+" ， "+ Arrays.toString(arrayListY.getElementData()));
+        System.out.println("输出："+arrayListY.size()+" ， "+ Arrays.toString(arrayListY.getElementData()));
         arrayListY.remove(2);
-        DLog.eLog("输出2："+arrayListY.size()+" ， "+ Arrays.toString(arrayListY.getElementData()));
+        System.out.println("输出2："+arrayListY.size()+" ， "+ Arrays.toString(arrayListY.getElementData()));
 
 
     }

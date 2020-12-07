@@ -54,6 +54,7 @@ public class JavaBaseActivity extends BaseActivity {
         System.out.println("数组："+Arrays.toString(newStrArr) +" , "+Arrays.equals(newStrArr,strArr) +" , "+(newStrArr == strArr));
     }
 
+
     /**
      * arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
      * src：被copy的原数组；
