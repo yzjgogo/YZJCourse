@@ -5,7 +5,9 @@ import com.yin.yzjcourse.utils.DLog;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class ExampleUnitTest {
 
@@ -60,14 +62,33 @@ public class ExampleUnitTest {
 
         */
 
-        ArrayListY arrayListY = new ArrayListY();
+        ArrayListY<String> arrayListY = new ArrayListY();
         arrayListY.add("a");
         arrayListY.add("b");
         arrayListY.add("c");
         arrayListY.add("d");
-        System.out.println("输出："+arrayListY.size()+" ， "+ Arrays.toString(arrayListY.getElementData()));
-        arrayListY.remove(2);
-        System.out.println("输出2："+arrayListY.size()+" ， "+ Arrays.toString(arrayListY.getElementData()));
+//        System.out.println("输出："+arrayListY.size()+" ， "+ Arrays.toString(arrayListY.getElementData()));
+//        arrayListY.remove(2);
+//        System.out.println("输出2："+arrayListY.size()+" ， "+ Arrays.toString(arrayListY.getElementData()));
+
+        Iterator<String> iterator = arrayListY.iterator();
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            if (next.equals("c")) {
+                iterator.remove();
+            }
+            System.out.println("迭代器："+next);
+        }
+
+        ArrayList<String> mList = new ArrayList<>();
+        mList.add("1");
+        mList.add("2");
+        mList.add("3");
+        Iterator<String> mIter = mList.iterator();
+        while (mIter.hasNext()) {
+            String next = mIter.next();
+            System.out.println("原来的迭代器："+next);
+        }
 
 
     }

@@ -1,6 +1,15 @@
 package com.yin.yzjcourse.structure;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Objects;
+import java.util.function.Consumer;
 
 public class ArrayListY<E> {
     private static final int DEFAULT_CAPACITY = 10;
@@ -222,5 +231,107 @@ public class ArrayListY<E> {
 
     private String outOfBoundsMsg(int index) {
         return "Index: "+index+", Size: "+size;
+    }
+
+    //******************************************************************************************************************
+
+    /**
+     * 获取ArrayListY的迭代器
+     * @return
+     */
+    public Iterator<E> iterator() {
+        return new Itr();
+    }
+
+    /**
+     * 看看与for循环的区别在哪里？
+     * 为什么for循环时不要做删除操作，而迭代器就可以？
+     */
+    private class Itr implements Iterator<E> {
+
+        //开始迭代时的初始长度
+        protected int limit = ArrayListY.this.size;
+
+        //下次取元素(next())的索引位置,第一次相对于"还没取过"，也是下次，所以默认值为0
+        //每次取(next())完，cursor都会加1(cursor = i + 1)，表示下次要取那个索引的元素
+        int cursor;       // index of next element to return
+        //上次取元素的索引位置，第一次的上次就是"还没取过"，所以默认值是-1;
+        //每次(next())完，都会把本次取的索引位置赋值给lastRet(lastRet = i)，代表相对于下次上次取的索引位置
+        //lastRet是迭代器支持删除的关键，参考remove()体会
+        int lastRet = -1; // index of last element returned; -1 if no such
+        int expectedModCount = modCount;
+
+        //1，取之前先判断当前索引cursor有没有元素；
+        public boolean hasNext() {
+            return cursor < limit;
+        }
+
+        //2，开始取元素
+        @SuppressWarnings("unchecked")
+        public E next() {
+            if (modCount != expectedModCount)
+                throw new ConcurrentModificationException();
+            //2.1，本次要取的索引是cursor赋值给i；
+            int i = cursor;
+            if (i >= limit)
+                throw new NoSuchElementException();
+            //2.2，取ArrayListY的元素实际上就是取elementData数组的元素
+            Object[] elementData = ArrayListY.this.elementData;
+            if (i >= elementData.length)
+                throw new ConcurrentModificationException();
+            //2.3，下次要取的索引赋值，
+            cursor = i + 1;
+            //2.4，对于下次，上次的索引就是本次的i，用lastRet存储。
+            return (E) elementData[lastRet = i];
+        }
+
+        //3，如果需要删除，可以调用remove()
+        public void remove() {
+            if (lastRet < 0)
+                throw new IllegalStateException();
+            if (modCount != expectedModCount)
+                throw new ConcurrentModificationException();
+
+            try {
+                //3.1，调用ArrayListY自己的删除方法，删除本次取的元素，因为本次迭代还没完，所以lastRet就是next()方法里的本次的i；
+                ArrayListY.this.remove(lastRet);
+                //3.2，因为删除了lastRet位置的元素(本次i位置)，导致lastRet后面所有的元素都向前移动一个位置，则删除后lastRet位置就存放了删除前
+                //(lastRet+1)位置的元素，需要遍历到它，所以要再次遍历一次lastRet，因此lastRet赋值给cursor，下次遍历时的next()就会再取一次
+                //删除掉了元素的位置，保证遍历不会遗漏，这里也就是与for循环的根本区别，如果是for循环，则删除后，被删除的元素的下一个元素就会被漏掉。
+                cursor = lastRet;
+                //3.3，再次初始化lastRet，没什么好讲的，我觉得不加这一句也可以，因此下次next()里lastRet = 1;
+                lastRet = -1;
+                expectedModCount = modCount;
+                //3.4，因为删除了元素，所以长度减1；
+                limit--;
+            } catch (IndexOutOfBoundsException ex) {
+                throw new ConcurrentModificationException();
+            }
+        }
+
+        @RequiresApi(api = Build.VERSION_CODES.N)
+        @Override
+        @SuppressWarnings("unchecked")
+        public void forEachRemaining(Consumer<? super E> consumer) {
+            Objects.requireNonNull(consumer);
+            final int size = ArrayListY.this.size;
+            int i = cursor;
+            if (i >= size) {
+                return;
+            }
+            final Object[] elementData = ArrayListY.this.elementData;
+            if (i >= elementData.length) {
+                throw new ConcurrentModificationException();
+            }
+            while (i != size && modCount == expectedModCount) {
+                consumer.accept((E) elementData[i++]);
+            }
+            // update once at end of iteration to reduce heap write traffic
+            cursor = i;
+            lastRet = i - 1;
+
+            if (modCount != expectedModCount)
+                throw new ConcurrentModificationException();
+        }
     }
 }
