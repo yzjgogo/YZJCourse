@@ -150,7 +150,7 @@ public class ArrayListY<E> {
         if (index >= size)
             throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
 
-        //2，其实就是找到对应数组位置的元素，课件访问效率很高
+        //2，其实就是找到对应数组位置的元素，可见访问效率很高
         return (E) elementData[index];
     }
 
