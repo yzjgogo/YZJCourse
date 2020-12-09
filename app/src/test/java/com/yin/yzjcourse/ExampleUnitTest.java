@@ -1,6 +1,7 @@
 package com.yin.yzjcourse;
 
 import com.yin.yzjcourse.structure.ArrayListY;
+import com.yin.yzjcourse.structure.SingleLinkedList;
 import com.yin.yzjcourse.utils.DLog;
 
 import org.junit.Test;
@@ -60,7 +61,7 @@ public class ExampleUnitTest {
         //输出：[10, 11, 12, 13, 14, 15],[0, 0, 0, 0, 12, 13, 14, 0]
         System.out.println("输出：" + Arrays.toString(configSpec) + "," + Arrays.toString(newConfigSpec));
 
-        */
+
 
         ArrayListY<String> arrayListY = new ArrayListY();
         arrayListY.add("a");
@@ -89,7 +90,31 @@ public class ExampleUnitTest {
             String next = mIter.next();
             System.out.println("原来的迭代器："+next);
         }
+*/
+        SingleLinkedList<String> singleLinkedList = new SingleLinkedList<>();
+        singleLinkedList.addFirst("a");
+        singleLinkedList.addLast("b");
+        singleLinkedList.addLast("c");
+        singleLinkedList.addLast("d");
+        singleLinkedList.addLast("e");
+//        singleLinkedList.add(3,"d");
+//        singleLinkedList.add(0,"e");
+//        singleLinkedList.add(5,"e2");
+//        System.out.println("查找："+singleLinkedList.get(1));
+//        singleLinkedList.remove(0);
+//        singleLinkedList.remove(2);
+//        singleLinkedList.remove("a");
+//        singleLinkedList.remove("c");
+//        singleLinkedList.remove("e");
+//        singleLinkedList.set(2,"cc");
 
+//        System.out.println("地址："+System.identityHashCode(singleLinkedList)+ " , "+ System.identityHashCode(singleLinkedList.getNode(0)));
+//        System.out.println("地址："+singleLinkedList+ " , "+ singleLinkedList.getNode(0));
 
+        System.out.println("单链表长度："+singleLinkedList.size());
+        for(int i=0;i<singleLinkedList.size();i++){
+            String str = singleLinkedList.get(i);
+            System.out.println("单链表："+str+" , "+i);
+        }
     }
 }
