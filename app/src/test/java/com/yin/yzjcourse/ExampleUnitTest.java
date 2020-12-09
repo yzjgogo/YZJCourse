@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class ExampleUnitTest {
 
@@ -129,7 +130,7 @@ public class ExampleUnitTest {
             System.out.println("链表遍历："+linkedList.get(i)+" , "+i);
         }
 //        linkedList.getLast()
-        */
+
         int size = 100;
         //0,0
         //1,0
@@ -142,10 +143,39 @@ public class ExampleUnitTest {
         linkedListY.add("a");
         linkedListY.add("b");
             String temp = linkedListY.get(0);
-            System.out.println("取出："+temp);
+//            System.out.println("取出："+temp);
 //        for(int i=0;i<linkedListY.size();i++){
 //            String temp = linkedListY.get(i);
 //            System.out.println("遍历："+temp+ " , " +i);
 //        }
+
+
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("a");
+        linkedList.add("b");
+        linkedList.add("c");
+        linkedList.add("d");
+        linkedList.add("e");
+        Iterator<String> iterator = linkedList.iterator();
+        while (iterator.hasNext()){
+            String next = iterator.next();
+            LinkedList
+        }
+*/
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("a");
+        linkedList.add("b");
+        linkedList.add("c");
+        linkedList.add("d");
+        linkedList.add("e");
+        ListIterator<String> listIterator = linkedList.listIterator(3);
+//        while (listIterator.hasNext()) {
+//            String next = listIterator.next();
+//            System.out.println("遍历："+next);
+//        }
+        while (listIterator.hasPrevious()) {
+            String next = listIterator.previous();
+            System.out.println("遍历："+next);
+        }
     }
 }
