@@ -1,6 +1,7 @@
 package com.yin.yzjcourse;
 
 import com.yin.yzjcourse.structure.ArrayListY;
+import com.yin.yzjcourse.structure.LinkedListY;
 import com.yin.yzjcourse.structure.SingleLinkedList;
 import com.yin.yzjcourse.utils.DLog;
 
@@ -117,7 +118,6 @@ public class ExampleUnitTest {
             String str = singleLinkedList.get(i);
             System.out.println("单链表："+str+" , "+i);
         }
-        */
         LinkedList<String> linkedList = new LinkedList<>();
         linkedList.add("a");
         linkedList.add("b");
@@ -129,5 +129,23 @@ public class ExampleUnitTest {
             System.out.println("链表遍历："+linkedList.get(i)+" , "+i);
         }
 //        linkedList.getLast()
+        */
+        int size = 100;
+        //0,0
+        //1,0
+        //2,1
+        //3,1
+        //4,2
+        //100,50
+//        System.out.println("100位运算："+(size >> 1));
+        LinkedListY<String> linkedListY = new LinkedListY<>();
+        linkedListY.add("a");
+        linkedListY.add("b");
+            String temp = linkedListY.get(0);
+            System.out.println("取出："+temp);
+//        for(int i=0;i<linkedListY.size();i++){
+//            String temp = linkedListY.get(i);
+//            System.out.println("遍历："+temp+ " , " +i);
+//        }
     }
 }
