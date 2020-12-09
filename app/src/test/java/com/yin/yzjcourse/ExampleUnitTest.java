@@ -9,6 +9,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.LinkedList;
 
 public class ExampleUnitTest {
 
@@ -90,7 +91,7 @@ public class ExampleUnitTest {
             String next = mIter.next();
             System.out.println("原来的迭代器："+next);
         }
-*/
+
         SingleLinkedList<String> singleLinkedList = new SingleLinkedList<>();
         singleLinkedList.addFirst("a");
         singleLinkedList.addLast("b");
@@ -116,5 +117,17 @@ public class ExampleUnitTest {
             String str = singleLinkedList.get(i);
             System.out.println("单链表："+str+" , "+i);
         }
+        */
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("a");
+        linkedList.add("b");
+        linkedList.add("c");
+        linkedList.add("d");
+        linkedList.add("e");
+        System.out.println("链表长度："+linkedList.size());
+        for (int i = 0; i < linkedList.size(); i++) {
+            System.out.println("链表遍历："+linkedList.get(i)+" , "+i);
+        }
+//        linkedList.getLast()
     }
 }
