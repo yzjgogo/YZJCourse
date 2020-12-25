@@ -118,6 +118,9 @@
         <activity android:name=".MaterialDesign.ClipToPaddingActivity" />
         <activity android:name=".DiyWidget.ViewTouchActivity" />
         <activity android:name=".DiyWidget.ViewDispatchTouchActivity" />
+        <activity android:name=".DiyWidget.GestureDetectorActivity" />
+        <activity android:name=".DiyWidget.ScaleGestureDetectorActivity" />
+        <activity android:name=".DiyWidget.ScaleDoubleFingerActivity" />
         <activity android:name=".Base.AndroidMessageActivity" />
         <activity android:name=".Base.JavaBaseActivity" />
         <activity android:name=".Base.BaseContentActivity" />

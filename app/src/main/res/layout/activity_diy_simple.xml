@@ -107,20 +107,47 @@
             android:layout_height="wrap_content"
             android:text="给图片添加标签"
             android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/bt_touch_view"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android触摸事件--View"
-            android:textAllCaps="false" />
+            android:orientation="vertical"
+            android:background="@color/colorAccent">
 
-        <Button
-            android:id="@+id/bt_dispatch_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Android触摸事件--View事件分发"
-            android:textAllCaps="false" />
+            <Button
+                android:id="@+id/bt_touch_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Android触摸事件--View"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_dispatch_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Android触摸事件--View事件分发"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_gesture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="手势检测-GestureDetector"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_scale_gesture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="缩放手势检测-ScaleGestureDetector"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_scale_double"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自己实现双指缩放"
+                android:textAllCaps="false" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/bt_cache_view"
