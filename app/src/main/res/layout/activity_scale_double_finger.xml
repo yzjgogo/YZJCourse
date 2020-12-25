@@ -5,10 +5,34 @@
     android:id="@+id/fl"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/tv"
+    <com.yin.yzjcourse.DiyWidget.MyFrameGroup
+        android:id="@+id/fl_content"
         android:layout_width="665px"
         android:layout_height="1000px"
         android:layout_gravity="center"
-        android:src="@mipmap/fifth"/>
+        android:background="@mipmap/fifth">
+        <com.yin.yzjcourse.DiyWidget.MyButtonInGroup
+            android:id="@+id/bt_in_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:text="一个按钮"
+            android:background="@color/light_yellow"/>
+        <com.yin.yzjcourse.DiyWidget.MyImageViewInGroup
+            android:id="@+id/iv_in_group"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:src="@drawable/zyjj_top_bg"
+            android:scaleType="fitXY"
+            android:layout_gravity="bottom"
+            android:layout_margin="50dp"/>
+        <com.yin.yzjcourse.DiyWidget.MyRelativeInGroup
+            android:id="@+id/rl_in_group"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/colorAccent"/>
+    </com.yin.yzjcourse.DiyWidget.MyFrameGroup>
 </FrameLayout>
