@@ -16,6 +16,9 @@ import com.yin.yzjcourse.utils.DLog;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * https://blog.csdn.net/u010410408/article/details/39577399
+ */
 public class ScaleGestureDetectorActivity extends BaseActivity implements View.OnTouchListener {
 
     @BindView(R.id.fl)

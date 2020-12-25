@@ -13,6 +13,9 @@ import com.yin.yzjcourse.utils.DLog;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * https://blog.csdn.net/harvic880925/article/details/39520901
+ */
 public class GestureDetectorActivity extends BaseActivity implements View.OnTouchListener {
 
 //    @BindView(R.id.my_btn)
