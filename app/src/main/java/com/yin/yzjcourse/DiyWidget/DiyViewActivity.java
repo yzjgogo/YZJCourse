@@ -40,7 +40,7 @@ public class DiyViewActivity extends BaseActivity {
         pieMore.addSlice(new PieSlice(Color.RED, 6));
     }
 
-    @OnClick({R.id.bt_src_out_eraser,R.id.bt_diy,R.id.bt_canvas_change,R.id.bt_canvas_text,R.id.bt_canvas_beisaier,R.id.bt_hit_rect,R.id.bt_draw_rect,R.id.bt_local_rect})
+    @OnClick({R.id.bt_matrix,R.id.bt_src_out_eraser,R.id.bt_diy,R.id.bt_canvas_change,R.id.bt_canvas_text,R.id.bt_canvas_beisaier,R.id.bt_hit_rect,R.id.bt_draw_rect,R.id.bt_local_rect})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_src_out_eraser:
@@ -54,6 +54,9 @@ public class DiyViewActivity extends BaseActivity {
             case R.id.bt_canvas_change:
                 Intent intent2 = new Intent(this,CanvasChangeActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.bt_matrix:
+                startActivity(new Intent(this,MatrixActivity.class));
                 break;
             case R.id.bt_canvas_text:
                 startActivity(new Intent(this,CanvasTextActivity.class));

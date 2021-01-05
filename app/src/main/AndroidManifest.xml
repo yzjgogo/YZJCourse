@@ -53,6 +53,8 @@
         <activity android:name=".RxJava2.DisposableExampleActivity" />
         <activity android:name=".RxJava2.IntervalActivity" />
         <activity android:name=".DiyWidget.DiyViewActivity" />
+        <activity android:name=".DiyWidget.MatrixActivity" />
+        <activity android:name=".DiyWidget.MatrixMulActivity" />
         <activity android:name=".DiyWidget.ViewAnimation.XmlAnimActivity" />
 
         <service android:name=".ForeService.FakeForeService" />
