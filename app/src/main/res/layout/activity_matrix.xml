@@ -16,6 +16,56 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
+            android:gravity="left"
             android:text="矩阵的左乘(post)和右乘(pre)" />
+        <Button
+            android:id="@+id/bt_new_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:gravity="left"
+            android:text="无参构造 new Matrix() \n创建出一个单位矩阵" />
+        <Button
+            android:id="@+id/bt_new_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:gravity="left"
+            android:text="有参构造 new Matrix(Matrix src) \n创建一个Matrix，并对src深拷贝(理解为新的matrix和src是两个对象，但内部数值相同即可)。" />
+        <Button
+            android:id="@+id/bt_set_values"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:gravity="left"
+            android:text="void setValues (float[] values) \n参数是浮点型的一维数组，长度需要大于9，拷贝数组中的前9位数值赋值给当前Matrix" />
+        <Button
+            android:id="@+id/bt_get_values"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:gravity="left"
+            android:text="void getValues (float[] values) \ngetValues和setValues是一对方法，参数也是浮点型的一维数组，长度需要大于9，将Matrix中的数值拷贝进参数的前9位中。" />
+        <Button
+            android:id="@+id/bt_set"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:gravity="left"
+            android:text="void set (Matrix src) \n没有返回值，有一个参数，作用是将参数Matrix的数值复制到当前Matrix中。如果参数为空，则重置当前Matrix，相当于reset()。" />
+        <Button
+            android:id="@+id/bt_reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:gravity="left"
+            android:text="void reset () \n重置当前Matrix(将当前Matrix重置为单位矩阵)。" />
+        <Button
+            android:id="@+id/bt_equals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:gravity="left"
+            android:text="equals() \n比较两个Matrix的数值是否相同。" />
     </LinearLayout>
 </ScrollView>
