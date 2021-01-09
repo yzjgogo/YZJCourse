@@ -2,6 +2,7 @@ package com.yin.yzjcourse.DiyWidget;
 
 import android.content.Intent;
 import android.graphics.Matrix;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -61,7 +62,7 @@ public class MatrixActivity extends BaseActivity {
     }
 
     @OnClick({R.id.bt_pre_post,R.id.bt_new_1,R.id.bt_new_2,R.id.bt_set_values,R.id.bt_get_values,R.id.bt_equals,R.id.bt_set
-            ,R.id.bt_reset,R.id.bt_map_1,R.id.bt_map_2,R.id.bt_map_3})
+            ,R.id.bt_reset,R.id.bt_map_1,R.id.bt_map_2,R.id.bt_map_3,R.id.bt_map_radius,R.id.bt_map_rect_1})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_pre_post:
@@ -175,6 +176,40 @@ public class MatrixActivity extends BaseActivity {
                 DLog.eLog("变换前："+Arrays.toString(srcA) +" , "+Arrays.toString(dstA));
                 matrixH.mapPoints(dstA, 0, srcA, 2, 2);
                 DLog.eLog("变换后："+Arrays.toString(srcA) +" , "+Arrays.toString(dstA));
+                break;
+            case R.id.bt_map_radius:
+                float radius = 100;
+                float result = 0;
+
+                // 构造一个matrix，x坐标缩放0.5,y坐标不变，这里导致圆变为了椭圆，因此结果是平均半径
+                Matrix matrixI = new Matrix();
+                matrixI.setScale(0.5f, 1f);
+                DLog.eLog("原来的半径: "+radius);
+                result = matrixI.mapRadius(radius);
+                DLog.eLog("x缩小一半后的半径: "+result);
+
+                matrixI.reset();
+                //x和y轴都变为原来的一半，缩小后的圆还是圆，因此半径是50
+                matrixI.setScale(0.5f,0.5f);
+                DLog.eLog("原来的半径: "+radius);
+                result = matrixI.mapRadius(radius);
+                DLog.eLog("x和y轴都变为原来的一半的半径: "+result);
+                break;
+            case R.id.bt_map_rect_1:
+                RectF rect = new RectF(400, 400, 1000, 800);
+
+                Matrix matrixJ = new Matrix();
+                /*
+                matrixJ.setScale(0.5f, 1f);//变换后仍是矩形
+                DLog.eLog("变换前的矩形: "+rect.toString());
+                boolean resultJ = matrixJ.mapRect(rect);
+                DLog.eLog("变换后的矩形:是不是矩形： "+resultJ+" , "+rect.toString());
+                 */
+
+                matrixJ.postSkew(1,0);//错切变换后不是矩形
+                DLog.eLog("--变换前的矩形: "+rect.toString());//--变换前的矩形: RectF(400.0, 400.0, 1000.0, 800.0)
+                boolean resultJ2 = matrixJ.mapRect(rect);
+                DLog.eLog("--变换后的矩形:是不是矩形： "+resultJ2+" , "+rect.toString());//--变换后的矩形:是不是矩形： false , RectF(800.0, 400.0, 1800.0, 800.0)
                 break;
         }
     }

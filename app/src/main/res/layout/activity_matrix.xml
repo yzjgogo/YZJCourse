@@ -98,5 +98,37 @@
                 android:gravity="left"
                 android:text="void mapPoints (float[] dst, int dstIndex,float[] src, int srcIndex, int pointCount) \n 可以指定只计算一部分数值" />
         </LinearLayout>
+        <Button
+            android:id="@+id/bt_map_radius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAllCaps="false"
+            android:text="float mapRadius (float radius) \n测量半径，由于圆可能会因为画布变换变成椭圆，所以此处测量的是平均半径。" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorAccent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mapRect方法 \n测量矩形变换后位置。"/>
+
+            <Button
+                android:id="@+id/bt_map_rect_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textAllCaps="false"
+                android:text="boolean mapRect (RectF rect) \n测量rect并将测量结果放入rect中，返回值是判断矩形经过变换后是否仍为矩形。" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textAllCaps="false"
+                android:text="boolean mapRect (RectF dst, RectF src) \n测量src并将测量结果放入dst中，返回值是判断矩形经过变换后是否仍为矩形,和之前没有什么太大区别，此处就不啰嗦了。" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
