@@ -12,6 +12,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
+import java.util.Objects;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class ExampleUnitTest {
 
@@ -161,7 +164,7 @@ public class ExampleUnitTest {
             String next = iterator.next();
             LinkedList
         }
-*/
+
         LinkedList<String> linkedList = new LinkedList<>();
         linkedList.add("a");
         linkedList.add("b");
@@ -177,5 +180,98 @@ public class ExampleUnitTest {
             String next = listIterator.previous();
             System.out.println("遍历："+next);
         }
+        */
+//        String abc = "a-b-c";
+//        String abc = "abc";
+//        System.out.println("输出："+abc.lastIndexOf("-"));
+        SortedSet<MyEntity> sortedSets = new TreeSet<>();
+        sortedSets.add(new MyEntity("m-5"));
+        sortedSets.add(new MyEntity("m"));
+        sortedSets.add(new MyEntity("m-3"));
+        sortedSets.add(new MyEntity("ab"));
+        sortedSets.add(new MyEntity("等待"));
+        sortedSets.add(new MyEntity("mc-3"));
+        sortedSets.add(new MyEntity("aee-34"));
+        sortedSets.add(new MyEntity("ap-1"));
+        System.out.println("输出："+sortedSets.toString() + " , "+ sortedSets.size());
+
+//        int a = 10;
+//        int b = 20;
+//        if(a<b)
+//            System.out.println("输出1");
+//            System.out.println("输出2");
+
+//        String abc = "音频-本地-2";
+////        String abc = "音频-本地2";
+////        String abc = "音频本地2";
+//        int first = abc.indexOf("-");
+//        int last = abc.lastIndexOf("-");
+//        System.out.println("输出:"+first+","+last);
+//        if (first!=last && first!=-1 && last!=-1) {
+//            String sub = abc.substring(last+1)+abc.substring(first+1,last);
+//            System.out.println("输出:"+sub);
+//        }
     }
+class MyEntity implements Comparable<MyEntity>{
+        public String content;
+
+    public MyEntity(String content) {
+        this.content = content;
+    }
+
+    @Override
+    public int compareTo(MyEntity o) {
+        int oOrder = 0;
+        int thisOrder = 0;
+        if (o != null) {
+            int oStartIndex = o.content.lastIndexOf("-");
+            if (oStartIndex>=0) {
+                try {
+                    oOrder = Integer.parseInt(o.content.substring(oStartIndex+1,o.content.length()));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        int thisStartIndex = this.content.lastIndexOf("-");
+        if (thisStartIndex>=0) {
+            try {
+                thisOrder = Integer.parseInt(this.content.substring(thisStartIndex+1,this.content.length()));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("输出:"+oOrder+","+thisOrder);
+//        if (oOrder == 0 || thisOrder == 0) {
+//            return -1;
+//        }
+        if (oOrder>thisOrder) {
+            return -1;
+        }else if(oOrder<thisOrder){
+            return 1;
+        }
+        return 1;
+    }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        MyEntity myEntity = (MyEntity) o;
+//        return Objects.equals(content, myEntity.content);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(content);
+//    }
+
+    @Override
+    public String toString() {
+        return "MyEntity{" +
+                "content='" + content + '\'' +
+                '}';
+    }
+}
 }

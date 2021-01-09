@@ -67,5 +67,36 @@
             android:textAllCaps="false"
             android:gravity="left"
             android:text="equals() \n比较两个Matrix的数值是否相同。" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/main_tabbar_font_color_focus">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mapPoints方法 \n计算一组点基于当前Matrix变换后的位置，(由于是计算点，所以参数中的float数组长度一般都是偶数的,若为奇数，则最后一个数值不参与计算)。"/>
+            <Button
+                android:id="@+id/bt_map_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:gravity="left"
+                android:text="void mapPoints (float[] pts) \n方法仅有一个参数，pts数组作为参数传递原始数值，计算结果仍存放在pts中。" />
+            <Button
+                android:id="@+id/bt_map_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:gravity="left"
+                android:text="void mapPoints (float[] dst, float[] src) \n src作为参数传递原始数值，计算结果存放在dst中，src不变。" />
+            <Button
+                android:id="@+id/bt_map_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:gravity="left"
+                android:text="void mapPoints (float[] dst, int dstIndex,float[] src, int srcIndex, int pointCount) \n 可以指定只计算一部分数值" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
