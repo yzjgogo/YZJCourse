@@ -130,5 +130,18 @@
                 android:textAllCaps="false"
                 android:text="boolean mapRect (RectF dst, RectF src) \n测量src并将测量结果放入dst中，返回值是判断矩形经过变换后是否仍为矩形,和之前没有什么太大区别，此处就不啰嗦了。" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_map_vectors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAllCaps="false"
+            android:text="测量向量系列方法 \n
+void mapVectors (float[] vecs) \n
+void mapVectors (float[] dst, float[] src) \n
+void mapVectors (float[] dst, int dstIndex, float[] src, int srcIndex, int vectorCount) \n
+mapVectors 与 mapPoints 基本上是相同的，可以直接参照上面的mapPoints使用方法。\n
+而两者唯一的区别就是mapVectors不会受到位移的影响，这符合向量的定律，如果你不了解的话，请找到以前教过你的老师然后把学费要回来。" />
     </LinearLayout>
 </ScrollView>

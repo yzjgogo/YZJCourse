@@ -62,7 +62,7 @@ public class MatrixActivity extends BaseActivity {
     }
 
     @OnClick({R.id.bt_pre_post,R.id.bt_new_1,R.id.bt_new_2,R.id.bt_set_values,R.id.bt_get_values,R.id.bt_equals,R.id.bt_set
-            ,R.id.bt_reset,R.id.bt_map_1,R.id.bt_map_2,R.id.bt_map_3,R.id.bt_map_radius,R.id.bt_map_rect_1})
+            ,R.id.bt_reset,R.id.bt_map_1,R.id.bt_map_2,R.id.bt_map_3,R.id.bt_map_radius,R.id.bt_map_rect_1,R.id.bt_map_vectors})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_pre_post:
@@ -210,6 +210,22 @@ public class MatrixActivity extends BaseActivity {
                 DLog.eLog("--变换前的矩形: "+rect.toString());//--变换前的矩形: RectF(400.0, 400.0, 1000.0, 800.0)
                 boolean resultJ2 = matrixJ.mapRect(rect);
                 DLog.eLog("--变换后的矩形:是不是矩形： "+resultJ2+" , "+rect.toString());//--变换后的矩形:是不是矩形： false , RectF(800.0, 400.0, 1800.0, 800.0)
+                break;
+            case R.id.bt_map_vectors:
+                float[] srcK = new float[]{1000, 800};
+                float[] dstK = new float[2];
+
+                Matrix matrixK = new Matrix();
+                matrixK.setScale(0.5f, 1f);
+                matrixK.postTranslate(100,100);
+
+                // 计算向量, 不受位移影响
+                matrixK.mapVectors(dstK, srcK);
+                DLog.eLog("向量变换后: "+Arrays.toString(dstK));//向量变换后: [500.0, 800.0]
+
+                // 计算点，受位移的影响
+                matrixK.mapPoints(dstK, srcK);
+                DLog.eLog("点变换后: "+Arrays.toString(dstK));//点变换后: [600.0, 900.0]
                 break;
         }
     }
