@@ -49,13 +49,14 @@ public class MatrixMulView extends View {
     }
 
     /**
-     * 这个例子是实现围绕图片的中心缩放，因为默认是参考图片的左上角(0,0)缩放的，所以事先逻辑就是：先将图片的左上角向右向下移动(w/2,h/2),再进行缩放，再将图片的左上角向左向上移动(-w/2,-h/2)
+     * 这个例子是实现围绕图片的中心缩放(旋转)，因为默认是参考图片的左上角(0,0)缩放的，所以事先逻辑就是：先将图片的左上角向右向下移动(w/2,h/2),再进行缩放(旋转)，再将图片的左上角向左向上移动(-w/2,-h/2)
      *
      * pre...和post..系列函数的使用方法
-     * pre... --> (前乘)右乘 M*S
-     * post... --> (后乘)左乘 S*M
+     * pre... --> (前乘)右乘 M*S，只是决定了S在M的右边,乘法永远是从左往右，遇到括号，括号优先
+     * post... --> (后乘)左乘 S*M，只是决定了S再M的左边，,乘法永远是从左往右，遇到括号，括号优先
      * 先根据业务逻辑构造出线性代数里的真实的“矩阵乘法公式”，然后再用pre..和post..组合成这个公式即可；
-     * pre..和post..不能控制代码的执行顺序，代码永远都是一行一行执行的，执行一行就得一行的结果；pre..和post..没有代码执行顺序上的先后只说，只是用来构造“矩阵乘法公式”
+     * pre..和post..不能控制代码的执行顺序，代码永远都是一行一行执行的，执行一行就得一行的结果；pre..和post..没有代码执行顺序上的先后只说，只是用来构造“矩阵乘法公式”,直到真正使用Matrix时才按照构造出的公式
+     * 真正发挥平移、缩放、旋转、错切等作用
      *
      * 一个已知的“矩阵乘法公式”，可以通过不同的pre..或post..组合成不同的代码形式
      * @param canvas
@@ -73,12 +74,17 @@ public class MatrixMulView extends View {
 //        matrix.preRotate(90);
         matrix.preTranslate(-bitWidth/2.0f,-bitHeight/2.0f);
 
-        //(T*S*M)*(-T) --> (T*S)*(-T) --> T*S*(-T)
+        //T*S*(-T)*M --> T*S*(-T)  效果一样
+//        matrix.postTranslate(-bitWidth/2.0f,-bitHeight/2.0f);
+//        matrix.postScale(0.5f,0.5f);
+//        matrix.postTranslate(bitWidth/2.0f,bitHeight/2.0f);
+
+        //(T*S*M)*(-T) --> (T*S)*(-T) --> T*S*(-T) 效果一样
 //        matrix.postScale(0.5f,0.5f);
 //        matrix.postTranslate(bitWidth/2.0f,bitHeight/2.0f);
 //        matrix.preTranslate(-bitWidth/2.0f,-bitHeight/2.0f);
 
-        //(T*(M*S))*(-T) --> (T*M*S)*(-T) --> (T*S)*(-T) --> T*S*(-T)
+        //(T*(M*S))*(-T) --> (T*M*S)*(-T) --> (T*S)*(-T) --> T*S*(-T) 效果一样
 //        matrix.preScale(0.5f,0.5f);
 //        matrix.postTranslate(bitWidth/2.0f,bitHeight/2.0f);
 //        matrix.preTranslate(-bitWidth/2.0f,-bitHeight/2.0f);
