@@ -70,25 +70,25 @@ public class MatrixActivity extends BaseActivity {
                 break;
             case R.id.bt_new_1:
                 Matrix matrix = new Matrix();
-                DLog.eLog("无参构造器："+matrix.toString());
+                DLog.eLog("无参构造器："+matrix.toString());//无参构造器：Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}
                 break;
             case R.id.bt_new_2:
                 Matrix oriMatrix = new Matrix();
                 oriMatrix.setValues(new float[]{11,22,33,44,55,66,77,88,99});
                 Matrix matrix1 = new Matrix(oriMatrix);
-                DLog.eLog("有参构造器："+matrix1.toString());
+                DLog.eLog("有参构造器："+matrix1.toString());//有参构造器：Matrix{[11.0, 22.0, 33.0][44.0, 55.0, 66.0][77.0, 88.0, 99.0]}
                 break;
             case R.id.bt_set_values:
                 Matrix sMatrix = new Matrix();
                 sMatrix.setValues(new float[]{1,2,3,4,5,6,7,8,9,10,11});
-                DLog.eLog("设置值："+sMatrix.toString());
+                DLog.eLog("设置值："+sMatrix.toString());//设置值：Matrix{[1.0, 2.0, 3.0][4.0, 5.0, 6.0][7.0, 8.0, 9.0]}
                 break;
             case R.id.bt_get_values:
                 Matrix gMatrix = new Matrix();
                 gMatrix.setValues(new float[]{1,2,3,4,5,6,7,8,9,10,11});
                 float[] values = new float[9];
                 gMatrix.getValues(values);
-                DLog.eLog("获取值："+ Arrays.toString(values));
+                DLog.eLog("获取值："+ Arrays.toString(values));//获取值：[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0]
                 break;
             case R.id.bt_equals:
                 Matrix matrixA = new Matrix();
@@ -96,7 +96,7 @@ public class MatrixActivity extends BaseActivity {
                 Matrix matrixB = new Matrix();
                 matrixB.setValues(new float[]{1,2,3,4,5,6,7,8,9});
                 //比较9个值是否一一相等
-                DLog.eLog("是否相等："+ matrixA.equals(matrixB));
+                DLog.eLog("是否相等："+ matrixA.equals(matrixB));//是否相等：true
                 break;
             case R.id.bt_set:
                 Matrix matrixC = new Matrix();
@@ -105,20 +105,20 @@ public class MatrixActivity extends BaseActivity {
                 Matrix matrixD = new Matrix();
                 matrixD.setValues(new float[]{11,22,33,44,55,66,77,88,98});
 
-                //将matrixC的9个值一次赋值给matrixD的9个值
+                //将matrixC的9个值依次赋值给matrixD的9个值
                 matrixD.set(matrixC);
-                DLog.eLog("设置一个非空矩阵："+matrixD.toString());
+                DLog.eLog("设置一个非空矩阵："+matrixD.toString());//设置一个非空矩阵：Matrix{[1.0, 2.0, 3.0][4.0, 5.0, 6.0][7.0, 8.0, 9.0]}
 
                 //将matrixD重置为单位矩阵，等价于reset(),进去看源码确实是这样
                 matrixD.set(null);
-                DLog.eLog("设置一个空矩阵："+matrixD.toString());
+                DLog.eLog("设置一个空矩阵："+matrixD.toString());//设置一个空矩阵：Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}
 
                 break;
             case R.id.bt_reset:
                 Matrix matrixE = new Matrix();
                 matrixE.setValues(new float[]{1,2,3,4,5,6,7,8,9});
                 matrixE.reset();
-                DLog.eLog("调用reset:"+matrixE.toString());
+                DLog.eLog("调用reset:"+matrixE.toString());//调用reset:Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}
                 break;
             case R.id.bt_map_1:
                 //一般是在单位矩阵的基础上进行变换，然后获取变换后的点
@@ -139,7 +139,7 @@ public class MatrixActivity extends BaseActivity {
                 matrixF.setScale(0.5f, 1f);
                 matrixF.mapPoints(pts);
                 //变换后的结果还放到原pts数组里，覆盖pts的原数据
-                DLog.eLog("一个参数的map变换："+Arrays.toString(pts));
+                DLog.eLog("一个参数的map变换："+Arrays.toString(pts));//一个参数的map变换：[0.0, 0.0, 40.0, 100.0, 200.0, 300.0]
                 break;
             case R.id.bt_map_2:
                 //一般是在单位矩阵的基础上进行变换，然后获取变换后的点
@@ -151,7 +151,8 @@ public class MatrixActivity extends BaseActivity {
                 matrixG.setScale(0.5f, 1f);
                 //第一个参数是变换后的点，第二个参数是原来的点
                 matrixG.mapPoints(dst,src);
-                //变换后的结果还放到原pts数组里，覆盖pts的原数据
+                //变换后的结果还放到dst数组里，src数据不变
+                //2个参数的map变换：原来的点：[0.0, 0.0, 80.0, 100.0, 400.0, 300.0] ,变换后的点：[0.0, 0.0, 40.0, 100.0, 200.0, 300.0]
                 DLog.eLog("2个参数的map变换：原来的点："+Arrays.toString(src)+" ,变换后的点："+Arrays.toString(dst));
                 break;
             case R.id.bt_map_3:
@@ -173,9 +174,9 @@ public class MatrixActivity extends BaseActivity {
                  *
                  * 这里是src从第2个元素开始(第2个点开始)，共取2个点，参与变换，变换后的结果放到dst中，且从dst的第0个点开始放变换后的元素，没放变换后的元素位置数值不变
                  */
-                DLog.eLog("变换前："+Arrays.toString(srcA) +" , "+Arrays.toString(dstA));
+                DLog.eLog("变换前："+Arrays.toString(srcA) +" , "+Arrays.toString(dstA));//变换前：[0.0, 0.0, 80.0, 100.0, 400.0, 300.0] , [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
                 matrixH.mapPoints(dstA, 0, srcA, 2, 2);
-                DLog.eLog("变换后："+Arrays.toString(srcA) +" , "+Arrays.toString(dstA));
+                DLog.eLog("变换后："+Arrays.toString(srcA) +" , "+Arrays.toString(dstA));//变换后：[0.0, 0.0, 80.0, 100.0, 400.0, 300.0] , [40.0, 100.0, 200.0, 300.0, 0.0, 0.0]
                 break;
             case R.id.bt_map_radius:
                 float radius = 100;
@@ -184,16 +185,16 @@ public class MatrixActivity extends BaseActivity {
                 // 构造一个matrix，x坐标缩放0.5,y坐标不变，这里导致圆变为了椭圆，因此结果是平均半径
                 Matrix matrixI = new Matrix();
                 matrixI.setScale(0.5f, 1f);
-                DLog.eLog("原来的半径: "+radius);
+                DLog.eLog("原来的半径: "+radius);//原来的半径: 100.0
                 result = matrixI.mapRadius(radius);
-                DLog.eLog("x缩小一半后的半径: "+result);
+                DLog.eLog("x缩小一半后的半径: "+result);//x缩小一半后的半径: 70.71068
 
                 matrixI.reset();
                 //x和y轴都变为原来的一半，缩小后的圆还是圆，因此半径是50
                 matrixI.setScale(0.5f,0.5f);
-                DLog.eLog("原来的半径: "+radius);
+                DLog.eLog("原来的半径: "+radius);//原来的半径: 100.0
                 result = matrixI.mapRadius(radius);
-                DLog.eLog("x和y轴都变为原来的一半的半径: "+result);
+                DLog.eLog("x和y轴都变为原来的一半的半径: "+result);//x和y轴都变为原来的一半的半径: 50.0
                 break;
             case R.id.bt_map_rect_1:
                 RectF rect = new RectF(400, 400, 1000, 800);
