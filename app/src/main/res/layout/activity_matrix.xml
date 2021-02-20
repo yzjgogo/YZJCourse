@@ -143,5 +143,13 @@ void mapVectors (float[] dst, float[] src) \n
 void mapVectors (float[] dst, int dstIndex, float[] src, int srcIndex, int vectorCount) \n
 mapVectors 与 mapPoints 基本上是相同的，可以直接参照上面的mapPoints使用方法。\n
 而两者唯一的区别就是mapVectors不会受到位移的影响，这符合向量的定律，如果你不了解的话，请找到以前教过你的老师然后把学费要回来。" />
+
+        <Button
+            android:id="@+id/bt_3d_rotate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAllCaps="false"
+            android:text="3D旋转demo" />
     </LinearLayout>
 </ScrollView>

@@ -62,7 +62,7 @@ public class MatrixActivity extends BaseActivity {
     }
 
     @OnClick({R.id.bt_pre_post,R.id.bt_new_1,R.id.bt_new_2,R.id.bt_set_values,R.id.bt_get_values,R.id.bt_equals,R.id.bt_set
-            ,R.id.bt_reset,R.id.bt_map_1,R.id.bt_map_2,R.id.bt_map_3,R.id.bt_map_radius,R.id.bt_map_rect_1,R.id.bt_map_vectors})
+            ,R.id.bt_reset,R.id.bt_map_1,R.id.bt_map_2,R.id.bt_map_3,R.id.bt_map_radius,R.id.bt_map_rect_1,R.id.bt_map_vectors,R.id.bt_3d_rotate})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_pre_post:
@@ -227,6 +227,9 @@ public class MatrixActivity extends BaseActivity {
                 // 计算点，受位移的影响
                 matrixK.mapPoints(dstK, srcK);
                 DLog.eLog("点变换后: "+Arrays.toString(dstK));//点变换后: [600.0, 900.0]
+                break;
+            case R.id.bt_3d_rotate:
+                startActivity(new Intent(this, Rotate3DActivity.class));
                 break;
         }
     }
