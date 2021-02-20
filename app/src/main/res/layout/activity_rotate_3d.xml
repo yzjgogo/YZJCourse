@@ -7,6 +7,7 @@
         android:id="@+id/bt_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:text="开始"/>
     <ImageView
         android:id="@+id/iv"
@@ -14,4 +15,9 @@
         android:layout_height="204dp"
         android:layout_gravity="center"
         android:src="@mipmap/bg_test"/>
+    <com.yin.yzjcourse.DiyWidget.ThreeDView
+        android:id="@+id/three_d"
+        android:layout_width="255dp"
+        android:layout_height="204dp"
+        android:background="@color/bg"/>
 </FrameLayout>
