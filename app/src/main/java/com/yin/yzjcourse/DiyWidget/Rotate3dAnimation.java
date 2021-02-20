@@ -59,6 +59,7 @@ public class Rotate3dAnimation extends Animation {
         final Matrix matrix = t.getMatrix();
 //        matrix.reset();
 //        DLog.eLog("矩阵t："+matrix.toShortString()+" , "+matrix.isIdentity()+" , "+System.identityHashCode(matrix)+" , "+System.identityHashCode(t));
+        //save()和restore()的目的就是在这两个方法直接拿到业务逻辑需要的Matrix数据(这里是旋转数据和位移数据)，然后restore()后，camera状态还原，其维护的Matrix也还原为单位矩阵
         camera.save();
 
         // 调节深度
@@ -74,6 +75,10 @@ public class Rotate3dAnimation extends Animation {
         camera.getMatrix(matrix);
         DLog.eLog("旋转数据："+matrix.toShortString());
         camera.restore();
+
+//        Matrix tMatrix = new Matrix();
+//        camera.getMatrix(tMatrix);
+//        DLog.eLog("还原后的矩阵："+tMatrix.toShortString());//[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0] 是单位矩阵
 
         // 修正失真，主要修改 MPERSP_0 和 MPERSP_1
         float[] mValues = new float[9];

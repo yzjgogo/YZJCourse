@@ -45,7 +45,7 @@ public class Rotate3DActivity extends BaseActivity {
                 final float centerY = iv.getHeight() / 2.0f;
 
                 //括号内参数分别为（上下文，开始角度，结束角度，x轴中心点，y轴中心点，深度，是否扭曲）
-                final Rotate3dAnimation rotation = new Rotate3dAnimation(Rotate3DActivity.this, 0, 180, centerX, centerY, 0f, true);
+                final Rotate3dAnimation rotation = new Rotate3dAnimation(Rotate3DActivity.this, 0, 180, centerX, centerY, 200f, true);
 
 //                rotation.setDuration(30000);                         //设置动画时长
                 rotation.setDuration(10000);                         //设置动画时长
