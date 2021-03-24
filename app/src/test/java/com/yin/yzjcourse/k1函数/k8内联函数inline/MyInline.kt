@@ -1,5 +1,8 @@
 package com.yin.yzjcourse.k1函数.k8内联函数inline
 
+/**
+ * https://www.jianshu.com/p/8a0d5bae9cdf
+ */
 class MyInline {
     /**
      * 内联函数：用inline修饰的函数
