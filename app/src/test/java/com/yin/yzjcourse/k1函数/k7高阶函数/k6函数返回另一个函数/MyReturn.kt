@@ -18,4 +18,13 @@ class MyReturn {
         val mf = getFun(Person("Jack",100))
         mf(Person("Fuck",20))
     }
+
+    @Test
+    fun mytest2(){
+        println(testReturn(Person("ad",100),200))
+    }
+    fun testReturn(p:Person,b:Int):(Person) -> String{
+//        return {it.toString()}
+        return {p -> p.age.toString()}
+    }
 }
