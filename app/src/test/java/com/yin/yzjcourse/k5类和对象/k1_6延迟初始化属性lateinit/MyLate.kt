@@ -3,6 +3,8 @@ package com.yin.yzjcourse.k5类和对象.k1_6延迟初始化属性lateinit
 import org.junit.Test
 
 /**
+ * https://www.jianshu.com/p/24fdd70fdbce?utm_source=oschina-app
+ *
  * 延迟初始化属性用lateinit修饰
  * 只有主构造函数定义的属性可以用val修饰，因此延迟初始化的属性也只能用var修饰；
  *
