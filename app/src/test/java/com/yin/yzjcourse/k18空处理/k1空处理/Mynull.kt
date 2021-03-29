@@ -41,6 +41,7 @@ class Mynull {
         }
         //handle way 2:
         val y2 = x?.toDouble()//if x not  null then execute x.toDouble();if x is null then y2 will be null too,and y2's type will be 'Double?'.
+        //因为toString()是Any?的扩展函数，可空类型的扩展函数调用时永远不需要用?
         val y22 = y2.toString()//因为y2的类型是'Double?'，所以不会报错
 
         //if you don't want return a null value,you can use ':' define a default value;
