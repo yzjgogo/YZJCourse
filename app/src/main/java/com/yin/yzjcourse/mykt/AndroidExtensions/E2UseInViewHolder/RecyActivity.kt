@@ -1,7 +1,7 @@
 package com.yin.yzjcourse.mykt.AndroidExtensions.E2UseInViewHolder
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.yin.yzjcourse.BaseActivity
 import com.yin.yzjcourse.R
 import kotlinx.android.synthetic.main.activity_holder.*
@@ -15,7 +15,7 @@ class RecyActivity : BaseActivity() {
     }
 
     private fun initView() {
-        val  llManager = LinearLayoutManager(this)
+        val  llManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         recyclerView.layoutManager = llManager
         val adapter = FruitAdapter(getFruitList())
         recyclerView.adapter = adapter

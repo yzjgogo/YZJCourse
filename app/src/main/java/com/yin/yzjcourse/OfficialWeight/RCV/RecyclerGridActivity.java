@@ -1,13 +1,11 @@
 package com.yin.yzjcourse.OfficialWeight.RCV;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.OfficialWeight.RCV.Util.SpaceItemDecoration;
-import com.yin.yzjcourse.OfficialWeight.RCV.adapter.RcvBaseUseAdapter;
 import com.yin.yzjcourse.OfficialWeight.RCV.adapter.RcvGridAdapter;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.Utils;

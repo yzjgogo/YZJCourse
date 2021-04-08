@@ -1,9 +1,9 @@
 package com.yin.yzjcourse.Jetpack;
 
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleOwner;
-import android.arch.lifecycle.LifecycleRegistry;
-import android.support.annotation.NonNull;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.LifecycleRegistry;
+import androidx.annotation.NonNull;
 
 /***
  * 自定义的LifecycleOwner，自定义生命周期onOpen(),onRun(),onRelease()

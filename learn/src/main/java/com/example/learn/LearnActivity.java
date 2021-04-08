@@ -1,11 +1,11 @@
 package com.example.learn;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
+//import com.alibaba.android.arouter.facade.annotation.Route;
 
-@Route(path = "/test/learn")
+//@Route(path = "/test/learn")
 public class LearnActivity extends AppCompatActivity {
 
     @Override

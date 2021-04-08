@@ -1,12 +1,10 @@
 package com.yin.yzjcourse.OfficialWeight;
 
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
+import androidx.appcompat.widget.SearchView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 
 import com.yin.yzjcourse.BaseActivity;

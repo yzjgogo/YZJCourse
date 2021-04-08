@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cl"
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="点击"/>
-<android.support.design.widget.FloatingActionButton
+<com.google.android.material.floatingactionbutton.FloatingActionButton
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/fab_margin"
@@ -26,7 +26,7 @@
     <!--behavior_hideable:默认为false无法隐藏整个BottomSheet，至少要显示默认的高或behavior_peekHeight指定的高；-->
                         <!--为true时可以隐藏整个BottomSheet-->
     <!--behavior_peekHeight:默认状态下至少显示的高-->
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/bottom_sheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,11 +80,11 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/a6"/>
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="我在底部,可以把我去掉，我只是想看看底部可不可以放按钮"
         android:layout_gravity="bottom"
         android:background="@color/orange"/>
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

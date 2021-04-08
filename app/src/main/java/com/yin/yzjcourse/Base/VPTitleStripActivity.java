@@ -1,12 +1,11 @@
 package com.yin.yzjcourse.Base;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.PagerTitleStrip;
-import android.support.v4.view.ViewPager;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.PagerTitleStrip;
+import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
 
 import com.yin.yzjcourse.Base.adapter.VPTitleStripAdapter;
 import com.yin.yzjcourse.BaseActivity;

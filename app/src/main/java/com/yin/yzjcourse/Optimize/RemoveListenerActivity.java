@@ -1,18 +1,14 @@
 package com.yin.yzjcourse.Optimize;
 
-import android.hardware.Sensor;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.view.View;
+import androidx.annotation.RequiresApi;
+
 import android.view.ViewTreeObserver;
 import android.widget.EditText;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
-import com.yin.yzjcourse.utils.DLog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

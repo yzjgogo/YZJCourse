@@ -1,7 +1,7 @@
 package com.yin.yzjcourse;
 
 import android.app.Activity;
-import android.support.v4.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 
 
 import com.yin.yzjcourse.utils.DLog;

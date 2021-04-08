@@ -16,12 +16,35 @@
             android:layout_height="wrap_content"
             android:text="LifecycleOwner、LifecycleObserver(GenericLifecycleObserver)、LifecycleRegistry\n高版本的Activity和Fragment都是LifecycleOwner类型自带此功能，自己的类也可以自定义实现，实现方式与Activity和Fragment相同"
             android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/bt_lifecycle2"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="  "
-            android:textAllCaps="false" />
+            android:orientation="vertical"
+            android:background="@color/tabbar_item_font_color_checked">
+
+            <Button
+                android:id="@+id/bt_activity_lifecycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Activity或Fragment的lifecycle"
+                android:gravity="left"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_service_lifecycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Service的lifecycle"
+                android:gravity="left"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_app_lifecycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Application的lifecycle --> AppLocationListener"
+                android:gravity="left"
+                android:textAllCaps="false" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

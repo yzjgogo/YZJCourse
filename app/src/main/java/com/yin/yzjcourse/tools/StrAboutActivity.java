@@ -1,13 +1,11 @@
 package com.yin.yzjcourse.tools;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
-import com.yin.yzjcourse.Utils;
 import com.yin.yzjcourse.utils.DLog;
 
 import java.util.StringTokenizer;

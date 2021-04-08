@@ -14,17 +14,17 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="橘色区域这部分是只在viewGroup创建的时候，才会对其中的item添加动画。在创建成功以后，再向其中添加item将不会再有动画。 \n且这里只能用xml补间动画" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="LayoutAnimation适用于所有ViewGroup例如ListView" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="GridLayoutAnimation只适用于GridView" />

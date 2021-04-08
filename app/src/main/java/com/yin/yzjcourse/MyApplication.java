@@ -1,11 +1,11 @@
 package com.yin.yzjcourse;
 
-import android.app.Application;
-import android.support.multidex.MultiDexApplication;
+import androidx.lifecycle.ProcessLifecycleOwner;
+import androidx.multidex.MultiDexApplication;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.dev.think.mylibrary.PushUtils;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.yin.yzjcourse.Jetpack.AppLocationListener;
 
 /**
  * Created by think on 2016/11/21.
@@ -15,10 +15,11 @@ public class MyApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        ProcessLifecycleOwner.get().getLifecycle().addObserver(new AppLocationListener());
 
-        ARouter.openLog();
-        ARouter.openDebug();
-        ARouter.init(this);
+//        ARouter.openLog();
+//        ARouter.openDebug();
+//        ARouter.init(this);
 
         initBugly();
         PushUtils.register(this);

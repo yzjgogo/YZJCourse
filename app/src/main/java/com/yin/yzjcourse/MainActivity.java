@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.yin.yzjcourse.Base.BaseContentActivity;
 import com.yin.yzjcourse.BuilderMode.BuilderModeActivity;
 import com.yin.yzjcourse.Coordinator.CoordinatorActivity;
@@ -42,23 +41,30 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
+//import butterknife.OnClick;
+
 //从公司提交代码
 public class MainActivity extends BaseActivity {
     //试试我的台式机
-    @BindView(R.id.bt_fore_service)
-    Button btForeService;
-    @BindView(R.id.bt_dialog_fragment)
-    Button btDialogFragment;
-    @BindView(R.id.bt_rxjava)
-    Button btRxjava;
-    @BindView(R.id.bt_diy_view)
-    Button btDiyView;
-    @BindView(R.id.bt_xml_anim)
-    Button btXmlAnim;
-    @BindView(R.id.bt_property_anim)
-    Button btPropertyAnim;
-    @BindView(R.id.activity_main)
-    LinearLayout activityMain;
+//    @BindView(R.id.bt_fore_service)
+//    Button btForeService;
+//    @BindView(R.id.bt_dialog_fragment)
+//    Button btDialogFragment;
+//    @BindView(R.id.bt_rxjava)
+//    Button btRxjava;
+//    @BindView(R.id.bt_diy_view)
+//    Button btDiyView;
+//    @BindView(R.id.bt_xml_anim)
+//    Button btXmlAnim;
+//    @BindView(R.id.bt_property_anim)
+//    Button btPropertyAnim;
+//    @BindView(R.id.activity_main)
+//    LinearLayout activityMain;
+//    @BindView(R.id.sv)
+//    ScrollView sv;
+
     @BindView(R.id.sv)
     ScrollView sv;
 
@@ -66,6 +72,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        ButterKnife.bind(this);
         ButterKnife.bind(this);
         initView();
     }
@@ -87,10 +94,11 @@ public class MainActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_fore_service:
-                Integer i = null;
-                i.toString();
-                Intent intent = new Intent(this, ForeServiceActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(this, DraftActivity.class));
+//                Integer i = null;
+//                i.toString();
+//                Intent intent = new Intent(this, ForeServiceActivity.class);
+//                startActivity(intent);
                 break;
             case R.id.bt_dialog_fragment:
                 CourseDialog dialog = CourseDialog.getInstance();

@@ -2,8 +2,8 @@ package com.yin.yzjcourse.DiyWidget;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.Px;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.Px;
+import androidx.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;

@@ -24,7 +24,7 @@
         android:padding="10dp"
         android:text="下面是默认的BottomNavigationView效果" />
 
-    <android.support.design.widget.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_three"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
         android:padding="10dp"
         android:text="下面是使用style的BottomNavigationView效果" />
 
-    <android.support.design.widget.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_two"
         style="@style/BottomNavigation"
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
         android:padding="10dp"
         android:text="下面是使用各个属性的BottomNavigationView效果" />
 
-    <android.support.design.widget.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

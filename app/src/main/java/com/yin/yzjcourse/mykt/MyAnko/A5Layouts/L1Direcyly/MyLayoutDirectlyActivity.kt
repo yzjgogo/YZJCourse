@@ -2,7 +2,7 @@ package com.yin.yzjcourse.mykt.MyAnko.A5Layouts.L1Direcyly
 
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.yin.yzjcourse.BaseActivity

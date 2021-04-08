@@ -1,8 +1,8 @@
 package com.yin.yzjcourse.Base;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import com.yin.yzjcourse.Base.adapter.VPFragAdapter;
 import com.yin.yzjcourse.BaseActivity;

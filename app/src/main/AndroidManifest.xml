@@ -15,7 +15,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DiyWidget.ViewCacheActivity"></activity>
+        <service
+            android:name=".Jetpack.MyLCService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".Jetpack.ServiceLifecycleActivity" />
+        <activity android:name=".Jetpack.PageLifecycleActivity" />
+        <activity android:name=".DraftActivity" />
+        <activity android:name=".DiyWidget.ViewCacheActivity" />
         <activity android:name=".tools.DrawableActivity" />
         <activity android:name=".tools.ProgressActivity" />
         <activity android:name=".tools.StrAboutActivity" />
@@ -219,10 +227,12 @@
         <activity android:name=".MultiProcess.MyAidl.ClientActivity" />
         <activity android:name=".Window.MyWindowActivity" />
         <activity android:name=".DesignModel.P1策略模式.StrategyActivity" />
-        <activity android:name=".Base.XMLDialogActivity"
-            android:theme="@style/DialogWebActivityTheme"/>
-        <activity android:name=".Base.DynamicDialogActivity"
-            android:theme="@style/DialogBaseTheme"/>
+        <activity
+            android:name=".Base.XMLDialogActivity"
+            android:theme="@style/DialogWebActivityTheme" />
+        <activity
+            android:name=".Base.DynamicDialogActivity"
+            android:theme="@style/DialogBaseTheme" />
     </application>
 
 </manifest>

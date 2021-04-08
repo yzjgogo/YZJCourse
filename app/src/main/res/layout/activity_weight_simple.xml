@@ -209,7 +209,7 @@
         <!--android:translationZ是动态值，是Z上的偏移变化，用以在属性动画中动态改变Z值（使用View.setTranslationZ()），-->
         <!--如果直接在布局文件中设置translationZ则效果和elevation一样-->
         <!--这里之所以没有阴影效果是因为上面ScrollView设置了layerType="software"，去掉就可以了-->
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"

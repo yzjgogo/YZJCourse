@@ -1,21 +1,17 @@
 package com.yin.yzjcourse.DiyWidget.DrawView;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
-import android.text.TextPaint;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-
-import com.yin.yzjcourse.R;
 
 /**
  * TODO: document your custom view class.

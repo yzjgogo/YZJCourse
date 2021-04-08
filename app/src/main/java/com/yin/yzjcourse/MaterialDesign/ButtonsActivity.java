@@ -1,7 +1,7 @@
 package com.yin.yzjcourse.MaterialDesign;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;

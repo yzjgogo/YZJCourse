@@ -2,7 +2,7 @@ package com.yin.yzjcourse.DiyWidget;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.yin.yzjcourse.DiyWidget.DrawView.SkewView;

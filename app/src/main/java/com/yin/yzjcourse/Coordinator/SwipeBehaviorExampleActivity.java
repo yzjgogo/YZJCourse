@@ -1,9 +1,9 @@
 package com.yin.yzjcourse.Coordinator;
 
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout.LayoutParams;
-import android.support.design.widget.SwipeDismissBehavior;
-import android.support.v7.widget.CardView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout.LayoutParams;
+import com.google.android.material.behavior.SwipeDismissBehavior;
+import androidx.cardview.widget.CardView;
 import android.view.View;
 import android.widget.Toast;
 

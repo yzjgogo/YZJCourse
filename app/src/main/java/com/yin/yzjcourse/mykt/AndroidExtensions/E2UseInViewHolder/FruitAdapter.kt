@@ -1,6 +1,6 @@
 package com.yin.yzjcourse.mykt.AndroidExtensions.E2UseInViewHolder
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import com.yin.yzjcourse.R
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.fruit_item.*
 
-class FruitAdapter(val fruitList: List<Fruit>) : RecyclerView.Adapter<FruitAdapter.ViewHolder>() {
+class FruitAdapter(val fruitList: List<Fruit>) : androidx.recyclerview.widget.RecyclerView.Adapter<FruitAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.fruit_item, parent, false)
         return ViewHolder(itemView)
@@ -37,7 +37,7 @@ class FruitAdapter(val fruitList: List<Fruit>) : RecyclerView.Adapter<FruitAdapt
      *
      * 通过findViewById()获取控件的原始方式参考:[com.yin.yzjcourse.mykt.AndroidExtensions.E2UseInViewHolder.FruitOriginalAdapter.ViewHolder]
      */
-    class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    class ViewHolder(override val containerView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(containerView), LayoutContainer {
         //        val tvName = view.findViewById<TextView>(R.id.tvName)
 //        val ivImage = view.findViewById<ImageView>(R.id.ivImage)
         fun setName(name:String) {

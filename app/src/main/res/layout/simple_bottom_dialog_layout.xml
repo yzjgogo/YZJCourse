@@ -13,7 +13,7 @@
         <!--android:textColor="@color/black"-->
         <!--android:textSize="20sp" />-->
     <!--不要用ScrollView，如果用了，滑动上去后就滑不下来了-->
-<android.support.v4.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/orange">
@@ -140,7 +140,7 @@
 
 
     </LinearLayout>
-</android.support.v4.widget.NestedScrollView>
+</androidx.core.widget.NestedScrollView>
 
     <!--<android.support.design.widget.FloatingActionButton-->
         <!--android:id="@+id/fab"-->

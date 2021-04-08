@@ -1,7 +1,7 @@
 package com.yin.yzjcourse.BuilderMode;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -12,7 +12,6 @@ import com.yin.yzjcourse.BuilderMode.ClassicalBuilderMode.RoundCookiesBuilder;
 import com.yin.yzjcourse.BuilderMode.ClassicalBuilderMode.SquareCookiesBuilder;
 import com.yin.yzjcourse.BuilderMode.ModernBuilderMode.Person;
 import com.yin.yzjcourse.R;
-import com.yin.yzjcourse.utils.DLog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

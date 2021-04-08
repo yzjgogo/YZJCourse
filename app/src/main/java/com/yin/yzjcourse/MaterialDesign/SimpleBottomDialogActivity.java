@@ -1,8 +1,8 @@
 package com.yin.yzjcourse.MaterialDesign;
 
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.yin.yzjcourse.R;

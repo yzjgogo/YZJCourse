@@ -2,18 +2,15 @@ package com.yin.yzjcourse.Net;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.widget.Toast;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
+//import com.alibaba.android.arouter.facade.annotation.Route;
 import com.yin.yzjcourse.BaseActivity;
-import com.yin.yzjcourse.DiyWidget.ViewGroupAnimActivity;
 import com.yin.yzjcourse.R;
-import com.yin.yzjcourse.tools.ToolsActivity;
 import com.yin.yzjcourse.utils.DLog;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,16 +20,13 @@ import butterknife.OnClick;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
-import okhttp3.Headers;
 import okhttp3.HttpUrl;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import okio.BufferedSink;
-@Route(path = "/test/net")
+
+//@Route(path = "/test/net")
 public class NetActivity extends BaseActivity {
     public static final String MAIN_URL = "https://pzx.pagekite.me/";
 
