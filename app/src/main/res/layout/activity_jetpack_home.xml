@@ -46,5 +46,19 @@
                 android:gravity="left"
                 android:textAllCaps="false" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/tabbar_item_font_color_checked">
+
+            <Button
+                android:id="@+id/bt_nav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Navigation"
+                android:gravity="left"
+                android:textAllCaps="false" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

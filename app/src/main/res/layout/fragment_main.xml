@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="main_fragment" />
+
+    <Button
+        android:id="@+id/bt_to_second_1"
+        android:layout_below="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="to second_fragment方式1"
+        android:gravity="left"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_to_second_2"
+        android:layout_below="@+id/bt_to_second_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="to second_fragment方式2"
+        android:gravity="left"
+        android:textAllCaps="false" />
+
+</RelativeLayout>

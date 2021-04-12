@@ -19,7 +19,7 @@ public class JetpackHomeActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_lifecycle, R.id.bt_activity_lifecycle, R.id.bt_service_lifecycle, R.id.bt_app_lifecycle})
+    @OnClick({R.id.bt_lifecycle, R.id.bt_activity_lifecycle, R.id.bt_service_lifecycle, R.id.bt_app_lifecycle, R.id.bt_nav})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_lifecycle:
@@ -33,6 +33,9 @@ public class JetpackHomeActivity extends BaseActivity {
                 break;
             case R.id.bt_app_lifecycle:
                 //看AppLocationListener
+                break;
+            case R.id.bt_nav:
+                startActivity(new Intent(this, NavigationActivity.class));
                 break;
         }
     }
