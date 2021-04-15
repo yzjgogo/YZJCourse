@@ -15,7 +15,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Jetpack.NavigationActivity"></activity>
+        <activity android:name=".Base.ScrollerActivity"></activity>
+        <activity android:name=".Jetpack.NavigationActivity" />
 
         <service
             android:name=".Jetpack.MyLCService"
