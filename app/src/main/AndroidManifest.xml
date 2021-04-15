@@ -18,7 +18,7 @@
         <activity android:name=".Base.ScrollerActivity"></activity>
         <activity android:name=".Jetpack.NavigationActivity" />
         <activity android:name=".Jetpack.ViewModelActivity"></activity>
-        <activity android:name=".Jetpack.NavigationActivity" />
+<!--        <activity android:name=".Jetpack.NavigationActivity" />-->
 
         <service
             android:name=".Jetpack.MyLCService"
