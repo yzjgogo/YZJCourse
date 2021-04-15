@@ -49,10 +49,10 @@ class MainFragment : Fragment() {
         //这里才是createNavigateOnClickListener的正确用法
         mView.findViewById<View>(R.id.bt_to_second_2).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_mainFragment_to_secondFragment))
         //下面对createNavigateOnClickListener的使用时错误的
-        mView.findViewById<View>(R.id.bt_to_second_2).setOnClickListener{
-            //这样做是无效的，因为createNavigateOnClickListener的作用是返回一个OnClickListener，并不是触发跳转，真正要触发跳转还需要这个OnClickListener得到执行才可以
-            Navigation.createNavigateOnClickListener(R.id.action_mainFragment_to_secondFragment,null)
-        }
+//        mView.findViewById<View>(R.id.bt_to_second_2).setOnClickListener{
+//            //这样做是无效的，因为createNavigateOnClickListener的作用是返回一个OnClickListener，并不是触发跳转，真正要触发跳转还需要这个OnClickListener得到执行才可以
+//            Navigation.createNavigateOnClickListener(R.id.action_mainFragment_to_secondFragment,null)
+//        }
         return mView
     }
 

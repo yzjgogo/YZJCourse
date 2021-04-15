@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/tabbar_item_font_color_checked">
+            android:background="@color/strong_red_hint_text_color">
 
             <Button
                 android:id="@+id/bt_nav"
@@ -60,5 +60,13 @@
                 android:gravity="left"
                 android:textAllCaps="false" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_view_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ViewModel"
+            android:gravity="left"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
