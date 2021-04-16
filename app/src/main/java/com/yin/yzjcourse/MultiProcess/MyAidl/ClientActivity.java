@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.yin.yzjcourse.BaseActivity;
-import com.yin.yzjcourse.IMyAidl;
+//import com.yin.yzjcourse.IMyAidl;
 import com.yin.yzjcourse.R;
 
 import java.util.List;
@@ -23,7 +23,7 @@ import butterknife.OnClick;
 public class ClientActivity extends BaseActivity {
     @BindView(R.id.tv_result)
     TextView tvResult;
-    private IMyAidl mAidl;
+//    private IMyAidl mAidl;
     /**
      * 这是与服务链接的回调
      */
@@ -42,12 +42,12 @@ public class ClientActivity extends BaseActivity {
          */
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            mAidl = IMyAidl.Stub.asInterface(service);
+//            mAidl = IMyAidl.Stub.asInterface(service);
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            mAidl = null;
+//            mAidl = null;
         }
     };
 
@@ -99,12 +99,12 @@ public class ClientActivity extends BaseActivity {
         Random random = new Random();
         Person person = new Person("yzj" + random.nextInt(10));
 
-        try {
-            mAidl.addPerson(person);
-            List<Person> personList = mAidl.getPersonList();
-            tvResult.setText(personList.toString());
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            mAidl.addPerson(person);
+//            List<Person> personList = mAidl.getPersonList();
+//            tvResult.setText(personList.toString());
+//        } catch (RemoteException e) {
+//            e.printStackTrace();
+//        }
     }
 }

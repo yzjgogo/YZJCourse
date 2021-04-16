@@ -25,6 +25,7 @@ class TimerViewModel:ViewModel() {
 
     override fun onCleared() {
         DLog.eLog("自动执行onCleared")
+        timer?.cancel()
         super.onCleared()
     }
 

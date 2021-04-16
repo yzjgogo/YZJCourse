@@ -5,13 +5,13 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
 
-import com.yin.yzjcourse.IMyAidl;
+//import com.yin.yzjcourse.IMyAidl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyService extends Service {
-    private ArrayList<Person> mPersons;
+//    private ArrayList<Person> mPersons;
 
     /**
      * 为了实现跨进程通信，我在清单文件中给这个Service设置了android:Process属性，使这个服务运行在另一个进程中
@@ -27,18 +27,18 @@ public class MyService extends Service {
      * 重写这个IMyAidl的接口方法，之后客户端与该服务建立连接后，客户端会获取该IBinder实例，
      * 当然可以访问该实例的方法，例如访问addPerson()getPersonList()等等，这样也就实现了跨进程通信。
      */
-    private IBinder mIBinder = new IMyAidl.Stub() {
-
-        @Override
-        public void addPerson(Person person) throws RemoteException {
-            mPersons.add(person);
-        }
-
-        @Override
-        public List<Person> getPersonList() throws RemoteException {
-            return mPersons;
-        }
-    };
+//    private IBinder mIBinder = new IMyAidl.Stub() {
+//
+//        @Override
+//        public void addPerson(Person person) throws RemoteException {
+//            mPersons.add(person);
+//        }
+//
+//        @Override
+//        public List<Person> getPersonList() throws RemoteException {
+//            return mPersons;
+//        }
+//    };
 
     /**
      * 当有远程客户端绑定这个服务时，就把mIBinder返回给客户端，客户端可通过这个mIBinder调用服务端的方法，
@@ -48,7 +48,7 @@ public class MyService extends Service {
      */
     @Override
     public IBinder onBind(Intent intent) {
-        mPersons = new ArrayList<>();
-        return mIBinder;
+//        mPersons = new ArrayList<>();
+        return null;
     }
 }
