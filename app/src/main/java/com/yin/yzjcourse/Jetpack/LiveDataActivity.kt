@@ -23,9 +23,9 @@ class LiveDataActivity : BaseActivity() {
         val liveData = viewModel.currentSecond
 
         //给liveData添加一个观察者，当ViewModel里的数据发生变化时，被观察者LiveData会通知观察者
-        liveData?.observe(this, Observer<Int> {
+        liveData?.observe(this){
             textView.text = it.toString()
-        })
+        }
 
         //更新数据
         findViewById<Button>(R.id.bt_restart).setOnClickListener {
