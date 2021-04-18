@@ -1,5 +1,7 @@
 package com.yin.yzjcourse;
 
+import android.content.Context;
+
 import androidx.lifecycle.ProcessLifecycleOwner;
 import androidx.multidex.MultiDexApplication;
 
@@ -12,9 +14,11 @@ import com.yin.yzjcourse.Jetpack.AppLocationListener;
  */
 
 public class MyApplication extends MultiDexApplication {
+    public static Context appContext;
     @Override
     public void onCreate() {
         super.onCreate();
+        appContext = this;
         ProcessLifecycleOwner.get().getLifecycle().addObserver(new AppLocationListener());
 
 //        ARouter.openLog();

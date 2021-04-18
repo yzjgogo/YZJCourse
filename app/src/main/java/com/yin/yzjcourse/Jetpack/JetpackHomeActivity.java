@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.yin.yzjcourse.BaseActivity;
+import com.yin.yzjcourse.Jetpack.Room.RoomActivity;
 import com.yin.yzjcourse.R;
 
 import butterknife.ButterKnife;
@@ -19,7 +20,7 @@ public class JetpackHomeActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_lifecycle, R.id.bt_activity_lifecycle, R.id.bt_service_lifecycle, R.id.bt_app_lifecycle, R.id.bt_nav, R.id.bt_view_model, R.id.bt_live_data})
+    @OnClick({R.id.bt_lifecycle, R.id.bt_activity_lifecycle, R.id.bt_service_lifecycle, R.id.bt_app_lifecycle, R.id.bt_nav, R.id.bt_view_model, R.id.bt_live_data, R.id.bt_room})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_lifecycle:
@@ -42,6 +43,9 @@ public class JetpackHomeActivity extends BaseActivity {
                 break;
             case R.id.bt_live_data:
                 startActivity(new Intent(this, LiveDataActivity.class));
+                break;
+            case R.id.bt_room:
+                startActivity(new Intent(this, RoomActivity.class));
                 break;
         }
     }
