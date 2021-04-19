@@ -14,5 +14,11 @@ data class Student(
         var name:String,
 
         @ColumnInfo(name = "age", typeAffinity = ColumnInfo.TEXT)
-        var age:String
+        var age:String,
+
+        /**
+         * salary属性，是在学数据库升级时，[MyDatabase.MIGRATION_3_4]用到的升级后新增一列
+         */
+        @ColumnInfo(name = "salary", typeAffinity = ColumnInfo.TEXT)
+        var salary:String = "100"
 )
