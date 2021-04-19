@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModelProvider
 import butterknife.ButterKnife
 import butterknife.OnClick
 import com.yin.yzjcourse.BaseActivity
@@ -19,6 +21,19 @@ class RoomActivity : BaseActivity() {
         setContentView(R.layout.activity_room)
         ButterKnife.bind(this)
         myDatabase = MyDatabase.instance
+
+        observeData()
+    }
+
+    /**
+     * 使用LiveData，ViewModel配合Room实现，数据库中数据变化的实时监听
+     */
+    private fun observeData() {
+        val roomViewModel = ViewModelProvider(this).get(RoomViewModel::class.java)
+        val liveData: LiveData<List<Student>> = roomViewModel.studentLiveData
+        liveData.observe(this) {
+            DLog.eLog("监听到表数据的变化：$it")
+        }
     }
 
     @OnClick(R.id.bt_add, R.id.bt_delete, R.id.bt_update, R.id.bt_query)
@@ -46,7 +61,7 @@ class RoomActivity : BaseActivity() {
             R.id.bt_query -> {
                 Thread{
                     val students = myDatabase.studentDao().getStudentList()
-                    DLog.eLog("所有数据:${students}")
+                    DLog.eLog("所有数据:${students.value}")
                 }.start()
             }
         }
