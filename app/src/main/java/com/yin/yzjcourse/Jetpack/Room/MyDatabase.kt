@@ -75,6 +75,10 @@ abstract class MyDatabase : RoomDatabase() {
                 //如果我们把数据库版本升级到5(version = 5)，但没有找对对应的Migration(没写对应的升级方案)，则会报异常IllegalStateException异常而崩溃，
                 //为了避免崩溃，则需要加入fallbackToDestructiveMigration()，该方法能够在出现升级异常时，重新创建数据表，只是所有数据都会消失
                 .fallbackToDestructiveMigration()
+                //从Assets中加载db文件,Room 2.2版本支持
+//                .createFromAsset(databaseFilePath)
+                //从sd卡中加载db文件,Room 2.2版本支持
+//                .createFromFile(databaseFile)
                 .build()
     }
 
