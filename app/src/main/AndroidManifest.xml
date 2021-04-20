@@ -15,7 +15,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Jetpack.Room.RoomActivity"></activity>
+        <activity android:name=".Jetpack.work.WorkActivity"></activity>
+        <activity android:name=".Jetpack.Room.RoomActivity" />
         <activity android:name=".Jetpack.LiveDataActivity" />
         <activity android:name=".Base.ScrollerActivity" />
         <activity android:name=".Jetpack.NavigationActivity" />
