@@ -147,6 +147,13 @@
                 android:layout_height="wrap_content"
                 android:text="自己实现双指缩放"
                 android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_multi_point"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="多点触控"
+                android:textAllCaps="false" />
         </LinearLayout>
 
         <Button
