@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/strong_red_hint_text_color">
+            android:background="@color/capital_serve">
 
             <Button
                 android:id="@+id/bt_nav"
