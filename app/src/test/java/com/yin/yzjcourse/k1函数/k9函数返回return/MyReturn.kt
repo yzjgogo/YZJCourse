@@ -19,7 +19,7 @@ class MyReturn {
     fun findAlice2(list: List<Person>) {
         list.forEach {
             if (it.name == "Alice") {
-                return//也是全局返回，整个findAlice2()结束
+                return//也是全局返回，整个findAlice2()结束，因为forEach是inline修饰的
             }
         }
         println("findAlice2最后")
