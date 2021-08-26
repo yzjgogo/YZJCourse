@@ -92,14 +92,14 @@ class k4字符串 {
     fun testEmptyCheck() {
         var str1: String? = null
         var str2: String? = ""
-        var str3: String? = "    "
+        var str3: String? = "   "
         var str4: String = ""
         var str5: String = "   "
 
         println(str1.isNullOrEmpty())//对可空值判断是null或这""    可以用null值调用
-        println(str3.isNullOrBlank())//对可空值判断是null或者"  "  可以用null值调用
+        println(str3.isNullOrBlank())//对可空值判断是null或者""或者"  "  可以用null值调用
         println(str4.isEmpty())//对非空值判断是不是""     不可以用null值调用
-        println(str5.isBlank())//对非空值判断是不是"   "  不可以用null值调用
+        println(str5.isBlank())//对非空值判断是不是""或"   "  不可以用null值调用
     }
 
 
