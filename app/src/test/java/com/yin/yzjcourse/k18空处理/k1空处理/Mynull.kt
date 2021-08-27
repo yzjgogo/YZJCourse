@@ -44,7 +44,7 @@ class Mynull {
         //因为toString()是Any?的扩展函数，可空类型的扩展函数调用时永远不需要用?
         val y22 = y2.toString()//因为y2的类型是'Double?'，所以不会报错
 
-        //if you don't want return a null value,you can use ':' define a default value;
+        //if you don't want return a null value,you can use '?:' define a default value;
         val y3 = x?.toDouble() ?: 0.0//if x is null will return 0.0
         //above line be equivalent to latter code.you will find that kotlin can give 'if' to a variable.
 //        val y4 = if (x != null) {
