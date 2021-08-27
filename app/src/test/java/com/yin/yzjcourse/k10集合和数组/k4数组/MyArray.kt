@@ -53,7 +53,7 @@ class MyArray {
 
 
         //构造器创建一个指定长度的基本类型数组，数组元素是具体类型的默认值
-        //这里创建了长度是3的int数组，各个元素默认值是null
+        //这里创建了长度是3的int数组，各个元素默认值是0
         val intArr2 = IntArray(3)//[0,0,0]
         for (i in intArr2.indices) {
             println("intArr2[$i]=${intArr2[i]}")
