@@ -46,6 +46,7 @@ class MyMember {
         mysalute()
         val myadd = ::add
         myadd(5)
+        (::add)(5)//这样也可以
         println("*************%%%%%%%%%%%%%%%%%%%%")
 
 
