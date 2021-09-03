@@ -40,14 +40,30 @@ class RetrofitGetActivity : BaseActivity() {
         }
     }
 
+    /**
+    Response:是所有网络请求返回后的数据的总体，包含，状态码，请求头，message，后台返回的业务数据实体(ResponseBody)
+    ResponseBody：在Response里，是真正后台返回的业务数据实体，
+     */
     private fun doGet() {
+        //第二步：通过build()构建一个Retrofit实例，
         val retrofit = Retrofit.Builder().baseUrl(BASE_URL)
                 .build()
+        //第三步：通过create()创建一个接口示例，这里并没有让你写一个类实现BosToolService接口
         val service = retrofit.create(BosToolService::class.java)
+        //第四步：获取发起网络请求的Call对象
         val call: Call<ResponseBody> = service.getBosData("zhledu", TOKEN)
+        //第五步：异步发起网络请求
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 try {
+                    DLog.eLog("${response.isSuccessful}," +
+                            "${response.code()}," +
+                            "${response.errorBody()}," +
+                            "${response.headers().toString()}," +
+                            "${response.message()}")
+
+
+                    DLog.eLog("是ResponseBody吗？：${response.body() is ResponseBody}")//是ResponseBody吗？：true
                     val rspBody: String = response.body()!!.string()
                     val gson = Gson()
                     val bosData = gson.fromJson<RspEntity>(rspBody, RspEntity::class.java)
@@ -64,7 +80,7 @@ class RetrofitGetActivity : BaseActivity() {
     }
 
     /**
-    第一步：定义网络请求接口
+    第一步：定义网络请求接口,是一个语法上的interface接口
 
     @GET -> get请求
 
@@ -74,6 +90,8 @@ class RetrofitGetActivity : BaseActivity() {
     注意：@Path不可用于get请求中请求参数的动态替换，例如http://file-manage.xxfz.com.cn//baiduyun/baiduboskey/zhledu/bj?token={mToken}，@Path("mToken") 是错误的
 
     @Query("token") -> 用于get请求的参数传递，其中token是参数名，不能乱写，后台怎么定义的就怎么写，发起网络请求是会自动拼到网络请求地址后面(例如 ?token=mToken&....)
+
+    Call<ResponseBody> -> 用于发起网络请求的对象，其泛型ResponseBody就是Retrofit封装的服务端返回的业务数据实体，包含在Response<ResponseBody>里；
      */
     interface BosToolService {
         @GET("/baiduyun/baiduboskey/{dirpath}/bj")

@@ -7,6 +7,7 @@ import com.yin.yzjcourse.utils.DLog;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -18,8 +19,30 @@ import java.util.TreeSet;
 
 public class ExampleUnitTest {
 
+    private BigDecimal fromFenToYuan(int fen){
+
+        return new BigDecimal(
+                Double.toString(fen)
+        )
+                .divide(
+                        new BigDecimal(100), 2, BigDecimal.ROUND_HALF_UP
+                );
+    }
+
+    @Test
+    public void justTest(){
+boolean a = Objects.equals(null, null);
+        System.out.println("结果："+a);
+    }
     @Test
     public void myTest() {
+
+        BigDecimal big = fromFenToYuan(2345);
+        System.out.println(big);
+        System.out.println(big.toString());
+
+
+
         /*
         String abc = "dddd";
         System.out.println(abc);
