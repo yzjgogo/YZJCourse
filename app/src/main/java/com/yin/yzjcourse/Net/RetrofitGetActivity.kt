@@ -16,6 +16,7 @@ import retrofit2.Retrofit
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
+import retrofit2.http.QueryMap
 
 
 private val TOKEN: String = "d8ed1f5c5d76acb2f5adc1ab5bf49d5efe7b39577695b8ca6c30c53b9f8f11f4"
@@ -52,6 +53,10 @@ class RetrofitGetActivity : BaseActivity() {
         val service = retrofit.create(BosToolService::class.java)
         //第四步：获取发起网络请求的Call对象
         val call: Call<ResponseBody> = service.getBosData("zhledu", TOKEN)
+        //当使用@QueryMap传递请求参数时：
+//        val map = HashMap<String,String>()
+//        map["token"] = TOKEN
+//        val call: Call<ResponseBody> = service.getBosData("zhledu", map)
         //第五步：异步发起网络请求
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
@@ -63,7 +68,7 @@ class RetrofitGetActivity : BaseActivity() {
                             "${response.message()}")
 
 
-                    DLog.eLog("是ResponseBody吗？：${response.body() is ResponseBody}")//是ResponseBody吗？：true
+                    DLog.eLog("1是ResponseBody吗？：${response.body() is ResponseBody}")//是ResponseBody吗？：true
                     val rspBody: String = response.body()!!.string()
                     val gson = Gson()
                     val bosData = gson.fromJson<RspEntity>(rspBody, RspEntity::class.java)
@@ -105,5 +110,13 @@ class RetrofitGetActivity : BaseActivity() {
 //        @GET("/baiduyun/baiduboskey/{dirpath}/bj?token=d8ed1f5c5d76acb2f5adc1ab5bf49d5efe7b39577695b8ca6c30c53b9f8f11f4")
 //        fun getBosData(
 //                @Path("dirpath") dir: String): Call<ResponseBody>
+
+
+        //如果有多个请求参数，可以通过Map封装，对应注解@QueryMap
+//        @GET("/baiduyun/baiduboskey/{dirpath}/bj")
+//        fun getBosData(
+//                @Path("dirpath") dir: String,
+//                @QueryMap options: Map<String, String>
+//        ): Call<ResponseBody>
     }
 }
