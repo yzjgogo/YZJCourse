@@ -18,8 +18,8 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 
-val TOKEN: String = "d8ed1f5c5d76acb2f5adc1ab5bf49d5efe7b39577695b8ca6c30c53b9f8f11f4"
-val BASE_URL: String = "http://file-manage.xxfz.com.cn/"
+private val TOKEN: String = "d8ed1f5c5d76acb2f5adc1ab5bf49d5efe7b39577695b8ca6c30c53b9f8f11f4"
+private val BASE_URL: String = "http://file-manage.xxfz.com.cn/"
 
 class RetrofitGetActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,5 +99,11 @@ class RetrofitGetActivity : BaseActivity() {
                 @Path("dirpath") dir: String,
                 @Query("token") mToken: String
         ): Call<ResponseBody>
+
+
+        //直接在url路径后面拼上请求参数也是可以的
+//        @GET("/baiduyun/baiduboskey/{dirpath}/bj?token=d8ed1f5c5d76acb2f5adc1ab5bf49d5efe7b39577695b8ca6c30c53b9f8f11f4")
+//        fun getBosData(
+//                @Path("dirpath") dir: String): Call<ResponseBody>
     }
 }
