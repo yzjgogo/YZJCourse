@@ -37,7 +37,7 @@ public class NetActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_ok, R.id.bt_temp,R.id.bt_original_socket,R.id.bt_web_socket,R.id.bt_url_connection})
+    @OnClick({R.id.bt_ok, R.id.bt_temp,R.id.bt_original_socket,R.id.bt_web_socket,R.id.bt_url_connection,R.id.bt_retrofit})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_ok:
@@ -95,6 +95,9 @@ public class NetActivity extends BaseActivity {
                 break;
             case R.id.bt_url_connection:
                 startActivity(new Intent(this, UrlConnectionActivity.class));
+                break;
+            case R.id.bt_retrofit:
+                startActivity(new Intent(this, RetrofitActivity.class));
                 break;
         }
     }

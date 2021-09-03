@@ -52,5 +52,12 @@
             android:layout_height="wrap_content"
             android:text="HttpURLConnection"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Retrofit"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
