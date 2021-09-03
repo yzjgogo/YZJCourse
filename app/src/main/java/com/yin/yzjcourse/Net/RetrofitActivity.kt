@@ -15,15 +15,15 @@ class RetrofitActivity : BaseActivity() {
         ButterKnife.bind(this)
     }
 
-    @OnClick(R.id.bt_get)
+    @OnClick(R.id.bt_get,R.id.bt_post)
     fun onViewClicked(view: View) {
         when (view.id) {
             R.id.bt_get -> {
                 startActivity(Intent(this, RetrofitGetActivity::class.java))
             }
-//            R.id.bt_stop_service -> {
-//                stopService(Intent(this, MyLCService::class.java))
-//            }
+            R.id.bt_post -> {
+                startActivity(Intent(this, RetrofitPostActivity::class.java))
+            }
         }
     }
 }
