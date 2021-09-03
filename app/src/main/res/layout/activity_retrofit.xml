@@ -16,6 +16,12 @@
         android:textAllCaps="false"
         android:text="get请求与ResponseBody"/>
     <Button
+        android:id="@+id/bt_get_convert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="get请求-ConverterFactory"/>
+    <Button
         android:id="@+id/bt_post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -15,11 +15,14 @@ class RetrofitActivity : BaseActivity() {
         ButterKnife.bind(this)
     }
 
-    @OnClick(R.id.bt_get,R.id.bt_post)
+    @OnClick(R.id.bt_get,R.id.bt_post,R.id.bt_get_convert)
     fun onViewClicked(view: View) {
         when (view.id) {
             R.id.bt_get -> {
                 startActivity(Intent(this, RetrofitGetActivity::class.java))
+            }
+            R.id.bt_get_convert -> {
+                startActivity(Intent(this, ConverterFactoryActivity::class.java))
             }
             R.id.bt_post -> {
                 startActivity(Intent(this, RetrofitPostActivity::class.java))
