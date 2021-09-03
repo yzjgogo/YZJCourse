@@ -7,16 +7,22 @@
     android:orientation="vertical"
     tools:context=".mykt.MyKtActivity">
     <Button
-        android:id="@+id/btExtension"
+        android:id="@+id/bt_extension"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="kotlin-android-extensions"
         android:textAllCaps="false"/>
     <Button
-        android:id="@+id/btAnko"
+        android:id="@+id/bt_anko"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="anko的用法"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/bt_xiecheng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="协程"
         android:textAllCaps="false"/>
 
 </LinearLayout>

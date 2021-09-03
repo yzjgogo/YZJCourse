@@ -36,6 +36,11 @@ android {
             }
         }
     }
+//    kotlin {
+//        experimental {
+//            coroutines 'enable'
+//        }
+//    }
     signingConfigs {
         myConfigs {
             storeFile file("yzjcourse.jks")
@@ -149,5 +154,9 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
 
     implementation "androidx.work:work-runtime-ktx:2.5.0"
+
+    //协程
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9"
 
 }
