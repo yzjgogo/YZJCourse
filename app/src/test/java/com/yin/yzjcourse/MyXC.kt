@@ -3,8 +3,7 @@ package com.yin.yzjcourse
 import kotlinx.coroutines.*
 import org.junit.Test
 
-
-
+/*
 fun main(args: Array<String>) {
     /*
     GlobalScope.launch { // 在后台启动一个新的协程并继续
@@ -25,6 +24,7 @@ fun main(args: Array<String>) {
     println("第2:${Thread.currentThread().id},${Thread.currentThread().name}")
     //会阻塞所在的线程，不会开辟新的线程,目的是阻塞所在线程使有足够的时间等到launch加载的协程执行完
     //之所以用runBlocking包裹，可以用runBlocking实现一个协程，因为delay()是suspend函数，需要在协程内或另一个suspend函数内调用
+    //runBlocking不是suspend函数，只是一个普通函数
     runBlocking {
         //不是新的线程，仍然是外部那个线程
         delay(2000L)
@@ -89,39 +89,41 @@ fun main(args: Array<String>) {
     Thread.sleep(9000L)
     */
 
-    /**
-        runBlocking的launch类似post,会先向下继续执行，然后执行launch体
 
-        coroutineScope则不是，而是
-     */
-    /*
-    runBlocking { // this: CoroutineScope
-        launch {
-//            println("第10:${Thread.currentThread().id},${Thread.currentThread().name}")
-//            delay(200L)
-            println("第1:${Thread.currentThread().id},${Thread.currentThread().name}")
-        }
 
-        coroutineScope { // 创建一个协程作用域
-            launch {
-//                println("第20:${Thread.currentThread().id},${Thread.currentThread().name}")
-//                delay(500L)
-                println("第2:${Thread.currentThread().id},${Thread.currentThread().name}")
-            }
-//            println("第30:${Thread.currentThread().id},${Thread.currentThread().name}")
-//            delay(100L)
-            println("第3:${Thread.currentThread().id},${Thread.currentThread().name}")
+
+        /*
+        runBlocking { // this: CoroutineScope
+//                launch(Dispatchers.IO) {//这样的话，就会新建线程
+                launch {
+                        delay(200L)
+                        println("Task from runBlocking：${Thread.currentThread().id},${Thread.currentThread().name}")//不是新线程
+                }
+
+                //coroutineScope是一个suspend函数，所以会挂起，等到coroutineScope都执行完后，才会执行它的下一行
+                coroutineScope { // 创建一个协程作用域
+//                        launch(Dispatchers.IO) {//这样的话就会新建线程
+                        launch {
+                                delay(500L)
+                                println("Task from nested launch：${Thread.currentThread().id},${Thread.currentThread().name}")//不是新线程
+                        }
+
+                        delay(100L)
+                        println("Task from coroutine scope：${Thread.currentThread().id},${Thread.currentThread().name}") // 这一行会在内嵌 launch 之前输出
+                }
+
+                println("Coroutine scope is over：${Thread.currentThread().id},${Thread.currentThread().name}") // 这一行在内嵌 launch 执行完毕后才输出
         }
-        println("第4:${Thread.currentThread().id},${Thread.currentThread().name}")
-    }
-    */
+        */
+
+        println("ddddddddddddddd")
 }
-
+*/
 
 
 class MyXC {
-//    @Test
-//    fun test1(){
-//        println("sdfsdfsd")
-//    }
+    @Test
+    fun test1(){
+        println("sdfsdfsd")
+    }
 }

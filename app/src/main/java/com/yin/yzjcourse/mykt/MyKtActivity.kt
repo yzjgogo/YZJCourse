@@ -16,6 +16,7 @@ import kotlinx.coroutines.*
 import java.io.InputStream
 import java.net.HttpURLConnection
 import java.net.URL
+import kotlin.system.measureTimeMillis
 
 class MyKtActivity : BaseActivity() {
 
@@ -62,6 +63,8 @@ class MyKtActivity : BaseActivity() {
                 DLog.eLog("第4：${Thread.currentThread().name}\"")
                 */
 
+
+
                 /**
                  * 协程仅仅只是Kotlin为了更方便操作线程，而对线程API的封装，本质上还是线程在工作，这与android中的Handler和AsyncTask没什么区别；
                  *
@@ -70,21 +73,72 @@ class MyKtActivity : BaseActivity() {
                  * 挂起(suspend)：launch{"代码"}就好像android里post{"代码"}了一段代码，当这段代码运行到一个suspend函数时，此时，会兵分两路，
                  * 一路：原本运行这段协程的线程执行完毕，不再执行从这个suspend函数开始往后的所有代码，这个线程该干嘛干嘛去，例如继续刷新界面等等；
                  * 二路：这个suspend函数会开辟一个线程执行耗时操作，执行完成后会自动再切回原来这段协程所在的线程，从调用suspend函数的下一行开始继续执行；
-                 * 一般有耗时操作的函数我们会定义成suspend函数，提醒函数的调用者你需要在协程里调用我
+                 * 一般有耗时操作的函数我们会定义成suspend函数，提醒函数的调用者你需要在协程里调用我或者再另一个suspend函数调用我，
                  *
-                 * 非阻塞式调用：用同步的代码写出异步的调用的方式，避免了接口回调，这不是协程所独有的，完全可以通过且线程的方式实现非阻塞式调用，只有单线程的上下两行代码
+                 * 非阻塞式调用：用同步的代码写出异步的调用的方式，避免了接口回调，这不是协程所独有的，完全可以通过切线程的方式实现非阻塞式调用，只有单线程的上下两行代码
                  * 才是阻塞式的
                  * */
+                /*
                 GlobalScope.launch(Dispatchers.Main) {
                     DLog.eLog("开始：${Thread.currentThread().id},${Thread.currentThread().name}")
                     val result = requestNetData()
                     DLog.eLog("后面1：$result,${Thread.currentThread().id},${Thread.currentThread().name}")
                 }
                 DLog.eLog("后面2：${Thread.currentThread().id},${Thread.currentThread().name}")
+                */
+
+/*
+                runBlocking {
+                    val job = launch {
+                        try {
+                            repeat(1000) { i ->
+                                DLog.eLog("job: I'm sleeping $i ...")
+                                delay(500L)
+                            }
+                        } finally {
+//                            withContext(NonCancellable){
+                                delay(100)
+////                            coroutineScope {  }
+//                                DLog.eLog("job: I'm running finally")
+//                            }
+                        }
+                    }
+                    delay(1300L) // 延迟一段时间
+                    DLog.eLog("main: I'm tired of waiting!")
+                    job.cancel(CancellationException("出错了"))
+                    job.join()
+//                    job.cancelAndJoin() // 取消该作业并且等待它结束
+                    DLog.eLog("main: Now I can quit.")
+                }
+                */
+
+
+                DLog.eLog("线程：${Thread.currentThread().id},${Thread.currentThread().name}--")
+                runBlocking<Unit> {
+                    DLog.eLog("线程0：${Thread.currentThread().id},${Thread.currentThread().name}--")
+                    val time = measureTimeMillis {
+                        val one = async {
+                            DLog.eLog("线程1：${Thread.currentThread().id},${Thread.currentThread().name}--")
+                            doSomethingUsefulOne() }
+                        val two = async { doSomethingUsefulTwo() }
+                        DLog.eLog("类型:${one.javaClass},${two.javaClass},${one is Deferred}")
+                        DLog.eLog("The answer is ${one.await() + two.await()}")//The answer is 42
+                    }
+                    //对比test16()中的方式，时间快了一倍，因为one和two，是并发的，同时开始执行两个suspend函数
+                    DLog.eLog("Completed in $time ms")//Completed in 1025 ms
+                }
             }
         }
     }
+    suspend fun doSomethingUsefulOne(): Int {
+        delay(1000L) // 假设我们在这里做了些有用的事
+        return 13
+    }
 
+    suspend fun doSomethingUsefulTwo(): Int {
+        delay(1000L) // 假设我们在这里也做了一些有用的事
+        return 29
+    }
     suspend fun requestNetData():String{
         return withContext(Dispatchers.IO){
             return@withContext requestData()
