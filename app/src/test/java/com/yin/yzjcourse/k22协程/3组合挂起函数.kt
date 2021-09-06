@@ -1,9 +1,6 @@
 package com.yin.yzjcourse.k22协程
 
-import kotlinx.coroutines.CoroutineStart
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import org.junit.Test
 import kotlin.system.measureTimeMillis
 
@@ -72,6 +69,37 @@ class `3组合挂起函数` {
         }
     }
 
+
+    /**
+        一个async()并发调用 抽取的案例
+     */
+    @Test
+    fun test19() {
+        runBlocking<Unit> {
+            val time = measureTimeMillis {
+                println("The answer is ${concurrentSum()}")
+            }
+            println("Completed in $time ms")
+        }
+    }
+
+
+    /**
+    如果其中一个子协程（即 two）失败，第一个 async会被取消
+     */
+    @Test
+    fun test20() {
+        runBlocking<Unit> {
+            try {
+                failedConcurrentSum()
+            } catch(e: ArithmeticException) {
+                println("Computation failed with ArithmeticException:$isActive")//isActive == true
+            }finally {
+                println("Computation failed with ArithmeticException---:$isActive")//isActive == true
+            }
+        }
+    }
+
     suspend fun doSomethingUsefulOne(): Int {
         delay(1000L) // 假设我们在这里做了些有用的事
         return 13
@@ -80,5 +108,26 @@ class `3组合挂起函数` {
     suspend fun doSomethingUsefulTwo(): Int {
         delay(1000L) // 假设我们在这里也做了一些有用的事
         return 29
+    }
+    suspend fun concurrentSum(): Int = coroutineScope {
+        val one = async { doSomethingUsefulOne() }
+        val two = async { doSomethingUsefulTwo() }
+        one.await() + two.await()
+    }
+    //如果其中一个子协程（即 two）失败，第一个 async会被取消
+    suspend fun failedConcurrentSum(): Int = coroutineScope {
+        val one = async<Int> {
+            try {
+                delay(Long.MAX_VALUE) // 模拟一个长时间的运算
+                42
+            } finally {
+                println("First child was cancelled:$isActive")//isActive == false
+            }
+        }
+        val two = async<Int> {
+            println("Second child throws an exception")
+            throw ArithmeticException()
+        }
+        one.await() + two.await()
     }
 }
