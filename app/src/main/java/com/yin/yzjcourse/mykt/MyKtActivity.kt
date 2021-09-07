@@ -113,6 +113,8 @@ class MyKtActivity : BaseActivity() {
                 */
 
 
+
+/*
                 DLog.eLog("线程：${Thread.currentThread().id},${Thread.currentThread().name}--")
                 runBlocking<Unit> {
                     DLog.eLog("线程0：${Thread.currentThread().id},${Thread.currentThread().name}--")
@@ -126,6 +128,19 @@ class MyKtActivity : BaseActivity() {
                     }
                     //对比test16()中的方式，时间快了一倍，因为one和two，是并发的，同时开始执行两个suspend函数
                     DLog.eLog("Completed in $time ms")//Completed in 1025 ms
+                }
+                */
+
+
+//                coroutineScope {
+//
+//                }
+
+                GlobalScope.launch {
+                    DLog.eLog("第1：${Thread.currentThread().id}, ${Thread.currentThread().name}")
+                    launch {
+                        DLog.eLog("第2：${Thread.currentThread().id}, ${Thread.currentThread().name}")
+                    }
                 }
             }
         }

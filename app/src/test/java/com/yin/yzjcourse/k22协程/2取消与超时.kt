@@ -73,6 +73,7 @@ class `2取消与超时` {
     main: Now I can quit.
 
     isActive是CoroutineScope的扩展属性，可以实时判断当前协程有没有别取消
+     参考:com.yin.yzjcourse.k22协程.4协程上下文与调度器.test7
      */
     @Test
     fun test10() {
