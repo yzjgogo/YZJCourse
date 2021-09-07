@@ -148,7 +148,9 @@ class `4协程上下文与调度器` {
     }
 
     /**
+     弥补
     调试协程与线程
+
 
     1：用 IDEA 调试
     2：用日志调试
@@ -303,6 +305,67 @@ class `4协程上下文与调度器` {
                 //我工作在线程： DefaultDispatcher-worker-1 @test#2
                 println("我工作在线程： ${Thread.currentThread().name}")
             }
+        }
+    }
+
+    /**
+        协程的作用域与协程的创建
+
+        1：public fun CoroutineScope(context: CoroutineContext): CoroutineScope
+
+        2：MainScope()
+     */
+    @Test
+    fun test11() {
+        runBlocking<Unit> {
+            val activity = Activity()
+            activity.doSomething() // 运行测试函数
+            println("Launched coroutines")
+            delay(500L) // 延迟半秒钟
+            println("Destroying activity!")
+            activity.destroy() // 取消所有的协程
+            delay(1000) // 为了在视觉上确认它们没有工作
+        }
+    }
+    //模拟一个Activity
+    class Activity {
+        private val mainScope = CoroutineScope(Dispatchers.Default) // use Default for test purposes
+//        private val mainScope2 = MainScope()// 工厂函数，使用Dispatchers.Main为默认的调度器
+
+        fun destroy() {
+            mainScope.cancel()
+        }
+
+        fun doSomething() {
+            // 在示例中启动了 10 个协程，且每个都工作了不同的时长
+            repeat(10) { i ->
+                mainScope.launch {
+                    delay((i + 1) * 200L) // 延迟 200 毫秒、400 毫秒、600 毫秒等等不同的时间
+                    println("Coroutine $i is done")
+                }
+            }
+        }
+    }
+
+
+    /**
+     弥补
+    https://www.kotlincn.net/docs/reference/coroutines/coroutine-context-and-dispatchers.html
+     */
+    val threadLocal = ThreadLocal<String?>() // 声明线程局部变量
+    @Test
+    fun test12(){
+        runBlocking<Unit> {
+            threadLocal.set("main")
+            println("Pre-main, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
+//            println("Pre-main, current thread: ${Thread.currentThread().name}")
+            val job = launch(Dispatchers.Default + threadLocal.asContextElement(value = "launch")) {
+                println("Launch start, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
+                yield()
+                println("After yield, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
+            }
+            job.join()
+            println("Post-main, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
         }
     }
 }
