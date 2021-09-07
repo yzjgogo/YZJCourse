@@ -94,63 +94,29 @@ class `1基础` {
         Thread.sleep(9000L)
     }
 
-    /**
-    runBlocking 与 coroutineScope的区别
-    test7_1和test7_2
-
-    第1
-    第2 等5000ms
-    第3
-    第4
-
-    前提：只看里面的runBlocking,不看外面的，外面的只是为了和test7_2保持一致，一样的协程环境
-     结论：runBlocking方法会阻塞当前线程等待协程的执行，
-     例如这里：“第1”执行后，遇到了runBlocking,则这个runBlocking会阻塞其所在的线程，直到整个runBlocking协程及其所有子协程执行完后才会解除阻塞，因此接着这行“第2”
-     等了5000ms后执行“第3”，这时，整个runBlocking执行完毕，线程的阻塞解除，就轮到“第4”执行了
-
-     注意无论runBlocking传入的什么CoroutineContext效果都是一样的
-     */
     @Test
-    fun test7_1() {
-        runBlocking {
-            println("第1")
-//            runBlocking(Dispatchers.IO) {
-//            runBlocking(Dispatchers.Unconfined) {
-            runBlocking {
-                println("第2")
-                delay(5000)
-                println("第3")
+    fun test7() {
+        runBlocking { // this: CoroutineScope
+//                launch(Dispatchers.IO) {//这样的话，就会新建线程
+            launch {
+                delay(200L)
+                println("Task from runBlocking：${Thread.currentThread().id},${Thread.currentThread().name}")//不是新线程
             }
-            println("第4")
-        }
-    }
-    @Test
-    fun test7_2() {
-        /*
-        runBlocking {
-            println("第11")
-//            runBlocking(Dispatchers.IO) {
-//            runBlocking(Dispatchers.Unconfined) {
-            coroutineScope {
-                println("第22")
-                delay(5000)
-                println("第33")
+
+            //coroutineScope是一个suspend函数，所以会挂起，等到coroutineScope都执行完后，才会执行它的下一行
+            coroutineScope { // 创建一个协程作用域
+//                        launch(Dispatchers.IO) {//这样的话就会新建线程
+                launch {
+                    delay(500L)
+                    println("Task from nested launch：${Thread.currentThread().id},${Thread.currentThread().name}")//不是新线程
+                }
+
+                delay(100L)
+                println("Task from coroutine scope：${Thread.currentThread().id},${Thread.currentThread().name}")
             }
-            println("第44")
+
+            println("Coroutine scope is over：${Thread.currentThread().id},${Thread.currentThread().name}")
         }
-        */
-        println("第1")
-        GlobalScope.launch(Dispatchers.IO) {
-            println("第2")
-            coroutineScope {
-                println("第3")
-                delay(5000)
-                println("第4")
-            }
-            println("第5")
-        }
-        println("第6")
-        Thread.sleep(9000)
     }
 
     /**

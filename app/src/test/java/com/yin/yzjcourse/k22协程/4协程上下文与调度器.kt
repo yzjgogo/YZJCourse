@@ -262,31 +262,47 @@ class `4协程上下文与调度器` {
 
     /**
 
+    Started main coroutine:Test worker @main#1
+    Computing v1:Test worker @v1coroutine#2
+    Computing v2:Test worker @v2coroutine#3
+    The answer for v1 / v2 = 42
+
+        给协程命名，方便调试，命名后，输出线程名称Thread.currentThread().name，时就会带有协程信息
+        值得注意的是CoroutineName也是CoroutineContext类型，但是我传入了名称怎么也传入指定的线程呢，看test10
      */
     @Test
     fun test9() {
-        runBlocking {
-            coroutineScope {
-                println("第1")
-                launch {
-                    println("第2")
-                    delay(5000)
-                    println("第3")
-                }
-                println("第4")
+        runBlocking(CoroutineName("main")) {
+            println("Started main coroutine:${Thread.currentThread().name}")
+            // 运行两个后台值计算
+            val v1 = async(CoroutineName("v1coroutine")) {
+                delay(500)
+                println("Computing v1:${Thread.currentThread().name}")
+                252
             }
+            val v2 = async(CoroutineName("v2coroutine")) {
+                delay(1000)
+                println("Computing v2:${Thread.currentThread().name}")
+                6
+            }
+            println("The answer for v1 / v2 = ${v1.await() / v2.await()}")
         }
+    }
 
-        /*
-        runBlocking {
-            println("第1")
-            runBlocking(Dispatchers.IO) {
-                println("第2")
-                delay(5000)
-                println("第3")
+
+    /**
+
+        如果我既想给协程传入一个名字，又同时想给协程指定一个线程可通过“+”实现
+     例如这里给协程指定线程Dispatchers.Default，同时指定名字“test”
+
+     */
+    @Test
+    fun test10() {
+        runBlocking<Unit> {
+            launch(Dispatchers.Default + CoroutineName("test")) {
+                //我工作在线程： DefaultDispatcher-worker-1 @test#2
+                println("我工作在线程： ${Thread.currentThread().name}")
             }
-            println("第4")
         }
-        */
     }
 }
