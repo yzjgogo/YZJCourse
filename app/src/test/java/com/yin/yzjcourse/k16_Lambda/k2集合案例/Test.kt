@@ -9,10 +9,10 @@ class Test {
     fun mytest() {
         var list = listOf(Person("jack",20), Person("Mack",30))
         //maxBy其实是一个函数，该函数的参数也是函数类型，这里传入了lambda函数
-        var max1 = list.maxBy { it.age }
+        var max1 = list.maxByOrNull { it.age }
         println(max1)
 
-        var max2 = list.maxBy(Person::age)
+        var max2 = list.maxByOrNull(Person::age)
         println(max2)
     }
 }

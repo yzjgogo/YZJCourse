@@ -33,9 +33,9 @@ class MyMember {
         getAge3(fitper)
         getAge4(fitper)
 
-        val max1 = people.maxBy{it.age}
-        val max2 = people.maxBy(Person::age)
-        val max3 = people.maxBy(Person::getMyAge)//会自动调用getMyAge()
+        val max1 = people.maxByOrNull{it.age}
+        val max2 = people.maxByOrNull(Person::age)
+        val max3 = people.maxByOrNull(Person::getMyAge)//会自动调用getMyAge()
         println("$max1,$max2,$max3")
 
 

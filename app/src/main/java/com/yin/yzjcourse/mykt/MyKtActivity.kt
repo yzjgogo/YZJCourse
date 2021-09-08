@@ -136,13 +136,12 @@ class MyKtActivity : BaseActivity() {
 //
 //                }
 
-//                GlobalScope.launch {
-//                    DLog.eLog("第1：${Thread.currentThread().id}, ${Thread.currentThread().name}")
-//                    launch {
-//                        DLog.eLog("第2：${Thread.currentThread().id}, ${Thread.currentThread().name}")
-//                    }
-//                }
-             MainScope()
+                GlobalScope.launch {
+                    DLog.eLog("第1：${Thread.currentThread().id}, ${Thread.currentThread().name}")
+                    launch {
+                        DLog.eLog("第2：${Thread.currentThread().id}, ${Thread.currentThread().name}")
+                    }
+                }
             }
         }
     }

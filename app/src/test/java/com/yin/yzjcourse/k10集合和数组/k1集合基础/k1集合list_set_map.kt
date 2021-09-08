@@ -38,11 +38,11 @@ class k1集合list_set_map {
         println("最后一个:${list.last()}")
 
         //获取集合中的最大值，不仅适用于int集合，所有可比较的对象集合都可以
-        println("最大值:${list.max()}")
+        println("最大值:${list.maxOrNull()}")
 
         //根据条件获取最大的元素
         val people = listOf(Person("jack", 20), Person("fuck", 30))
-        val maxAge = people.maxBy { it.age }
+        val maxAge = people.maxByOrNull { it.age }
 
 
         //数字集合求和
