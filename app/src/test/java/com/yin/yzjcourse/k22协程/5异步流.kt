@@ -111,7 +111,11 @@ class `5异步流` {
 
     @Test
     fun test3(){
+        /**
+            创建一个flow产生给定的值
+         */
         runBlocking {
+            // flowOf(vararg elements: T) 的简单版
             flowOf(10010).collect {
                 println("打印出：$it")
             }
