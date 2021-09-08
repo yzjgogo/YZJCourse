@@ -7,6 +7,9 @@ import org.junit.Test
 
 class `5异步流` {
 
+    /**
+        参考图片：flow_normal.jpg
+     */
     @InternalCoroutinesApi
     @Test
     fun test1() {
