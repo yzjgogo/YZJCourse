@@ -1,11 +1,13 @@
 package com.yin.yzjcourse;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import com.yin.yzjcourse.Base.BaseContentActivity;
 import com.yin.yzjcourse.BuilderMode.BuilderModeActivity;
@@ -28,6 +30,7 @@ import com.yin.yzjcourse.MaterialDesign.MaterialDesignActivity;
 import com.yin.yzjcourse.MathAbout.MathAboutActivity;
 import com.yin.yzjcourse.MultiProcess.AndroidMulti.MultiMainActivity;
 import com.yin.yzjcourse.MultiProcess.MultiActivity;
+import com.yin.yzjcourse.Net.JsonHp;
 import com.yin.yzjcourse.Net.NetActivity;
 import com.yin.yzjcourse.OfficialWeight.OfficialWeightActivity;
 import com.yin.yzjcourse.Optimize.OptimizeActivity;
@@ -36,6 +39,8 @@ import com.yin.yzjcourse.Window.MyWindowActivity;
 import com.yin.yzjcourse.mykt.MyKtActivity;
 import com.yin.yzjcourse.structure.DataStructureActivity;
 import com.yin.yzjcourse.tools.ToolsActivity;
+
+import java.io.Serializable;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -85,7 +90,21 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
-
+    /**
+     * 打开当前APP
+     */
+    public static void openApp(Context context, String app_package, String strToken, String strData) {
+        try {
+            Intent intent = context.getPackageManager().getLaunchIntentForPackage(app_package);
+            if (intent != null) {
+                intent.putExtra("token", strToken);
+                intent.putExtra("data", strData);
+                context.startActivity(intent);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     @OnClick({R.id.bt_fore_service, R.id.bt_dialog_fragment, R.id.bt_rxjava,
             R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim, R.id.bt_property_anim_interpolator, R.id.bt_object_anim_holder
             , R.id.bt_anim_set, R.id.bt_anim_draw, R.id.bt_builder_mode, R.id.bt_math, R.id.bt_data_bind, R.id.bt_weight, R.id.bt_material_design,
@@ -94,13 +113,28 @@ public class MainActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_fore_service:
-                startActivity(new Intent(this, DraftActivity.class));
+//                startActivity(new Intent(this, DraftActivity.class));
 //                Integer i = null;
 //                i.toString();
 //                Intent intent = new Intent(this, ForeServiceActivity.class);
 //                startActivity(intent);
+                TokenEntity tokenEntity = new TokenEntity();
+//                tokenEntity.access_token = "426e7baab1b276bcfd6fe403fa2917415997c52295e013e81fdb76ab88c2a9f9";
+                tokenEntity.access_token = "f5c197d8447a02bdaeadf1ff3ae6f6b509da9f24d21fdec868bd5d410db2cace";
+//                tokenEntity.refresh_token = "f16bf55b5a19e36c6a777f13ef1d08 c05997c52295e013e81fdb76ab88c2a9f9";
+                tokenEntity.refresh_token = "6fd68bd984c21ea36881457a78d1e4d709da9f24d21fdec868bd5d410db2cace";
+                tokenEntity.token_type = "Bearer";
+                tokenEntity.expires_in = 5183999;
+                tokenEntity.account = "18117843721";
+                String strToken = JsonHp.getGsonConverter().toJson(tokenEntity);
+
+                String strData = "{\"op_type\":100001,\"remark\":\"https://zhledu.cdn.bcebos.com/ktb/usercourse/a5c89bf2-5cfd-428a-b727-f5e4d3195612\",\"remark_one\":\"https://zhledu.cdn.bcebos.com/ktb/usercourse/609557f0-15b3-464e-bb0c-d16d9edef043\",\"source_id\":7795}";
+
+                openApp(MainActivity.this,"com.zhl.enteacher.tv",strToken,strData);
+
                 break;
             case R.id.bt_dialog_fragment:
+//                Toast.makeText(this,"status code:502,reason phrase:Bad Gateway",Toast.LENGTH_SHORT).show();
                 CourseDialog dialog = CourseDialog.getInstance();
                 dialog.show(getSupportFragmentManager(), "CourseDialog");
                 break;
@@ -235,5 +269,13 @@ public class MainActivity extends BaseActivity {
 
     private void jie1() {
 
+    }
+
+    public class TokenEntity implements Serializable {
+        public String access_token;// 验证的token
+        public String token_type;//token类型
+        public long expires_in;//超时时间
+        public String refresh_token;//刷新token
+        public String account;//当前账户
     }
 }

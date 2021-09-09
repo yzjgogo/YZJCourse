@@ -5,10 +5,14 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import org.junit.Test
 
+/**
+ * 弥补
+ * // 流暂时到这里，有空继续研究：https://www.kotlincn.net/docs/reference/coroutines/flow.html，搜索test10()里的关键字就找到学到哪里了
+ * */
 class `5异步流` {
 
     /**
-        参考图片：flow_normal.jpg
+    参考图片：flow_normal.jpg
      */
     @InternalCoroutinesApi
     @Test
@@ -109,10 +113,13 @@ class `5异步流` {
     }
 
 
+    /**
+    其它流构建器：flowOf()
+     */
     @Test
-    fun test3(){
+    fun test3() {
         /**
-            创建一个flow产生给定的值
+        创建一个flow产生给定的值
          */
         runBlocking {
             // flowOf(vararg elements: T) 的简单版
@@ -120,13 +127,195 @@ class `5异步流` {
                 println("打印出：$it")
             }
             /**
-                同理flowOf(10010)是冷的，并没有发生数据
-                直到collect()才热起来，因此collect()是suspend函数，它里面的action也是action函数
+            同理flowOf(10010)是冷的，并没有发生数据
+            直到collect()才热起来，因此collect()是suspend函数，它里面的action也是action函数
 
-                整个调用逻辑参考：flowof.png
+            整个调用逻辑参考：flowof.png
 
 
              */
         }
     }
+
+
+    /**
+    其它流构建器：asFlow
+
+    调用过程类似test3()的flowOf(),
+
+     */
+    @Test
+    fun test4() {
+        runBlocking<Unit> {
+            // 将一个整数区间转化为流，同样asFlow()是冷的，直到collect()才热
+            (1..3).asFlow().collect { value -> println(value) }
+
+            //集合转换为流
+            val list = listOf<Int>(1, 2, 3)
+            list.asFlow().collect {
+                println("输出集合flow:$it")
+            }
+
+            //序列转换为流
+            list.asSequence().asFlow().collect {
+                println("序列转换为flow:$it")
+            }
+        }
+    }
+
+
+    /**
+
+    操作符：map  可以一个个转换流中的每一个元素、
+    操作符：filter  可以一个个转换流中的每一个元素满足条件的保留，不满足条件的淘汰
+    这些操作符也是冷操作符，因此这些操作符不是suspend函数，只是针对流的定义，当真正要使用流中的数据时，例如调用collect()
+    函数时操作符内部的逻辑(这里是performRequest())才真正执行，因此操作符的函数类型的参数是suspend函数
+
+
+     */
+    @Test
+    fun test5() {
+        runBlocking<Unit> {
+            (1..3).asFlow() // 一个请求流
+                    .map { request -> performRequest(request) }
+                    .collect { response -> println("使用map：$response") }
+
+
+            (1..3).asFlow().filter {
+                if (it > 1) {
+                    return@filter true
+                }
+                return@filter false
+            }.collect {
+                println("使用filter:$it")
+            }
+        }
+    }
+
+    suspend fun performRequest(request: Int): String {
+//        println("打印")//只有调用了collect()performRequest才真正执行，因此操作符也是冷的
+        delay(1000) // 模仿长时间运行的异步工作
+        return "response $request"
+    }
+
+
+    /**
+    操作符：transform，支持高度自定义，完全能够实现map,filter等等操作符的功能；
+     */
+    @Test
+    fun test6() {
+        runBlocking<Unit> {
+            (1..3).asFlow() // 一个请求流
+                    .transform { request ->
+                        //可在transform中根据业务发射指定的数据
+                        emit("Making request $request")
+                        emit(performRequest2(request))
+                    }
+                    .collect { response -> println(response) }
+        }
+    }
+
+    suspend fun performRequest2(request: Int): String {
+        delay(6000) // 模仿长时间运行的异步任务
+        return "response $request"
+    }
+
+
+    /**
+    限长操作符：take(n),无论这个流打算发射多少个，我最多取n个，没发射的也不会再执行发射操作
+     */
+    @Test
+    fun test7(){
+        runBlocking<Unit> {
+            numbers()
+                    .take(2) // 只获取前两个
+                    .collect { value -> println(value) }
+        }
+    }
+    fun numbers(): Flow<Int> = flow {
+        try {
+            emit(1)
+            emit(2)
+            println("This line will not execute")
+            emit(3)
+        } finally {
+            println("Finally in numbers")
+        }
+    }
+
+
+    /**
+    输出：1,4
+    输出：5,9
+    输出：14,16
+    输出：30,25
+    55
+
+        末端操作符1：
+        reduce:计算出所有值通过一定逻辑一一合并的结果
+        例如流 T(a),T(b),T(c),T(d)
+        T(a),T(b) --> T(ab)
+        T(ab),T(c) --> T(abc)
+  sum = T(abc),T(d) --> T(abcd)
+
+     */
+    @Test
+    fun test8(){
+        runBlocking<Unit> {
+            val sum = (1..5).asFlow()
+                    .map { it * it } // 数字 1 至 5 的平方
+                    .reduce { a, b -> println("输出：$a,$b"); a + b } // 求和（末端操作符）
+
+            /*
+            val list = listOf(Dog("a"),Dog("b"),Dog("c"))
+            val sum = list.asFlow()
+                    .reduce { a, b -> println("输出：$a,$b"); Dog(a.toString()+b.toString()) } // 求和（末端操作符）
+            */
+            println(sum)
+        }
+    }
+    data class Dog(val name:String)
+
+
+    /**
+    末端操作符2：
+     */
+    @Test
+    fun test9(){
+        runBlocking {
+            val list = (1..3).asFlow().toList()
+            println("流转为list：$list")
+
+            val set = (1..3).asFlow().toSet()
+            println("流转为set：$set")
+
+            val first = (1..3).asFlow().first()
+            println("第一个值：$first")
+
+            val single = (1..1).asFlow().single()
+            println("唯一的值：$single")
+        }
+    }
+
+
+    /**
+    流是连续的,可以连续调用多个操作符，且不启动新的协程
+     */
+    @Test
+    fun test10(){
+        runBlocking<Unit> {
+            (1..5).asFlow()
+                    .filter {
+                        println("Filter $it")
+                        it % 2 == 0
+                    }
+                    .map {
+                        println("Map $it")
+                        "string $it"
+                    }.collect {
+                        println("Collect $it")
+                    }
+        }
+    }
+    // 流暂时到这里，有空继续研究：https://www.kotlincn.net/docs/reference/coroutines/flow.html，搜索test10()里的关键字就找到学到哪里了
 }
