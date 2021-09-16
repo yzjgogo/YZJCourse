@@ -43,14 +43,15 @@
             android:layout_height="wrap_content"
             android:background="@color/light_yellow"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="周期性执行任务"
-                android:textSize="30sp"
-                android:textColor="@color/red"
+                android:layout_gravity="center_horizontal"
                 android:padding="20dp"
-                android:layout_gravity="center_horizontal"/>
+                android:text="周期性执行任务"
+                android:textColor="@color/red"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/bt_timing_schedule"
@@ -114,11 +115,13 @@ SystemClock.elapsedRealtime自开机后，经过的时间，包括深度睡眠�
             android:layout_height="wrap_content"
             android:text="今日头条屏幕适配方案"
             android:textAllCaps="false" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/chris_color"
             android:orientation="vertical">
+
             <Button
                 android:id="@+id/bt_gener_id"
                 android:layout_width="match_parent"
@@ -154,6 +157,38 @@ SystemClock.elapsedRealtime自开机后，经过的时间，包括深度睡眠�
             android:layout_height="wrap_content"
             android:text="获取状态栏高，是否有虚拟导航栏，虚拟导航栏的高"
             android:textAllCaps="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/themeColor"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bt_svg_bitmap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="解析.svg文件，获取bitmap，放大会变模糊"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_svg_local"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="解析本地.svg文件，直接显示矢量图形，放大不变模糊"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_svg_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="解析网络.svg文件，直接显示矢量图形，放大不变模糊"
+                android:textAllCaps="false" />
+            <com.yin.yzjcourse.tools.svg.SVGImageView
+                android:id="@+id/iv_svg"
+                android:layout_width="300dp"
+                android:layout_height="300dp"/>
+        </LinearLayout>
 
 
     </LinearLayout>

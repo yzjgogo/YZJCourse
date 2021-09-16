@@ -13,17 +13,23 @@
     <declare-styleable name="BitmapShadowView">
         <attr name="src" format="reference" />
         <attr name="shadowDx" format="integer" />
-        <attr name="shadowDy" format="integer"/>
-        <attr name="shadowColor" format="color"/>
-        <attr name="shadowRadius" format="float"/>
+        <attr name="shadowDy" format="integer" />
+        <attr name="shadowColor" format="color" />
+        <attr name="shadowRadius" format="float" />
     </declare-styleable>
     <!--自定义各种样式的头像-->
     <declare-styleable name="ShaderAvatarView">
-        <attr name="avatar" format="reference"/>
+        <attr name="avatar" format="reference" />
         <attr name="shape" format="enum">
-            <enum name="circle" value="0"/>
-            <enum name="rectangle" value="1"/>
+            <enum name="circle" value="0" />
+            <enum name="rectangle" value="1" />
         </attr>
-        <attr name="radius" format="float"/>
+        <attr name="radius" format="float" />
     </declare-styleable>
+
+    <declare-styleable name="SVGImageView">
+        <attr name="svg" format="reference|string" />
+        <attr name="css" format="string" />
+    </declare-styleable>
+
 </resources>

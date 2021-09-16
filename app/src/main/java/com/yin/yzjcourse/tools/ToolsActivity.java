@@ -3,18 +3,28 @@ package com.yin.yzjcourse.tools;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.SystemClock;
 import android.view.View;
 import android.widget.Toast;
 
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.Utils;
+import com.yin.yzjcourse.tools.svg.SVG;
+import com.yin.yzjcourse.tools.svg.SVGImageView;
+import com.yin.yzjcourse.tools.svg.SVGParseException;
 import com.yin.yzjcourse.utils.DLog;
-import com.yin.yzjcourse.utils.ScreenUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,11 +32,15 @@ import java.util.TimeZone;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ToolsActivity extends BaseActivity {
     private long mInitialTime;
+    @BindView(R.id.iv_svg)
+    SVGImageView iv_svg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,35 +48,36 @@ public class ToolsActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_heap_size,R.id.bt_format_ms,R.id.bt_count_down,R.id.bt_timing_schedule,
-            R.id.bt_timing_rate,R.id.bt_time_calculate,R.id.bt_crash_catch,R.id.bt_screen
-            ,R.id.bt_utils,R.id.bt_gener_id,R.id.bt_str,R.id.bt_progress,R.id.bt_drawable,R.id.bt_status_nav})
+    @OnClick({R.id.bt_heap_size, R.id.bt_format_ms, R.id.bt_count_down, R.id.bt_timing_schedule,
+            R.id.bt_timing_rate, R.id.bt_time_calculate, R.id.bt_crash_catch, R.id.bt_screen
+            , R.id.bt_utils, R.id.bt_gener_id, R.id.bt_str, R.id.bt_progress, R.id.bt_drawable
+            , R.id.bt_status_nav, R.id.bt_svg_bitmap, R.id.bt_svg_local, R.id.bt_svg_net})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_utils:
-                Utils.showToast(this,"看看这个类就行了");
+                Utils.showToast(this, "看看这个类就行了");
                 break;
             case R.id.bt_heap_size:
-                ActivityManager manager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
+                ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
                 int heapSize = manager.getMemoryClass();//单位是Mb
-                DLog.eLog("分配的内存大小:"+heapSize+"Mb");
+                DLog.eLog("分配的内存大小:" + heapSize + "Mb");
                 break;
             case R.id.bt_format_ms:
                 SimpleDateFormat formatter = new SimpleDateFormat("HH小时mm分");
                 formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));//必须设置时区，否则有8个小时的差距，如果不设置时区结果就是11小时17分钟
-                String hms = formatter.format(3*60*60*1000+17*60*1000);//3小时17分钟
-                DLog.eLog("格式化后："+hms);
+                String hms = formatter.format(3 * 60 * 60 * 1000 + 17 * 60 * 1000);//3小时17分钟
+                DLog.eLog("格式化后：" + hms);
                 break;
             case R.id.bt_count_down:
                 //第一个参数：一共倒计时多少ms，注意是毫秒
                 //第二个参数：每隔多少ms倒计时一次，注意是毫秒
-                CountDownTimer timer = new CountDownTimer(60*1000,1000) {
+                CountDownTimer timer = new CountDownTimer(60 * 1000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {//参数是剩余多少毫秒，CountDownTimer第一个参数的剩余
                         //每倒计时一次就调用一次，多用于更新UI
-                        long s = millisUntilFinished/1000;
-                        DLog.eLog("当前："+s+"秒");
-                        if (s == 50l){
+                        long s = millisUntilFinished / 1000;
+                        DLog.eLog("当前：" + s + "秒");
+                        if (s == 50l) {
                             DLog.eLog("去取消");
 //                            cancel();
                         }
@@ -133,17 +148,16 @@ public class ToolsActivity extends BaseActivity {
                 try {
                     SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                     Date startDate = dateFormatter.parse("2019/07/23 14:31:00");
-                    long period = 25*1000;
+                    long period = 25 * 1000;
                     Timer myschedule = new Timer();
-                    myschedule.schedule(new TimerTask(){
-                        public void run()
-                        {
+                    myschedule.schedule(new TimerTask() {
+                        public void run() {
 //                            System.out.println("execute task!" + this.scheduledExecutionTime());
                             DLog.eLog("schedule-当前时间："
                                     + dateFormatter.format(System.currentTimeMillis()) + "计划时间："
                                     + dateFormatter.format(scheduledExecutionTime()));
                         }
-                    },startDate,period);
+                    }, startDate, period);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -171,16 +185,15 @@ public class ToolsActivity extends BaseActivity {
                 try {
                     SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                     Date startDate = dateFormatter.parse("2019/07/23 14:46:00");
-                    long period = 25*1000;
+                    long period = 25 * 1000;
                     Timer mytimer = new Timer();
-                    mytimer.scheduleAtFixedRate(new TimerTask(){
-                        public void run()
-                        {
+                    mytimer.scheduleAtFixedRate(new TimerTask() {
+                        public void run() {
                             DLog.eLog("FixedRate-当前时间："
                                     + dateFormatter.format(System.currentTimeMillis()) + "计划时间："
                                     + dateFormatter.format(scheduledExecutionTime()));
                         }
-                    },startDate,period);
+                    }, startDate, period);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -189,7 +202,7 @@ public class ToolsActivity extends BaseActivity {
 //                Toast.makeText(ToolsActivity.this,"只有两个类，看一下就行了",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.bt_crash_catch:
-                Toast.makeText(ToolsActivity.this,"只有两个类，看一下就行了",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ToolsActivity.this, "只有两个类，看一下就行了", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.bt_screen:
                 //在Activity的onCreate()方法中调用下面一行即可
@@ -211,6 +224,95 @@ public class ToolsActivity extends BaseActivity {
             case R.id.bt_status_nav:
                 startActivity(new Intent(this, StatusHeightActivity.class));
                 break;
+            case R.id.bt_svg_bitmap:
+                svgToBitmap();
+                break;
+            case R.id.bt_svg_local:
+                svgLocalRender();
+                break;
+            case R.id.bt_svg_net:
+                svgNetRender();
+                break;
         }
+    }
+
+/**
+ * com.yin.yzjcourse.tools.svg来自于  implementation 'com.caverock:androidsvg-aar:1.4'
+ * https://bigbadaboom.github.io/androidsvg/index.html
+ *
+ * 但是它不支持楷体因此，我把代码copy到com.yin.yzjcourse.tools.svg里SVGAndroidRenderer的checkGenericFont()新增支持微软雅黑和楷体
+ *
+ * 可以用文本工具打开.svg文件看看里面的内容，其实就是一些标签解析
+ *
+ */
+
+    /**
+     * 解析.svg文件，获取bitmap，放大会变模糊
+     */
+    private void svgToBitmap() {
+        try {
+// Read an SVG from the assets folder
+            SVG svg = SVG.getFromAsset(getAssets(), "abc.svg");
+
+// Create a canvas to draw onto
+            if (svg.getDocumentWidth() != -1) {
+                Bitmap newBM = Bitmap.createBitmap((int) Math.ceil(svg.getDocumentWidth()),
+                        (int) Math.ceil(svg.getDocumentHeight()),
+                        Bitmap.Config.ARGB_8888);
+                Canvas bmcanvas = new Canvas(newBM);
+
+                // Clear background to white
+//                bmcanvas.drawRGB(255, 255, 255);
+
+                // Render our document onto our canvas
+                svg.renderToCanvas(bmcanvas);
+                iv_svg.setImageBitmap(newBM);
+            }
+        } catch (SVGParseException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 解析本地.svg文件，直接显示矢量图形，放大不变模糊
+     */
+    private void svgLocalRender() {
+        try {
+            InputStream inputStream = new FileInputStream(new File("/storage/emulated/0/mjyyfep/audio/ddd.svg"));
+            SVG svg = SVG.getFromInputStream(inputStream);
+            iv_svg.setSVG(svg);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (SVGParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 解析网络.svg文件，直接显示矢量图形，放大不变模糊
+     */
+    private void svgNetRender() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    URL url = new URL("https://zhledu.cdn.bcebos.com/ktb/usercourse/cb32e1e7-87c0-4690-a81e-0ff73fd0db21");
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    final SVG svg = SVG.getFromInputStream(conn.getInputStream());
+                    iv_svg.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            iv_svg.setSVG(svg);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (SVGParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }

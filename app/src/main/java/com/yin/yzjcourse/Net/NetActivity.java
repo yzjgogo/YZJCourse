@@ -9,6 +9,7 @@ import android.widget.Toast;
 //import com.alibaba.android.arouter.facade.annotation.Route;
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
+import com.yin.yzjcourse.mykt.MyKtActivity;
 import com.yin.yzjcourse.utils.DLog;
 
 import java.io.IOException;
@@ -37,9 +38,12 @@ public class NetActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_ok, R.id.bt_temp,R.id.bt_original_socket,R.id.bt_web_socket,R.id.bt_url_connection,R.id.bt_retrofit})
+    @OnClick({R.id.bt_ok, R.id.bt_temp,R.id.bt_original_socket,R.id.bt_web_socket,R.id.bt_url_connection,R.id.bt_retrofit,R.id.bt_thread})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.bt_thread:
+                startActivity(new Intent(this, ThreadActivity.class));
+                break;
             case R.id.bt_ok:
 //                getRequest();
                 testGetObject();

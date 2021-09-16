@@ -16,7 +16,8 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Net.ConverterFactoryActivity"></activity>
+        <activity android:name=".Net.ThreadActivity"></activity>
+        <activity android:name=".Net.ConverterFactoryActivity" />
         <activity android:name=".Net.RetrofitPostActivity" />
         <activity android:name=".Net.RetrofitGetActivity" />
         <activity android:name=".Net.RetrofitActivity" />

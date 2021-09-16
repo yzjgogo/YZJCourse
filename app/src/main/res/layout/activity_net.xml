@@ -10,6 +10,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/bt_thread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="线程"
+            android:textAllCaps="false" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
