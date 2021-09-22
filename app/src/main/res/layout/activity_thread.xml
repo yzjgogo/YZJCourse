@@ -9,44 +9,62 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/money_deposit_color">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="如何停止一个线程"/>
 
-        <Button
-            android:id="@+id/bt_start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="发起线程"
-            android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/bt_stop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="stop()"
-            android:textAllCaps="false" />
+            <Button
+                android:id="@+id/bt_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="发起线程"
+                android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/bt_interrupt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="interrupt()"
-            android:textAllCaps="false" />
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/bt_boolean_start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="用于验证标志位的线程启动"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/bt_boolean"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="使用boolean标志位中断线程，以及volatile"
-            android:textAllCaps="false" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/bt_stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="stop()"
+                android:textAllCaps="false" />
 
+            <Button
+                android:id="@+id/bt_interrupt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="interrupt()"
+                android:textAllCaps="false" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/actionsheet_blue"
+                android:layout_marginBottom="10dp">
+                <Button
+                    android:id="@+id/bt_boolean_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="用于验证标志位的线程启动"
+                    android:textAllCaps="false" />
+                <Button
+                    android:id="@+id/bt_boolean"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="使用boolean标志位中断线程，以及volatile"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/bt_safe"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" 如何写出线程安全的程序？"/>
     </LinearLayout>
 </ScrollView>

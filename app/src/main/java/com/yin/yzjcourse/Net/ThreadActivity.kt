@@ -19,7 +19,7 @@ class ThreadActivity : BaseActivity() {
         ButterKnife.bind(this)
     }
 
-    @OnClick(R.id.bt_start, R.id.bt_stop, R.id.bt_interrupt, R.id.bt_boolean_start, R.id.bt_boolean)
+    @OnClick(R.id.bt_start, R.id.bt_stop, R.id.bt_interrupt, R.id.bt_boolean_start, R.id.bt_boolean, R.id.bt_safe)
     fun onViewClicked(view: View) {
         when (view.id) {
             R.id.bt_start -> startThread()
@@ -27,6 +27,7 @@ class ThreadActivity : BaseActivity() {
             R.id.bt_interrupt -> interruptThread()
             R.id.bt_boolean_start -> booleanThreadStart()
             R.id.bt_boolean -> booleanThread()
+            R.id.bt_safe -> safeThread()
         }
     }
 
@@ -118,5 +119,15 @@ class ThreadActivity : BaseActivity() {
 
     private fun booleanThread() {
         mThread!!.isExit = true
+    }
+
+
+    /**
+        看有道云笔记：如何写出线程安全的程序？
+
+        配合：https://www.cnblogs.com/dolphin0520/p/3920373.html
+     */
+    private fun safeThread() {
+
     }
 }
