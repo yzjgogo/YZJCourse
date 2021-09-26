@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.drawable.PictureDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.yin.yzjcourse.BaseActivity;
@@ -40,6 +42,8 @@ public class ToolsActivity extends BaseActivity {
     private long mInitialTime;
     @BindView(R.id.iv_svg)
     SVGImageView iv_svg;
+    @BindView(R.id.my_iv)
+    ImageView my_iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +55,7 @@ public class ToolsActivity extends BaseActivity {
     @OnClick({R.id.bt_heap_size, R.id.bt_format_ms, R.id.bt_count_down, R.id.bt_timing_schedule,
             R.id.bt_timing_rate, R.id.bt_time_calculate, R.id.bt_crash_catch, R.id.bt_screen
             , R.id.bt_utils, R.id.bt_gener_id, R.id.bt_str, R.id.bt_progress, R.id.bt_drawable
-            , R.id.bt_status_nav, R.id.bt_svg_bitmap, R.id.bt_svg_local, R.id.bt_svg_net})
+            , R.id.bt_status_nav, R.id.bt_svg_bitmap, R.id.bt_svg_local, R.id.bt_svg_net, R.id.bt_svg_drawable})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_utils:
@@ -233,6 +237,9 @@ public class ToolsActivity extends BaseActivity {
             case R.id.bt_svg_net:
                 svgNetRender();
                 break;
+            case R.id.bt_svg_drawable:
+                svgPicture();
+                break;
         }
     }
 
@@ -240,7 +247,7 @@ public class ToolsActivity extends BaseActivity {
  * com.yin.yzjcourse.tools.svg来自于  implementation 'com.caverock:androidsvg-aar:1.4'
  * https://bigbadaboom.github.io/androidsvg/index.html
  *
- * 但是它不支持楷体因此，我把代码copy到com.yin.yzjcourse.tools.svg里SVGAndroidRenderer的checkGenericFont()新增支持微软雅黑和楷体
+ * 但是它不支持楷体因此，我把代码copy到com.yin.yzjcourse.tools.svg里SVGAndroidRenderer的checkGenericFont()新增支持微软雅黑和楷体,对应的代码我注释了，可以打开看看，搜索“雅黑”或“楷体”关键字即可
  *
  * 可以用文本工具打开.svg文件看看里面的内容，其实就是一些标签解析
  *
@@ -280,7 +287,7 @@ public class ToolsActivity extends BaseActivity {
      */
     private void svgLocalRender() {
         try {
-            InputStream inputStream = new FileInputStream(new File("/storage/emulated/0/mjyyfep/audio/ddd.svg"));
+            InputStream inputStream = new FileInputStream(new File("/storage/emulated/0/mjyyfep/audio/pic.svg"));
             SVG svg = SVG.getFromInputStream(inputStream);
             iv_svg.setSVG(svg);
         } catch (FileNotFoundException e) {
@@ -314,5 +321,20 @@ public class ToolsActivity extends BaseActivity {
                 }
             }
         }).start();
+    }
+
+    /**
+     * 将svg转为PictureDrawable再显示
+     */
+    private void svgPicture() {
+        try {
+            InputStream inputStream = new FileInputStream(new File("/storage/emulated/0/mjyyfep/audio/pic.svg"));
+            SVG svg = SVG.getFromInputStream(inputStream);
+            my_iv.setImageDrawable(new PictureDrawable(svg.renderToPicture()));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (SVGParseException e) {
+            e.printStackTrace();
+        }
     }
 }

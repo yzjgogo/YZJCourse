@@ -39,6 +39,7 @@
             android:textAllCaps="false" />
 
         <LinearLayout
+            tools:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/light_yellow"
@@ -83,6 +84,7 @@
         </LinearLayout>
 
         <Button
+            tools:visibility="gone"
             android:id="@+id/bt_time_calculate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -184,6 +186,18 @@ SystemClock.elapsedRealtime自开机后，经过的时间，包括深度睡眠�
                 android:layout_height="wrap_content"
                 android:text="解析网络.svg文件，直接显示矢量图形，放大不变模糊"
                 android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_svg_drawable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="将svg转为PictureDrawable再显示"
+                android:textAllCaps="false" />
+            <ImageView
+                android:id="@+id/my_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/money_color"/>
             <com.yin.yzjcourse.tools.svg.SVGImageView
                 android:id="@+id/iv_svg"
                 android:layout_width="300dp"
