@@ -3,6 +3,7 @@ package com.yin.yzjcourse.k1函数.k9函数返回return
 /**
  * 总结：
  * 如果没有使用标签，return从最近的使用fun关键字修饰的函数返回(前提是使用到的函数的参数如果有lambda,则这个函数需要是inline的，例如这里的forEach就是inline的)。
+ * 参考[com.yin.yzjcourse.k1函数.k8内联函数inline.MyInline]这里也涉及到return
  */
 class MyReturn {
     data class Person(val name: String, val age: Int)
