@@ -111,6 +111,8 @@ class k4字符串 {
      * 1：buildString是一个顶层函数；
      * 2：buildString的参数是函数类型，且这个函数是StringBuilder的扩展函数，因此这个函数里的this就是StringBuilder的示例(接受者对象)
      * 3：最终函数会执行StringBuilder().apply(builderAction).toString()得到字符串
+     *
+     * 参考图片：函数调用逻辑.png
      */
     @Test
     fun testBuildString() {
