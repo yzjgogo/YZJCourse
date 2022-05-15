@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Base.SvScrollActivity">
-    <com.yin.yzjcourse.Base.MyScrollView
+    <com.yin.yzjcourse.Base.MyScrollFlingView
         android:id="@+id/my_sv"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -226,5 +226,5 @@
                 android:layout_height="wrap_content"
                 android:text="55"/>
         </LinearLayout>
-    </com.yin.yzjcourse.Base.MyScrollView>
+    </com.yin.yzjcourse.Base.MyScrollFlingView>
 </LinearLayout>

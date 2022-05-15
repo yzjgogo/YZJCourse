@@ -27,6 +27,7 @@
         <activity android:name=".Jetpack.Room.RoomActivity" />
         <activity android:name=".Jetpack.LiveDataActivity" />
         <activity android:name=".Base.ScrollerActivity" />
+        <activity android:name=".Base.ScrollerFlingActivity" />
         <activity android:name=".Jetpack.NavigationActivity" />
         <activity android:name=".Jetpack.ViewModelActivity" /> <!-- <activity android:name=".Jetpack.NavigationActivity" /> -->
         <service

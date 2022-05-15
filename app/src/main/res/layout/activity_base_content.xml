@@ -102,7 +102,13 @@
                 android:id="@+id/bt_scroller"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Scroller和computeScroll方法"
+                android:text="Scroller和computeScroll方法_startScroll"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/bt_scroller_fling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scroller和computeScroll方法_fling"
                 android:textAllCaps="false" />
         </LinearLayout>
         <LinearLayout

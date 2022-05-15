@@ -24,7 +24,7 @@ public class BaseContentActivity extends BaseActivity {
     }
 
     @OnClick({R.id.bt_java,R.id.bt_android_message, R.id.bt_title_menu,R.id.bt_vp,R.id.bt_span,R.id.bt_ht,R.id.bt_is,R.id.bt_tp,
-            R.id.bt_surface,R.id.bt_iterator,R.id.bt_get_id,R.id.bt_sc_scroll,R.id.bt_act_dialog_xml,
+            R.id.bt_surface,R.id.bt_iterator,R.id.bt_get_id,R.id.bt_sc_scroll,R.id.bt_scroller_fling,R.id.bt_act_dialog_xml,
             R.id.bt_act_dialog_dynamic,R.id.bt_phone_listen,R.id.bt_get_size,R.id.bt_scroller})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -66,6 +66,9 @@ public class BaseContentActivity extends BaseActivity {
                 break;
             case R.id.bt_scroller:
                 startActivity(new Intent(this, ScrollerActivity.class));
+                break;
+            case R.id.bt_scroller_fling:
+                startActivity(new Intent(this, ScrollerFlingActivity.class));
                 break;
             case R.id.bt_act_dialog_xml:
                 startActivity(new Intent(this, XMLDialogActivity.class));

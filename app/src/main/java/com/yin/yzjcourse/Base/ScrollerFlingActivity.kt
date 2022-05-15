@@ -7,14 +7,13 @@ import android.view.View
 import butterknife.ButterKnife
 import butterknife.OnClick
 import com.yin.yzjcourse.BaseActivity
-import com.yin.yzjcourse.Jetpack.MyLCService
 import com.yin.yzjcourse.R
-import kotlinx.android.synthetic.main.activity_scroller.*
+import kotlinx.android.synthetic.main.activity_scroller_fling.*
 
-class ScrollerActivity : BaseActivity() {
+class ScrollerFlingActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scroller)
+        setContentView(R.layout.activity_scroller_fling)
         ButterKnife.bind(this)
     }
 
