@@ -145,6 +145,7 @@
         <activity android:name=".DiyWidget.ViewTouchActivity" />
         <activity android:name=".DiyWidget.ViewDispatchTouchActivity" />
         <activity android:name=".DiyWidget.GestureDetectorActivity" />
+        <activity android:name=".DiyWidget.VelocityTrackerActivity" />
         <activity android:name=".DiyWidget.ScaleGestureDetectorActivity" />
         <activity android:name=".DiyWidget.ScaleDoubleFingerActivity" />
         <activity android:name=".Base.AndroidMessageActivity" />

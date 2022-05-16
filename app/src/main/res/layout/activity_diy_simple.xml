@@ -154,6 +154,13 @@
                 android:layout_height="wrap_content"
                 android:text="多点触控"
                 android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bt_velocity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="手指移动的速度"
+                android:textAllCaps="false" />
         </LinearLayout>
 
         <Button
