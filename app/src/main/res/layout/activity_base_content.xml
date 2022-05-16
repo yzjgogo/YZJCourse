@@ -110,6 +110,12 @@
                 android:layout_height="wrap_content"
                 android:text="Scroller和computeScroll方法_fling"
                 android:textAllCaps="false" />
+            <Button
+                android:id="@+id/bt_view_compute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View内容滚动相关的范围计算"
+                android:textAllCaps="false" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
