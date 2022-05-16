@@ -6,11 +6,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Base.SvScrollActivity">
-    <Button
-        android:id="@+id/bt_compute"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="计算"/>
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/bt_compute"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="计算"/>
+        <Button
+            android:id="@+id/bt_can_scroll"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="是否能滚动了"/>
+    </LinearLayout>
     <com.yin.yzjcourse.Base.ComputeScrollView
         android:id="@+id/my_sv"
         android:layout_width="match_parent"

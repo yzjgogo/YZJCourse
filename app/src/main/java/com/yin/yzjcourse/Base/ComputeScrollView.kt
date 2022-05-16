@@ -31,6 +31,10 @@ class ComputeScrollView : ScrollView {
     private fun initData(context: Context) {
     }
 
+    /**
+     * 这是ScrollView的computeVerticalScrollRange方法，我原样拿过来的，为了观察
+     */
+    /*
     override fun computeVerticalScrollRange(): Int {
         val count = childCount
         val contentHeight = height - paddingBottom - paddingTop
@@ -47,6 +51,7 @@ class ComputeScrollView : ScrollView {
         }
         return scrollRange
     }
+    */
 
     /**
      * 参考图片：view_compute介绍.jpg
@@ -66,4 +71,8 @@ class ComputeScrollView : ScrollView {
         val offset = computeVerticalScrollOffset()
         DLog.eLog("已经滚动的距离：$offset，获取滚动的距离：$scrollY")
     }
+
+//    override fun canScrollVertically(direction: Int): Boolean {
+//        return super.canScrollVertically(direction)
+//    }
 }
