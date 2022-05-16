@@ -11,6 +11,9 @@ import com.yin.yzjcourse.Jetpack.MyLCService
 import com.yin.yzjcourse.R
 import kotlinx.android.synthetic.main.activity_scroller.*
 
+/**
+ * v4兼容包里的是ScrollerCompat，用法同Scroller，只是创建实例的方式不同
+ */
 class ScrollerActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
