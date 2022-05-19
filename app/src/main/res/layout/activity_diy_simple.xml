@@ -45,6 +45,13 @@
             android:layout_height="wrap_content"
             android:text="自定义可自动换换的FlowLayout"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View的onSizeChange()"
+            android:textAllCaps="false" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

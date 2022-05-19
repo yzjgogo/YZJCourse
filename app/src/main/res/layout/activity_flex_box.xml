@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OfficialWeight.FlexBoxActivity"
+    android:background="@color/white">
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/fbl"
+        android:layout_width="800px"
+        android:layout_height="wrap_content"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        android:background="@color/nav_bg">
+        <TextView
+            android:layout_width="300px"
+            android:layout_height="400px"
+            android:background="@color/actionsheet_blue"/>
+        <View
+            android:layout_width="0px"
+            android:layout_height="400px"
+            app:layout_flexGrow="1"
+            android:background="@color/strong_red_hint_text_color"/>
+        <TextView
+            android:layout_width="300px"
+            android:layout_height="400px"
+            android:background="@color/money_deposit_color"/>
+<!--        <View-->
+<!--            android:layout_width="0px"-->
+<!--            android:layout_height="400px"-->
+<!--            app:layout_flexGrow="0"-->
+<!--            android:background="@color/strong_red_hint_text_color"/>-->
+
+
+
+
+        <TextView
+            android:layout_width="210px"
+            android:layout_height="400px"
+            android:background="@color/money_color"/>
+<!--        <TextView-->
+<!--            android:layout_width="0px"-->
+<!--            android:layout_height="400px"-->
+<!--            app:layout_flexGrow="1"-->
+<!--            android:background="@color/strong_red_hint_text_color"/>-->
+    </com.google.android.flexbox.FlexboxLayout>
+</LinearLayout>

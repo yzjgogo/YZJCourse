@@ -39,5 +39,12 @@
             android:layout_height="wrap_content"
             android:text="EditText的InputFilter用法"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_fbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FlexboxLayout"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

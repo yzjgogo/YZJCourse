@@ -50,6 +50,7 @@
         <activity android:name=".DiyWidget.ViewCompatAnimateActivity" />
         <activity android:name=".DiyWidget.ViewAnimateActivity" />
         <activity android:name=".OfficialWeight.EtFilterActivity" />
+        <activity android:name=".OfficialWeight.FlexBoxActivity" />
         <activity android:name=".Base.IteratorActivity" />
         <activity android:name=".DiyWidget.ViewLocalRectActivity" />
         <activity android:name=".DiyWidget.ViewDrawingRectActivity" />
@@ -77,6 +78,7 @@
         <activity android:name=".RxJava2.DisposableExampleActivity" />
         <activity android:name=".RxJava2.IntervalActivity" />
         <activity android:name=".DiyWidget.DiyViewActivity" />
+        <activity android:name=".DiyWidget.ViewSizeActivity" />
         <activity android:name=".DiyWidget.MatrixActivity" />
         <activity android:name=".DiyWidget.Rotate3DActivity" />
         <activity android:name=".DiyWidget.MatrixMulActivity" />
