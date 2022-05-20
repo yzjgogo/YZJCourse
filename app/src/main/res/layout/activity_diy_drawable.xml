@@ -71,6 +71,14 @@
                     android:layout_height="120dp"/>
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_custom_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="三：基于StateListDrawable(selector)自定义自己的状态"
+                android:textColor="@color/red"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

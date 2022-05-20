@@ -62,6 +62,8 @@
     <!--actionsheet的相关颜色 -->
     <color name="alertdialog_line">#e5e5e5</color>
     <color name="actionsheet_blue">#037BFF</color>
+
+    <color name="message_unread">#44ff0000</color>
     <color name="actionsheet_gray">#8F8F8F</color>
     <!-- 底部和顶部导航栏背景色-->
     <color name="nav_bg">#27C684</color>

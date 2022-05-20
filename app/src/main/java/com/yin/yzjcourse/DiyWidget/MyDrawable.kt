@@ -10,6 +10,8 @@ import com.yin.yzjcourse.utils.DLog
  *
  * https://blog.csdn.net/yanbober/article/details/56844869
  *
+ * csdn_drawable.png
+ *
  * 我刚学时查看View.java中Drawable的顺序：View.java -> setBackground(Drawable background) -> setBackgroundDrawable(Drawable background)(很重要,给View设置drawable,以及新老drawable的处理)
  * draw(Canvas canvas) -> drawBackground(Canvas canvas)(很重要给drawable设置bounds以及调用drawable.draw(canvas)) -> setBackgroundBounds()(就是在这里调用drawable.setBounds()设置drawable的边界)
  *
@@ -60,6 +62,7 @@ class MyDrawable : Drawable {
     /**
      * 获取drawable的宽高，我们可以按需从drawable.getBounds()中计算，这个bounds()也来自使用它的View里设置了，参考上面的注释
      * 默认返回 -1
+     * 一般如果使用这个drawable的view是wrap_content时，我们可能要计算一下，这两个方法的返回值
      */
     override fun getIntrinsicWidth(): Int {
         val width = super.getIntrinsicWidth();

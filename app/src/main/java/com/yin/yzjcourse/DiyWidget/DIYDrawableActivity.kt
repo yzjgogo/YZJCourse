@@ -1,5 +1,6 @@
 package com.yin.yzjcourse.DiyWidget
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -23,5 +24,11 @@ class DIYDrawableActivity:BaseActivity() {
         val useOtherDrawable = UseOtherDrawable(resources.getDrawable(R.drawable.timg))
 //        val useOtherDrawable = UseOtherDrawable(resources.getDrawable(R.drawable.timg).mutate())//如果有别的地方也用了timg，为了避免一个地方对timg修改，多个地方被影响，可如此，参考：https://blog.csdn.net/yanbober/article/details/56844869
         imageview6.setImageDrawable(useOtherDrawable)
+
+        //三：基于StateListDrawable(selector)自定义自己的状态
+        tv_custom_state.setOnClickListener {
+            startActivity(Intent(this, CustomStateDrawableActivity::class.java))
+        }
+
     }
 }
