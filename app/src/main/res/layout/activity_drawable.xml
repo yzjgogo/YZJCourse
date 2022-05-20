@@ -12,6 +12,53 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/bt_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="StateListDrawable对应selector标签"/>
+
+            <View
+                android:id="@+id/view_state"
+                android:layout_width="500px"
+                android:layout_height="300px"
+                android:clickable="true"
+                android:background="@drawable/state_drawable"/>
+
+            <View
+                android:id="@+id/view_state2"
+                android:layout_width="500px"
+                android:layout_height="300px"
+                android:clickable="true"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/bt_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="LevelListDrawable对应level-list标签"/>
+
+            <View
+                android:id="@+id/view_level"
+                android:layout_width="300px"
+                android:layout_height="300px"
+                android:background="@drawable/level_drawable"/>
+
+            <ImageView
+                android:id="@+id/iv_level"
+                android:layout_width="300px"
+                android:layout_height="300px"
+                android:src="@drawable/level_drawable"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@color/orange">
 

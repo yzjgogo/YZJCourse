@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DiyWidget.ViewSizeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="最简单的自定义drawable模板"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/bt_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="用法1：setBackgroundXXX使用自定义drawable"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/my_view"
+                    android:layout_width="400px"
+                    android:layout_height="300px"
+                    android:text="setBackgroundXXX使用自定义drawable" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/red" />
+
+                <com.yin.yzjcourse.DiyWidget.DrawableTextView
+                    android:layout_width="400px"
+                    android:layout_height="300px"
+                    android:text="用法2：在自定义View中使用自定义drawable" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

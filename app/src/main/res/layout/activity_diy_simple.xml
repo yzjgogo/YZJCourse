@@ -52,6 +52,13 @@
             android:layout_height="wrap_content"
             android:text="View的onSizeChange()"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_drawable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义drawable"
+            android:textAllCaps="false" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

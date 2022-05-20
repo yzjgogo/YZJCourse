@@ -79,6 +79,7 @@
         <activity android:name=".RxJava2.IntervalActivity" />
         <activity android:name=".DiyWidget.DiyViewActivity" />
         <activity android:name=".DiyWidget.ViewSizeActivity" />
+        <activity android:name=".DiyWidget.DIYDrawableActivity" />
         <activity android:name=".DiyWidget.MatrixActivity" />
         <activity android:name=".DiyWidget.Rotate3DActivity" />
         <activity android:name=".DiyWidget.MatrixMulActivity" />
