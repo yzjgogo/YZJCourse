@@ -46,6 +46,14 @@ class DrawableTextView:AppCompatTextView {
     }
 
     /**
+     * 也可以在onSizeChanged()里给mDrawable设置bounds
+     */
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+//        mDrawable.setBounds(0,0,w,h)
+    }
+
+    /**
      * onLayout之后既能拿到宽高，又能拿到left,top,right,bottom
      * 因此mDrawable.setBounds(0,0,right,bottom-top)设置边界可以
      * 注意，drawable的边界是相对View的，一次如果没有特殊需要前两个参数是(0,0)，这个drawable才能跟View的左上角重合
@@ -55,6 +63,7 @@ class DrawableTextView:AppCompatTextView {
         DLog.eLog("view的4个参数-2:$left,$top,$right,$bottom,$measuredWidth,$measuredHeight")
         mDrawable.setBounds(0,0,right,bottom-top)
     }
+
 
     /**
      * 在绘制view时，出发drawable的绘制

@@ -49,8 +49,12 @@ class MyDrawable : Drawable {
         return PixelFormat.TRANSLUCENT
     }
 
+    /**
+     * 边界发生变化时出发，可以类比View的onSizeChanged()
+     */
     override fun onBoundsChange(bounds: Rect?) {
         super.onBoundsChange(bounds)
+        DLog.eLog("执行onBoundsChange了:$bounds")
     }
 
     /**
