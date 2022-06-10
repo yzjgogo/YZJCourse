@@ -30,5 +30,10 @@ class DIYDrawableActivity:BaseActivity() {
             startActivity(Intent(this, CustomStateDrawableActivity::class.java))
         }
 
+        //四：Drawable关于Callback的学习
+        bt_callback.setOnClickListener {
+            startActivity(Intent(this, DrawableCallbackActivity::class.java))
+        }
+
     }
 }

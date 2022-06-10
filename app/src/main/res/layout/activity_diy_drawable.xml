@@ -73,12 +73,30 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_custom_state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="三：基于StateListDrawable(selector)自定义自己的状态"
                 android:textColor="@color/red"
                 android:textStyle="bold" />
+            <Button
+                android:id="@+id/tv_custom_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="打开自定义状态页面"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="四：Drawable关于Callback的学习"
+                android:textColor="@color/red"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/bt_callback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="打开callback页面(可能没什么意义，没完成)"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
