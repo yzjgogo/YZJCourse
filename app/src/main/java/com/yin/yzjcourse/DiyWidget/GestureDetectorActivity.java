@@ -53,7 +53,7 @@ public class GestureDetectorActivity extends BaseActivity implements View.OnTouc
          */
         @Override
         public boolean onDown(MotionEvent e) {
-            DLog.eLog("执行onDown：" + e.getAction() + ",rawX=" + e.getRawX() + ",rawY=" + e.getRawY() + ",x=" + e.getX() + ",y=" + e.getY() + " , " + System.currentTimeMillis() + " , " + e.getAction());
+            DLog.eLog("执行onDown："+System.identityHashCode(e)+ " | " + e.getAction() + ",rawX=" + e.getRawX() + ",rawY=" + e.getRawY() + ",x=" + e.getX() + ",y=" + e.getY() + " , " + System.currentTimeMillis() + " , " + e.getAction());
             return false;
         }
 
@@ -101,7 +101,7 @@ public class GestureDetectorActivity extends BaseActivity implements View.OnTouc
         /**
          * 手指在屏幕滑动的过程时出发，也就是ACTION_MOVE时触发，最后如果有快速瞬间滑动的操作(Fling)就会出发onFling
          *
-         * @param e1        手指按下的event,也就是onDown(MotionEvent e)里的参数e，也就是onFling(e1,e2,velocityX,velocityY)里的e1
+         * @param e1        手指按下的event,也就是onDown(MotionEvent e)里的参数e(不是同一个对象，但rawX,x等相等)，也就是onFling(e1,e2,velocityX,velocityY)里的e1
          * @param e2        当前ACTION_MOVE的event
          * @param distanceX 参考distanceY
          * @param distanceY 本次调用onScroll方法时，相对上次调用onScroll方式时，手指在Y轴移动的距离，向下滑动为负数，向上滑动为正数
@@ -109,7 +109,7 @@ public class GestureDetectorActivity extends BaseActivity implements View.OnTouc
          */
         @Override
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-//            DLog.eLog("执行onScroll："+",rawX="+e1.getRawX()+",rawY="+e1.getRawY()+",x="+e1.getX()+",y="+e1.getY()+","+distanceX+","+distanceY);
+//            DLog.eLog("执行onScroll："+System.identityHashCode(e1)+",rawX="+e1.getRawX()+",rawY="+e1.getRawY()+",x="+e1.getX()+",y="+e1.getY()+","+distanceX+","+distanceY);
             DLog.eLog("执行onScroll：" + ",rawX=" + e2.getRawX() + ",rawY=" + e2.getRawY() + ",x=" + e2.getX() + ",y=" + e2.getY() + "," + distanceX + "," + distanceY + " * " + e1.getAction() + " * " + e2.getAction());
             return false;
         }
@@ -118,15 +118,15 @@ public class GestureDetectorActivity extends BaseActivity implements View.OnTouc
          * 滑屏：手指按下(onDown)->随意滑动一段举例(onScroll,可无)->手指快速滑一下屏幕(必须，才能出发onScroll..onFling)
          *
          * @param e1 手指按下的event,也就是onDown(MotionEvent e)里的参数e，也就是第一个onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)的参数e1，action是ACTION_DOWN
-         * @param e2 快速滑动结束时手指抬起时的event，其x,y,rawX,rawY与onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)的e2的一样，但是action时ACTION_UP
+         * @param e2 快速滑动结束时手指抬起时的event，其x,y,rawX,rawY与最近的一次onScroll(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)的e2的一样，但是action时ACTION_UP
          * @param velocityX x轴Fling的速度，像素/秒
          * @param velocityY y轴Fling的速度，像素/秒
          * @return
          */
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-//            DLog.eLog("执行onFling："+",rawX="+e1.getRawX()+",rawY="+e1.getRawY()+",x="+e1.getX()+",y="+e1.getY()+","+velocityX+","+velocityY);
-            DLog.eLog("执行onFling：" + ",rawX=" + e2.getRawX() + ",rawY=" + e2.getRawY() + ",x=" + e2.getX() + ",y=" + e2.getY() + "," + velocityX + "," + velocityY + " * " + e1.getAction() + " * " + e2.getAction());
+            DLog.eLog("执行onFling："+",rawX="+e1.getRawX()+",rawY="+e1.getRawY()+",x="+e1.getX()+",y="+e1.getY()+","+velocityX+","+velocityY);
+//            DLog.eLog("执行onFling：" + ",rawX=" + e2.getRawX() + ",rawY=" + e2.getRawY() + ",x=" + e2.getX() + ",y=" + e2.getY() + "," + velocityX + "," + velocityY + " * " + e1.getAction() + " * " + e2.getAction());
             return false;
         }
         ////////////////////////////////////////////////////////////////////////////
