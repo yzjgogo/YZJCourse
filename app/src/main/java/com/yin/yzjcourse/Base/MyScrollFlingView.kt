@@ -41,7 +41,7 @@ class MyScrollFlingView : ScrollView {
         val mScrollY = scrollY
         //目标要滚动的距离，减去当前已经滚动了的距离，等于还需要滚动的距离
         val deltaY = destY - mScrollY
-        scroller.fling(scrollX,scrollY,2000,2000,0,0,250,500)
+        scroller.fling(scrollX,scrollY,2000,2000,0,0,0,500)
         DLog.eLog("已经滚动的距离：${scrollY},最终Y：${scroller.finalY},时间：${scroller.duration}")
         //去触发view的draw()，再由draw()触发computeScroll()
         invalidate()
