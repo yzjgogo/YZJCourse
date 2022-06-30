@@ -193,6 +193,7 @@
         <activity android:name=".Optimize.BusyUIThreadActivity" />
         <activity android:name=".Optimize.DataStructuresActivity" />
         <activity android:name=".Optimize.LargeImageActivity" />
+        <activity android:name=".Optimize.BitmapInSimpleSizeActivity" />
         <activity android:name=".Base.TitleMenuActivity" />
         <activity android:name=".Base.DiyMenuActivity" />
         <activity android:name=".Base.VPBaseActivity" />

@@ -24,7 +24,7 @@ public class OptimizeActivity extends BaseActivity {
     @OnClick({R.id.bt_one, R.id.bt_two,R.id.bt_inner_class,R.id.bt_inner_class_two,
             R.id.bt_handler,R.id.bt_handler_solve,R.id.bt_listener,R.id.bt_allocation,
     R.id.bt_clip,R.id.bt_object_pool,R.id.bt_over_draw,R.id.bt_batch_cache,R.id.bt_ui_block,
-    R.id.bt_trace_view,R.id.bt_structure,R.id.bt_large_img})
+    R.id.bt_trace_view,R.id.bt_structure,R.id.bt_large_img,R.id.bt_simple_size})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_one:
@@ -77,6 +77,9 @@ public class OptimizeActivity extends BaseActivity {
                 break;
             case R.id.bt_large_img:
                 startActivity(new Intent(this,LargeImageActivity.class));
+                break;
+            case R.id.bt_simple_size:
+                startActivity(new Intent(this,BitmapInSimpleSizeActivity.class));
                 break;
         }
     }
