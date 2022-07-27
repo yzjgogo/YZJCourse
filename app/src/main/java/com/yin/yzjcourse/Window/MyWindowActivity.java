@@ -88,6 +88,11 @@ public class MyWindowActivity extends BaseActivity implements View.OnTouchListen
                 PixelFormat.TRANSPARENT);
         mLayoutParams.flags = LayoutParams.FLAG_NOT_FOCUSABLE;
 //        mLayoutParams.type = LayoutParams.TYPE_SYSTEM_ERROR;
+
+        //占用状态栏 https://blog.csdn.net/qq_21154101/article/details/123926510
+//        mLayoutParams.flags = WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
+
+
         mLayoutParams.type = 2;
         mLayoutParams.gravity = Gravity.LEFT | Gravity.TOP;
         mLayoutParams.x = 100;
