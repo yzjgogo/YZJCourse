@@ -90,7 +90,7 @@ public class MyWindowActivity extends BaseActivity implements View.OnTouchListen
 //        mLayoutParams.type = LayoutParams.TYPE_SYSTEM_ERROR;
 
         //占用状态栏 https://blog.csdn.net/qq_21154101/article/details/123926510
-        //只需要FLAG_LAYOUT_NO_LIMITS就实现了占用状态栏，就可以做到让这个window可以拖拽超出屏幕范围了
+        //只需要FLAG_LAYOUT_NO_LIMITS就实现了占用状态栏，就可以做到让这个window可以拖拽超出屏幕范围了,虽然占用了状态栏但是y == 0的位置是状态了的地址，y == -stateBarHeight才是真正的屏幕顶部
         //FLAG_LAYOUT_IN_SCREEN 这个不知道啥意思
         //FLAG_NOT_TOUCHABLE 这个可能就是让点击事件触摸事件等失效，单独用合格有效吗？反正与FLAG_LAYOUT_NO_LIMITS和FLAG_LAYOUT_IN_SCREEN一起用是有效果的会导致单击事件和触摸事件失效
 //        mLayoutParams.flags = WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
