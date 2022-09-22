@@ -81,6 +81,15 @@ public class SpanActivity extends BaseActivity {
             public void onClick( @NonNull View widget) {
                 Utils.showToast(SpanActivity.this,"点击了1");
             }
+
+            //可选择是否重写
+            @Override
+            public void updateDrawState(@NonNull TextPaint ds) {
+                //修改点击区域字体颜色（同ForegroundColorSpan）
+                ds.setColor(Color.parseColor("#27C684"));
+                //设置是否在点击区域显示下划线（同UnderlineSpan）
+                ds.setUnderlineText(false);
+            }
         };
         style.setSpan(clickableSpan,13,15,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //设置第二个ClickableSpan，因此可设置多个，但是要有多个ClickableSpan实例
