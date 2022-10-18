@@ -1,2 +1,2 @@
 //include ':learn'
-include ':app', ':alipush'
+include ':app', ':alipush', ':FrameworkLib'

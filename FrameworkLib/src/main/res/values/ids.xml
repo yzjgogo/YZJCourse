@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 重写loadingView时，anima需要设置的ID -->
+    <item name="sdk_framework_loading_anima_id" type="id"/>
+    <item name="sdk_framework_loading_message_id" type="id"/>
+</resources>

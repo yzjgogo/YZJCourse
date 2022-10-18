@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:sharedUserId="android.uid.system"
+    package="com.lidroid.xutils">
+    <!--<uses-library android:name="org.apache.http.legacy" android:required="false"/>-->
+    <!--<uses-sdk-->
+        <!--android:minSdkVersion="10"-->
+        <!--android:targetSdkVersion="23"/>-->
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application/>
+
+</manifest>
