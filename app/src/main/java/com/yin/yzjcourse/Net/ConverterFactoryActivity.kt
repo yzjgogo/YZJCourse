@@ -13,7 +13,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+// implementation 'com.squareup.retrofit2:converter-gson:2.9.0' 这里的注释要解开
+//import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -39,6 +40,8 @@ class ConverterFactoryActivity : BaseActivity() {
     }
 
     private fun doGet() {
+        //可以解开注释/**/，也解开implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+        /*
         //要使用GsonConverterFactory，需要引入 implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
         val retrofit = Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -68,6 +71,7 @@ class ConverterFactoryActivity : BaseActivity() {
             }
 
         })
+        */
     }
     interface BosToolService {
         @GET("/baiduyun/baiduboskey/{dirpath}/bj")
