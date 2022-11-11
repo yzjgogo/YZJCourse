@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.lidroid.xutils.exception.DbException;
 import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.util.LogUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,8 +26,10 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import de.greenrobot.event.EventBus;
+import zhl.common.my.DigestUtils;
 import zhl.common.oauth.OAuthApi;
 import zhl.common.oauth.OauthApplicationLike;
 import zhl.common.oauth.OauthErrorEvent;
@@ -65,6 +68,7 @@ public class ZHLRequest extends com.android.volley.Request<String> {
     public ZHLRequest(int method,String url, Map<String, Object> param, AbsResult result) {
         super(method, url, null);
         mResult = result;
+        this.param = param;
         initRequestParams(param);
     }
 
@@ -131,6 +135,8 @@ public class ZHLRequest extends com.android.volley.Request<String> {
             }
         }else {
             rp.addBodyData(paramString.getBytes());
+            LogUtils.e("执行了请求参数+++++++++++++++++++++++++："+paramString);
+//            rp.addBodyData("versionType=2&versionCode=51000".getBytes());
         }
         // 设置请求参数
         super.setRequestParams(rp);
@@ -147,21 +153,41 @@ public class ZHLRequest extends com.android.volley.Request<String> {
     public Map<String, String> getHeaders() throws AuthFailureError {
         Context context = OauthApplicationLike.getOauthApplicationContext();
         Map<String, String> headers = new HashMap<>(super.getHeaders());
-        TokenEntity accessTokenEntity = null;
+//        TokenEntity accessTokenEntity = null;
+//        try {
+//            accessTokenEntity = OAuthApi.getInstance(context).getValidToken(OauthApplicationLike.getUserId(), mResult);
+//        } catch (DbException e) {
+//            e.printStackTrace();
+//        }
+//        if (accessTokenEntity != null) {
+//            headers.put("Authorization", Tools.getAccessToken(accessTokenEntity.access_token));
+//        }
+//        headers.put("Accept", "application/json");
+        headers.put("Connection", "Keep-Alive");
+//        headers.put("Charset", "UTF-8");
+        // 异步处理，子线程报错不影响主线程
+//        String agent = UserAgentUtils.get(context);
+//        headers.put("User-Agent", agent);
         try {
-            accessTokenEntity = OAuthApi.getInstance(context).getValidToken(OauthApplicationLike.getUserId(), mResult);
-        } catch (DbException e) {
+            //处理明医  2,V5.1.0,M2007J17C,11
+            headers.put("Mingyi-Version", "2,V5.1.0,M2007J17C,11");
+//            headers.put("Content-Type", "application/x-www-form-urlencoded");
+            headers.put("App-Version", "1");
+            if (getUrl().contains("?")) {//doPostJson
+                headers.put("digest", getDigestForJson(getUrl()));
+            }else {//doPostObject
+                Map<String, String> tempParams = new HashMap<>();
+                for(Map.Entry<String, Object> entry : param.entrySet()){
+                    String mapKey = entry.getKey();
+                    String mapValue = (String) entry.getValue();
+                    tempParams.put(mapKey,mapValue);
+                }
+                headers.put("digest", DigestUtils.getDigest(tempParams));
+//                headers.put("digest", "FMent1y81WWSRmz1z4mYcw==");
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        if (accessTokenEntity != null) {
-            headers.put("Authorization", Tools.getAccessToken(accessTokenEntity.access_token));
-        }
-        headers.put("Accept", "application/json");
-        headers.put("Connection", "Keep-Alive");
-        headers.put("Charset", "UTF-8");
-        // 异步处理，子线程报错不影响主线程
-        String agent = UserAgentUtils.get(context);
-        headers.put("User-Agent", agent);
         return headers;
     }
 
@@ -360,7 +386,8 @@ public class ZHLRequest extends com.android.volley.Request<String> {
 
     @Override
     public String getBodyContentType() {
-        return "application/json; charset=utf-8";
+//        return "application/json; charset=utf-8";
+        return "application/x-www-form-urlencoded";
     }
 
     protected String getBodyContentTypeInside() {
@@ -407,5 +434,24 @@ public class ZHLRequest extends com.android.volley.Request<String> {
 
     public void setResponseListener(Response.Listener responseListener) {
         this.responseListener = responseListener;
+    }
+
+    private String getDigestForJson(String url) {
+        String digest = "";
+        Map<String, String> urlParams = new ConcurrentHashMap<>();
+        String baseUrl[] = url.split("\\?");
+        if (baseUrl.length > 1) {
+            String keyValues[] = baseUrl[1].split("&");
+            for (int i = 0; i < keyValues.length; i++) {
+                String keyValue[] = keyValues[i].split("=");
+                urlParams.put(keyValue[0], keyValue[1]);
+            }
+        }
+        try {
+            digest = DigestUtils.getDigest(urlParams);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return digest;
     }
 }

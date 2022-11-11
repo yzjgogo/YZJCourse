@@ -8,8 +8,10 @@ import androidx.multidex.MultiDexApplication;
 import com.dev.think.mylibrary.PushUtils;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.yin.yzjcourse.Jetpack.AppLocationListener;
+import com.yin.yzjcourse.Net.PocOp;
 
 import zhl.common.oauth.OauthApplicationLike;
+import zhl.common.request.RequestManager;
 
 /**
  * Created by think on 2016/11/21.
@@ -29,6 +31,9 @@ public class MyApplication extends OauthApplicationLike {
 
         initBugly();
         PushUtils.register(this);
+
+        RequestManager.initialize(getApplication());
+        RequestManager.registerRequestConfigClass(PocOp.class);
     }
 
     private void initBugly() {

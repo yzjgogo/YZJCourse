@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import de.greenrobot.event.EventBus;
 import zhl.common.oauth.OauthErrorEvent;
@@ -43,14 +44,27 @@ public class VerityUtil {
         Exception exception = null;
         try {
             TreeMap<String, Object> treeMap = new TreeMap<>(map);
-            String noSecStr = ZHLSecurityUtil.sign(MD5Tool.md5Digest(getParamStr(treeMap, userId, secret)).toLowerCase());
-            treeMap.put(SEC_VALIDATE_KEY, noSecStr);
-            map.put(SEC_VALIDATE_KEY, noSecStr);
-            map.put(VALIDATE_KEY, MD5Tool.md5Digest(getParamStr(treeMap, userId, secret)).toLowerCase());
-            return JsonHp.Serialization(map);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            exception = e;
+//            String noSecStr = ZHLSecurityUtil.sign(MD5Tool.md5Digest(getParamStr(treeMap, userId, secret)).toLowerCase());
+//            treeMap.put(SEC_VALIDATE_KEY, noSecStr);
+//            map.put(SEC_VALIDATE_KEY, noSecStr);
+//            map.put(VALIDATE_KEY, MD5Tool.md5Digest(getParamStr(treeMap, userId, secret)).toLowerCase());
+
+
+
+
+            StringBuilder result = new StringBuilder();
+            for (ConcurrentHashMap.Entry<String, Object> entry : map.entrySet()) {
+                if (result.length() > 0)
+                    result.append("&");
+
+                result.append(entry.getKey());
+                result.append("=");
+                result.append(entry.getValue());
+            }
+
+
+
+            return result.toString();
         } catch (Exception e) {
             e.printStackTrace();
             exception = e;

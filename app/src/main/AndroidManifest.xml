@@ -37,6 +37,10 @@
             android:exported="true" />
 
         <activity android:name=".Jetpack.ServiceLifecycleActivity" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
         <activity android:name=".Jetpack.PageLifecycleActivity" />
         <activity android:name=".DraftActivity" />
         <activity android:name=".DiyWidget.ViewCacheActivity" />
@@ -207,6 +211,7 @@
         <activity android:name=".Base.VPTransformerActivity" />
         <activity android:name=".Base.VPTabLayoutActivity" />
         <activity android:name=".Net.NetActivity" />
+        <activity android:name=".Net.FrameworkActivity" />
         <activity android:name=".Net.UrlConnectionActivity" />
         <activity android:name=".mykt.AndroidExtensions.E1UseInActivity.WeightActivity" />
         <activity android:name=".DesignModel.DesignModelListActivity" />

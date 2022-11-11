@@ -170,25 +170,27 @@ public abstract class AbsResult<T> implements Serializable {
     //    public static String urlPrefix = DebugUrl.TYPE_ONLINE;
 
     public ZHLRequest post(Map<String, Object> param, String url) {
-        if (!param.containsKey("business_id")) {
-            param.put("business_id", getRequestBusinessId());
-        }
-        if (!param.containsKey("edition_id")) {
-            if (getEditionId() != 0) {
-                param.put("edition_id", getEditionId());
-            }
-        }
+//        if (!param.containsKey("business_id")) {
+//            param.put("business_id", getRequestBusinessId());
+//        }
+//        if (!param.containsKey("edition_id")) {
+//            if (getEditionId() != 0) {
+//                param.put("edition_id", getEditionId());
+//            }
+//        }
+        param.remove("op_path");
         return new ZHLRequest(url, param, this);
     }
 
     public ZHLRequest get(Map<String, Object> param, String url) {
-        if (!param.containsKey("business_id")) {
-            param.put("business_id", getRequestBusinessId());
-
-        }
-        if (!param.containsKey("subject_id")) {
-            param.put("subject_id", getEditionId());
-        }
+//        if (!param.containsKey("business_id")) {
+//            param.put("business_id", getRequestBusinessId());
+//
+//        }
+//        if (!param.containsKey("subject_id")) {
+//            param.put("subject_id", getEditionId());
+//        }
+        param.remove("op_path");
         return new ZHLRequest(Request.Method.GET, url, param, this);
     }
 

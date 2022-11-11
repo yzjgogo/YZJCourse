@@ -38,7 +38,7 @@ public class NetActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_ok, R.id.bt_temp,R.id.bt_original_socket,R.id.bt_web_socket,R.id.bt_url_connection,R.id.bt_retrofit,R.id.bt_thread})
+    @OnClick({R.id.bt_ok, R.id.bt_temp,R.id.bt_original_socket,R.id.bt_web_socket,R.id.bt_url_connection,R.id.bt_retrofit,R.id.bt_thread,R.id.bt_frame})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_thread:
@@ -53,6 +53,9 @@ public class NetActivity extends BaseActivity {
                 break;
             case R.id.bt_original_socket:
                 Toast.makeText(this,"没有跳转",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.bt_frame:
+                doFrame();
                 break;
             case R.id.bt_web_socket:
                 Toast.makeText(this,"看看这里的代码",Toast.LENGTH_SHORT).show();
@@ -104,6 +107,10 @@ public class NetActivity extends BaseActivity {
                 startActivity(new Intent(this, RetrofitActivity.class));
                 break;
         }
+    }
+
+    private void doFrame() {
+        startActivity(new Intent(this, FrameworkActivity.class));
     }
 
     private void testGetObject() {

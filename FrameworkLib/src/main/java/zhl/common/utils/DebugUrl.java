@@ -35,7 +35,8 @@ public class DebugUrl {
     public static final String ENGLISH_LOCAL_IP = "http://" + LOCAL_ADDRESS + "/zhl-english/api";
 
     //DEBUG_IP对应的是英语的地址
-    public static final String ENGLISH_DEBUG_IP = "http://222.212.88.30:8113/debug-8099/zhl-english/api";
+//    public static final String ENGLISH_DEBUG_IP = "http://222.212.88.30:8113/debug-8099/zhl-english/api";
+    public static final String ENGLISH_DEBUG_IP = "https://image.1tohome.com/device";
     //巧考
     public static final String QK_DEBUG_IP = "http://222.212.88.30:8113/debug-8085/zhl-qiaokao/api";
     //数学
@@ -75,7 +76,8 @@ public class DebugUrl {
     /**
      * edu接口
      */
-    public static final String REQUEST_URL_EDUCATION = "https://zhl-education.xxfz.com.cn/api";
+//    public static final String REQUEST_URL_EDUCATION = "https://zhl-education.xxfz.com.cn/api";
+    public static final String REQUEST_URL_EDUCATION = "https://mobile.11tohome.com/device";
     public static final String REQUEST_URL_EDUCATION_MATH = "https://zhl-education.xxfz.com.cn/api";
     public static final String REQUEST_URL_EDUCATION_CHINESE = "https://zhl-education.xxfz.com.cn/api";
     //巧考线上
