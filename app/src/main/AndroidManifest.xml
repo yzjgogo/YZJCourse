@@ -175,6 +175,7 @@
         <activity android:name=".DiyWidget.GridLayoutAnimationCodeActivity" />
         <activity android:name=".DiyWidget.AnimateLayoutChangesActivity" />
         <activity android:name=".DiyWidget.LayoutTransitionActivity" />
+        <activity android:name=".DiyWidget.MyBitmapActivity" />
         <activity android:name=".DiyWidget.CanvasChangeActivity" />
         <activity android:name=".DiyWidget.CanvasTranslateActivity" />
         <activity android:name=".DiyWidget.CanvasRotateActivity" />
