@@ -240,6 +240,12 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="数据结构" />
+        <Button
+            android:id="@+id/bt_bluetooth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="蓝牙" />
 
     </LinearLayout>
 </ScrollView>
