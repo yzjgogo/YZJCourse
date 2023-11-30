@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/bt_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启蓝牙"/>
+    <Button
+        android:id="@+id/bt_test2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询已配对的设备"/>
+    <Button
+        android:id="@+id/bt_discovery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发现设备"/>
+    <Button
+        android:id="@+id/bt_match"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="配对"/>
+    <Button
+        android:id="@+id/bt_dis_match"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取消配对"/>
+</LinearLayout>

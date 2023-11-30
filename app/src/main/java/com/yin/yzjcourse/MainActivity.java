@@ -16,6 +16,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.yin.yzjcourse.Base.BaseContentActivity;
+import com.yin.yzjcourse.Base.bluetooth.MyBlueToothActivity;
 import com.yin.yzjcourse.BuilderMode.BuilderModeActivity;
 import com.yin.yzjcourse.Coordinator.CoordinatorActivity;
 import com.yin.yzjcourse.DataBindP.DataBindSimplesActivity;
@@ -102,8 +103,19 @@ public class MainActivity extends BaseActivity {
         super.onResume();
         int readStorage = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE);
         int writeStorage = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if(readStorage!= PackageManager.PERMISSION_GRANTED || writeStorage!=PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+        int callLog = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_CALL_LOG);
+        int coarseLocation = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION);
+        int fineLocation = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION);
+        if(readStorage!= PackageManager.PERMISSION_GRANTED
+                || writeStorage!=PackageManager.PERMISSION_GRANTED
+                || callLog!=PackageManager.PERMISSION_GRANTED
+                || coarseLocation!=PackageManager.PERMISSION_GRANTED
+                || fineLocation!=PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_CALL_LOG,
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION},1);
         }
     }
 
@@ -136,7 +148,7 @@ public class MainActivity extends BaseActivity {
             R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim, R.id.bt_property_anim_interpolator, R.id.bt_object_anim_holder
             , R.id.bt_anim_set, R.id.bt_anim_draw, R.id.bt_builder_mode, R.id.bt_math, R.id.bt_data_bind, R.id.bt_weight, R.id.bt_material_design,
             R.id.bt_coordinator, R.id.bt_android_message, R.id.bt_anim_group, R.id.bt_optimize, R.id.bt_tools, R.id.bt_net,R.id.bt_kotlin,
-    R.id.bt_model,R.id.bt_multi_process,R.id.bt_window,R.id.bt_jetpack,R.id.bt_view_animate_1,R.id.bt_view_animate_2,R.id.bt_data_structure})
+    R.id.bt_model,R.id.bt_multi_process,R.id.bt_window,R.id.bt_jetpack,R.id.bt_view_animate_1,R.id.bt_view_animate_2,R.id.bt_data_structure,R.id.bt_bluetooth})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_fore_service:
@@ -251,6 +263,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.bt_data_structure:
                 startActivity(new Intent(this, DataStructureActivity.class));
+                break;
+            case R.id.bt_bluetooth:
+                startActivity(new Intent(this, MyBlueToothActivity.class));
                 break;
         }
     }

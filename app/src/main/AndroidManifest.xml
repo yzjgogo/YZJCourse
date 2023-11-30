@@ -9,6 +9,11 @@
     <uses-permission android:name="android.permission.READ_LOGS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name = "android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:name=".MyApplication"
@@ -29,6 +34,7 @@
         <activity android:name=".Base.ScrollerActivity" />
         <activity android:name=".Base.ViewComputeActivity" />
         <activity android:name=".Base.ScrollerFlingActivity" />
+        <activity android:name=".Base.bluetooth.MyBlueToothActivity" />
         <activity android:name=".Jetpack.NavigationActivity" />
         <activity android:name=".Jetpack.ViewModelActivity" /> <!-- <activity android:name=".Jetpack.NavigationActivity" /> -->
         <service
