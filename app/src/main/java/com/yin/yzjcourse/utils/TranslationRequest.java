@@ -80,11 +80,13 @@ private static Map<String, String> createRequestParams(String english) {
         File dir = new File(Tools.getSDPath()+"/ycourse/english");
         DLog.eLog("目录："+dir.exists()+ "," +dir.isDirectory());
         File[] files = dir.listFiles();
-        for (File file : files) {
-            if (file.getName().startsWith(order + "-")) {
-                DLog.eLog("找到本地音频："+file.getAbsolutePath());
-                MediaPlayerSingleton.getInstance().play(file.getAbsolutePath(),completionListener);
-                return;
+        if(files!=null){
+            for (File file : files) {
+                if (file.getName().startsWith(order + "-")) {
+                    DLog.eLog("找到本地音频："+file.getAbsolutePath());
+                    MediaPlayerSingleton.getInstance().play(file.getAbsolutePath(),completionListener);
+                    return;
+                }
             }
         }
         DLog.eLog("没有找到本地音频");
