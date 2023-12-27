@@ -259,6 +259,9 @@
                 <action android:name="com.yin.yzjcourse.remote_service" />
             </intent-filter>
         </service>
+        <service android:name=".utils.PlayService"
+            android:enabled="true"
+            android:exported="false"/>
 
         <activity android:name=".MultiProcess.MyAidl.ClientActivity" />
         <activity android:name=".Window.MyWindowActivity" />

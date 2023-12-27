@@ -1,6 +1,7 @@
 package com.yin.yzjcourse.utils;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,6 +17,7 @@ import com.liulishuo.filedownloader.FileDownloader;
 import com.yin.yzjcourse.MyApplication;
 import com.yin.yzjcourse.bean.TranslateResultEntity;
 
+import java.io.File;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
@@ -73,7 +75,20 @@ private static Map<String, String> createRequestParams(String english) {
 //        put("vocabId", new String[]{vocabId});
     }};
 }
-    public static void translate(String order,String english) throws NoSuchAlgorithmException {
+    public static void translate(String order, String english, MediaPlayer.OnCompletionListener completionListener) throws NoSuchAlgorithmException {
+
+        File dir = new File(Tools.getSDPath()+"/ycourse/english");
+        DLog.eLog("目录："+dir.exists()+ "," +dir.isDirectory());
+        File[] files = dir.listFiles();
+        for (File file : files) {
+            if (file.getName().startsWith(order + "-")) {
+                DLog.eLog("找到本地音频："+file.getAbsolutePath());
+                MediaPlayerSingleton.getInstance().play(file.getAbsolutePath(),completionListener);
+                return;
+            }
+        }
+        DLog.eLog("没有找到本地音频");
+
         Map<String, String> params = createRequestParams(english);
         // 添加鉴权相关参数
         AuthV3Util.addAuthParams(APP_KEY, APP_SECRET, params);
@@ -121,7 +136,7 @@ private static Map<String, String> createRequestParams(String english) {
 //                    MediaPlayerSingleton.getInstance().play(translateResultEntity.speakUrl);
 
 
-//                    downloadAudio(fileName, translateResultEntity);
+                    downloadAudio(fileName, translateResultEntity,completionListener);
 
 
                 } else {
@@ -136,7 +151,7 @@ private static Map<String, String> createRequestParams(String english) {
         });
     }
 
-    private static void downloadAudio(String fileName, TranslateResultEntity translateResultEntity) {
+    private static void downloadAudio(String fileName, TranslateResultEntity translateResultEntity,MediaPlayer.OnCompletionListener completionListener) {
         FileDownloader.setup(MyApplication.appContext);
         FileDownloader.getImpl().create(translateResultEntity.speakUrl)
                 .setPath(getDownloadPath(fileName))
@@ -153,6 +168,7 @@ private static Map<String, String> createRequestParams(String english) {
 
                     @Override
                     protected void completed(BaseDownloadTask task) {
+                    MediaPlayerSingleton.getInstance().play(getDownloadPath(fileName),completionListener);
                         DLog.eLog("执行completed："+ fileName +" , "+ translateResultEntity.speakUrl);
                     }
 
@@ -164,6 +180,9 @@ private static Map<String, String> createRequestParams(String english) {
                     @Override
                     protected void error(BaseDownloadTask task, Throwable e) {
                         DLog.eLog("执行error:"+e.getMessage()+" , "+ fileName +" , "+ translateResultEntity.speakUrl);
+                        if (completionListener!=null) {
+                            completionListener.onCompletion(null);
+                        }
                     }
 
                     @Override

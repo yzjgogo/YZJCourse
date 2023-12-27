@@ -19,6 +19,9 @@ import zhl.common.request.RequestManager;
 
 public class MyApplication extends OauthApplicationLike {
     public static Context appContext;
+    public static long startTimes = 0;//时间戳，毫秒
+    public static long durationTime = 0;//想播放多久就停止播放，分钟
+    public static int intervalTime = 1;//两句之间的时间间隔，秒
     @Override
     public void onCreate() {
         super.onCreate();

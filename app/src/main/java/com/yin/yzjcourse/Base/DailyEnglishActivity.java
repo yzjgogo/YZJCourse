@@ -11,6 +11,7 @@ import com.yin.yzjcourse.Base.adapter.SentenceAdapter;
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.bean.EnglishSentenceEntity;
+import com.yin.yzjcourse.utils.MediaPlayerSingleton;
 import com.yin.yzjcourse.utils.TranslationRequest;
 
 import java.security.NoSuchAlgorithmException;
@@ -26,7 +27,7 @@ public class DailyEnglishActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_english);
         rv = findViewById(R.id.rv);
-        sentenceEntityList = getSentenceList();
+        sentenceEntityList = MediaPlayerSingleton.getInstance().getSentenceList();
         adapter = new SentenceAdapter(R.layout.item_daily_english,sentenceEntityList);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(adapter);
@@ -39,7 +40,7 @@ public class DailyEnglishActivity extends BaseActivity {
                     if((position+1)<10){
                         order = ("0"+order);
                     }
-                    TranslationRequest.translate(order,sentenceEntityList.get(position).english);
+                    TranslationRequest.translate(order,sentenceEntityList.get(position).english,null);
                 } catch (NoSuchAlgorithmException e) {
                     e.printStackTrace();
                 }
