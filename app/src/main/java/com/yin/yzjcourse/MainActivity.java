@@ -16,6 +16,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.yin.yzjcourse.Base.BaseContentActivity;
+import com.yin.yzjcourse.Base.DailyEnglishActivity;
 import com.yin.yzjcourse.Base.bluetooth.MyBlueToothActivity;
 import com.yin.yzjcourse.BuilderMode.BuilderModeActivity;
 import com.yin.yzjcourse.Coordinator.CoordinatorActivity;
@@ -148,7 +149,7 @@ public class MainActivity extends BaseActivity {
             R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim, R.id.bt_property_anim_interpolator, R.id.bt_object_anim_holder
             , R.id.bt_anim_set, R.id.bt_anim_draw, R.id.bt_builder_mode, R.id.bt_math, R.id.bt_data_bind, R.id.bt_weight, R.id.bt_material_design,
             R.id.bt_coordinator, R.id.bt_android_message, R.id.bt_anim_group, R.id.bt_optimize, R.id.bt_tools, R.id.bt_net,R.id.bt_kotlin,
-    R.id.bt_model,R.id.bt_multi_process,R.id.bt_window,R.id.bt_jetpack,R.id.bt_view_animate_1,R.id.bt_view_animate_2,R.id.bt_data_structure,R.id.bt_bluetooth})
+    R.id.bt_model,R.id.bt_multi_process,R.id.bt_window,R.id.bt_jetpack,R.id.bt_view_animate_1,R.id.bt_view_animate_2,R.id.bt_data_structure,R.id.bt_bluetooth,R.id.bt_english})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_fore_service:
@@ -266,6 +267,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.bt_bluetooth:
                 startActivity(new Intent(this, MyBlueToothActivity.class));
+                break;
+            case R.id.bt_english:
+                startActivity(new Intent(this, DailyEnglishActivity.class));
                 break;
         }
     }

@@ -269,6 +269,7 @@
         <activity
             android:name=".Base.DynamicDialogActivity"
             android:theme="@style/DialogBaseTheme" />
+        <activity android:name=".Base.DailyEnglishActivity"/>
     </application>
 
 </manifest>

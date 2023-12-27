@@ -29,9 +29,19 @@ public class DLog {
             Logger.e(message, args);
         }
     }
-    public static void eLog(String content){
-        if(sDebug){
-            Log.e("yin",content);
+//    public static void eLog(String content){
+//        if(sDebug){
+//            Log.e("yin",content);
+//        }
+//    }
+
+    public static void eLog(Object object){
+        if(BuildConfig.DEBUG){
+            if (object!=null) {
+                Log.e("zhl",object.toString());
+            }else {
+                Log.e("zhl","是null");
+            }
         }
     }
     public static void eTest(String content){
