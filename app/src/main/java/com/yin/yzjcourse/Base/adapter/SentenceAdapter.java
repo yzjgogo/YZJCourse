@@ -1,5 +1,6 @@
 package com.yin.yzjcourse.Base.adapter;
 
+import android.graphics.Color;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -17,6 +18,7 @@ import java.util.List;
  *
  */
 public class SentenceAdapter extends BaseQuickAdapter<EnglishSentenceEntity, BaseViewHolder> {
+    public int lastCheckedPosition;
     public SentenceAdapter(int layoutResId, @Nullable List<EnglishSentenceEntity> data) {
         super(layoutResId, data);
     }
@@ -39,12 +41,19 @@ public class SentenceAdapter extends BaseQuickAdapter<EnglishSentenceEntity, Bas
 //        }else{
 //            imageView.setVisibility(View.GONE);
 //        }
+//        helper.
         AppCompatTextView tvDate = helper.getView(R.id.tv_date);
         AppCompatButton btTranslate = helper.getView(R.id.bt_translate);
         AppCompatTextView tvEnglish = helper.getView(R.id.tv_english);
         AppCompatTextView tvChinese = helper.getView(R.id.tv_chinese);
         tvDate.setText((helper.getLayoutPosition()+1)+"->"+item.date);
         tvEnglish.setText(item.english);
+        if(item.checked){
+            lastCheckedPosition = helper.getLayoutPosition();
+            tvEnglish.setTextColor(Color.parseColor("#FF0000"));
+        }else {
+            tvEnglish.setTextColor(Color.parseColor("#333333"));
+        }
         tvChinese.setText(item.chinese);
         btTranslate.setOnClickListener(new View.OnClickListener(){
             @Override

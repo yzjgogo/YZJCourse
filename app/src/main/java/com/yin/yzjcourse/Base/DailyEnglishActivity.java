@@ -1,6 +1,11 @@
 package com.yin.yzjcourse.Base;
 
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,7 +16,9 @@ import com.yin.yzjcourse.Base.adapter.SentenceAdapter;
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
 import com.yin.yzjcourse.bean.EnglishSentenceEntity;
+import com.yin.yzjcourse.utils.DLog;
 import com.yin.yzjcourse.utils.MediaPlayerSingleton;
+import com.yin.yzjcourse.utils.PlayService;
 import com.yin.yzjcourse.utils.TranslationRequest;
 
 import java.security.NoSuchAlgorithmException;
@@ -21,7 +28,9 @@ import java.util.List;
 public class DailyEnglishActivity extends BaseActivity {
     private SentenceAdapter adapter;
     private RecyclerView rv;
+    private LinearLayoutManager linearLayoutManager;
     private List<EnglishSentenceEntity> sentenceEntityList;
+    private PlayService playService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +38,8 @@ public class DailyEnglishActivity extends BaseActivity {
         rv = findViewById(R.id.rv);
         sentenceEntityList = MediaPlayerSingleton.getInstance().getSentenceList();
         adapter = new SentenceAdapter(R.layout.item_daily_english,sentenceEntityList);
-        rv.setLayoutManager(new LinearLayoutManager(this));
+        linearLayoutManager = new LinearLayoutManager(this);
+        rv.setLayoutManager(linearLayoutManager);
         rv.setAdapter(adapter);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -46,7 +56,43 @@ public class DailyEnglishActivity extends BaseActivity {
                 }
             }
         });
+        Intent mIntent = new Intent(getApplicationContext(), PlayService.class);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            startForegroundService(mIntent);
+        }else{
+            startService(mIntent);
+        }
+        bindService(mIntent, serviceConnect, BIND_AUTO_CREATE);
     }
+    private ServiceConnection serviceConnect = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            playService = ((PlayService.LocalBinder) service).getService();
+            playService.setCallBack(callBack);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            playService = null;
+        }
+    };
+    private PlayService.IServerCallBack callBack = new PlayService.IServerCallBack() {
+        @Override
+        public void onItem(int currentPosition) {
+            DLog.eLog("位置："+linearLayoutManager.findLastCompletelyVisibleItemPosition()+" , "+linearLayoutManager.findLastVisibleItemPosition());
+//            rv.scrollToPosition(currentPosition);
+//            rv.posit
+            if(linearLayoutManager.findLastCompletelyVisibleItemPosition() == currentPosition){
+//                rv.scrollToPosition(currentPosition+5);
+                rv.smoothScrollToPosition(currentPosition+5);
+            }
+            int lastCheckedPosition = adapter.lastCheckedPosition;
+            adapter.getItem(lastCheckedPosition).checked = false;
+            adapter.getItem(currentPosition).checked = true;
+            adapter.notifyItemChanged(lastCheckedPosition);
+            adapter.notifyItemChanged(currentPosition);
+        }
+    };
 
     public List<EnglishSentenceEntity> getSentenceList(){
         List<EnglishSentenceEntity> sentences = new ArrayList<>();

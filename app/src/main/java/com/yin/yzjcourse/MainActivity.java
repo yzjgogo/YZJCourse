@@ -278,6 +278,9 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, MyBlueToothActivity.class));
                 break;
             case R.id.bt_english:
+                MyApplication.startTimes = System.currentTimeMillis();
+                MyApplication.durationTime = Integer.parseInt(et_time.getText().toString().trim());
+                MyApplication.intervalTime = Integer.parseInt(et_interval.getText().toString().trim());
                 startActivity(new Intent(this, DailyEnglishActivity.class));
                 break;
             case R.id.bt_english_service:
