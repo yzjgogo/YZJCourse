@@ -167,4 +167,5 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.45'
 
     implementation 'com.liulishuo.filedownloader:library:1.7.6'
+    implementation 'com.orhanobut:hawk:2.0.1'
 }

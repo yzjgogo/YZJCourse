@@ -274,6 +274,13 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:text="40"/>
+            <Button
+                android:id="@+id/bt_save_position"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="保存位置" />
         </LinearLayout>
 
     </LinearLayout>

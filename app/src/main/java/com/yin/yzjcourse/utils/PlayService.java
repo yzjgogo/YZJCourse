@@ -13,10 +13,12 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
+import com.orhanobut.hawk.Hawk;
 import com.yin.yzjcourse.MainActivity;
 import com.yin.yzjcourse.MyApplication;
 import com.yin.yzjcourse.R;
@@ -42,7 +44,7 @@ public class PlayService extends Service {
     NotificationCompat.Builder notification; //创建服务对象
     NotificationManager manager;
     private boolean isShowNotification = false;
-    private int currentPosition = 0;
+//    public int currentPosition = 0;
     private List<EnglishSentenceEntity> sentenceEntityList;
     private Handler handler = new Handler(Looper.getMainLooper());
     private IServerCallBack callBack;
@@ -113,24 +115,27 @@ public class PlayService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         sentenceEntityList = MediaPlayerSingleton.getInstance().getSentenceList();
+        MyApplication.currentPosition = Hawk.get("last_done_position",0);
+        Toast.makeText(getApplication(),"开始播放时的位置："+MyApplication.currentPosition,Toast.LENGTH_SHORT).show();
         startPlay();
         return START_STICKY;
     }
 
     private void startPlay() {
         try {
-            String order = String.valueOf(currentPosition + 1);
-            if ((currentPosition + 1) < 10) {
+            String order = String.valueOf(MyApplication.currentPosition + 1);
+            if ((MyApplication.currentPosition + 1) < 10) {
                 order = ("0" + order);
             }
             if (callBack != null) {
-                callBack.onItem(currentPosition);
+                callBack.onItem(MyApplication.currentPosition);
             }
-            TranslationRequest.translate(order, sentenceEntityList.get(currentPosition).english, new MediaPlayer.OnCompletionListener() {
+            TranslationRequest.translate(order, sentenceEntityList.get(MyApplication.currentPosition).english, new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
                     if ((System.currentTimeMillis() - MyApplication.startTimes) > MyApplication.durationTime * 60 * 1000) {
                         DLog.eLog("时间到了停止播放");
+                        Hawk.put("last_done_position",MyApplication.currentPosition);
                     } else {
                         playNext();
                     }
@@ -151,17 +156,18 @@ public class PlayService extends Service {
     }
 
     private void playNextNow() {
-        if (currentPosition == (sentenceEntityList.size() - 1)) {
+        if (MyApplication.currentPosition == (sentenceEntityList.size() - 1)) {
             DLog.eLog("播放一遍了");
-            currentPosition = 0;
+            MyApplication.currentPosition = 0;
         } else {
-            currentPosition++;
+            MyApplication.currentPosition++;
         }
         startPlay();
     }
 
     @Override
     public void onDestroy() {
+        DLog.eLog("执行服务的onDestroy");
         super.onDestroy();
     }
 

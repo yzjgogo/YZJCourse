@@ -17,6 +17,7 @@ import androidx.appcompat.widget.AppCompatEditText;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.orhanobut.hawk.Hawk;
 import com.yin.yzjcourse.Base.BaseContentActivity;
 import com.yin.yzjcourse.Base.DailyEnglishActivity;
 import com.yin.yzjcourse.Base.bluetooth.MyBlueToothActivity;
@@ -158,7 +159,8 @@ public class MainActivity extends BaseActivity {
             R.id.bt_diy_view, R.id.bt_xml_anim, R.id.bt_property_anim, R.id.bt_property_anim_interpolator, R.id.bt_object_anim_holder
             , R.id.bt_anim_set, R.id.bt_anim_draw, R.id.bt_builder_mode, R.id.bt_math, R.id.bt_data_bind, R.id.bt_weight, R.id.bt_material_design,
             R.id.bt_coordinator, R.id.bt_android_message, R.id.bt_anim_group, R.id.bt_optimize, R.id.bt_tools, R.id.bt_net,R.id.bt_kotlin,
-    R.id.bt_model,R.id.bt_multi_process,R.id.bt_window,R.id.bt_jetpack,R.id.bt_view_animate_1,R.id.bt_view_animate_2,R.id.bt_data_structure,R.id.bt_bluetooth,R.id.bt_english,R.id.bt_english_service})
+    R.id.bt_model,R.id.bt_multi_process,R.id.bt_window,R.id.bt_jetpack,R.id.bt_view_animate_1,R.id.bt_view_animate_2,R.id.bt_data_structure,
+            R.id.bt_bluetooth,R.id.bt_english,R.id.bt_english_service,R.id.bt_save_position})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_fore_service:
@@ -192,8 +194,10 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent1);
                 break;
             case R.id.bt_diy_view:
-                Intent intent2 = new Intent(this, DiyViewActivity.class);
-                startActivity(intent2);
+//                Intent intent2 = new Intent(this, DiyViewActivity.class);
+//                startActivity(intent2);
+                String str1 = "https://student-qk.zhihuiliu.com/app/activity/sweep-good-books/flipping-books.html?business_id=105&book_id=1813501&pdf_volume_id=220&UID=304182&user_id=304182&Scope=com.zhl.fep.weixin.web&token=2651c37b5b899e2785a81ef2d615d990abdcfd9d1367ebb48e9f31a458b9b5e4&visitorGuid=347b7b09-8b89-45c0-964f-8606c9b2a128&userPeriod=1&fromSaoHaoShu=1";
+                PolicyWebActivity.Companion.start(this,str1);
                 break;
             case R.id.bt_xml_anim:
                 Intent intent3 = new Intent(this, XmlAnimActivity.class);
@@ -293,6 +297,10 @@ public class MainActivity extends BaseActivity {
                 }else{
                     startService(mIntent);
                 }
+                break;
+            case R.id.bt_save_position:
+                Hawk.put("last_done_position",MyApplication.currentPosition);
+                Toast.makeText(MyApplication.appContext,"保存成功",Toast.LENGTH_SHORT).show();
                 break;
         }
     }

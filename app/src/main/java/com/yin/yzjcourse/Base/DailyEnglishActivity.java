@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.orhanobut.hawk.Hawk;
 import com.yin.yzjcourse.Base.adapter.SentenceAdapter;
 import com.yin.yzjcourse.BaseActivity;
 import com.yin.yzjcourse.R;
@@ -79,12 +80,16 @@ public class DailyEnglishActivity extends BaseActivity {
     private PlayService.IServerCallBack callBack = new PlayService.IServerCallBack() {
         @Override
         public void onItem(int currentPosition) {
-            DLog.eLog("位置："+linearLayoutManager.findLastCompletelyVisibleItemPosition()+" , "+linearLayoutManager.findLastVisibleItemPosition());
+            DLog.eLog("位置："+linearLayoutManager.findLastCompletelyVisibleItemPosition()+" , "+linearLayoutManager.findLastVisibleItemPosition()+" , "+currentPosition);
 //            rv.scrollToPosition(currentPosition);
 //            rv.posit
             if(linearLayoutManager.findLastCompletelyVisibleItemPosition() == currentPosition){
+                DLog.eLog("执行位置11");
 //                rv.scrollToPosition(currentPosition+5);
                 rv.smoothScrollToPosition(currentPosition+5);
+            }else {
+                DLog.eLog("执行位置22");
+                rv.smoothScrollToPosition(currentPosition);
             }
             int lastCheckedPosition = adapter.lastCheckedPosition;
             adapter.getItem(lastCheckedPosition).checked = false;
@@ -549,5 +554,13 @@ public class DailyEnglishActivity extends BaseActivity {
                 "Ding Ding, you're blocking me.",
                 "2023年12月04日"));
         return sentences;
+    }
+
+    @Override
+    protected void onDestroy() {
+//        Hawk.put("last_done_position",playService.currentPosition);
+        playService.setCallBack(null);
+        DLog.eLog("执行activity的onDestroy");
+        super.onDestroy();
     }
 }

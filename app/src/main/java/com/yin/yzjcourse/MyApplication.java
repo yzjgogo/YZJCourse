@@ -6,6 +6,7 @@ import androidx.lifecycle.ProcessLifecycleOwner;
 import androidx.multidex.MultiDexApplication;
 
 import com.dev.think.mylibrary.PushUtils;
+import com.orhanobut.hawk.Hawk;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.yin.yzjcourse.Jetpack.AppLocationListener;
 import com.yin.yzjcourse.Net.PocOp;
@@ -22,6 +23,7 @@ public class MyApplication extends OauthApplicationLike {
     public static long startTimes = 0;//时间戳，毫秒
     public static long durationTime = 0;//想播放多久就停止播放，分钟
     public static int intervalTime = 1;//两句之间的时间间隔，秒
+    public static int currentPosition = 0;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -37,6 +39,8 @@ public class MyApplication extends OauthApplicationLike {
 
         RequestManager.initialize(getApplication());
         RequestManager.registerRequestConfigClass(PocOp.class);
+
+        Hawk.init(getApplication()).build();
     }
 
     private void initBugly() {
