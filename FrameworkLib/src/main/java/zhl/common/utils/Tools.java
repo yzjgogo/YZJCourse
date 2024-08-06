@@ -1045,4 +1045,23 @@ public class Tools {
             return arr;
         }
     }
+
+
+    /**
+     * 例如接口HttpURLConnection的响应InputStream，转为字符串
+     * @param inStream
+     * @return
+     * @throws IOException
+     */
+    public static String getResponse(InputStream inStream) throws IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        int len = -1;
+        byte[] buffer = new byte[1024];
+        while ((len = inStream.read(buffer)) != -1) {
+            outputStream.write(buffer, 0, len);
+        }
+
+        byte[] data = outputStream.toByteArray();
+        return new String(data, "utf-8");
+    }
 }
