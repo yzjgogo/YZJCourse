@@ -38,7 +38,7 @@ public class NetActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_ok, R.id.bt_temp,R.id.bt_original_socket,R.id.bt_web_socket,R.id.bt_url_connection,R.id.bt_retrofit,R.id.bt_thread,R.id.bt_frame})
+    @OnClick({R.id.bt_ok, R.id.bt_temp,R.id.bt_original_socket,R.id.bt_web_socket,R.id.bt_url_connection,R.id.bt_retrofit,R.id.bt_thread,R.id.bt_frame,R.id.bt_http_url_connection})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_thread:
@@ -56,6 +56,9 @@ public class NetActivity extends BaseActivity {
                 break;
             case R.id.bt_frame:
                 doFrame();
+                break;
+            case R.id.bt_http_url_connection:
+                startActivity(new Intent(this, HttpURLConnectionActivity.class));
                 break;
             case R.id.bt_web_socket:
                 Toast.makeText(this,"看看这里的代码",Toast.LENGTH_SHORT).show();
