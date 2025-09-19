@@ -194,10 +194,10 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent1);
                 break;
             case R.id.bt_diy_view:
-//                Intent intent2 = new Intent(this, DiyViewActivity.class);
-//                startActivity(intent2);
-                String str1 = "https://student-qk.zhihuiliu.com/app/activity/sweep-good-books/flipping-books.html?business_id=105&book_id=1813501&pdf_volume_id=220&UID=304182&user_id=304182&Scope=com.zhl.fep.weixin.web&token=2651c37b5b899e2785a81ef2d615d990abdcfd9d1367ebb48e9f31a458b9b5e4&visitorGuid=347b7b09-8b89-45c0-964f-8606c9b2a128&userPeriod=1&fromSaoHaoShu=1";
-                PolicyWebActivity.Companion.start(this,str1);
+                Intent intent2 = new Intent(this, DiyViewActivity.class);
+                startActivity(intent2);
+//                String str1 = "https://student-qk.zhihuiliu.com/app/activity/sweep-good-books/flipping-books.html?business_id=105&book_id=1813501&pdf_volume_id=220&UID=304182&user_id=304182&Scope=com.zhl.fep.weixin.web&token=2651c37b5b899e2785a81ef2d615d990abdcfd9d1367ebb48e9f31a458b9b5e4&visitorGuid=347b7b09-8b89-45c0-964f-8606c9b2a128&userPeriod=1&fromSaoHaoShu=1";
+//                PolicyWebActivity.Companion.start(this,str1);
                 break;
             case R.id.bt_xml_anim:
                 Intent intent3 = new Intent(this, XmlAnimActivity.class);

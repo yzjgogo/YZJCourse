@@ -73,5 +73,11 @@
             android:layout_height="wrap_content"
             android:text="Frame"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_http_url_connection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bt_http_url_connection"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
